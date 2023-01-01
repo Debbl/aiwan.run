@@ -1,18 +1,17 @@
-export default function Home() {
+import Footer from "~/components/footer";
+
+const Index: React.FC = () => {
   return (
-    <>
-      Hello world
-      <p className="bg-red">scoped!</p>
-      <style jsx>{`
-        div {
-          background-color: red;
-        }
-        @media (max-width: 600px) {
-          div {
-            background: blue;
-          }
-        }
-      `}</style>
-    </>
+    <div className="h-screen w-screen flex flex-col justify-center items-center">
+      <div className="flex gap-2">
+        <a href="https://blog.aiwan.run/">Blog</a>
+        <a href="https://github.com/Debbl/">GitHub</a>
+        <a href="mailto:me@aiwan.run">Email</a>
+        <a href="https://space.bilibili.com/174865648">Bilibili</a>
+      </div>
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Index;
