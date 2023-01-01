@@ -1,4 +1,4 @@
-import Footer from "~/components/footer";
+import Footer from "~/components/Footer";
 
 const Index: React.FC = () => {
   return (
