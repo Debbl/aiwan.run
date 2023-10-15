@@ -11,8 +11,8 @@ export default function Home() {
     { name: "Bilibili", url: "https://space.bilibili.com/174865648" },
   ];
   return (
-    <main>
-      <div className="flex h-screen w-screen flex-col items-center justify-center">
+    <main className="flex-1">
+      <div className="flex h-full flex-col items-center justify-center">
         <div>
           <Icon
             icon={Avatar}

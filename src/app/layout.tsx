@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <script
           async
@@ -24,7 +24,7 @@ export default function RootLayout({
           data-website-id="e44bfcdd-49ae-476b-95b7-f89bd0d69e86"
         />
       </head>
-      <body>
+      <body className="flex h-full flex-col">
         <ThemeProvider attribute="class">
           <Header />
           {children}
