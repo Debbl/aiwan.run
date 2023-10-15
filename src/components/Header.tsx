@@ -1,10 +1,12 @@
-const Header = (props: { title: string }) => {
-  const { title } = props;
+import ThemeSwitcher from "./ThemeSwitcher";
 
+const Header = () => {
   return (
-    <>
-      <h1>{title}</h1>
-    </>
+    <div className="flex justify-end px-6 py-3">
+      <div>
+        <ThemeSwitcher />
+      </div>
+    </div>
   );
 };
 

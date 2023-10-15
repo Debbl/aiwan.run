@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ThemeProvider from "~/components/ThemeProvider";
+import Header from "~/components/Header";
 
 export const metadata: Metadata = {
   title: "Brendan Dash",
@@ -22,7 +24,12 @@ export default function RootLayout({
           data-website-id="e44bfcdd-49ae-476b-95b7-f89bd0d69e86"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider attribute="class">
+          <Header />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
