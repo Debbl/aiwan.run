@@ -1,0 +1,38 @@
+{
+  "name": "aiwan.run",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Debbl <me@aiwan.run> (https://aiwan.run/)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "eslint --fix . --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "next": "13.5.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@debbl/eslint-config": "^0.0.65",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.5.4",
+    "@types/mdx": "^2.0.8",
+    "@types/node": "20.8.0",
+    "@types/react": "18.2.23",
+    "@types/react-dom": "18.2.8",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.3",
+    "postcss": "8.4.31",
+    "postcss-nesting": "^12.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-headerify": "^0.0.5",
+    "remark-mdx-frontmatter": "^3.0.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "^5.2.2"
+  }
+}
