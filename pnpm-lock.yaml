@@ -34,6 +34,9 @@ devDependencies:
   '@next/mdx':
     specifier: ^13.5.4
     version: 13.5.4(@mdx-js/loader@2.3.0)(@mdx-js/react@2.3.0)
+  '@types/dom-view-transitions':
+    specifier: ^1.0.3
+    version: 1.0.3
   '@types/mdx':
     specifier: ^2.0.8
     version: 2.0.8
@@ -589,6 +592,10 @@ packages:
     resolution: {integrity: sha512-8Hz50m2eoS56ldRlepxSBa6PWEVCtzUo/92HgLc2qTMnotJNIm7xP+UZhyWoYsyOdd5dxZ+NZLb24rsKyFs2ow==}
     dependencies:
       '@types/ms': 0.7.32
+    dev: true
+
+  /@types/dom-view-transitions@1.0.3:
+    resolution: {integrity: sha512-1X/BUVdo9pKho8SFWVNcIz0fasBAqwcAvWGMt0Z57LUN68I4AtdrgTUXFryZW/OHUSO+9OH9KtSgCTMrzOZdRg==}
     dev: true
 
   /@types/eslint-scope@3.7.5:

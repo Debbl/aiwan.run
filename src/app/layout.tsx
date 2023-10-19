@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
         <script
           async
@@ -25,7 +25,12 @@ export default function RootLayout({
         />
       </head>
       <body className="flex h-full flex-col">
-        <ThemeProvider attribute="class">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Header />
           {children}
         </ThemeProvider>
