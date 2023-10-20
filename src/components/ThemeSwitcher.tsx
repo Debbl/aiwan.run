@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
     const y = e.clientY;
     const endRadius = Math.hypot(
       Math.max(x, window.innerWidth - x),
-      Math.max(y, window.innerHeight - y)
+      Math.max(y, window.innerHeight - y),
     );
 
     const isDark = theme === "dark";
@@ -30,12 +30,11 @@ const ThemeSwitcher = () => {
       return;
     }
 
-    const transition = document.startViewTransition(() => {
-      flushSync(() => setTheme(theme === "dark" ? "light" : "dark"));
-    });
-
-    transition.ready
-      .then(() => {
+    document
+      .startViewTransition(() => {
+        flushSync(() => setTheme(theme === "dark" ? "light" : "dark"));
+      })
+      .ready.then(() => {
         const clipPath = [
           `circle(0px at ${x}px ${y}px)`,
           `circle(${endRadius}px at ${x}px ${y}px)`,
@@ -47,19 +46,16 @@ const ThemeSwitcher = () => {
           },
           {
             duration: 400,
-            easing: "ease-in",
+            easing: "ease-out",
             iterations: 1,
             direction: isDark ? "reverse" : "normal",
             pseudoElement: isDark
               ? "::view-transition-old(root)"
               : "::view-transition-new(root)",
-          }
+          },
         );
       })
-      .catch((e) => {
-        // eslint-disable-next-line no-console
-        console.log(e);
-      });
+      .catch(console.log);
   };
 
   return (
