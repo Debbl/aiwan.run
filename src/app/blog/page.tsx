@@ -15,7 +15,7 @@ function getPostsRoutes() {
   postsFilesPaths.forEach((p) => {
     const metadata = grayMatter.read(p).data as { title: string };
 
-    const link = "/blog" + "/" + path.relative(routerPath, path.dirname(p));
+    const link = `/blog/${path.relative(routerPath, path.dirname(p))}`;
 
     postsRoutes.push({ link, title: metadata?.title });
   });
@@ -27,7 +27,7 @@ export default function BlogPage() {
   const postsRoutes = getPostsRoutes();
 
   return (
-    <main className="px-20 mt-20">
+    <main className="mt-20 px-20">
       <ul>
         {postsRoutes.map((route) => (
           <li key={route.link}>

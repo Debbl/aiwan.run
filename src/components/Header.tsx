@@ -4,11 +4,14 @@ import { AntDesignFireFilled, Icon } from "~/icons";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center px-6 py-3">
+    <div className="flex items-center justify-between px-6 py-3">
       <div>
         <button>
           <Link href="/">
-            <Icon className="text-[#eab308] h-6 w-6" icon={AntDesignFireFilled} />
+            <Icon
+              className="h-6 w-6 text-[#eab308]"
+              icon={AntDesignFireFilled}
+            />
           </Link>
         </button>
       </div>
