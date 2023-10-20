@@ -20,10 +20,15 @@ const ThemeSwitcher = () => {
     const y = e.clientY;
     const endRadius = Math.hypot(
       Math.max(x, window.innerWidth - x),
-      Math.max(y, window.innerHeight - y),
+      Math.max(y, window.innerHeight - y)
     );
 
     const isDark = theme === "dark";
+
+    if (!document.startViewTransition) {
+      setTheme(theme === "dark" ? "light" : "dark");
+      return;
+    }
 
     const transition = document.startViewTransition(() => {
       flushSync(() => setTheme(theme === "dark" ? "light" : "dark"));
@@ -48,7 +53,7 @@ const ThemeSwitcher = () => {
             pseudoElement: isDark
               ? "::view-transition-old(root)"
               : "::view-transition-new(root)",
-          },
+          }
         );
       })
       .catch((e) => {
