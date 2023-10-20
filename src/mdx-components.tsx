@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types";
-import Header from "~/app/(blog)/components/Header";
+import Header from "~/app/blog/(posts)/components/Header";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
