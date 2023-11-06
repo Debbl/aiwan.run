@@ -4,7 +4,7 @@ import { AntDesignFireFilled, Icon } from "~/icons";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between px-6 py-3">
+    <nav className="flex items-center justify-between px-6 py-3">
       <div>
         <button>
           <Link href="/">
@@ -23,7 +23,7 @@ const Header = () => {
 
         <ThemeSwitcher />
       </div>
-    </div>
+    </nav>
   );
 };
 
