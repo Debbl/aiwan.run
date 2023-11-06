@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^2.9.0",
     "@debbl/ahooks": "^0.0.10",
     "next": "14.0.1",
     "next-themes": "^0.2.1",
@@ -36,6 +37,7 @@
     "gray-matter": "^4.0.3",
     "postcss": "8.4.31",
     "postcss-nesting": "^12.0.1",
+    "rehype-mdx-code-props": "^2.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-headerify": "^0.1.0",
     "remark-mdx-frontmatter": "^4.0.0",
