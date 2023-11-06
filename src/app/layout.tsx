@@ -8,6 +8,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Brendan Dash (Debbl)", url: "https://aiwan.run/" }],
   description: "Brendan Dash's personal website",
   icons: "/favicon.svg",
+  alternates: {
+    canonical: "https://aiwan.run/",
+    types: {
+      "application/rss+xml": [
+        {
+          title: "Brendan Dash's RSS Feed",
+          url: "/feed.xml",
+        },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({
