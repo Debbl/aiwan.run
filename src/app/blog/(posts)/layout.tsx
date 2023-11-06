@@ -3,5 +3,5 @@ export default function MarkdownLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <main className="markdown-body px-11">{children}</main>;
+  return <>{children}</>;
 }
