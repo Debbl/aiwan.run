@@ -16,7 +16,8 @@
     "next": "14.0.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "@debbl/eslint-config": "^1.1.1",
@@ -28,6 +29,7 @@
     "@types/node": "20.8.10",
     "@types/react": "18.2.35",
     "@types/react-dom": "18.2.14",
+    "@types/rss": "^0.0.31",
     "autoprefixer": "10.4.16",
     "eslint": "8.53.0",
     "glob": "^10.3.10",

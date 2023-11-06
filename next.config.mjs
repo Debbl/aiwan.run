@@ -6,6 +6,10 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  output: "export",
+  experimental: {
+    webpackBuildWorker: true,
+  },
 };
 
 const withMDX = createMDX({
