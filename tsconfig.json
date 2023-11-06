@@ -2,8 +2,8 @@
   "compilerOptions": {
     "incremental": true,
     "target": "ES5",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "preserve",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "node",
     "paths": {
@@ -11,11 +11,11 @@
     },
     "resolveJsonModule": true,
     "allowJs": true,
+    "strict": true,
     "noEmit": true,
-    "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "plugins": [
       {

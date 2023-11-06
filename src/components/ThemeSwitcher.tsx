@@ -54,8 +54,7 @@ const ThemeSwitcher = () => {
               : "::view-transition-new(root)",
           },
         );
-      })
-      .catch(console.log);
+      });
   };
 
   return (
