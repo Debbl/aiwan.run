@@ -21,7 +21,7 @@ export default function RootLayout({
         <script
           async
           src="https://umami.aiwan.run/script.js"
-          data-website-id="e44bfcdd-49ae-476b-95b7-f89bd0d69e86"
+          data-website-id="798a0204-dd50-4b46-9366-fb9ba43d2e98"
         />
       </head>
       <body className="flex h-full flex-col">
