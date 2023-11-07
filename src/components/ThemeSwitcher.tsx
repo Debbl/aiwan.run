@@ -60,10 +60,10 @@ const ThemeSwitcher = () => {
   return (
     <>
       {!isHydrated ? (
-        <div className="h-6 w-6" />
+        <div className="h-5 w-5" />
       ) : (
         <button onClick={toggleTheme}>
-          <Icon className="h-6 w-6 cursor-pointer" icon={icon} />
+          <Icon className="h-5 w-5 cursor-pointer" icon={icon} />
         </button>
       )}
     </>
