@@ -9,39 +9,39 @@ import {
   UilGithubAlt,
 } from "~/icons";
 
-const Header = () => {
-  const nav = [
-    {
-      "url": "/blog",
-      "name": "Blog",
-      "data-umami-event": "click-blog-link",
-    },
-    {
-      "url": "https://github.com/Debbl/",
-      "name": "Github",
-      "data-umami-event": "click-github-link",
-      "icon": UilGithubAlt,
-    },
-    {
-      "url": "https://space.bilibili.com/174865648/",
-      "name": "Bilibili",
-      "data-umami-event": "click-bilibili-link",
-      "icon": RiBilibiliLine,
-    },
-    {
-      "url": "mailto:me@aiwan.run",
-      "name": "Email",
-      "data-umami-event": "click-email-link",
-      "icon": CarbonEmail,
-    },
-    {
-      "url": "/feed.xml",
-      "name": "RSS",
-      "data-umami-event": "click-rss-link",
-      "icon": CarbonRss,
-    },
-  ];
+const nav = [
+  {
+    "url": "/blog",
+    "name": "Blog",
+    "data-umami-event": "click-blog-link",
+  },
+  {
+    "url": "https://github.com/Debbl/",
+    "name": "Github",
+    "data-umami-event": "click-github-link",
+    "icon": UilGithubAlt,
+  },
+  {
+    "url": "https://space.bilibili.com/174865648/",
+    "name": "Bilibili",
+    "data-umami-event": "click-bilibili-link",
+    "icon": RiBilibiliLine,
+  },
+  {
+    "url": "mailto:me@aiwan.run",
+    "name": "Email",
+    "data-umami-event": "click-email-link",
+    "icon": CarbonEmail,
+  },
+  {
+    "url": "/feed.xml",
+    "name": "RSS",
+    "data-umami-event": "click-rss-link",
+    "icon": CarbonRss,
+  },
+];
 
+const Header = () => {
   return (
     <nav className="flex items-center justify-between px-6 py-3">
       <div>
