@@ -36,7 +36,7 @@ export default function RootLayout({
           data-domains="aiwan.run"
         />
       </head>
-      <body className="flex h-full flex-col">
+      <body className="flex flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

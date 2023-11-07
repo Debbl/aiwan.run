@@ -34,7 +34,7 @@ const projects: Projects = {
         name: "Tic tac toe",
         link: "https://game.aiwan.run/tictactoe/",
         favicon: "https://game.aiwan.run/tictactoe/logo.png",
-        desc: "A Tic-tac-tow game use solid.js.",
+        desc: "A Tic-tac-toe game use solid.js.",
       },
       {
         name: "Game of Life",
@@ -93,14 +93,14 @@ const projects: Projects = {
 export default function Home() {
   return (
     <main className="flex-1">
-      <div className="flex h-full flex-col items-center">
+      <div className="mb-10 flex h-full flex-col items-center">
         <div className="mt-20">
           <Icon
             icon={Avatar}
             className="h-12 w-12 cursor-pointer rounded-full"
           />
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-24">
+        <div className="mt-10 grid grid-cols-1 gap-24 md:grid-cols-2">
           {Object.keys(projects).map((key) => {
             const project = projects[key];
 
