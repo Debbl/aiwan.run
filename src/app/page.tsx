@@ -3,12 +3,9 @@ import Avatar from "~/icons/Avatar";
 
 export default function Home() {
   const links = [
-    { name: "Blog", url: "https://blog.aiwan.run/" },
-    { name: "GitHub", url: "https://github.com/Debbl/" },
     { name: "Game", url: "https://game.aiwan.run/" },
     { name: "V", url: "https://v.aiwan.run/" },
     { name: "Email", url: "mailto:me@aiwan.run" },
-    { name: "Bilibili", url: "https://space.bilibili.com/174865648" },
   ];
   return (
     <main className="flex-1">

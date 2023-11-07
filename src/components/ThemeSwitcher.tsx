@@ -11,10 +11,6 @@ const ThemeSwitcher = () => {
 
   const { isHydrated } = useHydrated();
 
-  if (!isHydrated) {
-    return <div className="h-6 w-6" />;
-  }
-
   const toggleTheme: MouseEventHandler<HTMLButtonElement> = (e) => {
     const x = e.clientX;
     const y = e.clientY;
@@ -59,13 +55,12 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-      {!isHydrated ? (
-        <div className="h-5 w-5" />
-      ) : (
-        <button onClick={toggleTheme}>
-          <Icon className="h-5 w-5 cursor-pointer" icon={icon} />
-        </button>
-      )}
+      <button onClick={toggleTheme}>
+        <Icon
+          className="h-5 w-5 cursor-pointer"
+          icon={!isHydrated ? CarbonMoon : icon}
+        />
+      </button>
     </>
   );
 };

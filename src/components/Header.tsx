@@ -2,9 +2,10 @@ import Link from "next/link";
 import ThemeSwitcher from "./ThemeSwitcher";
 import {
   AntDesignFireFilled,
+  CarbonEmail,
   CarbonRss,
   Icon,
-  SimpleIconsBilibili,
+  RiBilibiliLine,
   UilGithubAlt,
 } from "~/icons";
 
@@ -25,7 +26,13 @@ const Header = () => {
       "url": "https://space.bilibili.com/174865648/",
       "name": "Bilibili",
       "data-umami-event": "click-bilibili-link",
-      "icon": SimpleIconsBilibili,
+      "icon": RiBilibiliLine,
+    },
+    {
+      "url": "mailto:me@aiwan.run",
+      "name": "Email",
+      "data-umami-event": "click-email-link",
+      "icon": CarbonEmail,
     },
     {
       "url": "/feed.xml",
