@@ -8,6 +8,7 @@ interface PostsDataItem {
   title: string;
   guid: string;
   url: string;
+  duration: number;
   description: string;
   date: string;
   enclosure: {
@@ -47,6 +48,7 @@ function getPostsData() {
       title: metadata.title,
       guid: url,
       url,
+      duration: metadata.duration,
       description: metadata.description ?? "",
       date: metadata.date,
       enclosure: {

@@ -11,6 +11,9 @@ dependencies:
   '@debbl/ahooks':
     specifier: ^0.0.10
     version: 0.0.10(react@18.2.0)
+  date-fns:
+    specifier: ^2.30.0
+    version: 2.30.0
   next:
     specifier: 14.0.1
     version: 14.0.1(react-dom@18.2.0)(react@18.2.0)
@@ -128,6 +131,13 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
+
+  /@babel/runtime@7.23.2:
+    resolution: {integrity: sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.0
+    dev: false
 
   /@codemirror/autocomplete@6.10.2(@codemirror/language@6.9.2)(@codemirror/state@6.3.1)(@codemirror/view@6.22.0)(@lezer/common@1.1.0):
     resolution: {integrity: sha512-3dCL7b0j2GdtZzWN5j7HDpRAJ26ip07R4NGYz7QYthIYMiX8I4E4TNrYcdTayPJGeVQtd/xe7lWU4XL7THFb/w==}
@@ -1576,6 +1586,13 @@ packages:
     dependencies:
       es5-ext: 0.10.62
       type: 1.2.0
+    dev: false
+
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.23.2
     dev: false
 
   /debug@3.2.7:
@@ -4428,6 +4445,10 @@ packages:
       globalthis: 1.0.3
       which-builtin-type: 1.1.3
     dev: true
+
+  /regenerator-runtime@0.14.0:
+    resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
+    dev: false
 
   /regexp-tree@0.1.27:
     resolution: {integrity: sha512-iETxpjK6YoRWJG5o6hXLwvjYAoW+FEZn9os0PD/b6AP6xQwsa/Y7lCVgIixBbUPMfhu+i2LtdeAqVTgGlQarfA==}

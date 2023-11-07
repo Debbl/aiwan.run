@@ -1,3 +1,5 @@
+import { format } from "~/utils/time";
+
 interface IProps {
   title: string;
   description: string;
@@ -8,10 +10,7 @@ const Header = (props: IProps) => {
   const { title, description, date, duration } = props;
   const time = new Date(date);
 
-  const dateStr = `${time.getFullYear()}-${time.getMonth() + 1}-${time
-    .getDate()
-    .toString()
-    .padStart(2, "0")}`;
+  const dateStr = format(time, "yyyy-MM-dd");
 
   return (
     <header className="text-center">

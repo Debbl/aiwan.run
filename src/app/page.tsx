@@ -108,7 +108,7 @@ export default function Home() {
               <div key={project.name}>
                 <Link
                   href={project.url}
-                  className="text-center text-lg font-bold hover:text-[#eab308]"
+                  className="text-center text-lg font-bold hover:text-primary"
                 >
                   {project.name}
                 </Link>
