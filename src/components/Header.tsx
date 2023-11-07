@@ -11,23 +11,27 @@ import {
 const Header = () => {
   const nav = [
     {
-      url: "/blog",
-      name: "Blog",
+      "url": "/blog",
+      "name": "Blog",
+      "data-umami-event": "click-blog-link",
     },
     {
-      url: "https://github.com/Debbl/",
-      name: "Github",
-      icon: UilGithubAlt,
+      "url": "https://github.com/Debbl/",
+      "name": "Github",
+      "data-umami-event": "click-github-link",
+      "icon": UilGithubAlt,
     },
     {
-      url: "https://space.bilibili.com/174865648/",
-      name: "Bilibili",
-      icon: SimpleIconsBilibili,
+      "url": "https://space.bilibili.com/174865648/",
+      "name": "Bilibili",
+      "data-umami-event": "click-bilibili-link",
+      "icon": SimpleIconsBilibili,
     },
     {
-      url: "/feed.xml",
-      name: "RSS",
-      icon: CarbonRss,
+      "url": "/feed.xml",
+      "name": "RSS",
+      "data-umami-event": "click-rss-link",
+      "icon": CarbonRss,
     },
   ];
 
@@ -46,7 +50,12 @@ const Header = () => {
 
       <div className="flex items-center gap-x-6">
         {nav.map((n) => (
-          <Link title={n.name} key={n.name} href={n.url}>
+          <Link
+            data-umami-event={n["data-umami-event"]}
+            title={n.name}
+            key={n.name}
+            href={n.url}
+          >
             {n.icon ? <Icon className="h-5 w-5" icon={n.icon} /> : n.name}
           </Link>
         ))}
