@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import {
   AntDesignFireFilled,
@@ -42,8 +44,35 @@ const nav = [
 ];
 
 const Header = () => {
+  const navRef = useRef<HTMLElement>(null);
+  const [isShowNavBackground, setIsShowNavBackground] = useState(false);
+
+  useEffect(() => {
+    const handleShowNavBackground = () => {
+      if (
+        navRef.current?.offsetHeight &&
+        window.scrollY > navRef.current?.offsetHeight
+      ) {
+        setIsShowNavBackground(true);
+      } else {
+        setIsShowNavBackground(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleShowNavBackground);
+
+    return () => {
+      window.removeEventListener("scroll", handleShowNavBackground);
+    };
+  }, []);
+
   return (
-    <nav className="flex items-center justify-between px-6 py-3">
+    <nav
+      ref={navRef}
+      className={`sticky top-0 flex items-center justify-between px-6 py-3 ${
+        isShowNavBackground ? "z-50 bg-gray-50 shadow-md" : ""
+      }`}
+    >
       <div>
         <button>
           <Link href="/">
