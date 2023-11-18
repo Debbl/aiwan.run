@@ -8,11 +8,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: ({ colors }) => ({
-      ...colors,
-      primary: "#eab308",
-    }),
     extend: {
+      colors: {
+        primary: "#eab308",
+      },
       gridTemplateColumns: ({ theme }) => {
         const spacing = theme("spacing") as Record<string, string>;
 
