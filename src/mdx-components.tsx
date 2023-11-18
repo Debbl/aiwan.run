@@ -1,8 +1,8 @@
 import type { MDXComponents } from "mdx/types";
 import type { SandpackInternal } from "@codesandbox/sandpack-react/types";
-import Main from "~/app/blog/(posts)/components/Main";
-import Sandpack from "~/app/blog/(posts)/components/Sandpack";
-import Header from "~/app/blog/(posts)/components/Header";
+import MDXHeader from "./components/MDXHeader";
+import MDXMain from "./components/MDXMain";
+import MDXSandpack from "./components/MDXSandpack";
 
 interface SandpackChildrenProps {
   filename?: string;
@@ -27,11 +27,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       date: string;
       duration: number;
     }) => {
-      return <Header {...props} />;
+      return <MDXHeader {...props} />;
     },
 
     Main: ({ children }: { children: React.ReactNode }) => {
-      return <Main>{children}</Main>;
+      return <MDXMain>{children}</MDXMain>;
     },
 
     Sandpack: (props: SandpackProps) => {
@@ -51,7 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         files[filename] = fileContent;
       }
 
-      return <Sandpack files={files} {..._props} />;
+      return <MDXSandpack files={files} {..._props} />;
     },
 
     ...components,

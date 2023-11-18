@@ -6,7 +6,7 @@ interface IProps {
   date: string;
   duration: number;
 }
-const Header = (props: IProps) => {
+const MDXHeader = (props: IProps) => {
   const { title, description, date, duration } = props;
   const time = new Date(date);
 
@@ -25,4 +25,4 @@ const Header = (props: IProps) => {
   );
 };
 
-export default Header;
+export default MDXHeader;

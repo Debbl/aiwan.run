@@ -18,6 +18,11 @@ const nav = [
     "data-umami-event": "click-blog-link",
   },
   {
+    "url": "/til",
+    "name": "TIL",
+    "data-umami-event": "click-blog-til",
+  },
+  {
     "url": "https://github.com/Debbl/",
     "name": "Github",
     "data-umami-event": "click-github-link",

@@ -1,11 +1,11 @@
 "use client";
 import type { SandpackInternal } from "@codesandbox/sandpack-react";
-import { Sandpack as SpandpackBase } from "@codesandbox/sandpack-react";
+import { Sandpack } from "@codesandbox/sandpack-react";
 
-const Sandpack: SandpackInternal = (props) => {
+const MDXSandpack: SandpackInternal = (props) => {
   return (
     <div className="m-4">
-      <SpandpackBase
+      <Sandpack
         options={{
           showConsoleButton: true,
         }}
@@ -15,4 +15,4 @@ const Sandpack: SandpackInternal = (props) => {
   );
 };
 
-export default Sandpack;
+export default MDXSandpack;
