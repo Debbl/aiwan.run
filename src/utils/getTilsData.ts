@@ -38,8 +38,8 @@ function getTilsData() {
     const url = `/til/${path.relative(routerPath, path.dirname(postPath))}/`;
 
     if (!metadata.date || !metadata.duration) {
-      metadata.date = new Date().toUTCString();
-      metadata.duration = Math.ceil(content.length / 100);
+      metadata.date = metadata.date ?? new Date().toUTCString();
+      metadata.duration = metadata.duration ?? Math.ceil(content.length / 246);
 
       fs.writeFileSync(postPath, grayMatter.stringify(content, metadata));
     }

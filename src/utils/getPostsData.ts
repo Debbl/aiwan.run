@@ -39,7 +39,7 @@ function getPostsData() {
 
     if (!metadata.date || !metadata.duration) {
       metadata.date = new Date().toUTCString();
-      metadata.duration = Math.ceil(content.length / 100);
+      metadata.duration = Math.ceil(content.length / 246);
 
       fs.writeFileSync(postPath, grayMatter.stringify(content, metadata));
     }
