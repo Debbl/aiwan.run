@@ -3,11 +3,11 @@ import { useTheme } from "next-themes";
 import { useHydrated } from "@debbl/ahooks";
 import type { MouseEventHandler } from "react";
 import { flushSync } from "react-dom";
-import { CarbonMoon, CarbonSun, Icon } from "~/icons";
+import { Icon } from "~/icons";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
-  const icon = theme === "dark" ? CarbonSun : CarbonMoon;
+  const icon: "Sun" | "Moon" = theme === "dark" ? "Sun" : "Moon";
 
   const { isHydrated } = useHydrated();
 
@@ -58,7 +58,7 @@ const ThemeSwitcher = () => {
       <button onClick={toggleTheme}>
         <Icon
           className="h-5 w-5 cursor-pointer"
-          icon={!isHydrated ? CarbonMoon : icon}
+          icon={!isHydrated ? "Moon" : icon}
         />
       </button>
     </>

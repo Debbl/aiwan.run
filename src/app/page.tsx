@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "~/icons";
-import Avatar from "~/icons/Avatar";
 
 type Projects = Record<
   string,
@@ -96,7 +95,7 @@ export default function Home() {
       <div className="mb-10 flex h-full flex-col items-center">
         <div className="mt-20">
           <Icon
-            icon={Avatar}
+            icon="Avatar"
             className="h-12 w-12 cursor-pointer rounded-full"
           />
         </div>

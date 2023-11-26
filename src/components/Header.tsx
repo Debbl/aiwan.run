@@ -2,16 +2,15 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
-import {
-  AntDesignFireFilled,
-  CarbonEmail,
-  CarbonRss,
-  Icon,
-  RiBilibiliLine,
-  UilGithubAlt,
-} from "~/icons";
+import type { IconType } from "~/icons";
+import { Icon } from "~/icons";
 
-const nav = [
+const nav: {
+  "url": string;
+  "name": string;
+  "data-umami-event": string;
+  "icon"?: IconType;
+}[] = [
   {
     "url": "/blog",
     "name": "Blog",
@@ -26,25 +25,25 @@ const nav = [
     "url": "https://github.com/Debbl/",
     "name": "Github",
     "data-umami-event": "click-github-link",
-    "icon": UilGithubAlt,
+    "icon": "GithubAlt",
   },
   {
     "url": "https://space.bilibili.com/174865648/",
     "name": "Bilibili",
     "data-umami-event": "click-bilibili-link",
-    "icon": RiBilibiliLine,
+    "icon": "BilibiliLine",
   },
   {
     "url": "mailto:me@aiwan.run",
     "name": "Email",
     "data-umami-event": "click-email-link",
-    "icon": CarbonEmail,
+    "icon": "Email",
   },
   {
     "url": "/feed.xml",
     "name": "RSS",
     "data-umami-event": "click-rss-link",
-    "icon": CarbonRss,
+    "icon": "Rss",
   },
 ];
 
@@ -81,10 +80,7 @@ const Header = () => {
       <div>
         <button>
           <Link href="/">
-            <Icon
-              className="h-6 w-6 text-[#eab308]"
-              icon={AntDesignFireFilled}
-            />
+            <Icon className="h-6 w-6 text-[#eab308]" icon="FireFilled" />
           </Link>
         </button>
       </div>
