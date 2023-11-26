@@ -100,49 +100,45 @@ export default function Home() {
           />
         </div>
         <div className="mt-10 grid grid-cols-1 gap-24 md:grid-cols-2">
-          {Object.keys(projects).map((key) => {
-            const project = projects[key];
+          {Object.entries(projects).map(([_, project]) => (
+            <div key={project.name}>
+              <Link
+                href={project.url}
+                className="text-center text-lg font-bold hover:text-primary"
+              >
+                {project.name}
+              </Link>
+              <div className="text-sm text-gray-400">{project.desc}</div>
 
-            return (
-              <div key={project.name}>
-                <Link
-                  href={project.url}
-                  className="text-center text-lg font-bold hover:text-primary"
-                >
-                  {project.name}
-                </Link>
-                <div className="text-sm text-gray-400">{project.desc}</div>
-
-                <ul className="mt-2">
-                  {project.content.map((item) => (
-                    <li className="my-3" key={item.name}>
-                      <div className="flex items-center gap-x-3">
-                        <div>
-                          <Image
-                            unoptimized
-                            alt={item.name}
-                            src={item.favicon ?? ""}
-                            width={16}
-                            height={16}
-                            className="mr-1 inline-block h-4 w-4"
-                          />
-                        </div>
-                        <div>
-                          <Link
-                            href={item.link}
-                            className="text-sm hover:text-[#eab308]"
-                          >
-                            {item.name}
-                          </Link>
-                          <p className="text-xs">{item.desc}</p>
-                        </div>
+              <ul className="mt-2">
+                {project.content.map((item) => (
+                  <li className="my-3" key={item.name}>
+                    <div className="flex items-center gap-x-3">
+                      <div>
+                        <Image
+                          unoptimized
+                          alt={item.name}
+                          src={item.favicon ?? ""}
+                          width={16}
+                          height={16}
+                          className="mr-1 inline-block h-4 w-4"
+                        />
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+                      <div>
+                        <Link
+                          href={item.link}
+                          className="text-sm hover:text-[#eab308]"
+                        >
+                          {item.name}
+                        </Link>
+                        <p className="text-xs">{item.desc}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </main>
