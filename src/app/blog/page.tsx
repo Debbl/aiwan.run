@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getPostsData } from "~/utils/getPostsData";
+import { getBlogData } from "~/utils/getData";
 import { format } from "~/utils/time";
 
 export default function BlogPage() {
-  const postsData = getPostsData();
+  const postsData = getBlogData();
 
   return (
     <main className="mt-20 flex flex-col items-center">

@@ -1,6 +1,6 @@
 import RSS from "rss";
 import { website } from "~/constants";
-import { getPostsData } from "~/utils/getPostsData";
+import { getBlogData } from "~/utils/getData";
 
 export async function GET() {
   const feed = new RSS({
@@ -12,7 +12,7 @@ export async function GET() {
     generator: "PHP 9.0",
   });
 
-  const postsData = getPostsData();
+  const postsData = getBlogData();
   postsData.forEach((data) => {
     feed.item({
       title: data.title,

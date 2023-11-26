@@ -16,11 +16,11 @@ interface PostsDataItem {
   };
 }
 
-function getTilsData() {
+function getData(_postPath: string, _routerPath: string, _url: string) {
   const postsData: PostsDataItem[] = [];
 
-  const postsPath = path.join(process.cwd(), "src/app/til/(posts)/**/*.mdx");
-  const routerPath = path.join(process.cwd(), "src/app/til/(posts)");
+  const postsPath = path.join(process.cwd(), _postPath);
+  const routerPath = path.join(process.cwd(), _routerPath);
 
   const postsFilesPaths = globSync(postsPath);
 
@@ -35,11 +35,11 @@ function getTilsData() {
       content: string;
     };
 
-    const url = `/til/${path.relative(routerPath, path.dirname(postPath))}/`;
+    const url = `${_url}/${path.relative(routerPath, path.dirname(postPath))}/`;
 
     if (!metadata.date || !metadata.duration) {
-      metadata.date = metadata.date ?? new Date().toUTCString();
-      metadata.duration = metadata.duration ?? Math.ceil(content.length / 246);
+      metadata.date = new Date().toUTCString();
+      metadata.duration = Math.ceil(content.length / 246);
 
       fs.writeFileSync(postPath, grayMatter.stringify(content, metadata));
     }
@@ -57,7 +57,21 @@ function getTilsData() {
     });
   });
 
-  return postsData;
+  return postsData.toSorted(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 }
 
-export { getTilsData };
+function getBlogData() {
+  return getData(
+    "src/app/blog/(posts)/**/*.mdx",
+    "src/app/blog/(posts)",
+    "/blog",
+  );
+}
+
+function getTilData() {
+  return getData("src/app/til/(posts)/**/*.mdx", "src/app/til/(posts)", "/til");
+}
+
+export { getData, getBlogData, getTilData };
