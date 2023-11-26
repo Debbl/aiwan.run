@@ -604,6 +604,7 @@
 .markdown-body table,
 .markdown-body pre,
 .markdown-body details {
+  list-style: disc;
   margin-top: 0;
   margin-bottom: 16px;
 }
