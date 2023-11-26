@@ -285,7 +285,7 @@
 .markdown-body [type="button"],
 .markdown-body [type="reset"],
 .markdown-body [type="submit"] {
-  -webkit-appearance: button;
+  appearance: button;
 }
 
 .markdown-body [type="checkbox"],
@@ -301,7 +301,7 @@
 
 .markdown-body [type="search"]::-webkit-search-cancel-button,
 .markdown-body [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 .markdown-body ::-webkit-input-placeholder {
@@ -310,7 +310,7 @@
 }
 
 .markdown-body ::-webkit-file-upload-button {
-  -webkit-appearance: button;
+  appearance: button;
   font: inherit;
 }
 
