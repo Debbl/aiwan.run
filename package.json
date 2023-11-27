@@ -22,7 +22,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^1.2.0",
+    "@debbl/eslint-config": "^2.0.1",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.3",
@@ -43,6 +43,6 @@
     "remark-headerify": "^0.1.0",
     "remark-mdx-frontmatter": "^4.0.0",
     "tailwindcss": "3.3.5",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   }
 }
