@@ -22,7 +22,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^2.0.1",
+    "@debbl/eslint-config": "^2.2.0",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.3",
