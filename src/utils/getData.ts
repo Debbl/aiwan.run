@@ -8,6 +8,7 @@ interface PostsDataItem {
   title: string;
   guid: string;
   url: string;
+  author?: string;
   duration: number;
   description: string;
   date: string;
@@ -16,7 +17,7 @@ interface PostsDataItem {
   };
 }
 
-function getData(_postPath: string, _routerPath: string, _url: string) {
+function parserMDX(_postPath: string, _routerPath: string, _url: string) {
   const postsData: PostsDataItem[] = [];
 
   const postsPath = path.join(process.cwd(), _postPath);
@@ -63,7 +64,7 @@ function getData(_postPath: string, _routerPath: string, _url: string) {
 }
 
 function getBlogData() {
-  return getData(
+  return parserMDX(
     "src/app/blog/(posts)/**/*.mdx",
     "src/app/blog/(posts)",
     "/blog",
@@ -71,7 +72,11 @@ function getBlogData() {
 }
 
 function getTilData() {
-  return getData("src/app/til/(posts)/**/*.mdx", "src/app/til/(posts)", "/til");
+  return parserMDX(
+    "src/app/til/(posts)/**/*.mdx",
+    "src/app/til/(posts)",
+    "/til",
+  );
 }
 
-export { getData, getBlogData, getTilData };
+export { parserMDX, getBlogData, getTilData };
