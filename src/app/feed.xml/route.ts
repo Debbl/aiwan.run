@@ -1,6 +1,6 @@
 import RSS from "rss";
 import { WEBSITE } from "~/constants";
-import { getBlogData } from "~/utils/getData";
+import { getBlogData, getTilData } from "~/utils/getData";
 
 export async function GET() {
   const feed = new RSS({
@@ -13,14 +13,37 @@ export async function GET() {
     generator: "PHP 9.0",
   });
 
-  const postsData = getBlogData();
-  postsData.forEach((data) => {
+  const blogData = getBlogData();
+  const TILData = getTilData();
+  blogData.forEach((data) => {
     feed.item({
       title: data.title,
       guid: WEBSITE.domain + data.guid,
       author: data.author ?? "me@aiwan.run (Brendan Dash)",
       url: WEBSITE.domain + data.url,
-      categories: ["blog"],
+      categories: ["Blog"],
+      description: data.description,
+      date: data.date,
+      enclosure: {
+        url: data.enclosure.url,
+      },
+      // TODO add all mdx content
+      // custom_elements: [
+      //   {
+      //     "content:encoded": {
+      //       _cdata: "This is the long content. <b>This & That</b>",
+      //     },
+      //   },
+      // ],
+    });
+  });
+  TILData.forEach((data) => {
+    feed.item({
+      title: data.title,
+      guid: WEBSITE.domain + data.guid,
+      author: data.author ?? "me@aiwan.run (Brendan Dash)",
+      url: WEBSITE.domain + data.url,
+      categories: ["TIL"],
       description: data.description,
       date: data.date,
       enclosure: {
