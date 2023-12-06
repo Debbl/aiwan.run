@@ -7,7 +7,6 @@ export default function BlogPage() {
 
   return (
     <main className="mt-20 flex flex-col items-center">
-      <h1 className="text-3xl">Posts</h1>
       <div className="mt-10">
         <ul>
           {postsData.map((post) => (
