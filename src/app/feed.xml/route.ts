@@ -27,14 +27,13 @@ export async function GET() {
       enclosure: {
         url: data.enclosure.url,
       },
-      // TODO add all mdx content
-      // custom_elements: [
-      //   {
-      //     "content:encoded": {
-      //       _cdata: "This is the long content. <b>This & That</b>",
-      //     },
-      //   },
-      // ],
+      custom_elements: [
+        {
+          "content:encoded": {
+            _cdata: data.content,
+          },
+        },
+      ],
     });
   });
   TILData.forEach((data) => {
@@ -49,14 +48,13 @@ export async function GET() {
       enclosure: {
         url: data.enclosure.url,
       },
-      // TODO add all mdx content
-      // custom_elements: [
-      //   {
-      //     "content:encoded": {
-      //       _cdata: "This is the long content. <b>This & That</b>",
-      //     },
-      //   },
-      // ],
+      custom_elements: [
+        {
+          "content:encoded": {
+            _cdata: data.content,
+          },
+        },
+      ],
     });
   });
 

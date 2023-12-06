@@ -8,6 +8,7 @@ interface PostsDataItem {
   title: string;
   guid: string;
   url: string;
+  content: string;
   author?: string;
   duration: number;
   description: string;
@@ -49,6 +50,7 @@ function parserMDX(_postPath: string, _routerPath: string, _url: string) {
       title: metadata.title,
       guid: url,
       url,
+      content,
       duration: metadata.duration,
       description: metadata.description ?? "",
       date: metadata.date,
