@@ -2,7 +2,6 @@
 title: windows git set eol to lf
 description: windows git 修改默认 eol 为 lf
 date: "Sat, 18 Nov 2023 14:36:36 GMT"
-duration: 7
 ---
 
 在写 [Debbl/eslint-config](https://github.com/Debbl/eslint-config) 的测试时

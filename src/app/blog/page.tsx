@@ -1,16 +1,16 @@
+import { allPosts } from "contentlayer/generated";
 import Link from "next/link";
-import { getBlogData } from "~/utils/getData";
 import { format } from "~/utils/time";
 
 export default function BlogPage() {
-  const postsData = getBlogData();
+  const posts = allPosts.filter((p) => p.category === "blog");
 
   return (
     <main className="mt-20 flex flex-col items-center">
       <div className="mt-10">
         <ul>
-          {postsData.map((post) => (
-            <li key={post.url} className="text-xl hover:text-primary">
+          {posts.map((post) => (
+            <li key={post._id} className="text-xl hover:text-primary">
               <Link href={post.url}>
                 <span>{post.title}</span>
                 <span className="ml-6 text-sm">

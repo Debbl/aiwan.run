@@ -2,7 +2,6 @@
 title: preload and prefetch
 description: difference between preload and prefetch
 date: "Sun, 26 Nov 2023 08:51:11 GMT"
-duration: 5
 ---
 
 ## preload
