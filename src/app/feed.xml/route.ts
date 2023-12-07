@@ -25,7 +25,7 @@ export async function GET() {
       custom_elements: [
         {
           "content:encoded": {
-            _cdata: p.body.raw,
+            _cdata: p.html,
           },
         },
       ],

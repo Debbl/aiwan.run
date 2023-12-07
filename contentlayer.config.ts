@@ -1,5 +1,12 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehyMdxCodeProps from "rehype-mdx-code-props";
+import MarkdownIt from "markdown-it";
+
+const md = MarkdownIt({
+  html: true,
+  breaks: true,
+  linkify: true,
+});
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -36,6 +43,10 @@ export const Post = defineDocumentType(() => ({
     category: {
       type: "string",
       resolve: (post) => post._raw.sourceFileDir,
+    },
+    html: {
+      type: "string",
+      resolve: (post) => md.render(post.body.raw),
     },
   },
   mdx: {
