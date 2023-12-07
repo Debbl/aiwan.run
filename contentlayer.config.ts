@@ -1,5 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import rehyMdxCodeProps from "rehype-mdx-code-props";
+import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import MarkdownIt from "markdown-it";
 
 const md = MarkdownIt({
@@ -49,12 +49,12 @@ export const Post = defineDocumentType(() => ({
       resolve: (post) => md.render(post.body.raw),
     },
   },
-  mdx: {
-    rehypePlugins: [rehyMdxCodeProps],
-  },
 }));
 
 export default makeSource({
   contentDirPath: "posts",
   documentTypes: [Post],
+  mdx: {
+    rehypePlugins: [rehypeMdxCodeProps as any],
+  },
 });
