@@ -1,6 +1,6 @@
+import { allPosts } from "contentlayer/generated";
 import RSS from "rss";
 import { WEBSITE } from "~/constants";
-import { getBlogData, getTilData } from "~/utils/getData";
 
 export async function GET() {
   const feed = new RSS({
@@ -13,45 +13,22 @@ export async function GET() {
     generator: "PHP 9.0",
   });
 
-  const blogData = getBlogData();
-  const TILData = getTilData();
-  blogData.forEach((data) => {
+  allPosts.forEach((p) => {
     feed.item({
-      title: data.title,
-      guid: WEBSITE.domain + data.guid,
-      author: data.author ?? "me@aiwan.run (Brendan Dash)",
-      url: WEBSITE.domain + data.url,
-      categories: ["Blog"],
-      description: data.description,
-      date: data.date,
+      title: p.title,
+      guid: p._id,
+      author: p.author ?? "me@aiwan.run (Brendan Dash)",
+      url: WEBSITE.domain + p.url,
+      description: p.description,
+      date: p.date,
       enclosure: {
-        url: data.enclosure.url,
+        url: p.url,
       },
+      categories: [p.category],
       custom_elements: [
         {
           "content:encoded": {
-            _cdata: data.content,
-          },
-        },
-      ],
-    });
-  });
-  TILData.forEach((data) => {
-    feed.item({
-      title: data.title,
-      guid: WEBSITE.domain + data.guid,
-      author: data.author ?? "me@aiwan.run (Brendan Dash)",
-      url: WEBSITE.domain + data.url,
-      categories: ["TIL"],
-      description: data.description,
-      date: data.date,
-      enclosure: {
-        url: data.enclosure.url,
-      },
-      custom_elements: [
-        {
-          "content:encoded": {
-            _cdata: data.content,
+            _cdata: p.body.raw,
           },
         },
       ],
