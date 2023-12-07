@@ -14,16 +14,13 @@ export async function GET() {
   });
 
   allPosts.forEach((p) => {
-    feed.item({
+    const data: RSS.ItemOptions = {
       title: p.title,
       guid: p._id,
       author: p.author ?? "me@aiwan.run (Brendan Dash)",
       url: WEBSITE.domain + p.url,
       description: p.description,
       date: p.date,
-      enclosure: {
-        url: p.url,
-      },
       categories: [p.category],
       custom_elements: [
         {
@@ -32,7 +29,11 @@ export async function GET() {
           },
         },
       ],
-    });
+    };
+
+    if (p.coverImgUrl) data.enclosure = { url: p.coverImgUrl };
+
+    feed.item(data);
   });
 
   return new Response(feed.xml(), {
