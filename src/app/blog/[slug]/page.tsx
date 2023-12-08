@@ -1,38 +1,36 @@
-import type { SandpackInternal } from "@codesandbox/sandpack-react/types";
-import { allPosts } from "contentlayer/generated";
-import { useMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
-import MDXSandpack from "~/components/MDXSandpack";
+import type { Metadata } from "next/types";
+import { useMDXComponent } from "~/hooks/useMDXComponent";
+import { postUtils } from "~/utils";
 import { format } from "~/utils/time";
 
-interface SandpackChildrenProps {
-  filename?: string;
-  children: { props: { children: string } };
-}
+const { posts, getPostBySlug } = postUtils("blog");
 
-type SandpackInternalParams = Parameters<SandpackInternal>[0];
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  // Find the post for the current page.
+  const post = getPostBySlug(params.slug);
 
-interface SandpackProps extends SandpackInternalParams {
-  children:
-    | Array<{
-        props: SandpackChildrenProps;
-      }>
-    | { props: SandpackChildrenProps };
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.description,
+  };
 }
 
 export async function generateStaticParams() {
-  return allPosts
-    .filter((p) => p.category === "blog")
-    .map((post) => ({
-      slug: post.slug,
-    }));
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default function BlogPage({ params }: { params: { slug: string } }) {
   // Find the post for the current page.
-  const post = allPosts.find((post) => {
-    return post._raw.flattenedPath === `blog/${params.slug}`;
-  });
+  const post = getPostBySlug(params.slug);
 
   // 404 if the post does not exist.
   if (!post) notFound();
@@ -57,29 +55,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
       </header>
 
       <main className="markdown-body px-1 md:px-10 lg:px-32 xl:px-64">
-        <MDXContent
-          components={{
-            Sandpack: (props: SandpackProps) => {
-              const { children, ..._props } = props;
-
-              const files: Record<string, string> = {};
-
-              if (Array.isArray(children)) {
-                children.forEach((child) => {
-                  const filename = child.props.filename || "index.js";
-                  const fileContent = child.props.children.props.children;
-                  files[filename] = fileContent;
-                });
-              } else {
-                const filename = children.props.filename || "index.js";
-                const fileContent = children.props.children.props.children;
-                files[filename] = fileContent;
-              }
-
-              return <MDXSandpack files={files} {..._props} />;
-            },
-          }}
-        />
+        <MDXContent />
       </main>
     </>
   );

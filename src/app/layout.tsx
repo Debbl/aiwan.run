@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "~/style/globals.css";
 import ThemeProvider from "~/components/ThemeProvider";
 import Header from "~/components/Header";
+import { WEBSITE } from "~/constants";
 
 export const metadata: Metadata = {
-  title: "Brendan Dash",
-  authors: [{ name: "Brendan Dash (Debbl)", url: "https://aiwan.run/" }],
-  description: "Brendan Dash's personal website",
+  title: WEBSITE.title,
+  authors: WEBSITE.authors,
+  description: WEBSITE.description,
   icons: "/favicon.svg",
   alternates: {
     canonical: "https://aiwan.run/",
