@@ -49,12 +49,6 @@ const projects: Projects = {
       },
     ],
   },
-  V: {
-    name: "V",
-    url: "https://v.aiwan.run/",
-    desc: "some visualization",
-    content: [],
-  },
   Tools: {
     name: "Tools",
     url: "https://tools.aiwan.run/",
@@ -80,10 +74,22 @@ const projects: Projects = {
     desc: "some toys",
     content: [
       {
+        name: "V",
+        link: "https://v.aiwan.run/",
+        favicon: "https://v.aiwan.run/favicon.svg",
+        desc: "some visualization",
+      },
+      {
         name: "Emoji Kitchen",
         link: "https://emoji.aiwan.run/",
         favicon: "https://emoji.aiwan.run/favicon.svg",
         desc: "A emoji kitchen.",
+      },
+      {
+        name: "Reader Markdown",
+        link: "https://rm.aiwan.run/",
+        favicon: "https://rm.aiwan.run/favicon.svg",
+        desc: "A markdown reader by web.",
       },
     ],
   },
