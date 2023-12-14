@@ -24,6 +24,19 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
+    timeline: {
+      type: "list",
+      required: false,
+      of: {
+        type: "nested",
+        def: () => ({
+          fields: {
+            description: { type: "string", required: true },
+            date: { type: "date", required: true },
+          },
+        }),
+      },
+    },
   },
   computedFields: {
     slug: {
