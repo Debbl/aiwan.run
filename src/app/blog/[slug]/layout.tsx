@@ -9,7 +9,7 @@ export default function BlogLayout({
     <>
       {children}
       <footer className="px-1 py-3 md:px-10 lg:px-32 xl:px-64">
-        <Link href="/til" className="text-gray-600 underline">
+        <Link href="/blog" className="text-gray-600 underline">
           cd ..
         </Link>
       </footer>
