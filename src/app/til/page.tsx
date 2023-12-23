@@ -1,9 +1,9 @@
-import { allPosts } from "contentlayer/generated";
 import Link from "next/link";
+import { getPostsByCategory } from "~/utils";
 import { format } from "~/utils/time";
 
 export default function BlogPage() {
-  const posts = allPosts.filter((p) => p.category === "TIL");
+  const posts = getPostsByCategory("TIL");
 
   return (
     <main className="mt-20 flex flex-col items-center">
