@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
+import { useMobile } from "~/hooks/useMobile";
 
 const nav: {
   "url": string;
@@ -55,6 +56,8 @@ const nav: {
 const Header = () => {
   const navRef = useRef<HTMLElement>(null);
   const [isShowNavBackground, setIsShowNavBackground] = useState(false);
+  const { isMobile } = useMobile();
+  console.log("🚀 ~ file: Header.tsx:60 ~ Header ~ isMobile:", isMobile)
 
   useEffect(() => {
     const handleShowNavBackground = () => {
@@ -90,17 +93,19 @@ const Header = () => {
         </button>
       </div>
 
-      <div className="flex items-center gap-x-6">
-        {nav.map((n) => (
-          <Link
-            data-umami-event={n["data-umami-event"]}
-            title={n.name}
-            key={n.name}
-            href={n.url}
-          >
-            {n.icon ? <Icon className="h-5 w-5" icon={n.icon} /> : n.name}
-          </Link>
-        ))}
+      <div className="flex items-center gap-x-3 sm:gap-x-6">
+        {nav
+          .filter((n) => !(isMobile && n.name === "Home"))
+          .map((n) => (
+            <Link
+              data-umami-event={n["data-umami-event"]}
+              title={n.name}
+              key={n.name}
+              href={n.url}
+            >
+              {n.icon ? <Icon className="h-5 w-5" icon={n.icon} /> : n.name}
+            </Link>
+          ))}
 
         <ThemeSwitcher />
       </div>
