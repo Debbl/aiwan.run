@@ -81,7 +81,9 @@ const Header = () => {
     <nav
       ref={navRef}
       className={`sticky top-0 flex items-center justify-between px-6 py-3 ${
-        isShowNavBackground ? "nav z-50 bg-transparent shadow-md dark:bg-black" : ""
+        isShowNavBackground
+          ? "nav z-50 bg-transparent shadow-md dark:bg-black"
+          : ""
       }`}
     >
       <div>
