@@ -27,6 +27,7 @@
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
+    "@types/dom-view-transitions": "^1.0.4",
     "@types/markdown-it": "^13.0.7",
     "@types/mdx": "^2.0.10",
     "@types/node": "20.8.10",
