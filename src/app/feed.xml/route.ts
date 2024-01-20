@@ -25,16 +25,16 @@ export async function GET() {
       guid: `${note.noteId}`,
       author: content.name ?? "me@aiwan.run (Brendan Dash)",
       url: WEBSITE.domain + slug,
-      description: content.title,
+      description: content.summary,
       date: note.createdAt,
       categories: content.tags,
-      // custom_elements: [
-      //   {
-      //     "content:encoded": {
-      //       _cdata: p.html,
-      //     },
-      //   },
-      // ],
+      custom_elements: [
+        {
+          "content:encoded": {
+            _cdata: content.html,
+          },
+        },
+      ],
     };
 
     // if (p.coverImgUrl) data.enclosure = { url: p.coverImgUrl };

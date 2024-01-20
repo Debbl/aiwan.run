@@ -5,22 +5,28 @@ import { getNotesByTag } from "~/data/crossbell/notes";
 async function generateMDXPageConfig(tag: TAG) {
   const { list } = await getNotesByTag(tag);
 
+  function getCurrentNote(slug: string) {
+    const note = list.find(
+      (note) =>
+        note.metadata.content.attributes.find(
+          (a) => a.trait_type === "xlog_slug",
+        )?.value === slug,
+    );
+    return note;
+  }
+
   async function generateMetadata({
     params,
   }: {
     params: { slug: string };
   }): Promise<Metadata> {
-    const note = list.find(
-      (note) =>
-        note.metadata.content.attributes.find(
-          (a) => a.trait_type === "xlog_slug",
-        )?.value === params.slug,
-    );
+    const note = getCurrentNote(params.slug);
 
     if (!note) return {};
 
     return {
       title: note.metadata.content.title,
+      description: note.metadata.content.summary,
     };
   }
 
@@ -31,16 +37,6 @@ async function generateMDXPageConfig(tag: TAG) {
           (a) => a.trait_type === "xlog_slug",
         )?.value ?? "",
     }));
-  }
-
-  function getCurrentNote(slug: string) {
-    const note = list.find(
-      (note) =>
-        note.metadata.content.attributes.find(
-          (a) => a.trait_type === "xlog_slug",
-        )?.value === slug,
-    );
-    return note;
   }
 
   const slugs = list.map(

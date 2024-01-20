@@ -1,5 +1,12 @@
+import MarkdownIt from "markdown-it";
 import { endpoint, headers } from "../constants";
 import type { TAG } from "~/types";
+
+const md = MarkdownIt({
+  html: true,
+  breaks: true,
+  linkify: true,
+});
 
 async function getNotes() {
   const response = await fetch(`${endpoint}/characters/59630/notes`, {
@@ -51,6 +58,8 @@ async function getNotes() {
             (a) => a.trait_type === "xlog_slug",
           )?.value ?? "";
 
+        const html = md.render(content);
+
         return {
           ...note,
           metadata: {
@@ -60,6 +69,7 @@ async function getNotes() {
               duration,
               summary,
               slug,
+              html,
             },
           },
         };
