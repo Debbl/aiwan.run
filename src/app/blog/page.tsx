@@ -14,13 +14,7 @@ export default async function BlogPage() {
 
             return (
               <li key={note.noteId} className="text-xl hover:text-primary">
-                <Link
-                  href={
-                    `/blog/${content.attributes.find(
-                      (a) => a.trait_type === "xlog_slug",
-                    )?.value}` ?? ""
-                  }
-                >
+                <Link href={`/blog/${content.slug}`}>
                   <span>{content.title}</span>
                   <span className="ml-6 text-sm">
                     <span>

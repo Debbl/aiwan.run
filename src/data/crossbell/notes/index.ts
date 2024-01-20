@@ -1,4 +1,5 @@
 import { endpoint, headers } from "../constants";
+import type { TAG } from "~/types";
 
 async function getNotes() {
   const response = await fetch(`${endpoint}/characters/59630/notes`, {
@@ -45,6 +46,11 @@ async function getNotes() {
           summary = data;
         }
 
+        const slug =
+          note.metadata.content.attributes.find(
+            (a) => a.trait_type === "xlog_slug",
+          )?.value ?? "";
+
         return {
           ...note,
           metadata: {
@@ -53,6 +59,7 @@ async function getNotes() {
               ...note.metadata.content,
               duration,
               summary,
+              slug,
             },
           },
         };
@@ -63,7 +70,7 @@ async function getNotes() {
   return data;
 }
 
-async function getNotesByTag(tag: "TIL" | "blog") {
+async function getNotesByTag(tag: TAG) {
   const notes = await getNotes();
 
   return {
