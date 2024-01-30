@@ -8,8 +8,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "paths": {
-      "~/*": ["./src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "allowJs": true,

@@ -1,6 +1,6 @@
-import { allPosts } from "contentlayer/generated";
 import RSS from "rss";
 import { WEBSITE } from "~/constants";
+import { getNotes } from "~/data/crossbell/notes";
 
 export async function GET() {
   const feed = new RSS({
@@ -12,26 +12,32 @@ export async function GET() {
     language: "zh-CN",
     generator: "PHP 9.0",
   });
+  const { list } = await getNotes();
 
-  allPosts.forEach((p) => {
+  list.forEach((note) => {
+    const { metadata } = note;
+    const { content } = metadata;
+    const slug =
+      content.attributes.find((a) => a.trait_type === "xlog_slug")?.value ?? "";
+
     const data: RSS.ItemOptions = {
-      title: p.title,
-      guid: p._id,
-      author: p.author ?? "me@aiwan.run (Brendan Dash)",
-      url: WEBSITE.domain + p.url,
-      description: p.description,
-      date: p.date,
-      categories: [p.category],
+      title: content.title,
+      guid: `${note.noteId}`,
+      author: content.name ?? "me@aiwan.run (Brendan Dash)",
+      url: WEBSITE.domain + slug,
+      description: content.summary,
+      date: note.createdAt,
+      categories: content.tags,
       custom_elements: [
         {
           "content:encoded": {
-            _cdata: p.html,
+            _cdata: content.html,
           },
         },
       ],
     };
 
-    if (p.coverImgUrl) data.enclosure = { url: p.coverImgUrl };
+    // if (p.coverImgUrl) data.enclosure = { url: p.coverImgUrl };
 
     feed.item(data);
   });

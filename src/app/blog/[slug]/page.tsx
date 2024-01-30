@@ -1,62 +1,55 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next/types";
 import { useMDXComponent } from "~/hooks/useMDXComponent";
-import { postUtils } from "~/utils";
+import { generateMDXPageConfig } from "~/utils";
 import { format } from "~/utils/time";
 
-const { posts, getPostBySlug } = postUtils("blog");
+const { getCurrentNote, generateMetadata, generateStaticParams } =
+  await generateMDXPageConfig("blog");
 
-export async function generateMetadata({
+export { generateMetadata, generateStaticParams };
+
+export default async function BlogPage({
   params,
 }: {
   params: { slug: string };
-}): Promise<Metadata> {
-  // Find the post for the current page.
-  const post = getPostBySlug(params.slug);
-
-  if (!post) return {};
-
-  return {
-    title: post.title,
-    description: post.description,
-  };
-}
-
-export async function generateStaticParams() {
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
-export default function BlogPage({ params }: { params: { slug: string } }) {
-  // Find the post for the current page.
-  const post = getPostBySlug(params.slug);
+}) {
+  const note = getCurrentNote(params.slug);
 
   // 404 if the post does not exist.
-  if (!post) notFound();
+  if (!note) notFound();
 
-  // Parse the MDX file via the useMDXComponent hook.
-  const MDXContent = useMDXComponent(post.body.code);
+  const { createdAt, metadata } = note;
 
-  const { title, description, date, duration } = post;
-  const time = new Date(date);
+  const { content } = metadata;
+  const { content: source, duration } = content;
+
+  const time = new Date(createdAt);
   const dateStr = format(time, "yyyy-MM-dd");
+
+  const { MDXContent } = useMDXComponent(source);
 
   return (
     <>
-      <header className="text-center">
-        <h1 className="text-6xl">{title}</h1>
-        <h3 className="text-gray-400">{description}</h3>
-        <div>
-          <span>{dateStr}</span>
-          <span>{" · "}</span>
-          <span>{`${duration}min`}</span>
-        </div>
-      </header>
+      <div className="px-1 md:px-10 lg:px-32 xl:px-64">
+        <header className="text-center">
+          <h1 className="text-6xl">{content.title}</h1>
+          <div className="pt-3 text-gray-400">
+            <span>{dateStr}</span>
+            <span>{" · "}</span>
+            <span>{`${duration}min`}</span>
+          </div>
+          {content.summary && (
+            <div className="rounded-md border p-3 text-left text-sm text-gray-400">
+              <div className=" text-black">AI 生成的摘要</div>
+              <h3 className="pt-1">{content.summary}</h3>
+            </div>
+          )}
+        </header>
 
-      <main className="markdown-body px-1 md:px-10 lg:px-32 xl:px-64">
-        <MDXContent />
-      </main>
+        <main className="markdown-body mt-3">
+          <MDXContent />
+        </main>
+      </div>
     </>
   );
 }
