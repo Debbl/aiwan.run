@@ -72,6 +72,12 @@ const projects: Projects = {
         favicon: "https://bili-shortlink.vercel.app/favicon.svg",
         desc: "Bilibili shortLink converter.",
       },
+      {
+        name: "Peppa Pig Quotes",
+        link: "https://peppa.aiwan.run",
+        favicon: "https://peppa.aiwan.run/favicon.svg",
+        desc: "A tool for leaning English by Peppa Pig.",
+      },
     ],
   },
   Toys: {
