@@ -47,6 +47,12 @@ const projects: Projects = {
         favicon: "https://game.aiwan.run/bubble-wrap/favicon.png",
         desc: "A Bubble Wrap game use react",
       },
+      {
+        name: "Self driving car",
+        link: "https://car.aiwan.run",
+        favicon: "https://car.aiwan.run/favicon.svg",
+        desc: "A self driving car game with neural network.",
+      },
     ],
   },
   Tools: {
