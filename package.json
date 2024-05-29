@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "^2.13.10",
+    "@codesandbox/sandpack-react": "^2.14.0",
     "@debbl/ahooks": "^0.1.0",
     "date-fns": "^3.6.0",
     "next": "14.1.1",
@@ -22,7 +22,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^3.1.5",
+    "@debbl/eslint-config": "^3.1.8",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.3",
@@ -35,12 +35,12 @@
     "@types/rss": "^0.0.32",
     "autoprefixer": "10.4.16",
     "contentlayer": "^0.3.4",
-    "eslint": "8.53.0",
-    "glob": "^10.3.14",
+    "eslint": "8.57.0",
+    "glob": "^10.4.1",
     "markdown-it": "^14.1.0",
     "next-contentlayer": "^0.3.4",
     "postcss": "8.4.31",
-    "postcss-nesting": "^12.1.2",
+    "postcss-nesting": "^12.1.5",
     "rehype-mdx-code-props": "^3.0.0",
     "tailwindcss": "3.3.5",
     "typescript": "^5.4.5"
