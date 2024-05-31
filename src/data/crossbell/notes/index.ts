@@ -8,7 +8,7 @@ const md = MarkdownIt({
   linkify: true,
 });
 
-async function getNotes() {
+export async function getNotes() {
   const response = await fetch(`${endpoint}/characters/59630/notes`, {
     headers,
   });
@@ -80,7 +80,7 @@ async function getNotes() {
   return data;
 }
 
-async function getNotesByTag(tag: TAG) {
+export async function getNotesByTag(tag: TAG) {
   const notes = await getNotes();
 
   return {
@@ -88,5 +88,3 @@ async function getNotesByTag(tag: TAG) {
     list: notes.list.filter((note) => note.metadata.content.tags.includes(tag)),
   };
 }
-
-export { getNotes, getNotesByTag };

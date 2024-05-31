@@ -47,6 +47,12 @@ const projects: Projects = {
         favicon: "https://game.aiwan.run/bubble-wrap/favicon.png",
         desc: "A Bubble Wrap game use react",
       },
+      {
+        name: "Self driving car",
+        link: "https://car.aiwan.run",
+        favicon: "https://car.aiwan.run/favicon.svg",
+        desc: "A self driving car game with neural network.",
+      },
     ],
   },
   Tools: {
@@ -65,6 +71,12 @@ const projects: Projects = {
         link: "https://bili-shortlink.vercel.app/",
         favicon: "https://bili-shortlink.vercel.app/favicon.svg",
         desc: "Bilibili shortLink converter.",
+      },
+      {
+        name: "Peppa Pig Quotes",
+        link: "https://peppa.aiwan.run",
+        favicon: "https://peppa.aiwan.run/favicon.svg",
+        desc: "A tool for leaning English by Peppa Pig.",
       },
     ],
   },
@@ -100,10 +112,7 @@ export default async function Home() {
     <main className="flex-1">
       <div className="mb-10 flex h-full flex-col items-center">
         <div className="mt-20">
-          <Icon
-            icon="Avatar"
-            className="h-12 w-12 cursor-pointer rounded-full"
-          />
+          <Icon icon="Avatar" className="size-12 cursor-pointer rounded-full" />
         </div>
         <div className="mt-10 grid grid-cols-1 gap-24 md:grid-cols-2">
           {Object.entries(projects).map(([_, project]) => (
@@ -127,13 +136,13 @@ export default async function Home() {
                           src={item.favicon ?? ""}
                           width={16}
                           height={16}
-                          className="mr-1 inline-block h-4 w-4"
+                          className="mr-1 inline-block size-4"
                         />
                       </div>
                       <div>
                         <Link
                           href={item.link}
-                          className="text-sm hover:text-[#eab308]"
+                          className="text-sm hover:text-primary"
                         >
                           {item.name}
                         </Link>

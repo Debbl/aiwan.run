@@ -89,7 +89,7 @@ const Header = () => {
       <div>
         <button>
           <Link href="/">
-            <Icon className="h-6 w-6 text-[#eab308]" icon="FireFilled" />
+            <Icon className="size-6 text-primary" icon="FireFilled" />
           </Link>
         </button>
       </div>
@@ -104,7 +104,7 @@ const Header = () => {
               key={n.name}
               href={n.url}
             >
-              {n.icon ? <Icon className="h-5 w-5" icon={n.icon} /> : n.name}
+              {n.icon ? <Icon className="size-5" icon={n.icon} /> : n.name}
             </Link>
           ))}
 

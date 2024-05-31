@@ -57,7 +57,7 @@ const ThemeSwitcher = () => {
     <>
       <button onClick={toggleTheme}>
         <Icon
-          className="h-5 w-5 cursor-pointer"
+          className="size-5 cursor-pointer"
           icon={!isHydrated ? "Moon" : icon}
         />
       </button>
