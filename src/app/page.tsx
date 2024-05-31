@@ -107,7 +107,7 @@ const projects: Projects = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="flex-1">
       <div className="mb-10 flex h-full flex-col items-center">

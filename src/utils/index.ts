@@ -1,20 +1,57 @@
-import type { Post } from "contentlayer/generated";
-import { allPosts } from "contentlayer/generated";
+import type { Metadata } from "next/types";
+import type { TAG } from "~/types";
+import { getNotesByTag } from "~/data/crossbell/notes";
 
-function getPostsByCategory(category: "blog" | "TIL") {
-  return allPosts.filter((post) => post.category === category);
-}
+async function generateMDXPageConfig(tag: TAG) {
+  const { list } = await getNotesByTag(tag);
 
-function getPostBySlug(posts: Post[], slug: string) {
-  return posts.find((post) => post.slug === slug);
-}
+  function getCurrentNote(slug: string) {
+    const note = list.find(
+      (note) =>
+        note.metadata.content.attributes.find(
+          (a) => a.trait_type === "xlog_slug",
+        )?.value === slug,
+    );
+    return note;
+  }
 
-function postUtils(category: "blog" | "TIL") {
-  const posts = getPostsByCategory(category);
+  async function generateMetadata({
+    params,
+  }: {
+    params: { slug: string };
+  }): Promise<Metadata> {
+    const note = getCurrentNote(params.slug);
+
+    if (!note) return {};
+
+    return {
+      title: note.metadata.content.title,
+      description: note.metadata.content.summary,
+    };
+  }
+
+  async function generateStaticParams() {
+    return list.map((note) => ({
+      slug:
+        note.metadata.content.attributes.find(
+          (a) => a.trait_type === "xlog_slug",
+        )?.value ?? "",
+    }));
+  }
+
+  const slugs = list.map(
+    (note) =>
+      note.metadata.content.attributes.find((a) => a.trait_type === "xlog_slug")
+        ?.value ?? "",
+  );
+
   return {
-    posts,
-    getPostBySlug: (slug: string) => getPostBySlug(posts, slug),
+    list,
+    slugs,
+    getCurrentNote,
+    generateMetadata,
+    generateStaticParams,
   };
 }
 
-export { getPostsByCategory, getPostBySlug, postUtils };
+export { generateMDXPageConfig };

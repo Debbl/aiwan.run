@@ -14,3 +14,5 @@ export interface SandpackProps extends SandpackInternalParams {
       }>
     | { props: SandpackChildrenProps };
 }
+
+export type TAG = "blog" | "TIL";
