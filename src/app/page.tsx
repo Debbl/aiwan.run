@@ -131,7 +131,6 @@ export default async function Home() {
                     <div className="flex items-center gap-x-3">
                       <div>
                         <Image
-                          unoptimized
                           alt={item.name}
                           src={item.favicon ?? ""}
                           width={16}
