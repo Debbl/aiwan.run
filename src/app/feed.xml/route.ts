@@ -1,6 +1,6 @@
 import RSS from "rss";
 import { WEBSITE } from "~/constants";
-import { getNotes } from "~/data/crossbell/notes";
+import { getNotes } from "~/data";
 
 export async function GET() {
   const feed = new RSS({
@@ -12,7 +12,7 @@ export async function GET() {
     language: "zh-CN",
     generator: "PHP 9.0",
   });
-  const { list } = await getNotes();
+  const { list } = getNotes();
 
   list.forEach((note) => {
     const { metadata } = note;

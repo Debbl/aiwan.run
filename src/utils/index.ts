@@ -1,9 +1,9 @@
 import type { Metadata } from "next/types";
+import { getNotesByTag } from "~/data";
 import type { TAG } from "~/types";
-import { getNotesByTag } from "~/data/crossbell/notes";
 
 async function generateMDXPageConfig(tag: TAG) {
-  const { list } = await getNotesByTag(tag);
+  const { list } = getNotesByTag(tag);
 
   function getCurrentNote(slug: string) {
     const note = list.find(

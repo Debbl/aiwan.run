@@ -32,12 +32,13 @@ export default async function BlogPage({
     <>
       <div className="px-1 md:px-10 lg:px-32 xl:px-64">
         <header className="text-center">
-          <h1 className="text-6xl">{content.title}</h1>
+          <h1 className="text-4xl">{content.title}</h1>
           <div className="pt-3 text-gray-400">
             <span>{dateStr}</span>
             <span>{" · "}</span>
             <span>{`${duration}min`}</span>
           </div>
+
           {content.summary && (
             <div className="rounded-md border p-3 text-left text-sm text-gray-400">
               <div className=" text-black">AI 生成的摘要</div>

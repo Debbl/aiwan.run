@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getNotesByTag } from "~/data/crossbell/notes";
+import { getNotesByTag } from "~/data";
 import { format } from "~/utils/time";
 
 export default async function BlogPage() {
-  const { list } = await getNotesByTag("TIL");
+  const { list } = getNotesByTag("TIL");
 
   return (
     <main className="mt-20 flex flex-col items-center">

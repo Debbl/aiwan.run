@@ -1,6 +1,9 @@
+/**
+ * fetch blog data from https://debbl.xlog.app/
+ */
+
+import { writeFile } from "node:fs/promises";
 import MarkdownIt from "markdown-it";
-import { endpoint, headers } from "../constants";
-import type { TAG } from "~/types";
 
 const md = MarkdownIt({
   html: true,
@@ -8,7 +11,29 @@ const md = MarkdownIt({
   linkify: true,
 });
 
-export async function getNotes() {
+const endpoint = "https://indexer.crossbell.io/v1";
+
+const headers = new Headers();
+// eslint-disable-next-line n/prefer-global/process
+const CROSSBELL_TOKEN = process.env.CROSSBELL_TOKEN;
+headers.set("Authorization", `Bearer ${CROSSBELL_TOKEN}`);
+
+async function getSummary({ cid, lang }: { cid: string; lang: string }) {
+  const res = await fetch(
+    `https://xlog.app/api/summary?cid=${cid}&lang=${lang}`,
+    {
+      method: "GET",
+      headers: new Headers({
+        "referer": `https://link.bilibili.com/p/center/index?visit_id=22ast2mb9zhc`,
+        "User-Agent": `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Shiro`,
+      }),
+    },
+  );
+  const data = (await res.json()) as { summary?: string };
+  return data.summary ?? "";
+}
+
+async function getNotes() {
   const response = await fetch(`${endpoint}/characters/59630/notes`, {
     headers,
   });
@@ -44,13 +69,10 @@ export async function getNotes() {
 
         let summary = note.metadata.content.summary;
         if (!summary) {
-          const res = await fetch(
-            `https://xlog.app/api/summary?cid=${note.metadata.uri.slice(
-              7,
-            )}&lang=zh`,
-          );
-          const { data } = await res.json();
-          summary = data;
+          summary = await getSummary({
+            cid: note.metadata.uri.slice(7),
+            lang: "zh",
+          });
         }
 
         const slug =
@@ -59,6 +81,8 @@ export async function getNotes() {
           )?.value ?? "";
 
         const html = md.render(content);
+
+        console.log("fetch:", note.metadata.content.title);
 
         return {
           ...note,
@@ -77,14 +101,7 @@ export async function getNotes() {
     ),
   };
 
-  return data;
+  writeFile("src/data/data.json", JSON.stringify(data, null, 2));
 }
 
-export async function getNotesByTag(tag: TAG) {
-  const notes = await getNotes();
-
-  return {
-    ...notes,
-    list: notes.list.filter((note) => note.metadata.content.tags.includes(tag)),
-  };
-}
+getNotes();
