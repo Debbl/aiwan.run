@@ -44,15 +44,9 @@
           ],
           "content": "## fork 官方仓库 [facebook/react](https://github.com/facebook/react)\n\n![image](ipfs://QmcsDSZx9dHhRpFbvZ48DfATf58WPWFApMEdNjAbmz8ELe)\n\n\n通常开源的项目里都有一个 [CONTRIBUTING.md](https://github.com/facebook/react/blob/main/CONTRIBUTING.md) 文件，来让其他的开发者知道如何贡献这个项目，或者看这个项目的 [.github/workflows](https://github.com/facebook/react/tree/main/.github/workflows) 里的一些运行测试、发布的 action 都可以找到运行这个项目的有效信息\n\n![image](ipfs://QmPZHL6qT2JWWdpUHo2ZDtLxvSnkNV9KjAKbiXG854fY9V)\n\n\n本地下载克隆的仓库\n```bash\ngit clone git@github.com:Debbl/react.git\n```\n\n## VSCode 环境\n\n使用 VSCode 打开\n\n```bash\ncode react\n```\n\n### 插件\n\n因为 react 是使用 [flow](https://flow.org/) 语言（类似 ts ）写的所以需要在 VSCode 提供相关语言的支持在 VSCode 中下载 flow 语言的插件 [flow-for-vscode](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode)\n\n> .vscode/extensions.json\n```json\n{\n    \"recommendations\": [\n        \"flowtype.flow-for-vscode\"\n    ]\n}\n```\n\n### 设置\n\n在本地的打开的仓库的根目录创建下面这个文件\n>.vscode/settings.json\n```json\n{ \n    \"javascript.validate.enable\": false,\n    \"typescript.validate.enable\": false,\n    \"flow.enabled\": true,\n    \"flow.useNPMPackagedFlow\": true\n}\n```\n解释一下这里的配置，前两个是禁用默认的 js ts 检查，然后开启 flow 插件，并且使用 `node_modules` 下的 flow 运行，这两个其实是默认开启的，更多详细的配置 [flow-for-vscode#configuration](https://github.com/flow/flow-for-vscode#configuration)\n\n## 本机环境\n> 这里可以直接参考 [contribution-prerequisites](https://legacy.reactjs.org/docs/how-to-contribute.html#contribution-prerequisites) 的官方文档，但是有几个需要注意的地方\n\n![image](ipfs://QmUkjkLMegL8xJ9fL2FMfh8SCuLGMxH783y9UKHubQW9TM)\n\n- `.nvmrc` 里对应的 node 版本，最好安装对应的版本\n- `package.json` 的 `packageManager` 有对应的 yarn 版本\n- java 环境没有明确说什么版本，我这里安装的是 `java 17.0.11 2024-04-16 LTS`\n\n![image](ipfs://QmZxuLTig5LVXg5FhQeDr6kKiNqNfUkQJaPMWgCT9dwFci)\n\n- gcc 环境\n\n![image](ipfs://QmbomvCX1PQFtJpihRJ1uRmWruPubWNS5cZ41nrqmucVou)\n\n\n## 安装依赖，环境检查\n\n> 这里可以参考文档的这一部分 [sending-a-pull-request](https://legacy.reactjs.org/docs/how-to-contribute.html#sending-a-pull-request)\n\n完全使用 `yarn.lock` 安装，这里推荐一个好用的工具 [antfu-collective/ni](https://github.com/antfu-collective/ni) 直接使用 `nci` 安装，我也参考别人的项目写了一个 rust 的版本 [Debbl/nci](https://github.com/Debbl/nci)\n\n```bash\nyarn install --frozen-lockfile\n```\n\n因为我使用的是 M1 芯片，在安装的过程中遇到了几个问题\n- `/bin/sh: autoreconf: command not found` 使用 brew 安装 `brew install autoconf`\n- 如果上一步是使用 brew 安装的会遇到一个问题 [error-cant-exec-aclocal-with-homebrew-installed-autoreconf-on-mac](https://stackoverflow.com/questions/76852766/error-cant-exec-aclocal-with-homebrew-installed-autoreconf-on-mac) 需要安装 `brew install automake`\n- `optipng-bin` 依赖报错，可以看这个 [optipng-bin/issues/117](https://github.com/imagemin/optipng-bin/issues/117#issuecomment-1362473572)\n\n### 配置 flow 环境\n\n```bash\nyarn flow\n```\n\n这里直接运行这个命令会要求选择对应的环境\n\n![image](ipfs://QmerKgfnxrCS3MEWLY3hhyXU8baV4jgAxduqQVTDNoDipG)\n\n这里使用 `dom-node` 环境\n```bash\nyarn flow dom-node\n```\n执行完成之后会发现在根目录多了一个 `.flowconfig` 文件\n\n![image](ipfs://QmaspMPgycpVnupZhzvWpjKxAmnDPzM4rzdVjFjixnWPkC)\n\n### 检查 flow 有没有生效\n\n![image](ipfs://QmQa4sp3sXyBigJPrtFREdAGsSRVsw5bhrwrAHbKbC7pNo)\n\n![image](ipfs://QmWwXuTQ2MY6wJBGBSr8VM2kbqWwBnFCgrrVd3eNBaLjwx)\n\n![image](ipfs://QmQN843uyvaXGUuKiESv7RjyciDsUH9pPpd9yTk7zwL9Jn)\n\n![image](ipfs://QmSBfqz3f7Wkn59eiX6pJKjD1cf4mKf8jgPxVf4TZqixmm)\n\n\n完成之后 VSCode 就会有提示了\n\n## 测试，本地运行\n\n```bash\nyarn test\n```\n\n![image](ipfs://QmbNyRdXGQtvEBj3pA9NP455sPjssnAHTyTkH47f5XsuQN)\n\n\n## 本地运行打包好的 react\n\n> 可以参考文档的 [development-workflow](https://legacy.reactjs.org/docs/how-to-contribute.html#development-workflow)\n\n![image](ipfs://QmPFc2xmfiWsZ2VATAqGo5dMZYxPFWg3xQiK6opKVB2MXo)\n\n\n```bash\ncd build/oss-experimental/react\nyarn link\n\ncd build/oss-experimental/react-dom\nyarn link\n```\n\n这里注意 node 环境的话需要 link 三个仓库 `react` `react-dom` `scheduler`\n\n也可以直接使用 `fixtures` 目录的环境，这里我使用 `fixtures/packaging/webpack/dev`\n\n```bash\ncd fixtures/packaging/webpack/dev\n\nyarn\n\nyarn build\n```\n\n这里需要替换一下 `input.js` 文件，新版 ReactDom 里没有 render 函数了\n\n>fixtures/packaging/webpack/dev/input.js\n```js\nvar React = require('react');\nvar ReactDOM = require('react-dom');\n\nReactDOM.render(\n  React.createElement('h1', null, 'Hello World!'),\n  document.getElementById('container')\n);\n\n```\n```js\nvar React = require('react');\nvar {createRoot} = require('react-dom/client');\n\nconsole.log('react version:', React.version);\n\nconst root = createRoot(document.getElementById('container'));\nroot.render(React.createElement('h1', null, 'Hello World!'));\n\n```\n\n使用 [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)打开 `fixtures/packaging/webpack/dev/index.html`\n\n![image](ipfs://QmeyKSBXnpdPUivN7owwis8kz2DxnjAk9JyD3PVMENU59v)\n",
           "date_published": "2024-05-26T10:24:09.734Z",
-          "sources": [
-            "xlog"
-          ],
+          "sources": ["xlog"],
           "summary": "克隆官方仓库facebook/react并在本地环境中配置VSCode以支持flow语言插件。安装必要的依赖并进行环境检查，配置flow环境并检查是否生效。进行测试和本地运行，最后链接react和react-dom仓库。",
-          "tags": [
-            "post",
-            "blog",
-            "react"
-          ],
+          "tags": ["post", "blog", "react"],
           "title": "如何在本地环境运行 react 源码仓库",
           "type": "note",
           "duration": 19,
@@ -96,14 +90,9 @@
           ],
           "content": "## preload\n\n`<link rel=\"preload\">` is used to preload resources that are needed for `the current page`, and it is loaded before the browser parses the HTML document.\n\n```html\n<link rel=\"preload\" href=\"https://example.com/image.png\" as=\"image\" />\n```\n\n## prefetch\n\n`<link rel=\"prefetch\">` is used to prefetch resources that will be needed for `the future pages`, and it is loaded after the browser parses the HTML document.\n\n```html\n<link rel=\"prefetch\" href=\"https://example.com/image.png\" as=\"image\" />\n```\n\n## preload vs prefetch\n\n- preload is used to load resources that are needed for the current page, and it is loaded before the browser parses the HTML document.\n- prefetch is used to load resources that will be needed for future pages, and it is loaded after the browser parses the HTML document.\n- preload priority is higher than prefetch\n\n## reference\n\n- [https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload)\n- [https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/prefetch](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/prefetch)\n",
           "date_published": "2024-01-14T08:20:04.915Z",
-          "sources": [
-            "xlog"
-          ],
+          "sources": ["xlog"],
           "summary": "preload（预加载）是用于预加载当前页面所需资源的，它在浏览器解析HTML文档之前加载。\nprefetch（预取）是用于预取将来页面所需资源的，它在浏览器解析HTML文档之后加载。\npreload用于加载当前页面所需资源，它的优先级高于prefetch。",
-          "tags": [
-            "post",
-            "TIL"
-          ],
+          "tags": ["post", "TIL"],
           "title": "preload and prefetch",
           "type": "note",
           "duration": 5,
@@ -157,14 +146,9 @@
           ],
           "content": "> info\n\n# h1\n\n<Sandpack template=\"react\">\n\n```js filename=\"App.js\"\nimport React from \"react\";\nexport default function App() {\n  return <div>hi</div>;\n}\n```\n\n```js filename=\"t.js\"\nconsole.log(112);\n```\n\n</Sandpack>\n\n# aaaa\n\n<Sandpack>\n\n```js filename=\"index.js\"\nconsole.log(1);\n```\n\n</Sandpack>",
           "date_published": "2024-01-14T07:36:19.342Z",
-          "sources": [
-            "xlog"
-          ],
+          "sources": ["xlog"],
           "summary": "这段代码是一个React组件，名为App。它导出一个默认函数，返回一个字符串hi。代码中还包含两个console.log语句，分别输出112和1。",
-          "tags": [
-            "post",
-            "blog"
-          ],
+          "tags": ["post", "blog"],
           "title": "MDX 测试",
           "type": "note",
           "duration": 2,
@@ -218,14 +202,9 @@
           ],
           "content": "## 原因\n在写 [Debbl/eslint-config](https://github.com/Debbl/eslint-config) 的测试时\n\n```ts filename=\"fixture.text.ts\"\nawait Promise.all(\n  files.map(async (file) => {\n    let content = await fs.readFile(join(target, file), \"utf-8\");\n    const source = await fs.readFile(join(from, file), \"utf-8\");\n\n    if (content === source) {\n      content = \"// unchanged\\n\";\n    }\n\n    await expect.soft(content).toMatchFileSnapshot(join(output, file));\n  }),\n);\n```\n\n在 github action 中有使用多个系统的测试\n\n```yml\nstrategy:\n  matrix:\n    node: [lts/*]\n    os: [ubuntu-latest, windows-latest, macos-latest]\n  fail-fast: false\n```\n\n但是在测试 windows 时总是报错 [test](https://github.com/Debbl/eslint-config/actions/runs/6914251251/job/18811912790)，显示 input 和 output 不符合，在测试后发现是 windows 默认的在 git 下载是的 `eol` 是 `crlf`\n\n所以搜了一下在 GitHub Action 如何设置 `eol` 为 `lf` [actions/checkout#135](https://github.com/actions/checkout/issues/135)\n\n最终添加如下命令 [ci.yml](https://github.com/Debbl/eslint-config/blob/main/.github/workflows/ci.yml)\n\nwindows 可以通过以下命令设置为 `lf`\n\n```bash\ngit config --global core.autocrlf false\ngit config --global core.eol lf\n```\n\n```yml\n- name: Set git to use LF\n  run: |\n    git config --global core.autocrlf false\n    git config --global core.eol lf\n```\n\n## 通过 `.gitattributes` 设置\n\n```\n* text=auto eol=lf\n```\n\n## 引用\n\n- [https://git-scm.com/docs/gitattributes](https://git-scm.com/docs/gitattributes)\n",
           "date_published": "2024-01-14T03:28:59.079Z",
-          "sources": [
-            "xlog"
-          ],
+          "sources": ["xlog"],
           "summary": "原因是在写Debbl/eslint-config的测试时，发现在测试Windows系统时总是报错，显示输入和输出不符合。经过测试发现是因为Windows默认在Git下载时的行尾符是CRLF。为了解决这个问题，在GitHub Action中添加了设置行尾符为LF的命令，并通过.gitattributes文件设置了text=auto eol=lf。参考了actions/checkout#135和https://git-scm.com/docs/gitattributes。",
-          "tags": [
-            "post",
-            "TIL"
-          ],
+          "tags": ["post", "TIL"],
           "title": "windows git set eol to lf",
           "type": "note",
           "duration": 6,
