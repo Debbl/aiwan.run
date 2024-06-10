@@ -24,7 +24,7 @@ function useMDXComponent(source: string) {
       return <MDXSandpack files={files} {..._props} />;
     },
     img: (props: any) => {
-      const src = `https://ipfs.crossbell.io/ipfs/${props.src.slice(7)}`;
+      const src = `/images/${props.src.slice(7)}.png`;
       // eslint-disable-next-line @next/next/no-img-element
       return <img {...props} src={src} />;
     },

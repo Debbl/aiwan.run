@@ -3,6 +3,8 @@
  */
 
 import { writeFile } from "node:fs/promises";
+import { Buffer } from "node:buffer";
+import { existsSync, mkdirSync } from "node:fs";
 import MarkdownIt from "markdown-it";
 
 const md = MarkdownIt({
@@ -10,6 +12,32 @@ const md = MarkdownIt({
   breaks: true,
   linkify: true,
 });
+
+const images: string[] = [];
+
+function getImageUrl(ipfs: string) {
+  return `https://ipfs.crossbell.io/ipfs/${ipfs}`;
+}
+
+md.renderer.rules.image = (tokens, idx, options, env, self) => {
+  const token = tokens[idx];
+
+  const src = token.attrGet("src") as string;
+  const ipfs = src.slice(7);
+  images.push(ipfs);
+
+  const url = getImageUrl(ipfs);
+
+  token!.attrs![token.attrIndex("src")][1] = url;
+
+  token!.attrs![token.attrIndex("alt")][1] = self.renderInlineAsText(
+    token.children!,
+    options,
+    env,
+  );
+
+  return self.renderToken(tokens, idx, options);
+};
 
 const endpoint = "https://indexer.crossbell.io/v1";
 
@@ -104,4 +132,31 @@ async function getNotes() {
   writeFile("src/data/data.json", JSON.stringify(data, null, 2));
 }
 
-getNotes();
+async function downloadImages() {
+  const dirPath = "public/images";
+  if (!existsSync(dirPath)) {
+    mkdirSync(dirPath);
+  }
+
+  for (const ipfs of images) {
+    if (existsSync(`public/images/${ipfs}.png`)) {
+      console.log(`skip: ${ipfs}`);
+      continue;
+    }
+
+    console.log(`download: ${ipfs}`);
+
+    const res = await fetch(getImageUrl(ipfs), {
+      method: "GET",
+    });
+    const buffer = await res.arrayBuffer();
+    await writeFile(`public/images/${ipfs}.png`, Buffer.from(buffer));
+  }
+}
+
+async function setup() {
+  await getNotes();
+  await downloadImages();
+}
+
+await setup();
