@@ -42,9 +42,6 @@ importers:
       '@debbl/eslint-config':
         specifier: ^3.3.0
         version: 3.3.0(@types/eslint@8.56.10)(eslint@8.57.0)(tailwindcss@3.4.4)(typescript@5.4.5)
-      '@shikijs/rehype':
-        specifier: ^1.6.3
-        version: 1.6.3
       '@types/dom-view-transitions':
         specifier: ^1.0.4
         version: 1.0.4
@@ -648,12 +645,6 @@ packages:
 
   '@shikijs/core@1.6.3':
     resolution: {integrity: sha512-QnJKHFUW95GnlJLJGP6QLx4M69HM0KlXk+R2Y8lr/x4nAx1Yb/lsuxq4XwybuUjTxbJk+BT0g/kvn0bcsjGGHg==}
-
-  '@shikijs/rehype@1.6.3':
-    resolution: {integrity: sha512-724+2zopOy3pNDONss0mjblgos+hKKVoy4MmboIkDLds3ZKf4squv6bGHBGEjHxP+RIKe9Vmt2wwf3wSCS6/Pw==}
-
-  '@shikijs/transformers@1.6.3':
-    resolution: {integrity: sha512-ptBuP/IIeqCzK3zZO/knFICZWs58uZWzbv7ND+bKOewe5NcCjZfSiMyzFwOyl23ewPJ1APjRBwLi6Asrodmmxw==}
 
   '@stitches/core@1.2.8':
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
@@ -4016,19 +4007,6 @@ snapshots:
       react: 18.3.1
 
   '@shikijs/core@1.6.3': {}
-
-  '@shikijs/rehype@1.6.3':
-    dependencies:
-      '@shikijs/transformers': 1.6.3
-      '@types/hast': 3.0.4
-      hast-util-to-string: 3.0.0
-      shiki: 1.6.3
-      unified: 11.0.4
-      unist-util-visit: 5.0.0
-
-  '@shikijs/transformers@1.6.3':
-    dependencies:
-      shiki: 1.6.3
 
   '@stitches/core@1.2.8': {}
 

@@ -1,6 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
-
 import MDXSandpack from "~/components/MDXSandpack";
 import type { SandpackProps } from "~/types";
 

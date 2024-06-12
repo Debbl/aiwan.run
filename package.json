@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@debbl/eslint-config": "^3.3.0",
-    "@shikijs/rehype": "^1.6.3",
     "@types/dom-view-transitions": "^1.0.4",
     "@types/markdown-it": "^14.1.1",
     "@types/node": "^20.14.2",

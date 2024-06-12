@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Icon } from "~/icons";
-import Particles from "~/components/particles";
+import Particles from "~/components/Particles";
 
 type Projects = Record<
   string,
