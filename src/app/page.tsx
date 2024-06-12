@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 import { Icon } from "~/icons";
+import Particles from "~/components/particles";
 
 type Projects = Record<
   string,
@@ -107,10 +111,20 @@ const projects: Projects = {
   },
 };
 
-export default async function Home() {
+export default function Home() {
+  const { theme } = useTheme();
+
   return (
-    <main className="flex-1">
-      <div className="mb-10 flex h-full flex-col items-center">
+    <main className="relative flex-1 overflow-y-scroll">
+      <Particles
+        className="pointer-events-none fixed inset-0"
+        quantity={300}
+        ease={80}
+        color={theme === "dark" ? "#fff" : "#000"}
+        refresh
+      />
+
+      <div className="mb-10 flex flex-col items-center">
         <div className="mt-20">
           <Icon icon="Avatar" className="size-12 cursor-pointer rounded-full" />
         </div>
