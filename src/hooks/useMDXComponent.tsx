@@ -1,4 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypePrettyCode from "rehype-pretty-code";
+
 import MDXSandpack from "~/components/MDXSandpack";
 import type { SandpackProps } from "~/types";
 
@@ -31,7 +33,22 @@ function useMDXComponent(source: string) {
   };
 
   const MDXContent = () => (
-    <MDXRemote components={components} source={source} />
+    <MDXRemote
+      components={components}
+      source={source}
+      options={{
+        mdxOptions: {
+          rehypePlugins: [
+            [
+              rehypePrettyCode,
+              {
+                theme: "one-dark-pro",
+              },
+            ],
+          ],
+        },
+      }}
+    />
   );
 
   return {
