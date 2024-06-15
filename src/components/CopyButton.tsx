@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Icon } from "~/icons";
 
 export function CopyButton({
@@ -22,15 +23,17 @@ export function CopyButton({
   };
 
   return (
-    <button
+    <motion.button
       type="button"
       aria-label="Copy code"
       data-value={code}
       data-lang={lang}
       className={className}
       onClick={handleCopy}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       <Icon icon={isCopied ? "CarbonCheckmark" : "Copy"} />
-    </button>
+    </motion.button>
   );
 }

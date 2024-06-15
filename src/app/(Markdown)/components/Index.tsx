@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { getNotesByTag } from "~/data";
+import type { List } from "~/data";
 import { format } from "~/utils/time";
 
-export default async function BlogPage() {
-  const { list } = getNotesByTag("TIL");
-
+export function Index({ list }: { list: List }) {
   return (
     <main className="mt-20 flex flex-col items-center">
       <div className="mt-10">
@@ -14,7 +12,7 @@ export default async function BlogPage() {
 
             return (
               <li key={note.noteId} className="text-xl hover:text-primary">
-                <Link href={`/til/${content.slug}`}>
+                <Link href={`/blog/${content.slug}`}>
                   <span>{content.title}</span>
                   <span className="ml-6 text-sm">
                     <span>

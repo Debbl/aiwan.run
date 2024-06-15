@@ -1,20 +1,9 @@
 import { notFound } from "next/navigation";
+import type { ListItem } from "~/data";
 import { useMDXComponent } from "~/hooks/useMDXComponent";
-import { generateMDXPageConfig } from "~/utils";
 import { format } from "~/utils/time";
 
-const { getCurrentNote, generateMetadata, generateStaticParams } =
-  await generateMDXPageConfig("blog");
-
-export { generateMetadata, generateStaticParams };
-
-export default async function BlogPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const note = getCurrentNote(params.slug);
-
+export function MarkdownPost({ note }: { note?: ListItem }) {
   // 404 if the post does not exist.
   if (!note) notFound();
 

@@ -44,11 +44,11 @@ export function CodeHighlight(
 
   return (
     <div className="group relative">
-      <span className="absolute right-2 top-2 text-gray-100 group-hover:opacity-0">
+      <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
         {lang}
       </span>
       <CopyButton
-        className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 hover:bg-gray-700 group-hover:opacity-100"
+        className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 transition-opacity hover:bg-gray-700 group-hover:opacity-100"
         lang={lang}
         code={code}
       />
