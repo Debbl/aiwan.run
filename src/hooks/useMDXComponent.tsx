@@ -1,5 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import rehypePrettyCode from "rehype-pretty-code";
+import { CodeHighlight } from "~/components/CodeHighlight";
 import MDXSandpack from "~/components/MDXSandpack";
 import type { SandpackProps } from "~/types";
 
@@ -24,6 +24,9 @@ function useMDXComponent(source: string) {
 
       return <MDXSandpack files={files} {..._props} />;
     },
+    pre: (props: any) => {
+      return <CodeHighlight {...props} />;
+    },
     img: (props: any) => {
       const src = `/images/${props.src.slice(7)}.png`;
       // eslint-disable-next-line @next/next/no-img-element
@@ -32,22 +35,7 @@ function useMDXComponent(source: string) {
   };
 
   const MDXContent = () => (
-    <MDXRemote
-      components={components}
-      source={source}
-      options={{
-        mdxOptions: {
-          rehypePlugins: [
-            [
-              rehypePrettyCode,
-              {
-                theme: "one-dark-pro",
-              },
-            ],
-          ],
-        },
-      }}
-    />
+    <MDXRemote components={components} source={source} />
   );
 
   return {
