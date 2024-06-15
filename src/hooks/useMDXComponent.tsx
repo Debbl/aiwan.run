@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CodeHighlight } from "~/components/CodeHighlight";
 import MDXSandpack from "~/components/MDXSandpack";
+import { MagicCard } from "~/components/magicui/MagicCard";
 import type { SandpackProps } from "~/types";
 
 function useMDXComponent(source: string) {
@@ -29,8 +31,12 @@ function useMDXComponent(source: string) {
     },
     img: (props: any) => {
       const src = `/images/${props.src.slice(7)}.png`;
-      // eslint-disable-next-line @next/next/no-img-element
-      return <img {...props} src={src} />;
+
+      return (
+        <MagicCard className="p-2">
+          <img {...props} src={src} />
+        </MagicCard>
+      );
     },
   };
 

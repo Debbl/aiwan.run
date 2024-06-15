@@ -12,6 +12,19 @@ const config: Config = {
       colors: {
         primary: "#eab308",
       },
+      keyframes: {
+        "shine-pulse": {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          "to": {
+            "background-position": "0% 0%",
+          },
+        },
+      },
       gridTemplateColumns: ({ theme }) => {
         const spacing = theme("spacing") as Record<string, string>;
 
