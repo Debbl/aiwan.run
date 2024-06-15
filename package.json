@@ -18,6 +18,8 @@
     "@codesandbox/sandpack-react": "^2.14.2",
     "@debbl/ahooks": "^0.1.0",
     "date-fns": "^3.6.0",
+    "framer-motion": "^11.2.10",
+    "medium-zoom": "^1.1.0",
     "next": "^14.2.4",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
@@ -27,8 +29,9 @@
     "twl": "0.0.0-alpha.5"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^3.3.0",
+    "@debbl/eslint-config": "^3.3.1",
     "@types/dom-view-transitions": "^1.0.4",
+    "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.1",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
@@ -46,7 +49,9 @@
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.4",
     "tsx": "^4.15.5",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "unified": "^11.0.4",
+    "unist-util-visit": "^5.0.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

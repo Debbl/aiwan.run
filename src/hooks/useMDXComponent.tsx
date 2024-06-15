@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CodeHighlight } from "~/components/CodeHighlight";
 import MDXSandpack from "~/components/MDXSandpack";
-import { MagicCard } from "~/components/magicui/MagicCard";
+import { MarkdownImage } from "~/components/MarkdownImage";
+import rehypePicture from "~/lib/plugins/rehype-picture";
 import type { SandpackProps } from "~/types";
 
 function useMDXComponent(source: string) {
@@ -32,16 +32,20 @@ function useMDXComponent(source: string) {
     img: (props: any) => {
       const src = `/images/${props.src.slice(7)}.png`;
 
-      return (
-        <MagicCard className="p-2">
-          <img {...props} src={src} />
-        </MagicCard>
-      );
+      return <MarkdownImage {...props} src={src} />;
     },
   };
 
   const MDXContent = () => (
-    <MDXRemote components={components} source={source} />
+    <MDXRemote
+      components={components}
+      source={source}
+      options={{
+        mdxOptions: {
+          rehypePlugins: [rehypePicture],
+        },
+      }}
+    />
   );
 
   return {
