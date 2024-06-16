@@ -19,7 +19,7 @@ export function MarkdownPost({ note }: { note?: ListItem }) {
 
   return (
     <>
-      <div className="px-1 md:px-10 lg:px-32 xl:px-64">
+      <div className="px-8 md:px-10 lg:px-32 xl:px-64">
         <header className="text-center">
           <h1 className="text-4xl">{content.title}</h1>
           <div className="pt-3 text-gray-400">

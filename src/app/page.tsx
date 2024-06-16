@@ -118,7 +118,7 @@ export default function Home() {
     <main className="relative flex-1 overflow-y-scroll">
       <Particles
         className="pointer-events-none fixed inset-0"
-        quantity={300}
+        quantity={80}
         ease={80}
         color={theme === "dark" ? "#fff" : "#000"}
         refresh
