@@ -1,5 +1,6 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 import { bundledLanguages, getHighlighter } from "shiki";
+import { cn } from "twl";
 import { CopyButton } from "./CopyButton";
 
 const languagePrefix = "language-";
@@ -10,7 +11,7 @@ const highlighter = await getHighlighter({
 const langs = highlighter.getLoadedLanguages();
 
 function getLang(className?: string) {
-  if (!className) return "text";
+  if (!className) return "log";
 
   const classes: string[] = className.split(" ");
   const languageClass = classes.find(
@@ -19,7 +20,7 @@ function getLang(className?: string) {
   const lang =
     typeof languageClass === "string"
       ? languageClass.slice(languagePrefix.length)
-      : "text";
+      : "log";
   return lang;
 }
 
@@ -43,9 +44,9 @@ export function CodeHighlight(
   });
 
   return (
-    <div className="group relative">
+    <div className={cn(`language-${lang}`, "group relative")}>
       <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
-        {lang}
+        {lang === "log" ? "" : lang}
       </span>
       <CopyButton
         className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 transition-opacity hover:bg-gray-700 group-hover:opacity-100"
