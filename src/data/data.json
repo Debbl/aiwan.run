@@ -2,6 +2,52 @@
   "list": [
     {
       "characterId": 59630,
+      "noteId": 5,
+      "linkItemType": null,
+      "linkKey": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "deleted": false,
+      "locked": false,
+      "contractAddress": "0x0000000000000000000000000000000000000000",
+      "uri": "ipfs://QmTGHZpmLMPK2gCqxyB7J2qdseX1WxhE7xjPBGYBaP68Hy",
+      "operator": "0xbbc2918c9003d264c25ecae45b44a846702c0e7c",
+      "owner": "0x9ba6564ee8bb58bc7759c39ee7ac89a4a67c7b6e",
+      "createdAt": "2024-06-23T03:38:22.000Z",
+      "updatedAt": "2024-06-23T03:38:22.000Z",
+      "deletedAt": null,
+      "publishedAt": "2024-06-23T03:37:16.827Z",
+      "transactionHash": "0xada114e7942f8b6a4b91c4cf3950719402856553f8d97530479a9a73e5f34dee",
+      "blockNumber": 68738159,
+      "logIndex": 0,
+      "updatedTransactionHash": "0xada114e7942f8b6a4b91c4cf3950719402856553f8d97530479a9a73e5f34dee",
+      "updatedBlockNumber": 68738159,
+      "updatedLogIndex": 0,
+      "metadata": {
+        "uri": "ipfs://QmTGHZpmLMPK2gCqxyB7J2qdseX1WxhE7xjPBGYBaP68Hy",
+        "type": "NOTE",
+        "content": {
+          "attachments": [],
+          "attributes": [
+            {
+              "trait_type": "xlog_slug",
+              "value": "pnpm-shamefully-hoist-setting"
+            }
+          ],
+          "content": "## shamefully-hoist\n> https://pnpm.io/npmrc#shamefully-hoist\n\n默认情况下，`pnpm` 会创建一个半严格的 `node_modules` 结构，意味着依赖项可以访问未声明的依赖项，但 `node_modules` 之外的模块不能。在这种布局下，大多数生态系统中的包都能正常工作。然而，如果某些工具只能在依赖项提升到 `node_modules` 根目录时才能正常工作，你可以将此选项设置为 `true` 来为你提升这些依赖项。\n\n简单来说就是现在有一个模块 A，其依赖一个模块 B，在项目的 `package.json` 里依赖模块 A，模块 A 是可以正常的访问到模块 B 的，但是在项目里就不能访问模块 B，当 `shamefully-hoist=true` 就会提升模块 B，然后在项目里都可以访问。\n\n默认 `pnpm` 在 `node_modules` 只会暴露在 `package.json` 里指定的依赖，不会像 `npm` 一样，暴露依赖包括依赖的依赖。\n\n> .npmrc\n\n```\nshamefully-hoist=true\n```\n\n",
+          "date_published": "2024-06-23T03:37:16.827Z",
+          "sources": ["xlog"],
+          "summary": "pnpm 默认情况下创建半严格的 node_modules 结构，依赖项可以访问未声明的依赖项，但 node_modules 之外的模块不能。设置 shamefully-hoist=true 可以提升依赖项到 node_modules 根目录，使其在项目中可访问。pnpm 默认只暴露 package.json 中指定的依赖，不像 npm 会暴露依赖的依赖。",
+          "tags": ["post", "TIL"],
+          "title": "pnpm shamefully-hoist 设置",
+          "type": "note",
+          "duration": 3,
+          "slug": "pnpm-shamefully-hoist-setting",
+          "html": "<h2>shamefully-hoist</h2>\n<blockquote>\n<p><a href=\"https://pnpm.io/npmrc#shamefully-hoist\">https://pnpm.io/npmrc#shamefully-hoist</a></p>\n</blockquote>\n<p>默认情况下，<code>pnpm</code> 会创建一个半严格的 <code>node_modules</code> 结构，意味着依赖项可以访问未声明的依赖项，但 <code>node_modules</code> 之外的模块不能。在这种布局下，大多数生态系统中的包都能正常工作。然而，如果某些工具只能在依赖项提升到 <code>node_modules</code> 根目录时才能正常工作，你可以将此选项设置为 <code>true</code> 来为你提升这些依赖项。</p>\n<p>简单来说就是现在有一个模块 A，其依赖一个模块 B，在项目的 <code>package.json</code> 里依赖模块 A，模块 A 是可以正常的访问到模块 B 的，但是在项目里就不能访问模块 B，当 <code>shamefully-hoist=true</code> 就会提升模块 B，然后在项目里都可以访问。</p>\n<p>默认 <code>pnpm</code> 在 <code>node_modules</code> 只会暴露在 <code>package.json</code> 里指定的依赖，不会像 <code>npm</code> 一样，暴露依赖包括依赖的依赖。</p>\n<blockquote>\n<p>.npmrc</p>\n</blockquote>\n<pre><code>shamefully-hoist=true\n</code></pre>\n"
+        },
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "characterId": 59630,
       "noteId": 4,
       "linkItemType": null,
       "linkKey": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -215,6 +261,6 @@
       }
     }
   ],
-  "count": 4,
+  "count": 5,
   "cursor": null
 }
