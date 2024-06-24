@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
 import Particles from "~/components/magicui/Particles";
 
@@ -111,6 +112,32 @@ const projects: Projects = {
   },
 };
 
+const FindMeLinks: {
+  "url": string;
+  "name": string;
+  "data-umami-event": string;
+  "icon": IconType;
+}[] = [
+  {
+    "url": "https://github.com/Debbl/",
+    "name": "Github",
+    "data-umami-event": "click-github-link",
+    "icon": "GithubAlt",
+  },
+  {
+    "url": "https://space.bilibili.com/174865648/",
+    "name": "哔哩哔哩",
+    "data-umami-event": "click-bilibili-link",
+    "icon": "BilibiliLine",
+  },
+  {
+    "url": "mailto:me@aiwan.run",
+    "name": "Email",
+    "data-umami-event": "click-email-link",
+    "icon": "Email",
+  },
+];
+
 export default function Home() {
   const { theme } = useTheme();
 
@@ -133,7 +160,7 @@ export default function Home() {
             <div key={project.name}>
               <Link
                 href={project.url}
-                className="text-center text-lg font-bold hover:text-primary"
+                className="text-center text-lg font-bold transition-colors hover:text-primary"
               >
                 {project.name}
               </Link>
@@ -155,7 +182,7 @@ export default function Home() {
                       <div>
                         <Link
                           href={item.link}
-                          className="text-sm hover:text-primary"
+                          className="text-sm transition-colors hover:text-primary"
                         >
                           {item.name}
                         </Link>
@@ -167,6 +194,23 @@ export default function Home() {
               </ul>
             </div>
           ))}
+
+          <div className="row-start-3">
+            <h3 className="text-lg font-bold">Find Me</h3>
+            <div className="mt-4 flex items-center gap-x-4">
+              {FindMeLinks.map((i) => (
+                <Link
+                  key={i.name}
+                  href={i.url}
+                  data-umami-event={i["data-umami-event"]}
+                  className="inline-flex items-center border-b px-2 transition-colors hover:border-primary"
+                >
+                  <Icon className="size-6" icon={i.icon} />
+                  {i.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </main>

@@ -28,24 +28,6 @@ const nav: {
     "data-umami-event": "click-blog-til",
   },
   {
-    "url": "https://github.com/Debbl/",
-    "name": "Github",
-    "data-umami-event": "click-github-link",
-    "icon": "GithubAlt",
-  },
-  {
-    "url": "https://space.bilibili.com/174865648/",
-    "name": "Bilibili",
-    "data-umami-event": "click-bilibili-link",
-    "icon": "BilibiliLine",
-  },
-  {
-    "url": "mailto:me@aiwan.run",
-    "name": "Email",
-    "data-umami-event": "click-email-link",
-    "icon": "Email",
-  },
-  {
     "url": "/feed.xml",
     "name": "RSS",
     "data-umami-event": "click-rss-link",
