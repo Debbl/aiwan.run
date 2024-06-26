@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypeSlug from "rehype-slug";
 import { CodeHighlight } from "~/components/CodeHighlight";
 import MDXSandpack from "~/components/MDXSandpack";
 import { MarkdownImage } from "~/components/MarkdownImage";
@@ -42,7 +43,7 @@ function useMDXComponent(source: string) {
       source={source}
       options={{
         mdxOptions: {
-          rehypePlugins: [rehypePicture],
+          rehypePlugins: [rehypePicture, rehypeSlug],
         },
       }}
     />

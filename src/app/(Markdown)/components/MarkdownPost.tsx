@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import MarkdownToc from "./MarkdownToc";
 import type { ListItem } from "~/data";
 import { useMDXComponent } from "~/hooks/useMDXComponent";
 import { format } from "~/utils/time";
@@ -36,8 +37,13 @@ export function MarkdownPost({ note }: { note?: ListItem }) {
           )}
         </header>
 
-        <main className="markdown-body mt-3">
-          <MDXContent />
+        <main className="mt-3">
+          <aside className="fixed left-4">
+            <MarkdownToc content={source} />
+          </aside>
+          <article className="markdown-body">
+            <MDXContent />
+          </article>
         </main>
       </div>
     </>
