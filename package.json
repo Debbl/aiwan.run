@@ -8,7 +8,7 @@
   "scripts": {
     "fetch": "tsx --env-file .env.local scripts/fetch.ts",
     "dev": "next dev",
-    "build": "next build",
+    "build": "ANALYZE=true next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@debbl/eslint-config": "^3.3.1",
+    "@next/bundle-analyzer": "^14.2.4",
     "@types/dom-view-transitions": "^1.0.4",
     "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.1",
