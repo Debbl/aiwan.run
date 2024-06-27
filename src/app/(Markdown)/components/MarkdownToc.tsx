@@ -7,9 +7,13 @@ export default function MarkdownToc({ content }: { content: string }) {
   function renderToc(toc: TocSlug) {
     return toc.map((item) => {
       return (
-        <li key={item.slug} className="hover:underline">
-          <a href={`#${item.slug}`}>{item.slug}</a>
-          {item.children && <ul>{renderToc(item.children)}</ul>}
+        <li key={item.slug}>
+          <a href={`#${item.slug}`} className="hover:underline">
+            {item.slug}
+          </a>
+          {item.children && (
+            <ul className="pl-4">{renderToc(item.children)}</ul>
+          )}
         </li>
       );
     });
@@ -17,5 +21,5 @@ export default function MarkdownToc({ content }: { content: string }) {
 
   if (!tocJson) return null;
 
-  return <ul>{renderToc(tocJson)}</ul>;
+  return <ul className="text-sm text-gray-500">{renderToc(tocJson)}</ul>;
 }
