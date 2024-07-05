@@ -1,25 +1,84 @@
-import type { TocSlug } from "~/lib/markdown";
-import { getTocJson } from "~/lib/markdown";
+import { toc } from "mdast-util-toc";
+import { fromMarkdown } from "mdast-util-from-markdown";
+import { toHast } from "mdast-util-to-hast";
+import type { Element, ElementContent, Nodes } from "hast";
 
 export default function MarkdownToc({ content }: { content: string }) {
-  const tocJson = getTocJson(content);
+  const hastTree = toHast(toc(fromMarkdown(content)).map!);
 
-  function renderToc(toc: TocSlug) {
-    return toc.map((item) => {
+  function renderAnchorElement(el: Element, key: number) {
+    if (el.children) {
+      const firstChild = el.children[0];
+      const value = firstChild.type === "text" ? firstChild.value : "";
+
       return (
-        <li key={item.slug}>
-          <a href={`#${item.slug}`} className="hover:underline">
-            {item.slug}
-          </a>
-          {item.children && (
-            <ul className="pl-4">{renderToc(item.children)}</ul>
-          )}
-        </li>
+        <a key={key} {...el.properties}>
+          {value}
+        </a>
       );
-    });
+    }
+
+    return <a key={key} {...el.properties}></a>;
   }
 
-  if (!tocJson) return null;
+  function renderParagraphElement(el: Element, key: number) {
+    if (el.children) {
+      return (
+        <p key={key}>
+          {el.children.map((c, index) => renderElement(c, index))}
+        </p>
+      );
+    }
+    return "";
+  }
 
-  return <ul className="text-sm text-gray-500">{renderToc(tocJson)}</ul>;
+  function renderListItemElement(el: Element, key: number) {
+    if (el.children) {
+      return (
+        <li key={key}>
+          {el.children.map((c, index) => renderElement(c, index))}
+        </li>
+      );
+    }
+    return "";
+  }
+
+  function renderUnorderedListElement(el: Element, key: number) {
+    if (el.children) {
+      return (
+        <ul key={key} className="pl-2">
+          {el.children.map((c, index) => renderElement(c, index))}
+        </ul>
+      );
+    }
+    return "";
+  }
+
+  function renderElement(el: Element | ElementContent, key: number) {
+    if (el.type !== "element") return "";
+
+    if (el.tagName === "p") {
+      return renderParagraphElement(el, key);
+    }
+    if (el.tagName === "li") {
+      return renderListItemElement(el, key);
+    }
+    if (el.tagName === "a") {
+      return renderAnchorElement(el, key);
+    }
+    if (el.tagName === "ul") {
+      return renderUnorderedListElement(el, key);
+    }
+  }
+
+  function renderToc(toc: Nodes) {
+    if (toc.type !== "element") return "";
+
+    if (toc.children) {
+      return toc.children.map((c, index) => renderElement(c, index));
+    }
+    return "";
+  }
+
+  return <ul>{renderToc(hastTree)}</ul>;
 }
