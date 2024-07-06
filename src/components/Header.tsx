@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
@@ -35,39 +35,12 @@ const nav: {
   },
 ];
 
-const Header = () => {
+export default function Header() {
   const navRef = useRef<HTMLElement>(null);
-  const [isShowNavBackground, setIsShowNavBackground] = useState(false);
   const { isMobile } = useMobile();
 
-  useEffect(() => {
-    const handleShowNavBackground = () => {
-      if (
-        navRef.current?.offsetHeight &&
-        window.scrollY > navRef.current?.offsetHeight
-      ) {
-        setIsShowNavBackground(true);
-      } else {
-        setIsShowNavBackground(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleShowNavBackground);
-
-    return () => {
-      window.removeEventListener("scroll", handleShowNavBackground);
-    };
-  }, []);
-
   return (
-    <nav
-      ref={navRef}
-      className={`sticky top-0 flex items-center justify-between px-6 py-3 ${
-        isShowNavBackground
-          ? "nav z-50 bg-transparent shadow-md dark:bg-black"
-          : ""
-      }`}
-    >
+    <nav ref={navRef} className={"flex items-center justify-between px-6 py-3"}>
       <div>
         <button>
           <Link href="/">
@@ -94,6 +67,4 @@ const Header = () => {
       </div>
     </nav>
   );
-};
-
-export default Header;
+}

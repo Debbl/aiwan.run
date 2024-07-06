@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 import { bundledLanguages, getHighlighter } from "shiki";
 import { cn } from "twl";
-import { CopyButton } from "./CopyButton";
+import CopyButton from "./CopyButton";
 
 const languagePrefix = "language-";
 const highlighter = await getHighlighter({
@@ -24,7 +24,7 @@ function getLang(className?: string) {
   return lang;
 }
 
-export function CodeHighlight(
+export default function CodeHighlight(
   props: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement> & {
     children: ReactElement;
   },

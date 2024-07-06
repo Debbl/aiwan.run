@@ -2,7 +2,7 @@ import type { Metadata } from "next/types";
 import { getNotesByTag } from "~/data";
 import type { TAG } from "~/types";
 
-async function generateMDXPageConfig(tag: TAG) {
+export async function generateMDXPageConfig(tag: TAG) {
   const { list } = getNotesByTag(tag);
 
   function getCurrentNote(slug: string) {
@@ -53,5 +53,3 @@ async function generateMDXPageConfig(tag: TAG) {
     generateStaticParams,
   };
 }
-
-export { generateMDXPageConfig };

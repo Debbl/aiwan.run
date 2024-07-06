@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "~/icons";
 
-export function CopyButton({
+export default function CopyButton({
   lang,
   code,
   className,

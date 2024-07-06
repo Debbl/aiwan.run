@@ -1,11 +1,8 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import TheParticles from "./components/TheParticles";
 import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
-import Particles from "~/components/magicui/Particles";
 
 type Projects = Record<
   string,
@@ -139,17 +136,9 @@ const FindMeLinks: {
 ];
 
 export default function Home() {
-  const { theme } = useTheme();
-
   return (
     <main className="relative flex-1 overflow-y-scroll">
-      <Particles
-        className="pointer-events-none fixed inset-0"
-        quantity={80}
-        ease={80}
-        color={theme === "dark" ? "#fff" : "#000"}
-        refresh
-      />
+      <TheParticles />
 
       <div className="mb-10 flex flex-col items-center">
         <div className="mt-20">

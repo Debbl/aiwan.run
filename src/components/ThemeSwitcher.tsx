@@ -5,7 +5,7 @@ import type { MouseEventHandler } from "react";
 import { flushSync } from "react-dom";
 import { Icon } from "~/icons";
 
-const ThemeSwitcher = () => {
+export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   const icon: "Sun" | "Moon" = theme === "dark" ? "Sun" : "Moon";
 
@@ -63,6 +63,4 @@ const ThemeSwitcher = () => {
       </button>
     </>
   );
-};
-
-export default ThemeSwitcher;
+}

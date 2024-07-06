@@ -1,6 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
-import { CodeHighlight } from "~/components/CodeHighlight";
+import CodeHighlight from "~/components/CodeHighlight";
 import MDXSandpack from "~/components/MDXSandpack";
 import { MarkdownImage } from "~/components/MarkdownImage";
 import rehypePicture from "~/lib/plugins/rehype-picture";
