@@ -4,8 +4,8 @@ import { visit } from "unist-util-visit";
 /**
  * Cover the paragraph to a picture element if it contains an image.
  */
-export default function rehypePicture() {
-  return function (tree: Root) {
+export function rehypePicture() {
+  return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
       if (
         parent &&

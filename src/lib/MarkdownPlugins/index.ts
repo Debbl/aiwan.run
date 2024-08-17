@@ -3,6 +3,9 @@ import { visit } from "unist-util-visit";
 import { toString } from "mdast-util-to-string";
 import Slugger from "github-slugger";
 
+export { rehypePicture } from "./rehypePicture";
+export { remarkHeadings } from "./remarkHeadings";
+
 const slugs = new Slugger();
 
 interface MapItem {

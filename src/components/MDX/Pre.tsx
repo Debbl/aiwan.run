@@ -1,7 +1,8 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 import { bundledLanguages, getHighlighter } from "shiki";
 import { cn } from "twl";
-import CopyButton from "./CopyButton";
+import parse from "html-react-parser";
+import CopyButton from "../CopyButton";
 
 const languagePrefix = "language-";
 const highlighter = await getHighlighter({
@@ -43,6 +44,8 @@ export default function CodeHighlight(
     theme: "one-dark-pro",
   });
 
+  const preJSXElement = parse(renderedHTML) as JSX.Element;
+
   return (
     <div className={cn(`language-${lang}`, "group relative")}>
       <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
@@ -53,7 +56,9 @@ export default function CodeHighlight(
         lang={lang}
         code={code}
       />
-      <figure dangerouslySetInnerHTML={{ __html: renderedHTML }} />
+      <figure className="my-4">
+        <pre {...preJSXElement.props} className="rounded-md p-4" />
+      </figure>
     </div>
   );
 }

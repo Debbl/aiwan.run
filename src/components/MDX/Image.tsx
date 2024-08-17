@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import type { Zoom } from "medium-zoom";
 import MediumZoom from "medium-zoom";
 
-export function MarkdownImage(props: ImgHTMLAttributes<HTMLImageElement>) {
+export default function Image(props: ImgHTMLAttributes<HTMLImageElement>) {
   const imgEl = useRef<HTMLImageElement>(null);
   const zoom = useRef<Zoom>();
 
