@@ -57,7 +57,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       return <MDXSandpack files={files} {..._props} />;
     },
     img: (props: any) => {
-      const src = `/images/${props.src.slice(7)}.png`;
+      const src = props.src.startsWith("ipfs")
+        ? `/images/${props.src.slice(7)}.png`
+        : props.src;
 
       return <Image {...props} src={src} />;
     },

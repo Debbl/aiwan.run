@@ -17,5 +17,5 @@ export default function Image(props: ImgHTMLAttributes<HTMLImageElement>) {
     zoom.current!.open();
   };
 
-  return <img ref={imgEl} src={props.src} onClick={handleClick} />;
+  return <img {...props} ref={imgEl} onClick={handleClick} />;
 }

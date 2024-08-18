@@ -25,7 +25,6 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   output: "export",
-  transpilePackages: ["shiki"],
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   cleanDistDir: true,
   reactStrictMode: true,
@@ -35,7 +34,6 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
-    optimizePackageImports: ["shiki"],
   },
 };
 
