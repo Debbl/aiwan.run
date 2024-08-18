@@ -1,3 +1,5 @@
+export * from "./mdxBundler";
+
 export interface Frontmatter {
   title: string;
   date: string;
