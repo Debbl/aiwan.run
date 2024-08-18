@@ -18,7 +18,7 @@ const nav: {
     "data-umami-event": "click-home-link",
   },
   {
-    "url": "/blog",
+    "url": "/posts",
     "name": "Blog",
     "data-umami-event": "click-blog-link",
   },

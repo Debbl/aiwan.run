@@ -23,11 +23,12 @@ export const remarkHeadings: Plugin<
   [{ exportName?: string; isRemoteContent?: boolean }],
   Root
 > = ({ exportName = "__toc", isRemoteContent }) => {
-  const headings: (Heading | string)[] = [];
-  let hasJsxInH1: boolean;
   let title: string;
+  let hasJsxInH1: boolean;
 
   const slugger = new Slugger();
+  const headings: (Heading | string)[] = [];
+
   return (tree, file, done) => {
     const PartialComponentToHeadingsName: Record<string, string> =
       Object.create(null);

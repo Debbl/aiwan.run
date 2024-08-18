@@ -2,7 +2,9 @@ import bundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 import remarkGfm from "remark-gfm";
-import { rehypePicture, remarkHeadings } from "~/lib/MarkdownPlugins";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import { rehypePicture, remarkHeadings } from "~/lib/MDXPlugins";
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -11,7 +13,12 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [[remarkHeadings, { isRemoteContent: false }], remarkGfm],
+    remarkPlugins: [
+      [remarkHeadings, { isRemoteContent: false }],
+      remarkGfm,
+      remarkFrontmatter,
+      remarkMdxFrontmatter,
+    ],
     rehypePlugins: [rehypePicture],
   },
 });
