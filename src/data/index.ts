@@ -1,6 +1,6 @@
 import path from "node:path";
 import { globby } from "globby";
-import { mdxBundler } from "~/utils/mdxBundler";
+import { mdxBundler } from "~/lib";
 
 export type Category = "posts" | "til";
 

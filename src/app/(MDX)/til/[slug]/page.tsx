@@ -1,5 +1,5 @@
 import { getMDXComponent } from "mdx-bundler/client";
-import { getMDXComponents } from "~/lib/getMDXComponents";
+import { getMDXComponents } from "~/components/MDX";
 import { allPosts } from "~/data";
 
 const posts = allPosts.filter((p) => p.category === "til");

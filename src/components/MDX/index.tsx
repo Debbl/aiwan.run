@@ -4,6 +4,11 @@ import { HeadingLink, Image, Pre } from "~/components/MDX";
 import MDXSandpack from "~/components/MDX/MDXSandpack";
 import type { SandpackProps } from "~/types";
 
+export { default as Pre } from "./Pre";
+export { default as Image } from "./Image";
+export { default as HeadingLink } from "./HeadingLink";
+
+// eslint-disable-next-line react-refresh/only-export-components
 export function getMDXComponents(): MDXComponents {
   return {
     h1: (props) => (

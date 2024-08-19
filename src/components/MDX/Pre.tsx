@@ -2,7 +2,7 @@ import type { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 import { bundledLanguages, getHighlighter } from "shiki";
 import { cn } from "twl";
 import parse from "html-react-parser";
-import CopyButton from "../CopyButton";
+import CopyButton from "./CopyButton";
 
 const languagePrefix = "language-";
 const highlighter = await getHighlighter({
