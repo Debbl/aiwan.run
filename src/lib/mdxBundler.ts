@@ -1,7 +1,5 @@
 import { bundleMDX } from "mdx-bundler";
 import remarkGfm from "remark-gfm";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import { rehypePicture, remarkHeadings } from "./MDXPlugins";
 
 export interface Frontmatter {
@@ -18,8 +16,6 @@ export async function mdxBundler(file: string) {
         ...(options.remarkPlugins ?? []),
         [remarkHeadings, { isRemoteContent: false }],
         remarkGfm,
-        remarkFrontmatter,
-        remarkMdxFrontmatter,
       ];
       options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypePicture];
 
