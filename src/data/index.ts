@@ -28,7 +28,11 @@ export async function getAllPosts() {
     }),
   );
 
-  return posts;
+  return posts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime(),
+  );
 }
 
 export const allPosts = await getAllPosts();
