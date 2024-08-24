@@ -31,8 +31,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const Component = getMDXComponent(post.code || "");
 
   return (
-    <article className="px-40">
-      <Component components={getMDXComponents()} />
-    </article>
+    <main className="px-40 py-10">
+      <article>
+        <Component components={getMDXComponents()} />
+      </article>
+      <footer>
+        <span className="font-bold opacity-50">&gt; </span>
+        <a href="/posts" className="font-mono opacity-50 hover:opacity-75">
+          cd ..
+        </a>
+      </footer>
+    </main>
   );
 }
