@@ -39,7 +39,7 @@ export default async function Page() {
                       key={post.slug}
                     >
                       <li
-                        className="text-gray-900 hover:text-primary"
+                        className="text-gray-900 dark:text-gray-50 dark:hover:text-primary"
                         data-umami-event={`click-posts-${post.slug}`}
                       >
                         <span>{post.frontmatter.title}</span>
