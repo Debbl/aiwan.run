@@ -64,7 +64,7 @@ const projects: Projects = {
       {
         name: "Code Diff",
         link: "https://tools.aiwan.run/code-diff/",
-        favicon: "https://tools.aiwan.run/code-diff/logo.svg",
+        favicon: "https://tools.aiwan.run/code-diff/icon.svg",
         desc: "A code diff tool.",
       },
       {
