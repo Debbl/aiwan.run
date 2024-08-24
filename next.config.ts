@@ -6,18 +6,6 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-// const withMDX = createMDX({
-//   options: {
-//     remarkPlugins: [
-//       [remarkHeadings, { isRemoteContent: false }],
-//       remarkGfm,
-//       remarkFrontmatter,
-//       remarkMdxFrontmatter,
-//     ],
-//     rehypePlugins: [rehypePicture],
-//   },
-// });
-
 const nextConfig: NextConfig = {
   output: "export",
   cleanDistDir: true,
