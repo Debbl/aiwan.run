@@ -42,9 +42,9 @@ export const remarkHeadings: Plugin<
         // verify .md/.mdx exports and attach named __toc export
         "mdxjsEsm",
       ],
-      (node, _index, parent) => {
+      (node, index, parent) => {
         if (node.type === "heading") {
-          if (node.depth === 1) {
+          if (node.depth === 1 && index) {
             const hasJsx = node.children.some(
               (child: { type: string }) => child.type === "mdxJsxTextElement",
             );
@@ -52,6 +52,7 @@ export const remarkHeadings: Plugin<
               hasJsxInH1 = true;
             }
             title ||= getFlattenedValue(node);
+            tree.children.splice(index, 1);
             return;
           }
 

@@ -11,12 +11,6 @@ export { default as HeadingLink } from "./HeadingLink";
 // eslint-disable-next-line react-refresh/only-export-components
 export function getMDXComponents(): MDXComponents {
   return {
-    h1: (props) => (
-      <h1
-        className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
-        {...props}
-      />
-    ),
     h2: (props) => <HeadingLink tag="h2" {...props} />,
     h3: (props) => <HeadingLink tag="h3" {...props} />,
     h4: (props) => <HeadingLink tag="h4" {...props} />,
