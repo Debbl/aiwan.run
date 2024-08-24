@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import type { Posts } from "./data";
 import { getAllPosts } from "./data";
 
@@ -30,14 +31,25 @@ export default async function Page() {
             {postsByCategory.map((category) => (
               <div className="mt-8" key={category.title} title={category.title}>
                 <h2 className="text-3xl font-bold">{category.title}</h2>
-                <ul>
+                <ul className="mt-4 flex flex-col gap-y-2">
                   {category.posts.map((post) => (
-                    <li
-                      data-umami-event={`click-posts-${post.slug}`}
+                    <a
+                      className="opacity-60 hover:opacity-100"
+                      href={post.url}
                       key={post.slug}
                     >
-                      <a href={post.url}>{post.frontmatter.title}</a>
-                    </li>
+                      <li
+                        className="text-gray-900 hover:text-primary"
+                        data-umami-event={`click-posts-${post.slug}`}
+                      >
+                        <span>{post.frontmatter.title}</span>
+                        <span className="ml-4 text-xs text-gray-500">
+                          {format(post.frontmatter.date, "MM-dd")}
+                          {" · "}
+                          {post.frontmatter.duration}
+                        </span>
+                      </li>
+                    </a>
                   ))}
                 </ul>
               </div>

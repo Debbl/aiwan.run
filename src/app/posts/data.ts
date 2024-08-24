@@ -8,6 +8,7 @@ export interface Post {
   frontmatter: {
     date: string;
     title: string;
+    duration: string;
   };
   category: Category;
   slug: string;
