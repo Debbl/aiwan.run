@@ -13,19 +13,9 @@ const nav: {
   "icon"?: IconType;
 }[] = [
   {
-    "url": "/",
-    "name": "Home",
-    "data-umami-event": "click-home-link",
-  },
-  {
     "url": "/posts",
     "name": "Blog",
     "data-umami-event": "click-blog-link",
-  },
-  {
-    "url": "/til",
-    "name": "TIL",
-    "data-umami-event": "click-blog-til",
   },
   {
     "url": "/feed.xml",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "~/styles/globals.css";
+import { NextUIProvider } from "@nextui-org/react";
 import ThemeProvider from "~/components/ThemeProvider";
 import Header from "~/components/Header";
 import { WEBSITE } from "~/constants";
@@ -44,8 +45,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
+          <NextUIProvider>
+            <Header />
+            {children}
+          </NextUIProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,16 +1,16 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import type { Metadata } from "next";
+import { getAllPosts } from "../data";
 import { getMDXComponents } from "~/components/MDX";
-import { allPosts } from "~/data";
 
-const posts = allPosts.filter((p) => p.category === "til");
+const allPosts = await getAllPosts();
 
 export function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Metadata {
-  const post = posts.find((p) => p.slug === params.slug)!;
+  const post = allPosts.find((p) => p.slug === params.slug)!;
 
   if (!post) return {};
 
@@ -20,13 +20,13 @@ export function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return posts.map((post) => ({
+  return allPosts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const post = posts.find((p) => p.slug === params.slug)!;
+export default async function Page({ params }: { params: { slug: string } }) {
+  const post = allPosts.find((p) => p.slug === params.slug)!;
 
   const Component = getMDXComponent(post.code || "");
 
