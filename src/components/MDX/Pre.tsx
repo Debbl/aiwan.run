@@ -1,4 +1,4 @@
-import type { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import { bundledLanguages, getHighlighter } from "shiki";
 import { cn } from "twl";
 import parse from "html-react-parser";
@@ -25,17 +25,12 @@ function getLang(className?: string) {
   return lang;
 }
 
-export default function CodeHighlight(
-  props: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement> & {
-    children: ReactElement;
-  },
-) {
-  if (props?.children?.type !== "code") return <pre {...props} />;
-
-  const codeElement = props.children;
-
-  const code: string = codeElement.props.children;
-  const lang = getLang(codeElement.props.className);
+export default function CodeHighlight({
+  children,
+  ...props
+}: ComponentProps<"pre"> & { children: ReactElement }): ReactElement {
+  const code: string = children.props.children;
+  const lang = getLang(children.props.className);
 
   if (!langs.includes(lang)) return <pre {...props} />;
 

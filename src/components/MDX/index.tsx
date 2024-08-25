@@ -1,5 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { cn } from "twl";
+import { Link } from "./Link";
+import { Code } from "./Code";
 import { HeadingLink, Image, Pre } from "~/components/MDX";
 import MDXSandpack from "~/components/MDX/MDXSandpack";
 import type { SandpackProps } from "~/types";
@@ -29,7 +31,7 @@ export function getMDXComponents(): MDXComponents {
     blockquote: (props) => (
       <blockquote
         className={cn(
-          "mt-6 border-gray-300 italic text-gray-700 dark:border-gray-700 dark:text-gray-400",
+          "mt-6 border-gray-300 mb-4 italic px-4 border-l-2 text-gray-700 dark:border-gray-700 dark:text-gray-400",
           "first:mt-0 ltr:border-l-2 ltr:pl-6 rtl:border-r-2 rtl:pr-6",
         )}
         {...props}
@@ -55,6 +57,7 @@ export function getMDXComponents(): MDXComponents {
 
       return <MDXSandpack files={files} {..._props} />;
     },
+    a: Link,
     img: (props: any) => {
       const src = props.src.startsWith("ipfs")
         ? `/images/${props.src.slice(7)}.png`
@@ -63,5 +66,6 @@ export function getMDXComponents(): MDXComponents {
       return <Image {...props} src={src} />;
     },
     pre: (props: any) => <Pre {...props} />,
+    code: Code,
   };
 }
