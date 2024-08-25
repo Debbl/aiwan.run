@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const Component = getMDXComponent(post.code || "");
 
   return (
-    <main className="px-40 py-10">
+    <main className="px-60 py-10">
       <article>
         <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
           {post.frontmatter.title}

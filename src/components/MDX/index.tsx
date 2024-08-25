@@ -2,12 +2,13 @@ import type { MDXComponents } from "mdx/types";
 import { cn } from "twl";
 import { Link } from "./Link";
 import { Code } from "./Code";
-import { HeadingLink, Image, Pre } from "~/components/MDX";
+import Img from "./Img";
+import { HeadingLink, Pre } from "~/components/MDX";
 import MDXSandpack from "~/components/MDX/MDXSandpack";
 import type { SandpackProps } from "~/types";
 
 export { default as Pre } from "./Pre";
-export { default as Image } from "./Image";
+export { default as Image } from "./Img";
 export { default as HeadingLink } from "./HeadingLink";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -58,13 +59,8 @@ export function getMDXComponents(): MDXComponents {
       return <MDXSandpack files={files} {..._props} />;
     },
     a: Link,
-    img: (props: any) => {
-      const src = props.src.startsWith("ipfs")
-        ? `/images/${props.src.slice(7)}.png`
-        : props.src;
-
-      return <Image {...props} src={src} />;
-    },
+    p: (props) => <p className="mt-6 leading-7 first:mt-0" {...props} />,
+    img: Img,
     pre: (props: any) => <Pre {...props} />,
     code: Code,
   };
