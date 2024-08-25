@@ -6,6 +6,15 @@ duration: 3min
 
 # playground
 
+```json filename=".vscode/settings.json"
+{
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  "flow.enabled": true,
+  "flow.useNPMPackagedFlow": true
+}
+```
+
 <Sandpack template="react">
 
 ```js filename="App.js"

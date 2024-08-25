@@ -4,8 +4,8 @@ import { globbySync } from "globby";
 import type { CompileMDXResult } from "next-mdx-remote/rsc";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
-import { remarkHeadings } from "~/lib/MDXPlugins";
-import { getMDXComponents } from "~/components/MDX";
+import { getMDXComponents } from "./components";
+import { rehypePre, remarkHeadings } from "~/lib/MDXPlugins";
 
 export type Category = "blog" | "til";
 
@@ -44,7 +44,7 @@ export async function getAllPosts(): Promise<Posts> {
               [remarkHeadings, { isRemoteContent: false }],
               remarkGfm,
             ],
-            rehypePlugins: [],
+            rehypePlugins: [rehypePre],
             format: "mdx",
           },
           parseFrontmatter: true,

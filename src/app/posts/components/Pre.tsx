@@ -25,14 +25,27 @@ function getLang(className?: string) {
   return lang;
 }
 
+function parseMeta(meta?: string) {
+  if (!meta) return {};
+
+  const filenameRegex = /filename="(.+)"/;
+
+  return {
+    filename: filenameRegex.test(meta) ? meta.match(filenameRegex)![1] : "",
+  };
+}
+
 export default function CodeHighlight({
   children,
   ...props
-}: ComponentProps<"pre">): ReactElement {
+}: ComponentProps<"pre"> & {
+  meta?: string;
+}): ReactElement {
   if (!children || !isValidElement(children)) return <pre {...props} />;
 
   const code: string = children.props.children;
   const lang = getLang(children.props.className);
+  const { filename } = parseMeta(props.meta);
 
   if (!langs.includes(lang)) return <pre {...props} />;
 
@@ -44,18 +57,25 @@ export default function CodeHighlight({
   const preJSXElement = parse(renderedHTML) as JSX.Element;
 
   return (
-    <div className={cn(`language-${lang}`, "group relative")}>
-      <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
-        {lang === "log" ? "" : lang}
-      </span>
-      <CopyButton
-        className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 transition-opacity hover:bg-gray-700 group-hover:opacity-100"
-        lang={lang}
-        code={code}
-      />
-      <figure className="my-4">
-        <pre {...preJSXElement.props} className="rounded-md p-4" />
-      </figure>
+    <div className="relative mt-6 overflow-hidden rounded-xl first:mt-0">
+      {filename && (
+        <div className="top-0 z-[1] w-full truncate bg-primary-700/5 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
+          {filename}
+        </div>
+      )}
+      <div className={cn(`language-${lang}`, "group relative")}>
+        <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
+          {lang === "log" ? "" : lang}
+        </span>
+        <CopyButton
+          className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 transition-opacity hover:bg-gray-700 group-hover:opacity-100"
+          lang={lang}
+          code={code}
+        />
+        <figure>
+          <pre {...preJSXElement.props} className="p-4" />
+        </figure>
+      </div>
     </div>
   );
 }

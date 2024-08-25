@@ -44,7 +44,7 @@ export const remarkHeadings: Plugin<
       ],
       (node, index, parent) => {
         if (node.type === "heading") {
-          if (node.depth === 1 && index) {
+          if (node.depth === 1 && typeof index === "number") {
             const hasJsx = node.children.some(
               (child: { type: string }) => child.type === "mdxJsxTextElement",
             );

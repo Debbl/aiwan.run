@@ -32,9 +32,7 @@ code react
 
 因为 react 是使用 [flow](https://flow.org/) 语言（类似 ts ）写的所以需要在 VSCode 提供相关语言的支持在 VSCode 中下载 flow 语言的插件 [flow-for-vscode](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode)
 
-> .vscode/extensions.json
-
-```json
+```json filename=".vscode/extensions.json"
 {
   "recommendations": ["flowtype.flow-for-vscode"]
 }
@@ -44,9 +42,7 @@ code react
 
 在本地的打开的仓库的根目录创建下面这个文件
 
-> .vscode/settings.json
-
-```json
+```json filename=".vscode/settings.json"
 {
   "javascript.validate.enable": false,
   "typescript.validate.enable": false,
@@ -157,9 +153,7 @@ yarn build
 
 这里需要替换一下 `input.js` 文件，新版 ReactDom 里没有 render 函数了
 
-> fixtures/packaging/webpack/dev/input.js
-
-```js
+```js filename="fixtures/packaging/webpack/dev/input.js"
 var React = require("react");
 var ReactDOM = require("react-dom");
 
