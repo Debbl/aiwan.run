@@ -5,7 +5,7 @@ import { Code } from "./Code";
 import Img from "./Img";
 import HeadingLink from "./HeadingLink";
 import Pre from "./Pre";
-import MDXSandpack from "~/components/MDX/MDXSandpack";
+import Sandpack from "./Sandpack";
 import type { SandpackProps } from "~/types";
 
 export function getMDXComponents(): MDXComponents {
@@ -35,6 +35,8 @@ export function getMDXComponents(): MDXComponents {
       />
     ),
     hr: (props) => <hr {...props} />,
+    a: Link,
+    p: (props) => <p className="mt-6 leading-7 first:mt-0" {...props} />,
     Sandpack: (props: SandpackProps) => {
       const { children, ..._props } = props;
 
@@ -52,10 +54,8 @@ export function getMDXComponents(): MDXComponents {
         files[filename] = fileContent;
       }
 
-      return <MDXSandpack files={files} {..._props} />;
+      return <Sandpack files={files} {..._props} />;
     },
-    a: Link,
-    p: (props) => <p className="mt-6 leading-7 first:mt-0" {...props} />,
     img: Img,
     pre: (props: any) => <Pre {...props} />,
     code: Code,

@@ -5,3 +5,19 @@ duration: 3min
 ---
 
 # playground
+
+<Sandpack template="react">
+
+```js filename="App.js"
+import React from "react";
+
+export default function App() {
+  return <div>hi</div>;
+}
+```
+
+```js filename="t.js"
+console.log(112);
+```
+
+</Sandpack>

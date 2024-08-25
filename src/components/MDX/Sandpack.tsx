@@ -1,15 +1,15 @@
 "use client";
 import type { SandpackInternal } from "@codesandbox/sandpack-react";
-import { Sandpack } from "@codesandbox/sandpack-react";
+import { Sandpack as CodeSandboxSandpack } from "@codesandbox/sandpack-react";
 import { useTheme } from "next-themes";
 
-const MDXSandpack: SandpackInternal = (props) => {
+const Sandpack: SandpackInternal = (props) => {
   const { theme: _theme } = useTheme();
   const theme = _theme === "dark" ? "dark" : "light";
 
   return (
     <div className="m-4">
-      <Sandpack
+      <CodeSandboxSandpack
         theme={theme}
         options={{
           showConsoleButton: true,
@@ -20,4 +20,4 @@ const MDXSandpack: SandpackInternal = (props) => {
   );
 };
 
-export default MDXSandpack;
+export default Sandpack;
