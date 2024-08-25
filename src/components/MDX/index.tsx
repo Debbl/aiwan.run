@@ -3,15 +3,11 @@ import { cn } from "twl";
 import { Link } from "./Link";
 import { Code } from "./Code";
 import Img from "./Img";
-import { HeadingLink, Pre } from "~/components/MDX";
+import HeadingLink from "./HeadingLink";
+import Pre from "./Pre";
 import MDXSandpack from "~/components/MDX/MDXSandpack";
 import type { SandpackProps } from "~/types";
 
-export { default as Pre } from "./Pre";
-export { default as Image } from "./Img";
-export { default as HeadingLink } from "./HeadingLink";
-
-// eslint-disable-next-line react-refresh/only-export-components
 export function getMDXComponents(): MDXComponents {
   return {
     h2: (props) => <HeadingLink tag="h2" {...props} />,
