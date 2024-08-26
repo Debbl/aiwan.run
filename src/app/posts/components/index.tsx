@@ -2,10 +2,10 @@ import type { MDXComponents } from "mdx/types";
 import { cn } from "twl";
 import { Link } from "./Link";
 import { Code } from "./Code";
-import Img from "./Img";
-import HeadingLink from "./HeadingLink";
-import Pre from "./Pre";
-import Sandpack from "./Sandpack";
+import { Image } from "./Image";
+import { HeadingLink } from "./HeadingLink";
+import { Pre } from "./Pre";
+import { Sandpack } from "./Sandpack";
 import type { SandpackProps } from "~/types";
 
 export function getMDXComponents(): MDXComponents {
@@ -56,7 +56,7 @@ export function getMDXComponents(): MDXComponents {
 
       return <Sandpack files={files} {..._props} />;
     },
-    img: Img,
+    Image,
     pre: (props: any) => <Pre {...props} />,
     code: Code,
   };

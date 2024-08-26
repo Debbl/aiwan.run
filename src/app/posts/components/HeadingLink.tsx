@@ -1,8 +1,7 @@
 import type { ComponentProps, ReactElement } from "react";
 import { cn } from "twl";
 
-// Anchor links
-export default function HeadingLink({
+export function HeadingLink({
   tag: Tag,
   children,
   id,

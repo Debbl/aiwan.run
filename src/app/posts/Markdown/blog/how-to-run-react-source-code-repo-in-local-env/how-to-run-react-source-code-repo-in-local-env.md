@@ -8,11 +8,11 @@ duration: 10min
 
 ## fork 官方仓库 [facebook/react](https://github.com/facebook/react)
 
-![image](ipfs://QmcsDSZx9dHhRpFbvZ48DfATf58WPWFApMEdNjAbmz8ELe)
+![image](./images/QmcsDSZx9dHhRpFbvZ48DfATf58WPWFApMEdNjAbmz8ELe.png)
 
 通常开源的项目里都有一个 [CONTRIBUTING.md](https://github.com/facebook/react/blob/main/CONTRIBUTING.md) 文件，来让其他的开发者知道如何贡献这个项目，或者看这个项目的 [.github/workflows](https://github.com/facebook/react/tree/main/.github/workflows) 里的一些运行测试、发布的 action 都可以找到运行这个项目的有效信息
 
-![image](ipfs://QmPZHL6qT2JWWdpUHo2ZDtLxvSnkNV9KjAKbiXG854fY9V)
+![image](./images//QmPZHL6qT2JWWdpUHo2ZDtLxvSnkNV9KjAKbiXG854fY9V.png)
 
 本地下载克隆的仓库
 
@@ -57,17 +57,17 @@ code react
 
 > 这里可以直接参考 [contribution-prerequisites](https://legacy.reactjs.org/docs/how-to-contribute.html#contribution-prerequisites) 的官方文档，但是有几个需要注意的地方
 
-![image](ipfs://QmUkjkLMegL8xJ9fL2FMfh8SCuLGMxH783y9UKHubQW9TM)
+![image](./images/QmUkjkLMegL8xJ9fL2FMfh8SCuLGMxH783y9UKHubQW9TM.png)
 
 - `.nvmrc` 里对应的 node 版本，最好安装对应的版本
 - `package.json` 的 `packageManager` 有对应的 yarn 版本
 - java 环境没有明确说什么版本，我这里安装的是 `java 17.0.11 2024-04-16 LTS`
 
-![image](ipfs://QmZxuLTig5LVXg5FhQeDr6kKiNqNfUkQJaPMWgCT9dwFci)
+![image](./images//QmZxuLTig5LVXg5FhQeDr6kKiNqNfUkQJaPMWgCT9dwFci.png)
 
 - gcc 环境
 
-![image](ipfs://QmbomvCX1PQFtJpihRJ1uRmWruPubWNS5cZ41nrqmucVou)
+![image](./images//QmbomvCX1PQFtJpihRJ1uRmWruPubWNS5cZ41nrqmucVou.png)
 
 ## 安装依赖，环境检查
 
@@ -93,7 +93,7 @@ yarn flow
 
 这里直接运行这个命令会要求选择对应的环境
 
-![image](ipfs://QmerKgfnxrCS3MEWLY3hhyXU8baV4jgAxduqQVTDNoDipG)
+![image](./images//QmerKgfnxrCS3MEWLY3hhyXU8baV4jgAxduqQVTDNoDipG.png)
 
 这里使用 `dom-node` 环境
 
@@ -103,17 +103,17 @@ yarn flow dom-node
 
 执行完成之后会发现在根目录多了一个 `.flowconfig` 文件
 
-![image](ipfs://QmaspMPgycpVnupZhzvWpjKxAmnDPzM4rzdVjFjixnWPkC)
+![image](./images//QmaspMPgycpVnupZhzvWpjKxAmnDPzM4rzdVjFjixnWPkC.png)
 
 ### 检查 flow 有没有生效
 
-![image](ipfs://QmQa4sp3sXyBigJPrtFREdAGsSRVsw5bhrwrAHbKbC7pNo)
+![image](./images//QmQa4sp3sXyBigJPrtFREdAGsSRVsw5bhrwrAHbKbC7pNo.png)
 
-![image](ipfs://QmWwXuTQ2MY6wJBGBSr8VM2kbqWwBnFCgrrVd3eNBaLjwx)
+![image](./images/QmWwXuTQ2MY6wJBGBSr8VM2kbqWwBnFCgrrVd3eNBaLjwx.png)
 
-![image](ipfs://QmQN843uyvaXGUuKiESv7RjyciDsUH9pPpd9yTk7zwL9Jn)
+![image](./images/QmQN843uyvaXGUuKiESv7RjyciDsUH9pPpd9yTk7zwL9Jn.png)
 
-![image](ipfs://QmSBfqz3f7Wkn59eiX6pJKjD1cf4mKf8jgPxVf4TZqixmm)
+![image](./images/QmSBfqz3f7Wkn59eiX6pJKjD1cf4mKf8jgPxVf4TZqixmm.png)
 
 完成之后 VSCode 就会有提示了
 
@@ -123,13 +123,13 @@ yarn flow dom-node
 yarn test
 ```
 
-![image](ipfs://QmbNyRdXGQtvEBj3pA9NP455sPjssnAHTyTkH47f5XsuQN)
+![image](./images/QmbNyRdXGQtvEBj3pA9NP455sPjssnAHTyTkH47f5XsuQN.png)
 
 ## 本地运行打包好的 react
 
 > 可以参考文档的 [development-workflow](https://legacy.reactjs.org/docs/how-to-contribute.html#development-workflow)
 
-![image](ipfs://QmPFc2xmfiWsZ2VATAqGo5dMZYxPFWg3xQiK6opKVB2MXo)
+![image](./images/QmPFc2xmfiWsZ2VATAqGo5dMZYxPFWg3xQiK6opKVB2MXo.png)
 
 ```bash
 cd build/oss-experimental/react
@@ -175,4 +175,4 @@ root.render(React.createElement("h1", null, "Hello World!"));
 
 使用 [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)打开 `fixtures/packaging/webpack/dev/index.html`
 
-![image](ipfs://QmeyKSBXnpdPUivN7owwis8kz2DxnjAk9JyD3PVMENU59v)
+![image](./images/QmeyKSBXnpdPUivN7owwis8kz2DxnjAk9JyD3PVMENU59v.png)

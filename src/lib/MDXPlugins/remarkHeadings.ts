@@ -10,7 +10,7 @@ const getFlattenedValue = (node: Parent): string =>
   node.children
     .map((child) =>
       "children" in child
-        ? getFlattenedValue(child)
+        ? getFlattenedValue(child as Parent)
         : "value" in child
           ? child.value
           : "",

@@ -6,6 +6,8 @@ duration: 3min
 
 # playground
 
+![](./images/1.png)
+
 ```json filename=".vscode/settings.json"
 {
   "javascript.validate.enable": false,

@@ -11,6 +11,9 @@ dependencies:
   '@debbl/ahooks':
     specifier: ^0.2.2
     version: 0.2.2(react@18.3.1)
+  '@debbl/utils':
+    specifier: ^0.2.2
+    version: 0.2.2
   '@mdx-js/loader':
     specifier: ^3.0.1
     version: 3.0.1(webpack@5.94.0)
@@ -65,9 +68,15 @@ dependencies:
   rss:
     specifier: ^1.2.2
     version: 1.2.2
+  slash:
+    specifier: ^5.1.0
+    version: 5.1.0
   twl:
     specifier: 0.0.0-alpha.5
     version: 0.0.0-alpha.5
+  vfile:
+    specifier: ^6.0.2
+    version: 6.0.2
 
 devDependencies:
   '@debbl/eslint-config':
@@ -686,6 +695,10 @@ packages:
       - typescript
       - vitest
     dev: true
+
+  /@debbl/utils@0.2.2:
+    resolution: {integrity: sha512-0tXSryDKT8Z64SU6ongtatb8G8EFf9v+TcpUGnY7QLfVCfG2GUOlpGYauc3kKcQRQNyqylH/bofT9B17DNrG7A==}
+    dev: false
 
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -11091,7 +11104,6 @@ packages:
   /slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
-    dev: true
 
   /slashes@3.0.12:
     resolution: {integrity: sha512-Q9VME8WyGkc7pJf6QEkj3wE+2CnvZMI+XJhwdTPR8Z/kWQRXi7boAWLDibRPyHRTUTPx5FaU7MsyrjI3yLB4HA==}

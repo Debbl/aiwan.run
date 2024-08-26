@@ -35,7 +35,7 @@ function parseMeta(meta?: string) {
   };
 }
 
-export default function CodeHighlight({
+export function Pre({
   children,
   ...props
 }: ComponentProps<"pre"> & {
