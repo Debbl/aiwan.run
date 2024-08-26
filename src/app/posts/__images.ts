@@ -1,34 +1,34 @@
 // this file is generated automatically
-import __img_how_to_run_react_source_code_repo_in_local_env_QmPFc2xmfiWsZ2VATAqGo5dMZYxPFWg3xQiK6opKVB2MXo from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmPFc2xmfiWsZ2VATAqGo5dMZYxPFWg3xQiK6opKVB2MXo.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmPZHL6qT2JWWdpUHo2ZDtLxvSnkNV9KjAKbiXG854fY9V from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmPZHL6qT2JWWdpUHo2ZDtLxvSnkNV9KjAKbiXG854fY9V.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmQN843uyvaXGUuKiESv7RjyciDsUH9pPpd9yTk7zwL9Jn from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmQN843uyvaXGUuKiESv7RjyciDsUH9pPpd9yTk7zwL9Jn.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmQa4sp3sXyBigJPrtFREdAGsSRVsw5bhrwrAHbKbC7pNo from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmQa4sp3sXyBigJPrtFREdAGsSRVsw5bhrwrAHbKbC7pNo.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmSBfqz3f7Wkn59eiX6pJKjD1cf4mKf8jgPxVf4TZqixmm from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmSBfqz3f7Wkn59eiX6pJKjD1cf4mKf8jgPxVf4TZqixmm.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmUkjkLMegL8xJ9fL2FMfh8SCuLGMxH783y9UKHubQW9TM from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmUkjkLMegL8xJ9fL2FMfh8SCuLGMxH783y9UKHubQW9TM.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmWwXuTQ2MY6wJBGBSr8VM2kbqWwBnFCgrrVd3eNBaLjwx from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmWwXuTQ2MY6wJBGBSr8VM2kbqWwBnFCgrrVd3eNBaLjwx.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmZxuLTig5LVXg5FhQeDr6kKiNqNfUkQJaPMWgCT9dwFci from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmZxuLTig5LVXg5FhQeDr6kKiNqNfUkQJaPMWgCT9dwFci.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmaspMPgycpVnupZhzvWpjKxAmnDPzM4rzdVjFjixnWPkC from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmaspMPgycpVnupZhzvWpjKxAmnDPzM4rzdVjFjixnWPkC.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmbNyRdXGQtvEBj3pA9NP455sPjssnAHTyTkH47f5XsuQN from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmbNyRdXGQtvEBj3pA9NP455sPjssnAHTyTkH47f5XsuQN.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmbomvCX1PQFtJpihRJ1uRmWruPubWNS5cZ41nrqmucVou from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmbomvCX1PQFtJpihRJ1uRmWruPubWNS5cZ41nrqmucVou.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmcsDSZx9dHhRpFbvZ48DfATf58WPWFApMEdNjAbmz8ELe from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmcsDSZx9dHhRpFbvZ48DfATf58WPWFApMEdNjAbmz8ELe.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmerKgfnxrCS3MEWLY3hhyXU8baV4jgAxduqQVTDNoDipG from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmerKgfnxrCS3MEWLY3hhyXU8baV4jgAxduqQVTDNoDipG.png";
-import __img_how_to_run_react_source_code_repo_in_local_env_QmeyKSBXnpdPUivN7owwis8kz2DxnjAk9JyD3PVMENU59v from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/QmeyKSBXnpdPUivN7owwis8kz2DxnjAk9JyD3PVMENU59v.png";
-import __img_playground_1 from "./Markdown/blog/playground/images/1.png";
+import img_9375f73 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/flow-config.png";
+import img_32e8459 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/fork-github-repo.png";
+import img_81374c0 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/gcc-version.png";
+import img_37637b4 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/java-version.png";
+import img_7b84967 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/react-build-and-link.png";
+import img_1253c99 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/react-contribution-prerequisites.png";
+import img_6c4413d from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/react-github-contributing.png";
+import img_23ca16f from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/react-run-done.png";
+import img_491da16 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/react-test.png";
+import img_cdfeeda from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/vscode-flow-is-ready.png";
+import img_cd40eeb from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/vscode-flow-reset-client.png";
+import img_e373be2 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/vscode-flow-show-client-status.png";
+import img_349da05 from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/vscode-select-react-flow-config.png";
+import img_90a9ceb from "./Markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/yarn-flow.png";
+import img_6f6b189 from "./Markdown/blog/playground/images/1.png";
 
 export const __images = {
-  __img_how_to_run_react_source_code_repo_in_local_env_QmPFc2xmfiWsZ2VATAqGo5dMZYxPFWg3xQiK6opKVB2MXo,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmPZHL6qT2JWWdpUHo2ZDtLxvSnkNV9KjAKbiXG854fY9V,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmQN843uyvaXGUuKiESv7RjyciDsUH9pPpd9yTk7zwL9Jn,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmQa4sp3sXyBigJPrtFREdAGsSRVsw5bhrwrAHbKbC7pNo,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmSBfqz3f7Wkn59eiX6pJKjD1cf4mKf8jgPxVf4TZqixmm,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmUkjkLMegL8xJ9fL2FMfh8SCuLGMxH783y9UKHubQW9TM,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmWwXuTQ2MY6wJBGBSr8VM2kbqWwBnFCgrrVd3eNBaLjwx,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmZxuLTig5LVXg5FhQeDr6kKiNqNfUkQJaPMWgCT9dwFci,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmaspMPgycpVnupZhzvWpjKxAmnDPzM4rzdVjFjixnWPkC,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmbNyRdXGQtvEBj3pA9NP455sPjssnAHTyTkH47f5XsuQN,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmbomvCX1PQFtJpihRJ1uRmWruPubWNS5cZ41nrqmucVou,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmcsDSZx9dHhRpFbvZ48DfATf58WPWFApMEdNjAbmz8ELe,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmerKgfnxrCS3MEWLY3hhyXU8baV4jgAxduqQVTDNoDipG,
-  __img_how_to_run_react_source_code_repo_in_local_env_QmeyKSBXnpdPUivN7owwis8kz2DxnjAk9JyD3PVMENU59v,
-  __img_playground_1,
+  img_9375f73,
+  img_32e8459,
+  img_81374c0,
+  img_37637b4,
+  img_7b84967,
+  img_1253c99,
+  img_6c4413d,
+  img_23ca16f,
+  img_491da16,
+  img_cdfeeda,
+  img_cd40eeb,
+  img_e373be2,
+  img_349da05,
+  img_90a9ceb,
+  img_6f6b189,
 };

@@ -1,5 +1,6 @@
 import path from "node:path";
 import { readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { globbySync } from "globby";
 import type { CompileMDXResult } from "next-mdx-remote/rsc";
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -43,10 +44,16 @@ const images = globbySync(`${rootPath}/**/*.png`).map((p) => {
       "_",
     ) as keyof typeof __images;
 
+  const hash = createHash("sha256")
+    .update(key)
+    .digest("hex")
+    .substring(0, 7)
+    .padStart(11, "img_") as keyof typeof __images;
+
   return {
-    key,
+    key: hash,
     path: `./${path.relative(path.join(__imagesPath, ".."), p)}`,
-    props: __images[key],
+    props: __images[hash],
   };
 });
 

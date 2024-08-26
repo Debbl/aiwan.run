@@ -1,4 +1,5 @@
 import path from "node:path";
+import { createHash } from "node:crypto";
 import type { Root } from "mdast";
 import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
@@ -11,6 +12,12 @@ export const remarkStaticImage: Plugin<[], Root> = () => (tree, file, done) => {
       "-",
       "_",
     );
+
+    const hash = createHash("sha256")
+      .update(imgKey)
+      .digest("hex")
+      .substring(0, 7)
+      .padStart(11, "img_");
 
     if (parent && typeof index === "number") {
       parent.children[index] = {
@@ -38,7 +45,7 @@ export const remarkStaticImage: Plugin<[], Root> = () => (tree, file, done) => {
           {
             type: "mdxJsxAttribute",
             name: "imgKey",
-            value: imgKey,
+            value: hash,
           },
         ],
       } as any;
