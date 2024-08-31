@@ -1,11 +1,11 @@
 import { type ComponentProps, type ReactElement, isValidElement } from "react";
-import { bundledLanguages, getHighlighter } from "shiki";
+import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "twl";
 import parse from "html-react-parser";
 import CopyButton from "./CopyButton";
 
 const languagePrefix = "language-";
-const highlighter = await getHighlighter({
+const highlighter = await createHighlighter({
   themes: ["one-dark-pro"],
   langs: Object.keys(bundledLanguages),
 });
