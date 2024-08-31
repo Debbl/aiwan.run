@@ -14,9 +14,7 @@ duration: 3min
 
 默认 `pnpm` 在 `node_modules` 只会暴露在 `package.json` 里指定的依赖，不会像 `npm` 一样，暴露依赖包括依赖的依赖。
 
-> .npmrc
-
-```
+```ini filename=".npmrc"
 shamefully-hoist=true
 ```
 
@@ -24,7 +22,7 @@ shamefully-hoist=true
 
 - https://pnpm.io/npmrc#public-hoist-pattern
 
-```
+```ini filename=".npmrc"
 hoist-pattern[]=*eslint*
 hoist-pattern[]=*babel*
 ```
@@ -35,7 +33,7 @@ hoist-pattern[]=*babel*
 
 - https://pnpm.io/npmrc#public-hoist-pattern
 
-```
+```ini filename=".npmrc"
 public-hoist-pattern[]=['*eslint*', '*prettier*']
 ```
 

@@ -9,10 +9,10 @@ const highlighter = await createHighlighter({
   themes: ["one-dark-pro"],
   langs: Object.keys(bundledLanguages),
 });
-const langs = highlighter.getLoadedLanguages();
+const langs = [...highlighter.getLoadedLanguages(), "text", "plain"];
 
 function getLang(className?: string) {
-  if (!className) return "log";
+  if (!className) return "plain";
 
   const classes: string[] = className.split(" ");
   const languageClass = classes.find(
@@ -21,7 +21,7 @@ function getLang(className?: string) {
   const lang =
     typeof languageClass === "string"
       ? languageClass.slice(languagePrefix.length)
-      : "log";
+      : "plain";
   return lang;
 }
 
@@ -59,13 +59,13 @@ export function Pre({
   return (
     <div className="relative mt-6 overflow-hidden rounded-xl first:mt-0">
       {filename && (
-        <div className="top-0 z-[1] w-full truncate bg-gray-300/30 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
+        <div className="top-0 z-[1] w-full truncate bg-gray-600/10 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
           {filename}
         </div>
       )}
       <div className={cn(`language-${lang}`, "group relative")}>
         <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
-          {lang === "log" ? "" : lang}
+          {lang}
         </span>
         <CopyButton
           className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 transition-opacity hover:bg-gray-700 group-hover:opacity-100"

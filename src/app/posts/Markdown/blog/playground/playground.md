@@ -6,6 +6,14 @@ duration: 3min
 
 # playground
 
+```
+public-hoist-pattern[]=['*eslint*', '*prettier*']
+```
+
+```ini filename=".npmrc"
+public-hoist-pattern[]=['*eslint*', '*prettier*']
+```
+
 ![](./images/1.png)
 
 ```json filename=".vscode/settings.json"
