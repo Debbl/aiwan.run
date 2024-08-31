@@ -8,7 +8,7 @@ export const Link = ({ href = "", ...props }: AnchorProps) => (
   <a
     href={href}
     target="_blank"
-    className="text-primary-600 underline decoration-from-font [text-underline-position:from-font]"
+    className="text-primary underline decoration-from-font [text-underline-position:from-font]"
     rel="noreferrer"
     {...props}
   >
