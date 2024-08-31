@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "twl";
 import { Icon } from "~/icons";
 
 export default function CopyButton({
@@ -33,7 +34,10 @@ export default function CopyButton({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
-      <Icon icon={isCopied ? "CarbonCheckmark" : "Copy"} />
+      <Icon
+        icon={isCopied ? "CarbonCheckmark" : "Copy"}
+        className={cn(isCopied && "text-green-500")}
+      />
     </motion.button>
   );
 }
