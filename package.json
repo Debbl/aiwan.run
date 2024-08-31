@@ -38,7 +38,7 @@
     "vfile": "^6.0.3"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^3.4.0",
+    "@debbl/eslint-config": "^3.5.0",
     "@next/bundle-analyzer": "^14.2.7",
     "@types/dom-view-transitions": "^1.0.5",
     "@types/hast": "^3.0.4",
@@ -50,7 +50,7 @@
     "@types/rss": "^0.0.32",
     "@types/unist": "^3.0.3",
     "autoprefixer": "^10.4.20",
-    "eslint": "8.57.0",
+    "eslint": "^9.9.1",
     "github-slugger": "^2.0.0",
     "glob": "^11.0.0",
     "globby": "^14.0.2",
