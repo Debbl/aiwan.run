@@ -1,6 +1,6 @@
 import { format } from "date-fns";
-import type { Posts } from "./data";
 import { getAllPosts } from "./data";
+import type { Posts } from "./types";
 
 export type PostsByCategory = {
   title: string;

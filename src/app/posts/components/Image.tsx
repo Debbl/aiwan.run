@@ -31,7 +31,12 @@ export function Image(
 
   return (
     <picture className="flex justify-center px-12">
-      <NextImage ref={imgRef} {...imageProps} alt="image" />
+      <NextImage
+        key={imageProps.src}
+        ref={imgRef}
+        {...imageProps}
+        alt="image"
+      />
     </picture>
   );
 }

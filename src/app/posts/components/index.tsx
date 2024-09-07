@@ -2,10 +2,10 @@ import type { MDXComponents } from "mdx/types";
 import { cn } from "twl";
 import { Link } from "./Link";
 import { Code } from "./Code";
-import { Image } from "./Image";
 import { HeadingLink } from "./HeadingLink";
 import { Pre } from "./Pre";
 import { Sandpack } from "./Sandpack";
+import { Image } from "./Image";
 import type { SandpackProps } from "~/types";
 
 export function getMDXComponents(): MDXComponents {
