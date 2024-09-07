@@ -1,3 +1,4 @@
+// @ts-check
 import bundleAnalyzer from "@next/bundle-analyzer";
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -8,6 +9,9 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  cleanDistDir: true,
+  reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     unoptimized: true,
   },

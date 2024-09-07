@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "~/style/globals.css";
+import "~/styles/globals.css";
 import ThemeProvider from "~/components/ThemeProvider";
 import Header from "~/components/Header";
 import { WEBSITE } from "~/constants";
@@ -37,7 +37,7 @@ export default function RootLayout({
           data-domains="aiwan.run"
         />
       </head>
-      <body className="flex flex-col">
+      <body className="flex h-full flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -29,7 +29,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    "next.config.mjs",
+    "src/app/posts/[slug]/layouta.tsx"
   ],
   "exclude": ["node_modules"]
 }

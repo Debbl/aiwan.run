@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import TheParticles from "./components/TheParticles";
 import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
 
@@ -65,7 +64,7 @@ const projects: Projects = {
       {
         name: "Code Diff",
         link: "https://tools.aiwan.run/code-diff/",
-        favicon: "https://tools.aiwan.run/code-diff/logo.svg",
+        favicon: "https://tools.aiwan.run/code-diff/icon.svg",
         desc: "A code diff tool.",
       },
       {
@@ -138,8 +137,6 @@ const FindMeLinks: {
 export default function Home() {
   return (
     <main className="relative flex-1 overflow-y-scroll">
-      <TheParticles />
-
       <div className="mb-10 flex flex-col items-center">
         <div className="mt-20">
           <Icon icon="Avatar" className="size-12 cursor-pointer rounded-full" />
