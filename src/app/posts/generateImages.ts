@@ -1,24 +1,27 @@
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { writeFileSync } from "node:fs";
-import { globbySync } from "globby";
 import { __images } from "./__images";
-import { __imagesPath, rootPath } from "./constants";
+import { __imagesPath, postsImagesPaths } from "./constants";
 
-export const images = globbySync(`${rootPath}/**/*.png`).map((p) => {
-  const pathArr = p.split("/");
+export function generateImgPathHash(imgPath: string) {
+  const pathArr = imgPath.split("/");
   const imagesIndex = pathArr.findIndex((d) => d === "images");
   const key =
-    `__img_${pathArr[imagesIndex - 1]}_${path.basename(p, ".png")}`.replaceAll(
+    `__img_${pathArr[imagesIndex - 1]}_${path.basename(imgPath, ".png")}`.replaceAll(
       "-",
       "_",
     ) as keyof typeof __images;
 
-  const hash = createHash("sha256")
+  return createHash("sha256")
     .update(key)
     .digest("hex")
     .substring(0, 7)
     .padStart(11, "img_") as keyof typeof __images;
+}
+
+export const images = postsImagesPaths.map((p) => {
+  const hash = generateImgPathHash(p);
 
   return {
     key: hash,

@@ -6,12 +6,12 @@ import remarkGfm from "remark-gfm";
 import { VFile } from "vfile";
 import { getMDXComponents } from "./components";
 import type { Category, Frontmatter, Posts } from "./types";
-import { rootPath } from "./constants";
+import { postRootPath } from "./constants";
 import { images } from "./generateImages";
 import { rehypePre, remarkHeadings, remarkStaticImage } from "~/lib/MDXPlugins";
 
 const isDev = false;
-const postsPath = globbySync(`${rootPath}/**/*.md?(x)`).filter(
+const postsPath = globbySync(`${postRootPath}/**/*.md?(x)`).filter(
   (v) => v.includes("playground") || !isDev,
 );
 
@@ -53,6 +53,8 @@ export async function getAllPosts(): Promise<Posts> {
 
       return {
         ...mdxSource,
+        path: p,
+        source: content,
         slug: name,
         url: `/posts/${name}`,
         category,
