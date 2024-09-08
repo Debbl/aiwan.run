@@ -1,5 +1,5 @@
-import type { Root } from "hast";
 import { visit } from "unist-util-visit";
+import type { Root } from "hast";
 
 export function rehypePre() {
   return function (tree: Root) {

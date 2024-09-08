@@ -1,7 +1,8 @@
-import { type ComponentProps, type ReactElement, isValidElement } from "react";
+import parse from "html-react-parser";
+import { isValidElement } from "react";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "twl";
-import parse from "html-react-parser";
+import type { ComponentProps, ReactElement } from "react";
 import CopyButton from "./CopyButton";
 
 const languagePrefix = "language-";

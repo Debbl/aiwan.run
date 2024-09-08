@@ -1,11 +1,11 @@
 "use client";
-import type { ComponentProps } from "react";
-import type { StaticImageData } from "next/image";
+import { omit } from "@debbl/utils";
+import MediumZoom from "medium-zoom";
 import NextImage from "next/image";
 import { useEffect, useRef } from "react";
-import MediumZoom from "medium-zoom";
 import type { Zoom } from "medium-zoom";
-import { omit } from "@debbl/utils";
+import type { StaticImageData } from "next/image";
+import type { ComponentProps } from "react";
 
 export function Image(
   props: ComponentProps<"img"> & {

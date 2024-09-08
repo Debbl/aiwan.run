@@ -2,9 +2,9 @@
  * fetch blog data from https://debbl.xlog.app/
  */
 
-import { writeFile } from "node:fs/promises";
 import { Buffer } from "node:buffer";
 import { existsSync, mkdirSync } from "node:fs";
+import { writeFile } from "node:fs/promises";
 import { getImageUrl, images, md } from "./markdown";
 
 const endpoint = "https://indexer.crossbell.io/v1";

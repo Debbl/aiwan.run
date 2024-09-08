@@ -1,5 +1,5 @@
-import type { ComponentProps, ReactElement } from "react";
 import { cn } from "twl";
+import type { ComponentProps, ReactElement } from "react";
 
 export function HeadingLink({
   tag: Tag,

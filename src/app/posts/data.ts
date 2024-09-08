@@ -1,14 +1,14 @@
-import path from "node:path";
 import { readFileSync } from "node:fs";
+import path from "node:path";
 import { globbySync } from "globby";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { VFile } from "vfile";
+import { rehypePre, remarkHeadings, remarkStaticImage } from "~/lib/MDXPlugins";
 import { getMDXComponents } from "./components";
-import type { Category, Frontmatter, Posts } from "./types";
 import { postRootPath } from "./constants";
 import { images } from "./generateImages";
-import { rehypePre, remarkHeadings, remarkStaticImage } from "~/lib/MDXPlugins";
+import type { Category, Frontmatter, Posts } from "./types";
 
 const isDev = false;
 const postsPath = globbySync(`${postRootPath}/**/*.md?(x)`).filter(

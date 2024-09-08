@@ -1,8 +1,8 @@
 "use client";
-import { useTheme } from "next-themes";
 import { useHydrated } from "@debbl/ahooks";
-import type { MouseEventHandler } from "react";
+import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
+import type { MouseEventHandler } from "react";
 import { Icon } from "~/icons";
 
 export default function ThemeSwitcher() {

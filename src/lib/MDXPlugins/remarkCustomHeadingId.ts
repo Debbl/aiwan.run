@@ -1,6 +1,6 @@
+import { visit } from "unist-util-visit";
 import type { Root } from "mdast";
 import type { Plugin } from "unified";
-import { visit } from "unist-util-visit";
 
 export interface HProperties {
   id?: string;

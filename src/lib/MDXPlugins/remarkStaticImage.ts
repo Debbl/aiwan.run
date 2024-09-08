@@ -1,8 +1,8 @@
-import path from "node:path";
 import { createHash } from "node:crypto";
+import path from "node:path";
+import { visit } from "unist-util-visit";
 import type { Root } from "mdast";
 import type { Plugin } from "unified";
-import { visit } from "unist-util-visit";
 
 export const remarkStaticImage: Plugin<[], Root> = () => (tree, file, done) => {
   const basename = path.parse(file.history[0]).dir.split("/").pop();

@@ -35,4 +35,4 @@ md.renderer.rules.image = (tokens, idx, options, env, self) => {
   return self.renderToken(tokens, idx, options);
 };
 
-export { md, images, getImageUrl };
+export { getImageUrl, images, md };

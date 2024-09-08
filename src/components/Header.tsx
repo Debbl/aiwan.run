@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useRef } from "react";
-import ThemeSwitcher from "./ThemeSwitcher";
+import { useMobile } from "~/hooks/useMobile";
 import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
-import { useMobile } from "~/hooks/useMobile";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const nav: {
   "url": string;
