@@ -32,11 +32,11 @@ export default function Header() {
   return (
     <nav ref={navRef} className={"flex items-center justify-between px-6 py-3"}>
       <div>
-        <button>
-          <Link href="/">
+        <Link href="/" aria-label="home page link">
+          <button aria-label="home">
             <Icon className="size-6 text-primary" icon="FireFilled" />
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
 
       <div className="flex items-center gap-x-3 sm:gap-x-6">

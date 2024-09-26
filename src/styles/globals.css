@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(./markdown.css);
 @import url(./subheading-anchor.css);
 
 @layer components {

@@ -55,7 +55,7 @@ export default function ThemeSwitcher() {
 
   return (
     <>
-      <button onClick={toggleTheme}>
+      <button onClick={toggleTheme} aria-label="theme-switcher">
         <Icon
           className="size-5 cursor-pointer"
           icon={!isHydrated ? "Moon" : icon}
