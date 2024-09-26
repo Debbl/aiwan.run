@@ -1,8 +1,8 @@
 import Slugger from "github-slugger";
 import { visit } from "unist-util-visit";
+import { MARKDOWN_EXTENSION_REGEX } from "../constants";
 import type { Parent, Root } from "mdast";
 import type { Plugin } from "unified";
-import { MARKDOWN_EXTENSION_REGEX } from "../constants";
 import type { Heading } from "../types";
 import type { HProperties } from "./remarkCustomHeadingId";
 

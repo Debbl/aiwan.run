@@ -1,6 +1,6 @@
 import { format } from "date-fns";
-import type { Metadata } from "next";
 import { allPosts } from "../data";
+import type { Metadata } from "next";
 
 export function generateMetadata({
   params,

@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { useMobile } from "~/hooks/useMobile";
-import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
 import ThemeSwitcher from "./ThemeSwitcher";
+import type { IconType } from "~/icons";
 
 const nav: {
   "url": string;

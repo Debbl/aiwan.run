@@ -1,12 +1,12 @@
 import { cn } from "twl";
-import type { MDXComponents } from "mdx/types";
-import type { SandpackProps } from "~/types";
 import { Code } from "./Code";
 import { HeadingLink } from "./HeadingLink";
 import { Image } from "./Image";
 import { Link } from "./Link";
 import { Pre } from "./Pre";
 import { Sandpack } from "./Sandpack";
+import type { MDXComponents } from "mdx/types";
+import type { SandpackProps } from "~/types";
 
 export function getMDXComponents(): MDXComponents {
   return {

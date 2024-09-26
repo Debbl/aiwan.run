@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import Header from "~/components/Header";
 import ThemeProvider from "~/components/ThemeProvider";
 import { WEBSITE } from "~/constants";
 import "~/styles/globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: WEBSITE.title,

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { IconType } from "~/icons";
 import { Icon } from "~/icons";
+import type { IconType } from "~/icons";
 
 type Projects = Record<
   string,
