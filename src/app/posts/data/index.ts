@@ -5,7 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { VFile } from "vfile";
 import { rehypePre, remarkHeadings, remarkStaticImage } from "~/lib/MDXPlugins";
-import { getMDXComponents } from "./components";
+import { getMDXComponents } from "../components";
 import { postRootPath } from "./constants";
 import { images } from "./generateImages";
 import type { Category, Frontmatter, Posts } from "./types";

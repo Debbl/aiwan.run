@@ -25,7 +25,7 @@ export const images = postsImagesPaths.map((p) => {
 
   return {
     key: hash,
-    path: `./${path.relative(path.join(__imagesPath, ".."), p)}`,
+    path: `${path.relative(path.join(__imagesPath, ".."), p)}`,
     props: __images[hash],
   };
 });

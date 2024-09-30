@@ -5,5 +5,5 @@ import { globbySync } from "globby";
 export const cwd = process.cwd();
 export const postRootPath = path.join(cwd, "src/app/posts");
 
-export const __imagesPath = path.join(cwd, "src/app/posts/__images.ts");
+export const __imagesPath = path.join(cwd, "src/app/posts/data/__images.ts");
 export const postsImagesPaths = globbySync(`${postRootPath}/**/*.png`);
