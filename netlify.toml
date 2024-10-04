@@ -2,4 +2,4 @@
 for = "/feed.xml"
 
 [headers.values]
-Content-Type = "application/rss+xml"
+Content-Type = "application/xml"

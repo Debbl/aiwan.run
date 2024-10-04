@@ -43,7 +43,7 @@ export async function GET() {
 
   return new Response(feed.xml(), {
     headers: {
-      "content-type": "application/xml",
+      "content-type": "application/xml", // this header set by netlify.toml
     },
   });
 }
