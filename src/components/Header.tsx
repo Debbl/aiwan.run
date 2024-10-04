@@ -48,6 +48,7 @@ export default function Header() {
               title={n.name}
               key={n.name}
               href={n.url}
+              prefetch={n.url !== "/feed.xml"}
             >
               {n.icon ? <Icon className="size-5" icon={n.icon} /> : n.name}
             </Link>
