@@ -1,5 +1,5 @@
 [[headers]]
-for = "feed.xml"
+for = "/feed.xml"
 
-[headers.value]
-content-type = "application/rss+xml"
+[headers.values]
+Content-Type = "application/rss+xml"
