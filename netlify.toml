@@ -1,0 +1,5 @@
+[[headers]]
+for = "feed.xml"
+
+[headers.value]
+content-type = "application/rss+xml"
