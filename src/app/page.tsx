@@ -146,11 +146,11 @@ export default function Home() {
             <div key={project.name}>
               <Link
                 href={project.url}
-                className="text-center text-lg font-bold transition-colors hover:text-primary"
+                className="text-center text-lg font-bold text-black transition-colors hover:text-primary"
               >
                 {project.name}
               </Link>
-              <div className="text-sm text-gray-400">{project.desc}</div>
+              <div className="text-sm text-gray-600">{project.desc}</div>
 
               <ul className="mt-2">
                 {project.content.map((item) => (
