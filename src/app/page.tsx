@@ -1,6 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "~/icons";
+import {
+  biliShortLink,
+  bubbleWrap,
+  car,
+  codeDiff,
+  emoji,
+  gameOfLife,
+  minesweeper,
+  peppa,
+  rm,
+  tictactoe,
+  v,
+} from "./logos";
 import type { IconType } from "~/icons";
 
 type Projects = Record<
@@ -27,31 +40,31 @@ const projects: Projects = {
       {
         name: "Minesweeper",
         link: "https://game.aiwan.run/minesweeper/",
-        favicon: "https://game.aiwan.run/minesweeper/vite.svg",
+        favicon: minesweeper,
         desc: "A minesweeper game use react.",
       },
       {
         name: "Tic tac toe",
         link: "https://game.aiwan.run/tictactoe/",
-        favicon: "https://game.aiwan.run/tictactoe/logo.png",
+        favicon: tictactoe,
         desc: "A Tic-tac-toe game use solid.js.",
       },
       {
         name: "Game of Life",
         link: "https://game.aiwan.run/game-of-life/",
-        favicon: "https://game.aiwan.run/game-of-life/favicon.png",
+        favicon: gameOfLife,
         desc: "A Game-of-Life game use react",
       },
       {
         name: "Bubble Wrap",
         link: "https://game.aiwan.run/bubble-wrap/",
-        favicon: "https://game.aiwan.run/bubble-wrap/favicon.png",
+        favicon: bubbleWrap,
         desc: "A Bubble Wrap game use react",
       },
       {
         name: "Self driving car",
         link: "https://car.aiwan.run",
-        favicon: "https://car.aiwan.run/favicon.svg",
+        favicon: car,
         desc: "A self driving car game with neural network.",
       },
     ],
@@ -64,19 +77,19 @@ const projects: Projects = {
       {
         name: "Code Diff",
         link: "https://tools.aiwan.run/code-diff/",
-        favicon: "https://tools.aiwan.run/code-diff/icon.svg",
+        favicon: codeDiff,
         desc: "A code diff tool.",
       },
       {
         name: "Bilibili ShortLink Converter",
         link: "https://bili-shortlink.vercel.app/",
-        favicon: "https://bili-shortlink.vercel.app/favicon.svg",
+        favicon: biliShortLink,
         desc: "Bilibili shortLink converter.",
       },
       {
         name: "Peppa Pig Quotes",
         link: "https://peppa.aiwan.run",
-        favicon: "https://peppa.aiwan.run/favicon.svg",
+        favicon: peppa,
         desc: "A tool for leaning English by Peppa Pig.",
       },
     ],
@@ -89,19 +102,19 @@ const projects: Projects = {
       {
         name: "V",
         link: "https://v.aiwan.run/",
-        favicon: "https://v.aiwan.run/favicon.svg",
+        favicon: v,
         desc: "some visualization",
       },
       {
         name: "Emoji Kitchen",
         link: "https://emoji.aiwan.run/",
-        favicon: "https://emoji.aiwan.run/favicon.svg",
+        favicon: emoji,
         desc: "A emoji kitchen.",
       },
       {
         name: "Reader Markdown",
         link: "https://rm.aiwan.run/",
-        favicon: "https://rm.aiwan.run/favicon.svg",
+        favicon: rm,
         desc: "A markdown reader by web.",
       },
     ],
