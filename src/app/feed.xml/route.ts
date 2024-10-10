@@ -12,6 +12,18 @@ export async function GET() {
     feed_url: `${WEBSITE.domain}/feed.xml`,
     language: "zh-CN",
     generator: "PHP 9.0",
+    custom_elements: [
+      {
+        follow_challenge: [
+          {
+            feed_id: "67028040212142080",
+          },
+          {
+            user_id: "55825808031657984",
+          },
+        ],
+      },
+    ],
   });
   const allPosts = await getAllPosts();
 
