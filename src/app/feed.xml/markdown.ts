@@ -3,6 +3,7 @@
  */
 
 import path from "node:path";
+import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import { WEBSITE } from "~/constants";
 import { __images } from "../posts/data/__images";
@@ -37,7 +38,9 @@ md.renderer.rules.image = (tokens, idx, options, env, self) => {
 };
 
 export function markdownToHtml(markdown: string, path: string) {
-  return md.render(markdown, { path });
+  const { content } = matter(markdown);
+
+  return md.render(content, { path });
 }
 
 export { md };
