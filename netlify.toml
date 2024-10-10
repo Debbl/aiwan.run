@@ -3,3 +3,23 @@ for = "/feed.xml"
 
 [headers.values]
 Content-Type = "application/xml"
+
+[[redirects]]
+form = "/rss"
+to = "/feed.xml"
+status = 301
+
+[[redirects]]
+form = "/blog"
+to = "/posts"
+status = 301
+
+[[redirects]]
+form = "/github"
+to = "https://github.com/Debbl"
+status = 301
+
+[[redirects]]
+form = "/gh"
+to = "https://github.com/Debbl"
+status = 301
