@@ -5,21 +5,21 @@ for = "/feed.xml"
 Content-Type = "application/xml"
 
 [[redirects]]
-form = "/rss"
+from = "/rss"
 to = "/feed.xml"
 status = 301
 
 [[redirects]]
-form = "/blog"
+from = "/blog"
 to = "/posts"
 status = 301
 
 [[redirects]]
-form = "/github"
+from = "/github"
 to = "https://github.com/Debbl"
 status = 301
 
 [[redirects]]
-form = "/gh"
+from = "/gh"
 to = "https://github.com/Debbl"
 status = 301
