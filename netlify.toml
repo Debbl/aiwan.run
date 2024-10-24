@@ -23,3 +23,8 @@ status = 301
 from = "/gh"
 to = "https://github.com/Debbl"
 status = 301
+
+[[redirects]]
+from = "/slides"
+to = "https://slides.aiwan.run"
+status = 301
