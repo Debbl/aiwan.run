@@ -16,10 +16,10 @@ export async function GET() {
       {
         follow_challenge: [
           {
-            feed_id: "67028040212142080",
+            feedId: "67028040212142080",
           },
           {
-            user_id: "55825808031657984",
+            userId: "55825808031657984",
           },
         ],
       },
