@@ -18,6 +18,11 @@ const nav: {
     "data-umami-event": "click-blog-link",
   },
   {
+    "url": "/tools",
+    "name": "Tools",
+    "data-umami-event": "click-blog-tools",
+  },
+  {
     "url": "/slides",
     "name": "Slides",
     "data-umami-event": "click-slides-link",

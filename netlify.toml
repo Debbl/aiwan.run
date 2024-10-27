@@ -28,3 +28,9 @@ status = 301
 from = "/slides"
 to = "https://slides.aiwan.run"
 status = 301
+
+
+[[redirects]]
+from = "/tools"
+to = "https://tools.aiwan.run"
+status = 301
