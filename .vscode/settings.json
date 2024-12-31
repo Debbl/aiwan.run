@@ -6,5 +6,5 @@
     "!unused-imports/no-unused-imports",
     "*"
   ],
-  "cSpell.words": ["frontmatter", "rehype"]
+  "cSpell.words": ["frontmatter", "precache", "rehype", "serwist"]
 }

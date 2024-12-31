@@ -17,14 +17,18 @@ export function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
+export type Params = Promise<{ slug: string }>;
+
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allPosts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = allPosts.find((p) => p.slug === params.slug)!;
+export default async function Page({ params }: { params: Params }) {
+  const { slug } = await params;
+
+  const post = allPosts.find((p) => p.slug === slug)!;
   const { title, date, duration } = post.frontmatter;
 
   return (

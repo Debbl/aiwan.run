@@ -3,6 +3,8 @@ import { WEBSITE } from "~/constants";
 import { getAllPosts } from "../posts/data";
 import { markdownToHtml } from "./markdown";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const feed = new RSS({
     title: "Brendan Dash",
