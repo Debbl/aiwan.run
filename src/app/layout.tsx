@@ -32,7 +32,8 @@ export default function RootLayout({
       <head>
         <script
           async
-          src="https://analytics.eu.umami.is/script.js"
+          defer
+          src="https://cloud.umami.is/script.js"
           data-website-id="6ed314b0-fc17-4333-870a-d9e5af82626e"
           data-domains="aiwan.run"
         />
