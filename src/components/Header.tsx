@@ -58,7 +58,7 @@ export default function Header() {
               title={n.name}
               key={n.name}
               href={n.url}
-              prefetch={!["/feed.xml", "/posts"].includes(n.url)}
+              prefetch={["/posts"].includes(n.url)}
             >
               {n.icon ? <Icon className="size-5" icon={n.icon} /> : n.name}
             </Link>
