@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import Link from "next/link";
 import { allPosts } from "../data";
 import type { Metadata } from "next";
 
@@ -41,9 +42,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </article>
       <footer>
         <span className="font-bold opacity-50">&gt; </span>
-        <a href="/posts" className="font-mono opacity-50 hover:opacity-75">
+        <Link href="/posts" className="font-mono opacity-50 hover:opacity-75">
           cd ..
-        </a>
+        </Link>
       </footer>
     </main>
   );

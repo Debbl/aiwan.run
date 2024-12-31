@@ -43,7 +43,7 @@ export default function Header() {
     <nav ref={navRef} className={"flex items-center justify-between px-6 py-3"}>
       <div>
         <Link href="/" aria-label="home page link">
-          <button aria-label="home">
+          <button type="button" aria-label="home">
             <Icon className="size-6 text-primary" icon="FireFilled" />
           </button>
         </Link>

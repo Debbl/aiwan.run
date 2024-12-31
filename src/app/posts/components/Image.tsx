@@ -7,14 +7,14 @@ import type { Zoom } from "medium-zoom";
 import type { StaticImageData } from "next/image";
 import type { ComponentProps } from "react";
 
-export function Image(
-  props: ComponentProps<"img"> & {
-    images?: Record<string, any>;
-    imgKey?: string;
-  },
-) {
-  const imgKey = props.imgKey;
-  const staticImgData = props.images?.find((i: any) => i.key === imgKey) as {
+export function Image({
+  images,
+  imgKey,
+}: ComponentProps<"img"> & {
+  images?: Record<string, any>;
+  imgKey?: string;
+}) {
+  const staticImgData = images?.find((i: any) => i.key === imgKey) as {
     key: string;
     path: string;
     props: StaticImageData;
@@ -23,7 +23,7 @@ export function Image(
   const imageProps = omit(staticImgData.props, ["blurWidth", "blurHeight"]);
 
   const imgRef = useRef<HTMLImageElement>(null);
-  const zoom = useRef<Zoom>();
+  const zoom = useRef<Zoom>(null);
 
   useEffect(() => {
     zoom.current = MediumZoom(imgRef.current!);
