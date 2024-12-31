@@ -53,14 +53,15 @@ export default function Header() {
         {nav
           .filter((n) => !(isMobile && n.name === "Home"))
           .map((n) => (
-            <a
+            <Link
               data-umami-event={n["data-umami-event"]}
               title={n.name}
               key={n.name}
               href={n.url}
+              prefetch={!["/feed.xml", "/posts"].includes(n.url)}
             >
               {n.icon ? <Icon className="size-5" icon={n.icon} /> : n.name}
-            </a>
+            </Link>
           ))}
 
         <ThemeSwitcher />
