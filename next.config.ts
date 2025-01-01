@@ -17,9 +17,6 @@ const nextConfig: NextConfig = {
   cleanDistDir: true,
   reactStrictMode: true,
   poweredByHeader: false,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },

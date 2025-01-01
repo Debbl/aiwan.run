@@ -1,3 +1,5 @@
+"use client";
+import { m } from "~/lib/motion";
 import type { SVGProps } from "react";
 
 export function Rss(props: SVGProps<SVGSVGElement>) {
@@ -246,3 +248,4 @@ const Icon = ({ icon: _icon, ..._props }: IProps) => {
 };
 
 export default Icon;
+export const MIcon = m.create(Icon);

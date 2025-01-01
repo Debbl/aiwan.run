@@ -1,6 +1,6 @@
 import Header from "~/components/Header";
-import ThemeProvider from "~/components/ThemeProvider";
 import { WEBSITE } from "~/constants";
+import Providers from "~/providers";
 import "~/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -39,15 +39,10 @@ export default function RootLayout({
         />
       </head>
       <body className="flex h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <Header />
           {children}
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

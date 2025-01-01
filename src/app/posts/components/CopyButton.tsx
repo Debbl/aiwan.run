@@ -1,8 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "twl";
 import { Icon } from "~/icons";
+import { motion } from "~/lib/motion";
 
 export default function CopyButton({
   lang,

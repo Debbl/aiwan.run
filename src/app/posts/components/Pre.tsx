@@ -3,7 +3,7 @@ import { isValidElement } from "react";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "twl";
 import CopyButton from "./CopyButton";
-import type { ComponentProps, ReactElement } from "react";
+import type { ComponentProps, JSX, ReactElement } from "react";
 
 const languagePrefix = "language-";
 const highlighter = await createHighlighter({
@@ -44,8 +44,9 @@ export function Pre({
 }): ReactElement {
   if (!children || !isValidElement(children)) return <pre {...props} />;
 
-  const code: string = children.props.children;
-  const lang = getLang(children.props.className);
+  const code = (children as JSX.Element).props.children as string;
+  const lang = getLang((children as JSX.Element).props.className);
+
   const { filename } = parseMeta(props.meta);
 
   if (!langs.includes(lang)) return <pre {...props} />;
