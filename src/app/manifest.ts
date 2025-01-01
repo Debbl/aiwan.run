@@ -1,12 +1,13 @@
+import { WEBSITE } from "~/constants";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Brendan Dash",
-    short_name: "Brendan Dash",
-    description: "Brendan Dash's personal website",
+    name: WEBSITE.title,
+    short_name: WEBSITE.title,
+    description: WEBSITE.description,
     start_url: "/",
     theme_color: "#ffffff",
     background_color: "#ffffff",
