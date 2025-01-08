@@ -44,7 +44,7 @@ export default function Header() {
       <div>
         <Link href="/" aria-label="home page link">
           <button type="button" aria-label="home">
-            <Icon className="size-6 text-primary" icon="FireFilled" />
+            ~
           </button>
         </Link>
       </div>
