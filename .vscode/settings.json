@@ -9,9 +9,12 @@
   "cSpell.words": [
     "frontmatter",
     "magicui",
+    "mdast",
     "precache",
     "rehype",
     "serwist",
-    "shadcn"
-  ]
+    "shadcn",
+    "shiki"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

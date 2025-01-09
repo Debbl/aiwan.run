@@ -96,9 +96,6 @@ importers:
       '@next/bundle-analyzer':
         specifier: ^15.1.4
         version: 15.1.4
-      '@types/dom-view-transitions':
-        specifier: ^1.0.5
-        version: 1.0.5
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
@@ -1033,9 +1030,6 @@ packages:
 
   '@types/doctrine@0.0.9':
     resolution: {integrity: sha512-eOIHzCUSH7SMfonMG1LsC2f8vxBFtho6NGBznK41R84YzPuvSBzrhEps33IsQiOW9+VL6NQ9DbjQJznk/S4uRA==}
-
-  '@types/dom-view-transitions@1.0.5':
-    resolution: {integrity: sha512-N2sILR7fxSMnaFaAPwGj4DtHCXjIyQTHt+xJyf9jATpzUsTkMNM0DWtqZB6W7f501B/Y0tq3uqat/VlbjuTpMA==}
 
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
@@ -5076,8 +5070,6 @@ snapshots:
       '@types/ms': 0.7.34
 
   '@types/doctrine@0.0.9': {}
-
-  '@types/dom-view-transitions@1.0.5': {}
 
   '@types/estree-jsx@1.0.5':
     dependencies:
