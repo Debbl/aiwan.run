@@ -1,3 +1,4 @@
+import BackgroundStage from "~/components/BackgroundStage";
 import Header from "~/components/Header";
 import { WEBSITE } from "~/constants";
 import Providers from "~/providers";
@@ -38,8 +39,9 @@ export default function RootLayout({
           data-domains="aiwan.run"
         />
       </head>
-      <body className="flex h-full flex-col">
+      <body className="relative flex h-full flex-col">
         <Providers>
+          <BackgroundStage />
           <Header />
           {children}
         </Providers>
