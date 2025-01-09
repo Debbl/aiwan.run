@@ -29,5 +29,8 @@ jobs:
       - name: Install
         run: nci
 
+      - name: Typecheck
+        run: nr typecheck
+
       - name: Lint
         run: nr lint

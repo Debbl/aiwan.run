@@ -6,10 +6,10 @@
   "packageManager": "pnpm@9.15.3",
   "author": "Debbl <me@aiwan.run> (https://aiwan.run/)",
   "scripts": {
-    "fetch": "tsx --env-file .env.local scripts/fetch.ts",
     "dev": "next dev",
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
+    "typecheck": "tsc --noEmit",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
