@@ -29,6 +29,9 @@ jobs:
       - name: Install
         run: nci
 
+      - name: build
+        run: nr build
+
       - name: Typecheck
         run: nr typecheck
 
