@@ -1,5 +1,5 @@
-import { allPosts } from "../data";
-import Content from "./Content";
+import { allPosts } from "../_data";
+import Content from "./_components/Content";
 
 export default async function Page({
   params,

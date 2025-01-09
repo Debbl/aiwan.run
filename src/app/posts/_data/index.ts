@@ -5,7 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { VFile } from "vfile";
 import { rehypePre, remarkHeadings, remarkStaticImage } from "~/lib/MDXPlugins";
-import { getMDXComponents } from "../components";
+import { getMDXComponents } from "../_components";
 import { postRootPath } from "./constants";
 import { images } from "./generateImages";
 import type { Category, Frontmatter, Posts } from "./types";
@@ -22,7 +22,7 @@ export async function getAllPosts(): Promise<Posts> {
       const { name, dir } = path.parse(p);
 
       const dirArr = dir.split("/");
-      const markdownDirIndex = dirArr.findIndex((d) => d === "Markdown");
+      const markdownDirIndex = dirArr.findIndex((d) => d === "_markdown");
       const category = dirArr[markdownDirIndex + 1] as Category;
 
       const vFile = new VFile({

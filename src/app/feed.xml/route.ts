@@ -1,6 +1,6 @@
 import RSS from "rss";
 import { WEBSITE } from "~/constants";
-import { getAllPosts } from "../posts/data";
+import { getAllPosts } from "../posts/_data";
 import { markdownToHtml } from "./markdown";
 
 export const dynamic = "force-static";

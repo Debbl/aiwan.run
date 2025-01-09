@@ -1,4 +1,4 @@
-import { allPosts } from "../data";
+import { allPosts } from "../_data";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 

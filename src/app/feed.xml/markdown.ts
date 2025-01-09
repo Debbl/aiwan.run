@@ -6,8 +6,8 @@ import path from "node:path";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import { WEBSITE } from "~/constants";
-import { __images } from "../posts/data/__images";
-import { generateImgPathHash } from "../posts/data/generateImages";
+import { __images } from "../posts/_data/__images";
+import { generateImgPathHash } from "../posts/_data/generateImages";
 
 const md = MarkdownIt({
   html: true,

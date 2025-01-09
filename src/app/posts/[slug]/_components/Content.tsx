@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { useRef } from "react";
 import { m, useScroll } from "~/lib/motion";
-import type { Post } from "../data/types";
+import type { Post } from "../../_data/types";
 
 export default function Content({ post }: { post: Post }) {
   const { title, date, duration } = post.frontmatter;
