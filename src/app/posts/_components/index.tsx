@@ -6,7 +6,7 @@ import { Link } from "./Link";
 import { Pre } from "./Pre";
 import { Sandpack } from "./Sandpack";
 import type { MDXComponents } from "mdx/types";
-import type { SandpackProps } from "~/types";
+import type { SandpackProps } from "~/app/posts/types";
 
 export function getMDXComponents(): MDXComponents {
   return {
