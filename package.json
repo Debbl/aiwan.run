@@ -24,6 +24,8 @@
     "@next/mdx": "^15.1.4",
     "@serwist/next": "^9.0.11",
     "@types/mdx": "^2.0.13",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.469.0",
@@ -37,6 +39,8 @@
     "remark-gfm": "^4.0.0",
     "rss": "^1.2.2",
     "slash": "^5.1.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
     "twl": "0.0.0-alpha.5",
     "vfile": "^6.0.3"
   },

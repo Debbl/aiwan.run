@@ -6,5 +6,12 @@
     "!unused-imports/no-unused-imports",
     "*"
   ],
-  "cSpell.words": ["frontmatter", "magicui", "precache", "rehype", "serwist"]
+  "cSpell.words": [
+    "frontmatter",
+    "magicui",
+    "precache",
+    "rehype",
+    "serwist",
+    "shadcn"
+  ]
 }
