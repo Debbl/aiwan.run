@@ -61,7 +61,7 @@ export function Pre({
   return (
     <div className="relative mt-6 overflow-hidden rounded-xl first:mt-0">
       {filename && (
-        <div className="top-0 z-[1] w-full truncate bg-gray-600/10 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
+        <div className="top-0 z-[1] w-full truncate bg-gray-200/80 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
           {filename}
         </div>
       )}

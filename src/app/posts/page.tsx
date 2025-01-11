@@ -26,9 +26,8 @@ export default async function Page() {
 
   return (
     <>
+      <Meteors number={30} />
       <main className="relative flex-1 overflow-y-scroll">
-        <Meteors number={30} />
-
         <div className="mx-auto w-fit">
           {postsByCategory.map((category) => (
             <div className="mt-8" key={category.title} title={category.title}>

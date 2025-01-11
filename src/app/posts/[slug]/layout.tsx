@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: post.frontmatter.title,
+    title: `Posts | ${post.frontmatter.title}`,
   };
 }
 
