@@ -1,9 +1,7 @@
 "use client";
 import { omit } from "@debbl/utils";
-import MediumZoom from "medium-zoom";
 import NextImage from "next/image";
-import { useEffect, useRef } from "react";
-import type { Zoom } from "medium-zoom";
+import Zoom from "react-medium-image-zoom";
 import type { StaticImageData } from "next/image";
 import type { ComponentProps } from "react";
 
@@ -22,21 +20,19 @@ export function Image({
 
   const imageProps = omit(staticImgData.props, ["blurWidth", "blurHeight"]);
 
-  const imgRef = useRef<HTMLImageElement>(null);
-  const zoom = useRef<Zoom>(null);
-
-  useEffect(() => {
-    zoom.current = MediumZoom(imgRef.current!);
-  }, []);
-
   return (
     <picture className="flex justify-center px-12">
-      <NextImage
-        key={imageProps.src}
-        ref={imgRef}
-        {...imageProps}
-        alt="image"
-      />
+      <Zoom
+        zoomMargin={40}
+        zoomImg={{
+          src: imageProps.src,
+          alt: "",
+        }}
+        ZoomContent={(data) => <>{data.img}</>}
+        wrapElement="span"
+      >
+        <NextImage key={imageProps.src} {...imageProps} alt="image" />
+      </Zoom>
     </picture>
   );
 }
