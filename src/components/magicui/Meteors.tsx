@@ -1,26 +1,29 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "~/lib/utils";
 
 interface MeteorsProps {
   number?: number;
 }
 export const Meteors = ({ number = 20 }: MeteorsProps) => {
-  const meteorStyles = useMemo(
-    () =>
-      Array.from({ length: number }).map(() => ({
-        top: -5,
-        left: `${Math.floor(Math.random() * window.innerWidth)}px`,
-        animationDelay: `${Math.random() * 1 + 0.2}s`,
-        animationDuration: `${Math.floor(Math.random() * 8 + 2)}s`,
-      })),
-    [number],
+  const [meteorStyles, setMeteorStyles] = useState<Array<React.CSSProperties>>(
+    [],
   );
+
+  useEffect(() => {
+    const styles = Array.from({ length: number }).map(() => ({
+      top: -5,
+      left: `${Math.floor(Math.random() * window.innerWidth)}px`,
+      animationDelay: `${Math.random() * 1 + 0.2}s`,
+      animationDuration: `${Math.floor(Math.random() * 8 + 2)}s`,
+    }));
+    setMeteorStyles(styles);
+  }, [number]);
 
   return (
     <>
-      {meteorStyles.map((style, idx) => (
+      {[...meteorStyles].map((style, idx) => (
         // Meteor Head
         <span
           key={idx}
