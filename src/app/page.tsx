@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Meteors } from "~/components/magicui/Meteors";
 import { Icon, MIcon } from "~/icons";
 import {
+  ai,
   biliShortLink,
   bubbleWrap,
   car,
@@ -13,6 +14,7 @@ import {
   peppa,
   rm,
   tictactoe,
+  tools,
   v,
 } from "../logos";
 import type { IconType } from "~/icons";
@@ -76,6 +78,12 @@ const projects: Projects = {
     desc: "some tools",
     content: [
       {
+        name: "Tools",
+        link: "https://tools.aiwan.run/",
+        favicon: tools,
+        desc: "A tool collection.",
+      },
+      {
         name: "Code Diff",
         link: "https://tools.aiwan.run/code-diff/",
         favicon: codeDiff,
@@ -100,6 +108,12 @@ const projects: Projects = {
     url: "/",
     desc: "some toys",
     content: [
+      {
+        name: "Ai",
+        link: "https://ai.aiwan.run/",
+        favicon: ai,
+        desc: "A free client first AI apps.",
+      },
       {
         name: "V",
         link: "https://v.aiwan.run/",
@@ -172,38 +186,37 @@ export default function Home() {
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12">
               {Object.entries(projects).map(([_, project]) => (
                 <div key={project.name}>
-                  <Link
-                    href={project.url}
-                    className="text-center text-lg font-bold text-black transition-colors hover:text-primary"
-                  >
+                  <h2 className="cursor-pointer text-lg font-bold text-black transition-colors hover:text-primary">
                     {project.name}
-                  </Link>
+                  </h2>
                   <div className="text-sm text-gray-600">{project.desc}</div>
 
                   <ul className="mt-2">
                     {project.content.map((item) => (
-                      <li className="my-3" key={item.name}>
-                        <div className="flex items-center gap-x-3">
-                          <div>
-                            <Image
-                              alt={item.name}
-                              src={item.favicon ?? ""}
-                              width={16}
-                              height={16}
-                              className="mr-1 inline-block size-4"
-                            />
+                      <Link
+                        href={item.link}
+                        key={item.name}
+                        className="text-sm transition-colors hover:text-primary"
+                        target="_blank"
+                      >
+                        <li className="my-3">
+                          <div className="flex items-center gap-x-3">
+                            <div>
+                              <Image
+                                alt={item.name}
+                                src={item.favicon ?? ""}
+                                width={16}
+                                height={16}
+                                className="mr-1 inline-block size-4 dark:rounded dark:bg-foreground "
+                              />
+                            </div>
+                            <div>
+                              <h3>{item.name}</h3>
+                              <p className="text-xs">{item.desc}</p>
+                            </div>
                           </div>
-                          <div>
-                            <Link
-                              href={item.link}
-                              className="text-sm transition-colors hover:text-primary"
-                            >
-                              {item.name}
-                            </Link>
-                            <p className="text-xs">{item.desc}</p>
-                          </div>
-                        </div>
-                      </li>
+                        </li>
+                      </Link>
                     ))}
                   </ul>
                 </div>
