@@ -12,7 +12,7 @@ import type { Category, Frontmatter, Posts } from "./types";
 
 const isDev = false;
 const postsPath = globbySync(`${postRootPath}/**/*.md?(x)`).filter(
-  (v) => v.includes("playground") || !isDev,
+  (v) => v.includes("playground") === isDev,
 );
 
 export async function getAllPosts(): Promise<Posts> {
@@ -20,6 +20,8 @@ export async function getAllPosts(): Promise<Posts> {
     postsPath.map(async (p) => {
       const content = readFileSync(p, "utf8");
       const { name, dir } = path.parse(p);
+
+      const slug = name === "index" ? path.basename(dir) : name;
 
       const dirArr = dir.split("/");
       const markdownDirIndex = dirArr.findIndex((d) => d === "_markdown");
@@ -55,8 +57,8 @@ export async function getAllPosts(): Promise<Posts> {
         ...mdxSource,
         path: p,
         source: content,
-        slug: name,
-        url: `/posts/${name}`,
+        slug,
+        url: `/posts/${slug}`,
         category,
       };
     }),
