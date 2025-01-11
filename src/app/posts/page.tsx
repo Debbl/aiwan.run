@@ -9,7 +9,12 @@ export type PostsByCategory = {
 }[];
 
 export default async function Page() {
-  const allPosts = await getAllPosts();
+  const allPosts = (await getAllPosts()).sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime(),
+  );
+
   const blogPosts = allPosts.filter((p) => p.category === "blog");
   const tilPosts = allPosts.filter((p) => p.category === "til");
 

@@ -13,6 +13,9 @@ import img_cd40eeb from "../_markdown/blog/how-to-run-react-source-code-repo-in-
 import img_e373be2 from "../_markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/vscode-flow-show-client-status.png";
 import img_349da05 from "../_markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/vscode-select-react-flow-config.png";
 import img_90a9ceb from "../_markdown/blog/how-to-run-react-source-code-repo-in-local-env/images/yarn-flow.png";
+import img_4be989a from "../_markdown/blog/nextjs-with-lingui-localization/images/en-and-zh-directory.png";
+import img_a5f6ec9 from "../_markdown/blog/nextjs-with-lingui-localization/images/lingui-workflow.png";
+import img_0036121 from "../_markdown/blog/nextjs-with-lingui-localization/images/translate-po-file.png";
 import img_6f6b189 from "../_markdown/blog/playground/images/1.png";
 
 export const __images = {
@@ -30,5 +33,8 @@ export const __images = {
   img_e373be2,
   img_349da05,
   img_90a9ceb,
+  img_4be989a,
+  img_a5f6ec9,
+  img_0036121,
   img_6f6b189,
 };
