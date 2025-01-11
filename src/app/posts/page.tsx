@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { Meteors } from "~/components/magicui/Meteors";
 import { getAllPosts } from "./_data";
 import type { Posts } from "./_data/types";
 
@@ -24,39 +25,39 @@ export default async function Page() {
   ];
 
   return (
-    <main className="flex h-full items-center justify-center">
-      <div className="flex items-center justify-center">
-        <div className="flex flex-col">
-          <div>
-            {postsByCategory.map((category) => (
-              <div className="mt-8" key={category.title} title={category.title}>
-                <h2 className="text-3xl font-bold">{category.title}</h2>
-                <ul className="mt-4 flex flex-col gap-y-2">
-                  {category.posts.map((post) => (
-                    <a
-                      className="opacity-60 hover:opacity-100"
-                      href={post.url}
-                      key={post.slug}
+    <>
+      <main className="relative flex-1 overflow-y-scroll">
+        <Meteors number={30} />
+
+        <div className="mx-auto w-fit">
+          {postsByCategory.map((category) => (
+            <div className="mt-8" key={category.title} title={category.title}>
+              <h2 className="text-3xl font-bold">{category.title}</h2>
+              <ul className="mt-4 flex flex-col gap-y-2">
+                {category.posts.map((post) => (
+                  <a
+                    className="opacity-60 hover:opacity-100"
+                    href={post.url}
+                    key={post.slug}
+                  >
+                    <li
+                      className="text-gray-900 hover:text-primary dark:text-gray-50 dark:hover:text-primary"
+                      data-umami-event={`click-posts-${post.slug}`}
                     >
-                      <li
-                        className="text-gray-900 hover:text-primary dark:text-gray-50 dark:hover:text-primary"
-                        data-umami-event={`click-posts-${post.slug}`}
-                      >
-                        <span>{post.frontmatter.title}</span>
-                        <span className="ml-4 text-xs text-gray-500">
-                          {format(post.frontmatter.date, "MMM-dd")}
-                          {" · "}
-                          {post.frontmatter.duration}
-                        </span>
-                      </li>
-                    </a>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+                      <span>{post.frontmatter.title}</span>
+                      <span className="ml-4 text-xs text-gray-500">
+                        {format(post.frontmatter.date, "MMM-dd")}
+                        {" · "}
+                        {post.frontmatter.duration}
+                      </span>
+                    </li>
+                  </a>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

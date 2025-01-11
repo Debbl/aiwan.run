@@ -1,17 +1,18 @@
 import { useId } from "react";
-import { cn } from "twl";
+import { cn } from "~/lib/utils";
 
 interface DotPatternProps {
-  width?: any;
-  height?: any;
-  x?: any;
-  y?: any;
-  cx?: any;
-  cy?: any;
-  cr?: any;
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
+  cx?: number;
+  cy?: number;
+  cr?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
+
 export function DotPattern({
   width = 16,
   height = 16,
@@ -51,5 +52,3 @@ export function DotPattern({
     </svg>
   );
 }
-
-export default DotPattern;

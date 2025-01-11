@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Meteors } from "~/components/magicui/Meteors";
 import { Icon, MIcon } from "~/icons";
 import {
   biliShortLink,
@@ -149,81 +150,85 @@ const FindMeLinks: {
 
 export default function Home() {
   return (
-    <main className="relative flex-1 overflow-y-scroll">
-      <div className="mb-10 flex flex-col items-center">
-        <div className="mt-20">
-          <MIcon
-            whileHover={{
-              rotate: 360,
-            }}
-            transition={{
-              type: "spring",
-              duration: 0.8,
-            }}
-            icon="Avatar"
-            className="size-12 cursor-pointer rounded-full"
-          />
-        </div>
-        <div>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12">
-            {Object.entries(projects).map(([_, project]) => (
-              <div key={project.name}>
-                <Link
-                  href={project.url}
-                  className="text-center text-lg font-bold text-black transition-colors hover:text-primary"
-                >
-                  {project.name}
-                </Link>
-                <div className="text-sm text-gray-600">{project.desc}</div>
+    <>
+      <Meteors number={30} />
 
-                <ul className="mt-2">
-                  {project.content.map((item) => (
-                    <li className="my-3" key={item.name}>
-                      <div className="flex items-center gap-x-3">
-                        <div>
-                          <Image
-                            alt={item.name}
-                            src={item.favicon ?? ""}
-                            width={16}
-                            height={16}
-                            className="mr-1 inline-block size-4"
-                          />
-                        </div>
-                        <div>
-                          <Link
-                            href={item.link}
-                            className="text-sm transition-colors hover:text-primary"
-                          >
-                            {item.name}
-                          </Link>
-                          <p className="text-xs">{item.desc}</p>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+      <main className="relative flex-1 overflow-y-scroll">
+        <div className="mb-10 flex flex-col items-center">
+          <div className="mt-20">
+            <MIcon
+              whileHover={{
+                rotate: 360,
+              }}
+              transition={{
+                type: "spring",
+                duration: 0.8,
+              }}
+              icon="Avatar"
+              className="size-12 cursor-pointer rounded-full"
+            />
           </div>
+          <div>
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12">
+              {Object.entries(projects).map(([_, project]) => (
+                <div key={project.name}>
+                  <Link
+                    href={project.url}
+                    className="text-center text-lg font-bold text-black transition-colors hover:text-primary"
+                  >
+                    {project.name}
+                  </Link>
+                  <div className="text-sm text-gray-600">{project.desc}</div>
 
-          <div className="mt-6 sm:mt-10">
-            <h3 className="text-lg font-bold">Find Me</h3>
-            <div className="mt-4 flex items-center gap-x-4">
-              {FindMeLinks.map((i) => (
-                <Link
-                  key={i.name}
-                  href={i.url}
-                  data-umami-event={i["data-umami-event"]}
-                  className="inline-flex items-center border-b px-2 transition-colors hover:border-primary"
-                >
-                  <Icon className="size-6" icon={i.icon} />
-                  {i.name}
-                </Link>
+                  <ul className="mt-2">
+                    {project.content.map((item) => (
+                      <li className="my-3" key={item.name}>
+                        <div className="flex items-center gap-x-3">
+                          <div>
+                            <Image
+                              alt={item.name}
+                              src={item.favicon ?? ""}
+                              width={16}
+                              height={16}
+                              className="mr-1 inline-block size-4"
+                            />
+                          </div>
+                          <div>
+                            <Link
+                              href={item.link}
+                              className="text-sm transition-colors hover:text-primary"
+                            >
+                              {item.name}
+                            </Link>
+                            <p className="text-xs">{item.desc}</p>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
+            </div>
+
+            <div className="mt-6 sm:mt-10">
+              <h3 className="text-lg font-bold">Find Me</h3>
+              <div className="mt-4 flex items-center gap-x-4">
+                {FindMeLinks.map((i) => (
+                  <Link
+                    key={i.name}
+                    href={i.url}
+                    data-umami-event={i["data-umami-event"]}
+                    className="inline-flex items-center border-b px-2 transition-colors hover:border-primary"
+                  >
+                    <Icon className="size-6" icon={i.icon} />
+                    {i.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
