@@ -23,7 +23,7 @@ export function getMDXComponents(): MDXComponents {
     blockquote: (props) => (
       <blockquote
         className={cn(
-          "mt-6 border-gray-300 mb-4 italic px-4 border-l-2 text-gray-700 dark:border-gray-700 dark:text-gray-400",
+          "mt-6 border-gray-300 mb-4 italic px-4 border-l-2 text-gray-700 bg-gray-200/80 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-900",
           "first:mt-0 border-l-2 pl-6",
         )}
         {...props}
@@ -31,7 +31,7 @@ export function getMDXComponents(): MDXComponents {
     ),
     hr: (props) => <hr {...props} />,
     a: Link,
-    p: (props) => <p className="mt-6 leading-7 first:mt-0" {...props} />,
+    p: (props) => <p className="mt-6 leading-normal first:mt-0" {...props} />,
     Sandpack: (props: SandpackProps) => {
       const { children, ..._props } = props;
 

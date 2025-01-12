@@ -42,6 +42,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <div className="pointer-events-none fixed bottom-0 left-0 h-20 w-full bg-white [mask-image:linear-gradient(transparent,#000000)] dark:bg-black" />
         </Providers>
       </body>
     </html>

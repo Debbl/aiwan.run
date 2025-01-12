@@ -60,22 +60,23 @@ export function Pre({
 
   return (
     <div className="relative mt-6 overflow-hidden rounded-xl first:mt-0">
-      {filename && (
-        <div className="top-0 z-[1] w-full truncate bg-gray-200/80 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
-          {filename}
-        </div>
-      )}
-      <div className={cn(`language-${lang}`, "group relative")}>
-        <span className="absolute right-2 top-2 text-xs text-gray-300 transition-opacity group-hover:opacity-0">
-          {lang}
-        </span>
+      <div className="top-0 z-[1] flex w-full items-center justify-between truncate bg-gray-200/80 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
+        <span>{filename}</span>
+
+        <span>{lang}</span>
+      </div>
+
+      <div className={cn(`language-${lang}`, "relative")}>
         <CopyButton
-          className="absolute right-2 top-2 rounded-md p-1 text-gray-300 opacity-0 transition-opacity hover:bg-gray-700 group-hover:opacity-100"
+          className="absolute right-2 top-2 rounded-md p-1 text-gray-300 transition-opacity hover:bg-gray-700"
           lang={lang}
           code={code}
         />
-        <figure className="max-h-[300px] overflow-y-scroll text-xs">
-          <pre {...preJSXElement.props} className="p-4" />
+        <figure>
+          <pre
+            {...preJSXElement.props}
+            className="max-h-[300px] overflow-scroll p-4 text-xs"
+          />
         </figure>
       </div>
     </div>
