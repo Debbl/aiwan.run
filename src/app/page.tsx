@@ -174,7 +174,15 @@ export default function Home() {
           <div className="mt-20">
             <MIcon
               whileHover={{
+                rotate: 0,
+              }}
+              animate={{
                 rotate: 360,
+                transition: {
+                  delay: 0.5,
+                  duration: 1,
+                  type: "spring",
+                },
               }}
               transition={{
                 type: "spring",
