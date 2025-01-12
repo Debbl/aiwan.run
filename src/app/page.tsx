@@ -165,7 +165,9 @@ const FindMeLinks: {
 export default function Home() {
   return (
     <>
-      <Meteors number={30} />
+      <div className="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden">
+        <Meteors number={30} />
+      </div>
 
       <main className="relative flex-1 overflow-y-scroll">
         <div className="mb-10 flex flex-col items-center">

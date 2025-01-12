@@ -31,7 +31,10 @@ export default async function Page() {
 
   return (
     <>
-      <Meteors number={30} />
+      <div className="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden">
+        <Meteors number={30} />
+      </div>
+
       <main className="relative flex-1 overflow-y-scroll">
         <div className="mx-auto w-fit">
           {postsByCategory.map((category) => (

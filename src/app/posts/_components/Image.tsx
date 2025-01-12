@@ -31,7 +31,12 @@ export function Image({
         ZoomContent={(data) => <>{data.img}</>}
         wrapElement="span"
       >
-        <NextImage key={imageProps.src} {...imageProps} alt="image" />
+        <NextImage
+          className="mx-auto max-h-[300px] max-w-[60%] object-contain"
+          key={imageProps.src}
+          {...imageProps}
+          alt="image"
+        />
       </Zoom>
     </picture>
   );
