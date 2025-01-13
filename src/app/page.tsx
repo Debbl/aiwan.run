@@ -203,13 +203,12 @@ export default function Home() {
 
                   <ul className="mt-2">
                     {project.content.map((item) => (
-                      <Link
-                        href={item.link}
-                        key={item.name}
-                        className="text-sm transition-colors hover:text-primary"
-                        target="_blank"
-                      >
-                        <li className="my-3">
+                      <li className="my-3" key={item.name}>
+                        <Link
+                          href={item.link}
+                          className="text-sm transition-colors hover:text-primary"
+                          target="_blank"
+                        >
                           <div className="flex items-center gap-x-3">
                             <div>
                               <Image
@@ -225,8 +224,8 @@ export default function Home() {
                               <p className="text-xs">{item.desc}</p>
                             </div>
                           </div>
-                        </li>
-                      </Link>
+                        </Link>
+                      </li>
                     ))}
                   </ul>
                 </div>
