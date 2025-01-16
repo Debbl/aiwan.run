@@ -6,7 +6,7 @@ const remarkMdxLayout: Plugin = () => {
     const layoutWrapper = {
       type: "mdxjsEsm",
       value:
-        "export default function MDXpage({ children }) {\n  return <MdxLayout>{children}</MdxLayout>\n}",
+        "export default function MDXpage({ children }) {\n  return <MdxLayout frontmatter={frontmatter}>{children}</MdxLayout>\n}",
       data: {
         estree: {
           type: "Program",
@@ -53,7 +53,22 @@ const remarkMdxLayout: Plugin = () => {
                         type: "JSXElement",
                         openingElement: {
                           type: "JSXOpeningElement",
-                          attributes: [],
+                          attributes: [
+                            {
+                              type: "JSXAttribute",
+                              name: {
+                                type: "JSXIdentifier",
+                                name: "frontmatter",
+                              },
+                              value: {
+                                type: "JSXExpressionContainer",
+                                expression: {
+                                  type: "Identifier",
+                                  name: "frontmatter",
+                                },
+                              },
+                            },
+                          ],
                           name: {
                             type: "JSXIdentifier",
                             name: "MdxLayout",

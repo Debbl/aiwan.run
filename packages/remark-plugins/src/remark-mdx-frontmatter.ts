@@ -55,6 +55,7 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
 
   return (ast) => {
     let data: unknown;
+    let formatData: unknown;
     const node = ast.children.find((child) =>
       Object.hasOwn(allParsers, child.type),
     );
@@ -65,7 +66,11 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
       const { value } = node as Literal;
       data = parser(value);
       if (format) {
-        data = format(data);
+        formatData = format(data);
+      }
+
+      if (name === "frontmatter") {
+        data = formatData ?? data;
       }
     }
 
@@ -86,12 +91,33 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
                 declarations: [
                   {
                     type: "VariableDeclarator",
-                    id: { type: "Identifier", name },
+                    id: { type: "Identifier", name: "frontmatter" },
                     init: valueToEstree(data, { preserveReferences: true }),
                   },
                 ],
               },
             },
+            ...(name !== "frontmatter"
+              ? [
+                  {
+                    type: "ExportNamedDeclaration",
+                    specifiers: [],
+                    declaration: {
+                      type: "VariableDeclaration",
+                      kind: "const",
+                      declarations: [
+                        {
+                          type: "VariableDeclarator",
+                          id: { type: "Identifier", name },
+                          init: valueToEstree(formatData, {
+                            preserveReferences: true,
+                          }),
+                        },
+                      ],
+                    },
+                  },
+                ]
+              : []),
           ],
         },
       },
