@@ -4,6 +4,10 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "author": "Debbl <me@aiwan.run> (https://aiwan.run/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Debbl/aiwan.run.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -65,6 +69,7 @@
     "postcss-nesting": "^13.0.1",
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
+    "remark-github": "^12.0.0",
     "remark-mdx-frontmatter": "^5.0.0",
     "remark-plugins": "workspace:*",
     "serwist": "^9.0.11",

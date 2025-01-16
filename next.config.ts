@@ -3,6 +3,7 @@ import createMDX from "@next/mdx";
 import withSerwistInit from "@serwist/next";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
+import remarkGithub from "remark-github";
 import {
   remarkMdxFrontmatter,
   remarkMdxLayout,
@@ -24,6 +25,7 @@ const withMDX = createMDX({
   options: {
     remarkPlugins: [
       remarkGfm,
+      [remarkGithub, {}],
       remarkFrontmatter,
       [
         remarkMdxFrontmatter,
