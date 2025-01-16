@@ -1,7 +1,7 @@
 import parse from "html-react-parser";
 import { isValidElement } from "react";
 import { bundledLanguages, createHighlighter } from "shiki";
-import { cn } from "twl";
+import { cn } from "~/lib/utils";
 import CopyButton from "./CopyButton";
 import type { ComponentProps, JSX, ReactElement } from "react";
 

@@ -1,8 +1,9 @@
-import { cn } from "twl";
+import { cn } from "~/lib/utils";
 import { Code } from "./Code";
 import { HeadingLink } from "./HeadingLink";
 import { Image } from "./Image";
 import { Link } from "./Link";
+import MdxLayout from "./MdxLayout";
 import { Pre } from "./Pre";
 import { Sandpack } from "./Sandpack";
 import type { MDXComponents } from "mdx/types";
@@ -52,6 +53,7 @@ export function getMDXComponents(): MDXComponents {
       return <Sandpack files={files} {..._props} />;
     },
     Image,
+    MdxLayout,
     pre: Pre,
     code: Code,
   };

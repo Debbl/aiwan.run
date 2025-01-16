@@ -1,4 +1,4 @@
-import { cn } from "twl";
+import { cn } from "~/lib/utils";
 import type { ComponentProps, ReactElement } from "react";
 
 export function HeadingLink({

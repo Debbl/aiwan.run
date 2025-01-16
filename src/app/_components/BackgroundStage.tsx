@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import Particles from "./magicui/Particles";
+import Particles from "../../components/magicui/Particles";
 
 export default function BackgroundStage() {
   const { theme } = useTheme();
