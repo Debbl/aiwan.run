@@ -2,7 +2,6 @@
 import { format } from "date-fns";
 import Link from "next/link";
 import { useRef } from "react";
-import { DotPattern } from "~/components/magicui/DotPattern";
 import { m, useScroll } from "~/lib/motion";
 
 export default function MdxLayout({
@@ -31,7 +30,7 @@ export default function MdxLayout({
         style={{ scaleX: scrollYProgress as any }}
       />
 
-      <DotPattern width={30} height={30} />
+      {/* <DotPattern width={30} height={30} /> */}
 
       <div className="relative flex-1 overflow-y-scroll" ref={containerRef}>
         <main className="px-6 py-10 sm:px-60">

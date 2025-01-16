@@ -2,6 +2,7 @@ import bundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
 import withSerwistInit from "@serwist/next";
 import remarkFrontmatter from "remark-frontmatter";
+import remarkGfm from "remark-gfm";
 import {
   remarkMdxFrontmatter,
   remarkMdxLayout,
@@ -22,6 +23,7 @@ const withSerwist = withSerwistInit({
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
+      remarkGfm,
       remarkFrontmatter,
       [
         remarkMdxFrontmatter,
