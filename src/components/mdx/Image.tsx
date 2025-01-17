@@ -31,6 +31,7 @@ export function Image(props: NextImageProps) {
       >
         <NextImage
           className="mx-auto max-h-[300px] max-w-[60%] object-contain"
+          priority
           {...props}
         />
       </Zoom>
