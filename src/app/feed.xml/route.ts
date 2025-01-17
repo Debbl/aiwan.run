@@ -1,6 +1,6 @@
 import RSS from "rss";
 import { WEBSITE } from "~/constants";
-import { getAllPosts } from "../posts/_data";
+import { getPosts } from "../posts/_data";
 import { markdownToHtml } from "./markdown";
 
 export const dynamic = "force-static";
@@ -27,24 +27,23 @@ export async function GET() {
       },
     ],
   });
-  const allPosts = await getAllPosts();
+  const { posts } = await getPosts();
 
-  allPosts.forEach((post) => {
-    const { frontmatter } = post;
+  posts.forEach((post) => {
     const slug = post.slug;
 
     const data: RSS.ItemOptions = {
-      title: frontmatter.title,
+      title: post.title,
       guid: `${post.slug}`,
-      author: frontmatter.author ?? "me@aiwan.run (Brendan Dash)",
+      author: "me@aiwan.run (Brendan Dash)",
       url: `${WEBSITE.domain}/posts/${slug}`,
-      description: frontmatter?.description || frontmatter.title,
-      date: post.frontmatter.date,
+      description: post.title,
+      date: post.date,
       categories: [post.category],
       custom_elements: [
         {
           "content:encoded": {
-            _cdata: markdownToHtml(post.source, post.path),
+            _cdata: markdownToHtml(post.content, post.path),
           },
         },
       ],
