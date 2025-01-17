@@ -1,68 +1,45 @@
-import { readFileSync } from "node:fs";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { globbySync } from "globby";
-import { compileMDX } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
-import { VFile } from "vfile";
-import { rehypePre, remarkHeadings, remarkStaticImage } from "~/lib/MDXPlugins";
-import { getMDXComponents } from "../_components";
-import { postRootPath } from "./constants";
-import { images } from "./generateImages";
-import type { Category, Frontmatter, Posts } from "./types";
+import { globby } from "globby";
+import matter from "gray-matter";
+import { postsRootPath } from "./constants";
 
-const isDev = false;
-const postsPath = globbySync(`${postRootPath}/**/*.md?(x)`).filter(
-  (v) => v.includes("playground") === isDev,
-);
-
-export async function getAllPosts(): Promise<Posts> {
-  return Promise.all(
-    postsPath.map(async (p) => {
-      const content = readFileSync(p, "utf8");
-      const { name, dir } = path.parse(p);
-
-      const slug = name === "index" ? path.basename(dir) : name;
-
-      const dirArr = dir.split("/");
-      const markdownDirIndex = dirArr.findIndex((d) => d === "_markdown");
-      const category = dirArr[markdownDirIndex + 1] as Category;
-
-      const vFile = new VFile({
-        path: p,
-        value: content,
-      });
-
-      const mdxSource = await compileMDX<Frontmatter>({
-        source: vFile,
-        options: {
-          mdxOptions: {
-            remarkPlugins: [
-              [remarkHeadings, { isRemoteContent: false }],
-              remarkGfm,
-              remarkStaticImage,
-            ],
-            rehypePlugins: [rehypePre],
-            format: "mdx",
-            baseUrl: dir,
-          },
-          parseFrontmatter: true,
-          scope: {
-            images,
-          },
-        },
-        components: getMDXComponents(),
-      });
-
-      return {
-        ...mdxSource,
-        path: p,
-        source: content,
-        slug,
-        url: `/posts/${slug}`,
-        category,
-      };
-    }),
-  );
+export interface Frontmatter {
+  title: string;
+  date: string;
+  duration: string;
 }
 
-export const allPosts = await getAllPosts();
+export async function getPosts() {
+  const blogPaths = await globby(`${postsRootPath}/\\(blog\\)/**/*.md?(x)`);
+  const TILPaths = await globby(`${postsRootPath}/\\(TIL\\)/**/*.md?(x)`);
+
+  const getPost = async (postPath: string) => {
+    const file = await readFile(postPath, "utf-8");
+    const { data, content } = matter(file) as any as {
+      data: Frontmatter;
+      content: string;
+    };
+
+    const pageName = path.basename(path.parse(postPath).dir);
+    const slug = `/posts/${pageName}`;
+
+    return { ...data, path: postPath, slug, content };
+  };
+
+  const getPosts = async (paths: string[], category: string) => {
+    return await Promise.all(
+      paths.map(async (p) => ({
+        ...(await getPost(p)),
+        category,
+      })),
+    );
+  };
+
+  const posts = [
+    ...(await getPosts(blogPaths, "blog")),
+    ...(await getPosts(TILPaths, "TIL")),
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  return { posts };
+}

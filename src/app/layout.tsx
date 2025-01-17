@@ -1,4 +1,4 @@
-import Header from "~/components/Header";
+import Header from "~/app/_components/Header";
 import { WEBSITE } from "~/constants";
 import Providers from "~/providers";
 import "~/styles/globals.css";

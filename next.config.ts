@@ -1,6 +1,15 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
+import createMDX from "@next/mdx";
 import withSerwistInit from "@serwist/next";
-import type { NextConfig } from "next";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkGfm from "remark-gfm";
+import remarkGithub from "remark-github";
+import {
+  remarkMdxFrontmatter,
+  remarkMdxLayout,
+  remarkStaticImage,
+} from "remark-plugins";
+import type { Metadata, NextConfig } from "next";
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -12,6 +21,29 @@ const withSerwist = withSerwistInit({
   swDest: "public/sw.js",
 });
 
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [
+      remarkGfm,
+      [remarkGithub, {}],
+      remarkFrontmatter,
+      [
+        remarkMdxFrontmatter,
+        {
+          name: "metadata",
+          format: (data: any) => {
+            return {
+              title: `Posts | ${data.title}`,
+            } satisfies Metadata;
+          },
+        },
+      ],
+      [remarkStaticImage, { importPrefix: "" }],
+      remarkMdxLayout,
+    ],
+  },
+});
+
 const nextConfig: NextConfig = {
   output: "export",
   cleanDistDir: true,
@@ -20,10 +52,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
-function pipeline(fns: ((config: NextConfig) => NextConfig)[]) {
-  return fns.reduce((acc, fn) => fn(acc), nextConfig);
-}
-
-export default pipeline([withBundleAnalyzer, withSerwist]);
+export default [withBundleAnalyzer, withSerwist, withMDX].reduce(
+  (config, fn) => fn(config),
+  nextConfig,
+);

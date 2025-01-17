@@ -1,31 +1,18 @@
 import { format } from "date-fns";
 import { Meteors } from "~/components/magicui/Meteors";
-import { getAllPosts } from "./_data";
-import type { Posts } from "./_data/types";
-
-export type PostsByCategory = {
-  title: string;
-  posts: Posts;
-}[];
+import { getPosts } from "./_data";
 
 export default async function Page() {
-  const allPosts = (await getAllPosts()).sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime(),
-  );
+  const { posts } = await getPosts();
 
-  const blogPosts = allPosts.filter((p) => p.category === "blog");
-  const tilPosts = allPosts.filter((p) => p.category === "til");
-
-  const postsByCategory: PostsByCategory = [
+  const postsByCategory = [
     {
       title: "Blog",
-      posts: blogPosts,
+      posts: posts.filter((p) => p.category === "blog"),
     },
     {
       title: "TIL",
-      posts: tilPosts,
+      posts: posts.filter((p) => p.category === "TIL"),
     },
   ];
 
@@ -45,18 +32,18 @@ export default async function Page() {
                   {category.posts.map((post) => (
                     <a
                       className="opacity-60 hover:opacity-100"
-                      href={post.url}
+                      href={post.slug}
                       key={post.slug}
                     >
                       <li
                         className="text-gray-900 hover:text-primary dark:text-gray-50 dark:hover:text-primary"
                         data-umami-event={`click-posts-${post.slug}`}
                       >
-                        <span>{post.frontmatter.title}</span>
+                        <span>{post.title}</span>
                         <span className="ml-4 text-xs text-gray-500">
-                          {format(post.frontmatter.date, "MMM-dd")}
+                          {format(post.date, "MMM-dd")}
                           {" · "}
-                          {post.frontmatter.duration}
+                          {post.duration}
                         </span>
                       </li>
                     </a>

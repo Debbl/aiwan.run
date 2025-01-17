@@ -2,12 +2,12 @@
  * parse Markdown file to html for rss feed
  */
 
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import loaderUtils from "loader-utils";
 import MarkdownIt from "markdown-it";
 import { WEBSITE } from "~/constants";
-import { __images } from "../posts/_data/__images";
-import { generateImgPathHash } from "../posts/_data/generateImages";
 
 const md = MarkdownIt({
   html: true,
@@ -20,11 +20,23 @@ md.renderer.rules.image = (tokens, idx, options, env, self) => {
 
   const src = token.attrGet("src") as string;
   const mdPath = env.path;
-  const imgPath = path.join(path.dirname(mdPath), src);
+  const imagePath = path.join(path.dirname(mdPath), src);
 
-  const hash = generateImgPathHash(imgPath);
+  const fileContent = readFileSync(imagePath);
 
-  const url = `${WEBSITE.domain}${__images[hash].src}`;
+  // https://github.com/vercel/next.js/blob/60903439560f3f6f0d1fdd782800a9ff05558afb/packages/next/src/build/webpack/loaders/next-image-loader/index.ts#L23
+  const interpolatedName = loaderUtils.interpolateName(
+    {
+      resourcePath: imagePath,
+    } as any,
+    "/_next/static/media/[name].[hash:8].[ext]",
+    {
+      context: path.dirname(imagePath),
+      content: fileContent,
+    },
+  );
+
+  const url = `${WEBSITE.domain}${interpolatedName}`;
 
   token!.attrs![token.attrIndex("src")][1] = url;
 
