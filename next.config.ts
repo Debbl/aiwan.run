@@ -5,6 +5,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkGithub from "remark-github";
 import {
+  remarkHeadings,
   remarkMdxFrontmatter,
   remarkMdxLayout,
   remarkStaticImage,
@@ -24,6 +25,7 @@ const withSerwist = withSerwistInit({
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
+      [remarkHeadings, { isRemoteContent: false }],
       remarkGfm,
       [remarkGithub, {}],
       remarkFrontmatter,
