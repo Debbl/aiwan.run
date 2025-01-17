@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import Link from "~/components/Link";
 import { Meteors } from "~/components/magicui/Meteors";
 import { getPosts } from "./_data";
 
@@ -30,7 +31,7 @@ export default async function Page() {
                 <h2 className="text-3xl font-bold">{category.title}</h2>
                 <ul className="mt-4 flex flex-col gap-y-2">
                   {category.posts.map((post) => (
-                    <a
+                    <Link
                       className="opacity-60 hover:opacity-100"
                       href={post.slug}
                       key={post.slug}
@@ -46,7 +47,7 @@ export default async function Page() {
                           {post.duration}
                         </span>
                       </li>
-                    </a>
+                    </Link>
                   ))}
                 </ul>
               </div>
