@@ -4,7 +4,7 @@ import { globby } from "globby";
 import matter from "gray-matter";
 import { postsRootPath } from "./constants";
 
-interface Frontmatter {
+export interface Frontmatter {
   title: string;
   date: string;
   duration: string;

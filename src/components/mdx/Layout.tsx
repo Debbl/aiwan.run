@@ -3,17 +3,14 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { useRef } from "react";
 import { m, useScroll } from "~/lib/motion";
+import type { Frontmatter } from "~/app/posts/_data";
 
-export default function MdxLayout({
+export default function Layout({
   children,
   frontmatter,
 }: {
   children: React.ReactNode;
-  frontmatter: {
-    title: string;
-    duration: string;
-    date: string;
-  };
+  frontmatter: Frontmatter;
 }) {
   const { title, duration, date } = frontmatter;
 

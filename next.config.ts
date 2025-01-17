@@ -9,7 +9,7 @@ import {
   remarkMdxLayout,
   remarkStaticImage,
 } from "remark-plugins";
-import type { NextConfig } from "next";
+import type { Metadata, NextConfig } from "next";
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -34,7 +34,7 @@ const withMDX = createMDX({
           format: (data: any) => {
             return {
               title: `Posts | ${data.title}`,
-            };
+            } satisfies Metadata;
           },
         },
       ],
