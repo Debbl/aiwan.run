@@ -34,6 +34,10 @@ export interface RemarkMdxFrontmatterOptions {
  * A remark plugin to expose frontmatter data as named exports.
  *
  * @param options Optional options to configure the output.
+ * @param options.name - If specified, the YAML data is exported using this name. Otherwise, each
+ * object key will be used as an export name.
+ * @param options.parsers - A mapping of node types to parsers.
+ * @param options.format - A function that formats the frontmatter data.
  * @returns A unified transformer.
  */
 const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
