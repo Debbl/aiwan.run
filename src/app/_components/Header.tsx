@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useRef } from "react";
+import Link from "~/components/Link";
 import { useMobile } from "~/hooks/useMobile";
 import { Icon } from "~/icons";
 import ThemeSwitcher from "./ThemeSwitcher";
