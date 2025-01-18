@@ -1,10 +1,23 @@
 {
   "eslint.useFlatConfig": true,
-  // do not want to autofix some rules on save
-  "eslint.codeActionsOnSave.rules": [
-    "!prefer-const",
-    "!unused-imports/no-unused-imports",
-    "*"
+  // set severity of some rules on save in vscode development
+  "eslint.rules.customizations": [
+    {
+      "rule": "no-console",
+      "severity": "warn"
+    },
+    {
+      "rule": "prefer-const",
+      "severity": "warn"
+    },
+    {
+      "rule": "no-unused-vars",
+      "severity": "warn"
+    },
+    {
+      "rule": "unused-imports/no-unused-imports",
+      "severity": "warn"
+    }
   ],
   "cSpell.words": [
     "frontmatter",
