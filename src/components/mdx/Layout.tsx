@@ -36,7 +36,7 @@ export default function Layout({
               {title}
             </h1>
             <p className="mt-2 text-gray-600">
-              <span>{format(new Date(date), "MMM-dd")}</span>
+              <span>{format(new Date(date), "MMM-dd, yyyy")}</span>
               {" · "}
               <span>{duration}</span>
             </p>

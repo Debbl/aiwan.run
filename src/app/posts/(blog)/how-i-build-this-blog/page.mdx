@@ -1,11 +1,23 @@
 ---
 title: 我是如何搭建这个博客的
 date: 2024-05-26T12:24:14.000Z
-duration: 15min
+duration: 3min
 ---
 
 ## 组件
 
 ### 图片
 
-![](./images/1.png)
+![](./images/image.png)
+
+## Changelog
+
+### refactor use mdx
+
+> https://github.com/Debbl/aiwan.run/pull/11
+
+- 使用 mdx 重构了博客 [nextjs文档](https://nextjs.org/docs/app/building-your-application/configuring/mdx)
+- 参考了 [nextra](https://github.com/shuding/nextra) 的实现
+- 使用 app router 作为 page 加载 mdx 文件
+- remark-mdx-layout 全局的 Layout 组件
+- remark-static-image 相对路径引入静态图片文件
