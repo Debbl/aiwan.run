@@ -8,6 +8,7 @@ import {
   remarkHeadings,
   remarkMdxFrontmatter,
   remarkMdxLayout,
+  remarkMdxPre,
   remarkStaticImage,
 } from "remark-plugins";
 import type { Metadata, NextConfig } from "next";
@@ -41,6 +42,7 @@ const withMDX = createMDX({
           },
         },
       ],
+      remarkMdxPre,
       [remarkStaticImage, { importPrefix: "" }],
       remarkMdxLayout,
     ],
