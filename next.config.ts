@@ -23,6 +23,7 @@ const withSerwist = withSerwistInit({
 });
 
 const withMDX = createMDX({
+  extension: /\.mdx?$/,
   options: {
     remarkPlugins: [
       [remarkHeadings, { isRemoteContent: false }],

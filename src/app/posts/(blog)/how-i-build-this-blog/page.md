@@ -14,9 +14,10 @@ duration: 3min
 
 ### 添加 NProgress
 
-> https://github.com/Skyleen77/next-nprogress-bar
+> https://github.com/Debbl/aiwan.run/pull/12
 
 - 当前网站路由切换时显示进度条
+- https://github.com/Skyleen77/next-nprogress-bar
 
 ### refactor use mdx
 
