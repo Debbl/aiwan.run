@@ -8,11 +8,7 @@ export default function ClientProviders({
 }) {
   return (
     <>
-      <AppProgressBar
-        color="#fef3c7"
-        options={{ showSpinner: false }}
-        shallowRouting
-      />
+      <AppProgressBar options={{ showSpinner: false }} shallowRouting />
       {children}
     </>
   );
