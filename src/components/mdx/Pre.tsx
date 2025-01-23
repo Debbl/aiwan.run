@@ -1,30 +1,13 @@
 import parse from "html-react-parser";
-import { isValidElement } from "react";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "~/lib/utils";
 import CopyButton from "./CopyButton";
-import type { ComponentProps, JSX, ReactElement } from "react";
+import type { JSX, ReactElement } from "react";
 
-const languagePrefix = "language-";
 const highlighter = await createHighlighter({
   themes: ["one-dark-pro"],
   langs: Object.keys(bundledLanguages),
 });
-const langs = [...highlighter.getLoadedLanguages(), "text", "plain"];
-
-function getLang(className?: string) {
-  if (!className) return "plain";
-
-  const classes: string[] = className.split(" ");
-  const languageClass = classes.find(
-    (d) => typeof d === "string" && d.startsWith(languagePrefix),
-  );
-  const lang =
-    typeof languageClass === "string"
-      ? languageClass.slice(languagePrefix.length)
-      : "plain";
-  return lang;
-}
 
 function parseMeta(meta?: string) {
   if (!meta) return {};
@@ -37,21 +20,17 @@ function parseMeta(meta?: string) {
 }
 
 export function Pre({
-  children,
-  ...props
-}: ComponentProps<"pre"> & {
-  meta?: string;
+  lang,
+  meta = "",
+  value,
+}: {
+  lang: string;
+  meta: string;
+  value: string;
 }): ReactElement {
-  if (!children || !isValidElement(children)) return <pre {...props} />;
+  const { filename } = parseMeta(meta);
 
-  const code = (children as JSX.Element).props.children as string;
-  const lang = getLang((children as JSX.Element).props.className);
-
-  const { filename } = parseMeta(props.meta);
-
-  if (!langs.includes(lang)) return <pre {...props} />;
-
-  const renderedHTML = highlighter.codeToHtml(code, {
+  const renderedHTML = highlighter.codeToHtml(value, {
     lang,
     theme: "one-dark-pro",
   });
@@ -70,7 +49,7 @@ export function Pre({
         <CopyButton
           className="absolute right-2 top-2 rounded-md p-1 text-gray-300 transition-opacity hover:bg-gray-700"
           lang={lang}
-          code={code}
+          code={value}
         />
         <figure>
           <pre

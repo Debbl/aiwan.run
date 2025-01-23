@@ -54,7 +54,7 @@ export function getMDXComponents(): MDXComponents {
     },
     Image,
     MdxLayout: Layout,
-    pre: Pre,
+    Pre,
     code: Code,
   };
 }
