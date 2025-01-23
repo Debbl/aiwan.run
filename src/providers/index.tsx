@@ -1,5 +1,6 @@
 import { domAnimation, LazyMotion } from "motion/react";
 import { ThemeProvider } from "next-themes";
+import ClientProviders from "./index.client";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +10,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <LazyMotion features={domAnimation}>{children}</LazyMotion>
+      <LazyMotion features={domAnimation}>
+        <ClientProviders>{children}</ClientProviders>
+      </LazyMotion>
     </ThemeProvider>
   );
 }
