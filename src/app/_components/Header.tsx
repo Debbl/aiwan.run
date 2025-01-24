@@ -1,16 +1,15 @@
 "use client";
+import { LucideRss } from "lucide-react";
 import { useRef } from "react";
 import Link from "~/components/Link";
 import { useMobile } from "~/hooks/useMobile";
-import { Icon } from "~/icons";
 import ThemeSwitcher from "./ThemeSwitcher";
-import type { IconType } from "~/icons";
 
 const nav: {
   "url": string;
   "name": string;
   "data-umami-event": string;
-  "icon"?: IconType;
+  "icon"?: React.ReactNode;
 }[] = [
   {
     "url": "/posts",
@@ -31,7 +30,7 @@ const nav: {
     "url": "/feed.xml",
     "name": "RSS",
     "data-umami-event": "click-rss-link",
-    "icon": "Rss",
+    "icon": <LucideRss className="size-5" />,
   },
 ];
 
@@ -60,7 +59,9 @@ export default function Header() {
               href={n.url}
               prefetch={["/posts"].includes(n.url)}
             >
-              {n.icon ? <Icon className="size-5" icon={n.icon} /> : n.name}
+              {n.icon || n.name}
+
+              {n.icon && <span className="sr-only">{n.name}</span>}
             </Link>
           ))}
 

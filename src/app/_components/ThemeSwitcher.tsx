@@ -1,15 +1,26 @@
 "use client";
-import { useHydrated } from "@debbl/ahooks";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
-import { Icon } from "~/icons";
 import type { MouseEventHandler } from "react";
+
+const ThemeIcon = ({
+  icon,
+  className,
+}: {
+  icon: "Moon" | "Sun";
+  className?: string;
+}) => {
+  if (icon === "Moon") {
+    return <Moon className={className} />;
+  }
+
+  return <Sun className={className} />;
+};
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   const icon: "Sun" | "Moon" = theme === "dark" ? "Sun" : "Moon";
-
-  const { isHydrated } = useHydrated();
 
   const toggleTheme: MouseEventHandler<HTMLButtonElement> = (e) => {
     const x = e.clientX;
@@ -55,11 +66,9 @@ export default function ThemeSwitcher() {
 
   return (
     <>
-      <button type="button" onClick={toggleTheme} aria-label="theme-switcher">
-        <Icon
-          className="size-5 cursor-pointer"
-          icon={!isHydrated ? "Moon" : icon}
-        />
+      <button type="button" onClick={toggleTheme}>
+        <ThemeIcon icon={icon} className="size-5 cursor-pointer" />
+        <span className="sr-only">theme-switcher</span>
       </button>
     </>
   );
