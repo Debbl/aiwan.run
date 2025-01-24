@@ -5,6 +5,7 @@
 @import url(./subheading-anchor.css);
 @import url(./view-transition.css);
 @import url(./image-zoom.css);
+@import url(./scroll-bar.css);
 
 @layer components {
   .nav {
