@@ -17,12 +17,6 @@ importers:
       '@debbl/utils':
         specifier: ^0.2.2
         version: 0.2.2
-      '@serwist/next':
-        specifier: ^9.0.11
-        version: 9.0.11(next@15.1.6(@babel/core@7.25.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)(webpack@5.94.0)
-      '@types/mdx':
-        specifier: ^2.0.13
-        version: 2.0.13
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -65,15 +59,6 @@ importers:
       react-medium-image-zoom:
         specifier: ^5.2.13
         version: 5.2.13(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      remark-gfm:
-        specifier: ^4.0.0
-        version: 4.0.0
-      rss:
-        specifier: ^1.2.2
-        version: 1.2.2
-      slash:
-        specifier: ^5.1.0
-        version: 5.1.0
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -83,9 +68,6 @@ importers:
       twl:
         specifier: 0.0.0-alpha.5
         version: 0.0.0-alpha.5
-      vfile:
-        specifier: ^6.0.3
-        version: 6.0.3
     devDependencies:
       '@debbl/eslint-config':
         specifier: ^3.8.10
@@ -102,6 +84,9 @@ importers:
       '@next/mdx':
         specifier: ^15.1.6
         version: 15.1.6(@mdx-js/loader@3.1.0(webpack@5.94.0))(@mdx-js/react@3.1.0(@types/react@19.0.8)(react@19.0.0))
+      '@serwist/next':
+        specifier: ^9.0.11
+        version: 9.0.11(next@15.1.6(@babel/core@7.25.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)(webpack@5.94.0)
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
@@ -114,6 +99,9 @@ importers:
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
+      '@types/mdx':
+        specifier: ^2.0.13
+        version: 2.0.13
       '@types/node':
         specifier: ^22.10.10
         version: 22.10.10
@@ -162,12 +150,18 @@ importers:
       postcss-nesting:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.5.1)
+      rehype-github-alerts:
+        specifier: ^3.0.0
+        version: 3.0.0
       remark:
         specifier: ^15.0.1
         version: 15.0.1
       remark-frontmatter:
         specifier: ^5.0.0
         version: 5.0.0
+      remark-gfm:
+        specifier: ^4.0.0
+        version: 4.0.0
       remark-github:
         specifier: ^12.0.0
         version: 12.0.0
@@ -177,6 +171,9 @@ importers:
       remark-plugins:
         specifier: workspace:*
         version: link:packages/remark-plugins
+      rss:
+        specifier: ^1.2.2
+        version: 1.2.2
       serwist:
         specifier: ^9.0.11
         version: 9.0.11(typescript@5.7.3)
@@ -2192,6 +2189,18 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  hast-util-from-html@2.0.3:
+    resolution: {integrity: sha512-CUSRHXyKjzHov8yKsQjGOElXy/3EKpyX56ELnkHH34vDVw1N1XSQ1ZcAvTyAPtGqLTuKP/uxM+aLkSPqF/EtMw==}
+
+  hast-util-from-parse5@8.0.2:
+    resolution: {integrity: sha512-SfMzfdAi/zAoZ1KkFEyyeXBn7u/ShQrfd675ZEE9M3qj+PMFX05xubzRyF76CCSJu8au9jgVxDV1+okFvgZU4A==}
+
+  hast-util-is-element@3.0.0:
+    resolution: {integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==}
+
+  hast-util-parse-selector@4.0.0:
+    resolution: {integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==}
+
   hast-util-to-estree@3.1.0:
     resolution: {integrity: sha512-lfX5g6hqVh9kjS/B9E2gSkvHH4SZNiQFiqWS0x9fENzEl+8W12RqdRxX6d/Cwxi30tPQs3bIO+aolQJNp1bIyw==}
 
@@ -2203,6 +2212,9 @@ packages:
 
   hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
+
+  hastscript@9.0.0:
+    resolution: {integrity: sha512-jzaLBGavEDKHrc5EfFImKN7nZKKBdSLIdGvCwDZ9TfzbF2ffXiov8CKE445L2Z1Ek2t/m4SKQ2j6Ipv7NyUolw==}
 
   hermes-estree@0.25.1:
     resolution: {integrity: sha512-0wUoCcLp+5Ev5pDW2OriHC2MJCbwLwuRx+gAqMTOkGKJJiBCLjtrvy4PWUGn6MIVefecRpzoOZ/UV6iGdOr+Cw==}
@@ -2931,6 +2943,9 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
 
+  parse5@7.2.1:
+    resolution: {integrity: sha512-BuBYQYlv1ckiPdQi/ohiivi9Sagc9JG+Ozs0r7b/0iK3sKmrb0b9FdWdBbOdx6hBCM/F9Ir82ofnBhtZOjCRPQ==}
+
   path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
@@ -3199,6 +3214,9 @@ packages:
   regjsparser@0.10.0:
     resolution: {integrity: sha512-qx+xQGZVsy55CH0a1hiVwHmqjLryfh7wQyF5HO07XJ9f7dQMY/gPQHhlyDkIzJKC+x2fUCpCcUODUUUFrm7SHA==}
     hasBin: true
+
+  rehype-github-alerts@3.0.0:
+    resolution: {integrity: sha512-m8Lm+V0Ee0T9JqaLN0eBqtyUSfMUDFhAOIjbvoAQfI6EKtxKsIGWP6PaQE01UBHat0K7dBtnaeyCmJuUO7ylHg==}
 
   remark-frontmatter@5.0.0:
     resolution: {integrity: sha512-XTFYvNASMe5iPN0719nPrdItC9aU0ssC4v14mH1BCi1u0n1gAocqcujWUrByftZTbLhRtiKRyjYTSIOcr69UVQ==}
@@ -3686,6 +3704,9 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
+  vfile-location@5.0.3:
+    resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
+
   vfile-matter@5.0.0:
     resolution: {integrity: sha512-jhPSqlj8hTSkTXOqyxbUeZAFFVq/iwu/jukcApEqc/7DOidaAth6rDc0Zgg0vWpzUnWkwFP7aK28l6nBmxMqdQ==}
 
@@ -3707,6 +3728,9 @@ packages:
   watchpack@2.4.2:
     resolution: {integrity: sha512-TnbFSbcOCcDgjZ4piURLCbJ3nJhznVh9kw6F6iokjiFPl8ONxe9A6nMDVXDiNbrSfLILs6vB07F7wLBrwPYzJw==}
     engines: {node: '>=10.13.0'}
+
+  web-namespaces@2.0.1:
+    resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
 
   webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
@@ -6167,6 +6191,34 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  hast-util-from-html@2.0.3:
+    dependencies:
+      '@types/hast': 3.0.4
+      devlop: 1.1.0
+      hast-util-from-parse5: 8.0.2
+      parse5: 7.2.1
+      vfile: 6.0.3
+      vfile-message: 4.0.2
+
+  hast-util-from-parse5@8.0.2:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/unist': 3.0.3
+      devlop: 1.1.0
+      hastscript: 9.0.0
+      property-information: 6.5.0
+      vfile: 6.0.3
+      vfile-location: 5.0.3
+      web-namespaces: 2.0.1
+
+  hast-util-is-element@3.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+
+  hast-util-parse-selector@4.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+
   hast-util-to-estree@3.1.0:
     dependencies:
       '@types/estree': 1.0.6
@@ -6225,6 +6277,14 @@ snapshots:
   hast-util-whitespace@3.0.0:
     dependencies:
       '@types/hast': 3.0.4
+
+  hastscript@9.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      comma-separated-tokens: 2.0.3
+      hast-util-parse-selector: 4.0.0
+      property-information: 6.5.0
+      space-separated-tokens: 2.0.2
 
   hermes-estree@0.25.1: {}
 
@@ -7201,6 +7261,10 @@ snapshots:
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
 
+  parse5@7.2.1:
+    dependencies:
+      entities: 4.5.0
+
   path-exists@4.0.0: {}
 
   path-key@3.1.1: {}
@@ -7388,6 +7452,12 @@ snapshots:
   regjsparser@0.10.0:
     dependencies:
       jsesc: 0.5.0
+
+  rehype-github-alerts@3.0.0:
+    dependencies:
+      hast-util-from-html: 2.0.3
+      hast-util-is-element: 3.0.0
+      unist-util-visit: 5.0.0
 
   remark-frontmatter@5.0.0:
     dependencies:
@@ -7967,6 +8037,11 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
+  vfile-location@5.0.3:
+    dependencies:
+      '@types/unist': 3.0.3
+      vfile: 6.0.3
+
   vfile-matter@5.0.0:
     dependencies:
       vfile: 6.0.3
@@ -8002,6 +8077,8 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
     optional: true
+
+  web-namespaces@2.0.1: {}
 
   webidl-conversions@4.0.2: {}
 

@@ -6,6 +6,7 @@
 @import url(./view-transition.css);
 @import url(./image-zoom.css);
 @import url(./scroll-bar.css);
+@import url(./markdown-alert.css);
 
 @layer components {
   .nav {

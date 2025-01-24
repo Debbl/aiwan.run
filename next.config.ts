@@ -1,6 +1,7 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
 import withSerwistInit from "@serwist/next";
+import { rehypeGithubAlerts } from "rehype-github-alerts";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkGithub from "remark-github";
@@ -46,6 +47,7 @@ const withMDX = createMDX({
       [remarkStaticImage, { importPrefix: "" }],
       remarkMdxLayout,
     ],
+    rehypePlugins: [rehypeGithubAlerts],
   },
 });
 

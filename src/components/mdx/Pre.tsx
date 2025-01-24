@@ -38,7 +38,7 @@ export function Pre({
   const preJSXElement = parse(renderedHTML) as JSX.Element;
 
   return (
-    <div className="relative mt-6 overflow-hidden rounded-xl first:mt-0">
+    <div className="relative my-6 overflow-hidden rounded-xl first:mt-0">
       <div className="top-0 z-[1] flex w-full items-center justify-between truncate bg-gray-200/80 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
         <span>{filename}</span>
 
