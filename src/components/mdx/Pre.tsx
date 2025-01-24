@@ -1,8 +1,10 @@
+"use server";
+import { rendererClassic, transformerTwoslash } from "@shikijs/twoslash";
 import parse from "html-react-parser";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "~/lib/utils";
 import CopyButton from "./CopyButton";
-import type { JSX, ReactElement } from "react";
+import type { JSX } from "react";
 
 const highlighter = await createHighlighter({
   themes: ["one-dark-pro"],
@@ -13,13 +15,15 @@ function parseMeta(meta?: string) {
   if (!meta) return {};
 
   const filenameRegex = /filename="(.+)"/;
+  const isTwoslash = /twoslash/.test(meta);
 
   return {
     filename: filenameRegex.test(meta) ? meta.match(filenameRegex)![1] : "",
+    isTwoslash,
   };
 }
 
-export function Pre({
+export async function Pre({
   lang,
   meta = "",
   value,
@@ -27,12 +31,23 @@ export function Pre({
   lang: string;
   meta: string;
   value: string;
-}): ReactElement {
-  const { filename } = parseMeta(meta);
+}) {
+  // console.log("🚀 ~ lang:", lang);
+
+  const { filename, isTwoslash } = parseMeta(meta);
+
+  const _TwoslashTransformer = isTwoslash
+    ? [
+        transformerTwoslash({
+          renderer: rendererClassic(),
+        }),
+      ]
+    : [];
 
   const renderedHTML = highlighter.codeToHtml(value, {
     lang,
     theme: "one-dark-pro",
+    transformers: [],
   });
 
   const preJSXElement = parse(renderedHTML) as JSX.Element;

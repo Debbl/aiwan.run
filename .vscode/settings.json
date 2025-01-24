@@ -28,7 +28,8 @@
     "rehype",
     "serwist",
     "shadcn",
-    "shiki"
+    "shiki",
+    "twoslash"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

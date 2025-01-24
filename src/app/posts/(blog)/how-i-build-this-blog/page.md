@@ -16,6 +16,14 @@ duration: 3min
 
 ## Changelog
 
+### 添加 twoslash
+
+> https://github.com/Debbl/aiwan.run/pull/12
+
+- 添加 twoslash 支持
+- https://shiki.style/packages/twoslash#shikijs-twoslash
+- https://nextra.site/docs/advanced/twoslash
+
 ### 添加 NProgress
 
 > https://github.com/Debbl/aiwan.run/pull/12

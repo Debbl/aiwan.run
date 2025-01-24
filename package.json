@@ -52,6 +52,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/bundle-analyzer": "^15.1.6",
     "@next/mdx": "^15.1.6",
+    "@shikijs/twoslash": "^2.1.0",
     "@types/hast": "^3.0.4",
     "@types/loader-utils": "^2.0.6",
     "@types/markdown-it": "^14.1.2",

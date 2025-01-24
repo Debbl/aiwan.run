@@ -8,9 +8,10 @@ duration: 1min
 
 模板字面量类型是 TypeScript 中的一种类型，它允许你创建可以包含变量的字符串类型。
 
-```ts
+```ts twoslash
 type World = "world";
-type Greeting = `hello ${World}`; // "hello world"
+type Greeting = `hello ${World}`;
+// ^?
 ```
 
 ```ts
