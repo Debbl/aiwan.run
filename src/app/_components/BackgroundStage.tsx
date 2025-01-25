@@ -1,17 +1,14 @@
 "use client";
 import { useTheme } from "next-themes";
-import Particles from "../../components/magicui/Particles";
+import Snowfall from "react-snowfall";
+import { Meteors } from "~/components/magicui/Meteors";
 
 export default function BackgroundStage() {
   const { theme } = useTheme();
 
   return (
-    <Particles
-      className="absolute inset-0 z-[-1]"
-      quantity={100}
-      ease={80}
-      color={theme === "dark" ? "#ffffff" : "#000000"}
-      refresh
-    />
+    <div className="pointer-events-none fixed inset-0 z-0 size-full overflow-hidden">
+      {theme === "dark" ? <Snowfall /> : <Meteors number={30} />}
+    </div>
   );
 }

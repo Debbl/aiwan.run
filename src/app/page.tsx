@@ -3,7 +3,6 @@ import Link from "next/link";
 import { LuGithub } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
 import { RiBilibiliLine } from "react-icons/ri";
-import { Meteors } from "~/components/magicui/Meteors";
 import { MAvatar } from "~/icons";
 import {
   ai,
@@ -20,6 +19,7 @@ import {
   tools,
   v,
 } from "../logos";
+import BackgroundStage from "./_components/BackgroundStage";
 import type { IconType } from "react-icons";
 
 type Projects = Record<
@@ -168,9 +168,7 @@ const FindMeLinks: {
 export default function Home() {
   return (
     <>
-      <div className="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden">
-        <Meteors number={30} />
-      </div>
+      <BackgroundStage />
 
       <main className="relative flex-1 overflow-y-scroll">
         <div className="mb-10 flex flex-col items-center">

@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import Link from "~/components/Link";
-import { Meteors } from "~/components/magicui/Meteors";
+import BackgroundStage from "../_components/BackgroundStage";
 import { getPosts } from "./_data";
 
 export default async function Page() {
@@ -19,9 +19,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden">
-        <Meteors number={30} />
-      </div>
+      <BackgroundStage />
 
       <main className="relative flex-1 overflow-y-scroll">
         <div className="flex min-h-full w-full items-center justify-center">
