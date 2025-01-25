@@ -37,11 +37,11 @@ export default async function Page() {
                       key={post.slug}
                     >
                       <li
-                        className="text-gray-900 hover:text-primary dark:text-gray-50 dark:hover:text-primary"
+                        className="flex flex-col text-gray-900 hover:text-primary md:flex-row dark:text-gray-50 dark:hover:text-primary"
                         data-umami-event={`click-posts-${post.slug}`}
                       >
                         <span>{post.title}</span>
-                        <span className="ml-4 text-xs text-gray-500">
+                        <span className="ml-0 flex items-center text-xs text-gray-500 md:ml-4">
                           {format(post.date, "MMM-dd")}
                           {" · "}
                           {post.duration}
