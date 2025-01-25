@@ -42,7 +42,7 @@ export default async function Page() {
                       >
                         <span>{post.title}</span>
                         <span className="ml-0 flex items-center text-xs text-gray-500 md:ml-4">
-                          {format(post.date, "MMM-dd")}
+                          {format(post.date, "MMM-dd, yyyy")}
                           {" · "}
                           {post.duration}
                         </span>
