@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   authors: WEBSITE.authors,
   description: WEBSITE.description,
   icons: "/favicon.svg",
+  openGraph: {
+    url: WEBSITE.domain,
+    title: WEBSITE.title,
+    description: WEBSITE.description,
+    images: ["/og.png"],
+    emails: [WEBSITE.email],
+  },
   alternates: {
     canonical: "https://aiwan.run/",
     types: {

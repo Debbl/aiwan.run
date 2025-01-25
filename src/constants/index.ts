@@ -1,7 +1,7 @@
 // eslint-disable-next-line n/prefer-global/process
-export const isDev = process.env.NODE_ENV === "development";
-// eslint-disable-next-line n/prefer-global/process
 export const CWD = process.cwd();
+// eslint-disable-next-line n/prefer-global/process
+export const isDev = process.env.NODE_ENV === "development";
 
 export const WEBSITE = {
   title: "Brendan Dash",
@@ -9,4 +9,5 @@ export const WEBSITE = {
   description: "Brendan Dash's personal website",
   // eslint-disable-next-line n/prefer-global/process
   domain: isDev ? process.env.__NEXT_PRIVATE_ORIGIN! : "https://aiwan.run",
+  email: "me@aiwan.run",
 };
