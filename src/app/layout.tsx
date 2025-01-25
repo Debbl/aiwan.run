@@ -6,6 +6,7 @@ import "~/styles/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(WEBSITE.domain),
   title: WEBSITE.title,
   authors: WEBSITE.authors,
   description: WEBSITE.description,
@@ -38,7 +39,6 @@ export const metadata: Metadata = {
     url: WEBSITE.domain,
     title: WEBSITE.title,
     description: WEBSITE.description,
-    images: ["/og.png"],
     emails: [WEBSITE.email],
   },
   alternates: {
