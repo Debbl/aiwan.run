@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "motion";
 import type { Transition, Variants } from "motion";
-import type { ClassName } from "~/types";
+import type { ClassName } from "./types";
 
 const svgVariants: Variants = {
   normal: {

@@ -35,6 +35,9 @@ export const metadata: Metadata = {
       url: "/apple-touch-icon.png",
     },
   ],
+  twitter: {
+    creator: "Debbl66",
+  },
   openGraph: {
     url: WEBSITE.domain,
     title: WEBSITE.title,

@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "motion";
 import type { Variants } from "motion";
-import type { ClassName } from "~/types";
+import type { ClassName } from "./types";
 
 const pathVariants: Variants = {
   normal: { opacity: 1 },

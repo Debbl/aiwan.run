@@ -1,9 +1,6 @@
+import { LuGithub, MAvatar, MdOutlineMail, RiBilibiliLine } from "icons";
 import Image from "next/image";
 import Link from "next/link";
-import { LuGithub } from "react-icons/lu";
-import { MdOutlineMail } from "react-icons/md";
-import { RiBilibiliLine } from "react-icons/ri";
-import { MAvatar } from "~/icons";
 import {
   ai,
   biliShortLink,
@@ -20,7 +17,7 @@ import {
   v,
 } from "../logos";
 import BackgroundStage from "./_components/BackgroundStage";
-import type { IconType } from "react-icons";
+import type { IconType } from "icons";
 
 type Projects = Record<
   string,

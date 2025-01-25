@@ -2,6 +2,18 @@
 import { m } from "motion";
 import type { SVGProps } from "react";
 
+export { CheckIcon } from "./CheckIcon";
+export { CopyIcon } from "./CopyIcon";
+export { MoonIcon } from "./MoonIcon";
+
+export { SunIcon } from "./SunIcon";
+
+export { LucideRss } from "lucide-react";
+export type { IconBaseProps, IconType } from "react-icons";
+export { LuGithub } from "react-icons/lu";
+export { MdOutlineMail } from "react-icons/md";
+export { RiBilibiliLine } from "react-icons/ri";
+
 export function Avatar(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
