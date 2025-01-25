@@ -56,6 +56,7 @@ duration: 3min
 
 - https://og-playground.vercel.app/
 - https://vercel.com/docs/functions/og-image-generation
+- https://orcascan.com/tools/open-graph-validator
 - 静态生成 OG 图片
   - 使用 `[og/[slug]/route.tsx]` 更改 slug 为 `[post.pageName].png`
   - `generateStaticParams` 生成 posts 的 OG 图片
