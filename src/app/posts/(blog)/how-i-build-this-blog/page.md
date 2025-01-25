@@ -52,6 +52,8 @@ duration: 3min
 
 ### 添加 GitHub Alert
 
+> https://github.com/Debbl/aiwan.run/commit/c9cb8268eb2037bec897ffbdeb780135d2145039
+
 - https://github.com/chrisweb/rehype-github-alerts
 
 ### 添加 NProgress
