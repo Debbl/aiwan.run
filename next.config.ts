@@ -12,6 +12,7 @@ import {
   remarkMdxPre,
   remarkStaticImage,
 } from "remark-plugins";
+import { WEBSITE } from "~/constants";
 import type { Metadata, NextConfig } from "next";
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -37,8 +38,17 @@ const withMDX = createMDX({
         {
           name: "metadata",
           format: (data: any) => {
+            const title = `Posts | ${data.title}`;
+
             return {
-              title: `Posts | ${data.title}`,
+              title,
+              openGraph: {
+                url: `${WEBSITE.domain}/posts`,
+                title,
+                description: WEBSITE.description,
+                images: ["/apple-touch-icon.png"],
+                emails: [WEBSITE.email],
+              },
             } satisfies Metadata;
           },
         },

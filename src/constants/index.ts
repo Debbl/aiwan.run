@@ -9,4 +9,5 @@ export const WEBSITE = {
   description: "Brendan Dash's personal website",
   // eslint-disable-next-line n/prefer-global/process
   domain: isDev ? process.env.__NEXT_PRIVATE_ORIGIN! : "https://aiwan.run",
+  email: "me@aiwan.run",
 };

@@ -24,7 +24,7 @@ export async function getPosts() {
     const pageName = path.basename(path.parse(postPath).dir);
     const slug = `/posts/${pageName}`;
 
-    return { ...data, path: postPath, slug, content };
+    return { ...data, path: postPath, slug, content, pageName };
   };
 
   const getPosts = async (paths: string[], category: string) => {
