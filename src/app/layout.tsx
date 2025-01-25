@@ -9,7 +9,31 @@ export const metadata: Metadata = {
   title: WEBSITE.title,
   authors: WEBSITE.authors,
   description: WEBSITE.description,
-  icons: "/favicon.svg",
+  appleWebApp: {
+    title: WEBSITE.title,
+  },
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "96x96",
+      url: "/favicon-96x96.png",
+    },
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      url: "/favicon.svg",
+    },
+    {
+      rel: "shortcut icon",
+      url: "/favicon.ico",
+    },
+    {
+      rel: "app-touch-icon",
+      sizes: "180x180",
+      url: "/apple-touch-icon.png",
+    },
+  ],
   openGraph: {
     url: WEBSITE.domain,
     title: WEBSITE.title,
