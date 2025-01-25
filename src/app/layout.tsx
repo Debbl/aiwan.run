@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: WEBSITE.domain,
     title: WEBSITE.title,
     description: WEBSITE.description,
-    images: ["/apple-touch-icon.png"],
+    images: ["/og.png"],
     emails: [WEBSITE.email],
   },
   alternates: {

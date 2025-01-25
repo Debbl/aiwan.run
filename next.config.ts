@@ -10,10 +10,12 @@ import {
   remarkMdxFrontmatter,
   remarkMdxLayout,
   remarkMdxPre,
+  remarkMdxSlug,
   remarkStaticImage,
 } from "remark-plugins";
 import { WEBSITE } from "~/constants";
 import type { Metadata, NextConfig } from "next";
+import type { VFile } from "vfile";
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -30,6 +32,7 @@ const withMDX = createMDX({
   options: {
     remarkPlugins: [
       [remarkHeadings, { isRemoteContent: false }],
+      remarkMdxSlug,
       remarkGfm,
       [remarkGithub, {}],
       remarkFrontmatter,
@@ -37,16 +40,16 @@ const withMDX = createMDX({
         remarkMdxFrontmatter,
         {
           name: "metadata",
-          format: (data: any) => {
+          format: (data: any, file: VFile) => {
             const title = `Posts | ${data.title}`;
 
             return {
               title,
               openGraph: {
                 url: `${WEBSITE.domain}/posts`,
-                title,
+                title: `${file.data.title}` || title,
                 description: WEBSITE.description,
-                images: ["/apple-touch-icon.png"],
+                images: [`/og/${file.data.slug}.png`],
                 emails: [WEBSITE.email],
               },
             } satisfies Metadata;
@@ -70,6 +73,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  transpilePackages: ["remark-plugins"],
 };
 
 export default [withBundleAnalyzer, withSerwist, withMDX].reduce(

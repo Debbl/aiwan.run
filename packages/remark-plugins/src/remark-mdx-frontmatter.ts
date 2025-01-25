@@ -6,6 +6,7 @@ import { parse as parseToml } from "toml";
 import { parse as parseYaml } from "yaml";
 import type { Literal, Root } from "mdast";
 import type { Plugin } from "unified";
+import type { VFile } from "vfile";
 
 type FrontmatterParsers = Record<string, (value: string) => unknown>;
 
@@ -27,7 +28,7 @@ export interface RemarkMdxFrontmatterOptions {
    */
   parsers?: FrontmatterParsers;
 
-  format?: (data: any) => any;
+  format?: (data: any, file: VFile) => any;
 }
 
 /**
@@ -57,7 +58,7 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
     ...parsers,
   };
 
-  return (ast) => {
+  return (ast, file) => {
     let data: unknown;
     let formatData: unknown;
     const node = ast.children.find((child) =>
@@ -70,7 +71,7 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
       const { value } = node as Literal;
       data = parser(value);
       if (format) {
-        formatData = format(data);
+        formatData = format(data, file);
       }
 
       if (name === "frontmatter") {
