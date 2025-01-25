@@ -1,7 +1,8 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
+import { MoonIcon } from "~/icons/MoonIcon";
+import { SunIcon } from "~/icons/SunIcon";
 import type { MouseEventHandler } from "react";
 
 const ThemeIcon = ({
@@ -12,10 +13,10 @@ const ThemeIcon = ({
   className?: string;
 }) => {
   if (icon === "Moon") {
-    return <Moon className={className} />;
+    return <MoonIcon className={className} />;
   }
 
-  return <Sun className={className} />;
+  return <SunIcon className={className} />;
 };
 
 export default function ThemeSwitcher() {

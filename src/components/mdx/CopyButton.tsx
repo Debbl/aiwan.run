@@ -1,19 +1,20 @@
 "use client";
+import { motion } from "motion";
 import { useState } from "react";
-import { LuCheck, LuCopy } from "react-icons/lu";
-import { motion } from "~/lib/motion";
+import { CheckIcon } from "~/icons/CheckIcon";
+import { CopyIcon } from "~/icons/CopyIcon";
 import { cn } from "~/lib/utils";
 import type { IconBaseProps } from "react-icons";
 
-const CopyIcon = ({
+const CopyButtonIcon = ({
   isCopied,
   ...props
 }: { isCopied: boolean } & IconBaseProps) => {
   if (isCopied) {
-    return <LuCheck {...props} />;
+    return <CheckIcon {...props} />;
   }
 
-  return <LuCopy {...props} />;
+  return <CopyIcon {...props} />;
 };
 
 export default function CopyButton({
@@ -45,9 +46,9 @@ export default function CopyButton({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
-      <CopyIcon
+      <CopyButtonIcon
         isCopied={isCopied}
-        className={cn(isCopied && "text-green-500")}
+        className={cn("size-4", isCopied && "text-green-500")}
       />
       <span className="sr-only">Copy</span>
     </motion.button>

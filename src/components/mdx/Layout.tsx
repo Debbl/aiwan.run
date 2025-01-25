@@ -1,8 +1,8 @@
 "use client";
 import { format } from "date-fns";
+import { m, useScroll } from "motion";
 import Link from "next/link";
 import { useRef } from "react";
-import { m, useScroll } from "~/lib/motion";
 import type { Frontmatter } from "~/app/posts/_data";
 
 export default function Layout({

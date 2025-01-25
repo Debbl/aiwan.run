@@ -30,8 +30,8 @@ importers:
         specifier: ^0.474.0
         version: 0.474.0(react@19.0.0)
       motion:
-        specifier: ^12.0.3
-        version: 12.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: workspace:*
+        version: link:packages/motion
       next:
         specifier: ^15.1.6
         version: 15.1.6(@babel/core@7.25.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -210,6 +210,12 @@ importers:
       vfile:
         specifier: ^6.0.3
         version: 6.0.3
+
+  packages/motion:
+    dependencies:
+      motion:
+        specifier: ^12.0.3
+        version: 12.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   packages/remark-plugins:
     dependencies:
@@ -1045,9 +1051,6 @@ packages:
 
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
-
-  '@types/estree@1.0.5':
-    resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -2020,9 +2023,6 @@ packages:
 
   estree-util-to-js@2.0.0:
     resolution: {integrity: sha512-WDF+xj5rRWmD5tj6bIqRi6CkLIXbbNQUcxQHzGysQzvHmdYG2G7p/Tf0J0gpxGgkeMZNTIjT/AoSvC9Xehcgdg==}
-
-  estree-util-value-to-estree@3.1.2:
-    resolution: {integrity: sha512-S0gW2+XZkmsx00tU2uJ4L9hUT7IFabbml9pHh2WQqFmAbxit++YGZne0sKJbNwkj9Wvg9E4uqWl4nCIFQMmfag==}
 
   estree-util-value-to-estree@3.2.1:
     resolution: {integrity: sha512-Vt2UOjyPbNQQgT5eJh+K5aATti0OjCIAGc9SgMdOFYbohuifsWclR74l0iZTJwePMgWYdX1hlVS+dedH9XV8kw==}
@@ -3883,11 +3883,6 @@ packages:
     resolution: {integrity: sha512-4wZWvE398hCP7O8n3nXKu/vdq1HcH01ixYlCREaJL5NUMwQ0g3MaGFUBNSlmBtKmhbtVG/Cm6lyYmSVTEVil8A==}
     engines: {node: ^14.17.0 || >=16.0.0}
 
-  yaml@2.6.1:
-    resolution: {integrity: sha512-7r0XPzioN/Q9kXBro/XPnA6kznR73DHq+GXh5ON7ZozRO6aMjbmiBuKste2wslTFkC5d1dw0GooOCepZXJ2SAg==}
-    engines: {node: '>= 14'}
-    hasBin: true
-
   yaml@2.7.0:
     resolution: {integrity: sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==}
     engines: {node: '>= 14'}
@@ -4893,8 +4888,6 @@ snapshots:
   '@types/estree-jsx@1.0.5':
     dependencies:
       '@types/estree': 1.0.6
-
-  '@types/estree@1.0.5': {}
 
   '@types/estree@1.0.6': {}
 
@@ -6079,10 +6072,6 @@ snapshots:
       '@types/estree-jsx': 1.0.5
       astring: 1.8.6
       source-map: 0.7.4
-
-  estree-util-value-to-estree@3.1.2:
-    dependencies:
-      '@types/estree': 1.0.5
 
   estree-util-value-to-estree@3.2.1:
     dependencies:
@@ -7447,7 +7436,7 @@ snapshots:
   postcss-load-config@4.0.2(postcss@8.5.1):
     dependencies:
       lilconfig: 3.1.3
-      yaml: 2.6.1
+      yaml: 2.7.0
     optionalDependencies:
       postcss: 8.5.1
 
@@ -7623,10 +7612,10 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.4
       estree-util-is-identifier-name: 3.0.0
-      estree-util-value-to-estree: 3.1.2
+      estree-util-value-to-estree: 3.2.1
       toml: 3.0.0
       unified: 11.0.5
-      yaml: 2.6.1
+      yaml: 2.7.0
 
   remark-mdx@3.0.1:
     dependencies:
@@ -8199,7 +8188,7 @@ snapshots:
   vfile-matter@5.0.0:
     dependencies:
       vfile: 6.0.3
-      yaml: 2.6.1
+      yaml: 2.7.0
 
   vfile-message@4.0.2:
     dependencies:
@@ -8332,8 +8321,6 @@ snapshots:
       eslint-visitor-keys: 3.4.3
       lodash: 4.17.21
       yaml: 2.7.0
-
-  yaml@2.6.1: {}
 
   yaml@2.7.0: {}
 

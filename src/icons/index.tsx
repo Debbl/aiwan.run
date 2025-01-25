@@ -1,5 +1,5 @@
 "use client";
-import { m } from "~/lib/motion";
+import { m } from "motion";
 import type { SVGProps } from "react";
 
 export function Avatar(props: SVGProps<SVGSVGElement>) {
