@@ -49,7 +49,15 @@ const withMDX = createMDX({
                 url: `${WEBSITE.domain}/posts`,
                 title: `${file.data.title}` || title,
                 description: WEBSITE.description,
-                images: [`/og/${file.data.slug}.png`],
+                type: "website",
+                images: [
+                  {
+                    alt: `og-image-${file.data.slug}`,
+                    url: `/posts/og/${file.data.slug}.png`,
+                    width: 800,
+                    height: 400,
+                  },
+                ],
                 emails: [WEBSITE.email],
               },
             } satisfies Metadata;

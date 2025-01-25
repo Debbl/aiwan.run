@@ -24,6 +24,7 @@
     "lingui",
     "magicui",
     "mdast",
+    "opengraph",
     "precache",
     "rehype",
     "serwist",
