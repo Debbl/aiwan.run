@@ -50,6 +50,18 @@ duration: 3min
 
 ## Changelog
 
+### 添加 OG 图片
+
+> https://github.com/Debbl/aiwan.run/pull/14
+
+- https://og-playground.vercel.app/
+- https://vercel.com/docs/functions/og-image-generation
+- 静态生成 OG 图片
+  - 使用 `[og/[slug]/route.tsx]` 更改 slug 为 `[post.pageName].png`
+  - `generateStaticParams` 生成 posts 的 OG 图片
+  - `remark-mdx-slug` 获取 `slug`
+  - `remark-mdx-formatter` 配置 `openGraph` 使用 `[/og/${post.pageName}.png]` 作为 OG 图片
+
 ### 添加 GitHub Alert
 
 > https://github.com/Debbl/aiwan.run/commit/c9cb8268eb2037bec897ffbdeb780135d2145039
