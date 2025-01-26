@@ -54,7 +54,7 @@ export function Pre({
         <figure>
           <pre
             {...preJSXElement.props}
-            className="max-h-[300px] overflow-scroll p-4 text-xs"
+            className="max-h-[300px] overflow-y-auto p-4 text-xs"
           />
         </figure>
       </div>
