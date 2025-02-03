@@ -1,6 +1,6 @@
 "use client";
+import { m, useScroll } from "@repo/motion";
 import { format } from "date-fns";
-import { m, useScroll } from "motion";
 import Link from "next/link";
 import { useRef } from "react";
 import type { Frontmatter } from "~/app/posts/_data";

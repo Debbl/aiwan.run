@@ -1,5 +1,5 @@
 "use client";
-import { m } from "motion";
+import { m } from "@repo/motion";
 import type { SVGProps } from "react";
 
 export { CheckIcon } from "./CheckIcon";

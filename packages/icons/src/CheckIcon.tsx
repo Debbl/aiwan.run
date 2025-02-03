@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "motion";
-import type { Variants } from "motion";
+import { motion, useAnimation } from "@repo/motion";
+import type { Variants } from "@repo/motion";
 import type { ClassName } from "./types";
 
 const pathVariants: Variants = {

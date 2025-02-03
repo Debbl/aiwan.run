@@ -1,9 +1,9 @@
 {
-  "name": "icons",
+  "name": "@repo/icons",
   "main": "./src/index.tsx",
   "dependencies": {
+    "@repo/motion": "workspace:*",
     "lucide-react": "^0.474.0",
-    "motion": "workspace:*",
     "react-icons": "^5.4.0"
   }
 }

@@ -1,10 +1,5 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
-import withSerwistInit from "@serwist/next";
-import { rehypeGithubAlerts } from "rehype-github-alerts";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkGfm from "remark-gfm";
-import remarkGithub from "remark-github";
 import {
   remarkHeadings,
   remarkMdxFrontmatter,
@@ -12,7 +7,12 @@ import {
   remarkMdxPre,
   remarkMdxSlug,
   remarkStaticImage,
-} from "remark-plugins";
+} from "@repo/remark-plugins";
+import withSerwistInit from "@serwist/next";
+import { rehypeGithubAlerts } from "rehype-github-alerts";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkGfm from "remark-gfm";
+import remarkGithub from "remark-github";
 import { WEBSITE } from "~/constants";
 import type { Metadata, NextConfig } from "next";
 import type { VFile } from "vfile";

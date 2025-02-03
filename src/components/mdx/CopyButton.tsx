@@ -1,9 +1,9 @@
 "use client";
-import { CheckIcon, CopyIcon } from "icons";
-import { motion } from "motion";
+import { CheckIcon, CopyIcon } from "@repo/icons";
+import { motion } from "@repo/motion";
 import { useState } from "react";
 import { cn } from "~/lib/utils";
-import type { IconBaseProps } from "icons";
+import type { IconBaseProps } from "@repo/icons";
 
 const CopyButtonIcon = ({
   isCopied,

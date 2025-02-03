@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "motion";
-import type { Transition } from "motion";
+import { motion, useAnimation } from "@repo/motion";
+import type { Transition } from "@repo/motion";
 import type { ClassName } from "./types";
 
 const defaultTransition: Transition = {

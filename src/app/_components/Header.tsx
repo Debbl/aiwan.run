@@ -1,5 +1,5 @@
 "use client";
-import { LucideRss } from "icons";
+import { LucideRss } from "@repo/icons";
 import { useRef } from "react";
 import Link from "~/components/Link";
 import { useMobile } from "~/hooks/useMobile";

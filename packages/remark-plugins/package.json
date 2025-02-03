@@ -1,5 +1,5 @@
 {
-  "name": "remark-plugins",
+  "name": "@repo/remark-plugins",
   "main": "./src/index.ts",
   "dependencies": {
     "estree-util-is-identifier-name": "^3.0.0",
