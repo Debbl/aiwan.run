@@ -30,7 +30,7 @@ export default function Layout({
       {/* <DotPattern width={30} height={30} /> */}
 
       <div className="relative flex-1 overflow-y-scroll" ref={containerRef}>
-        <main className="px-6 py-10 sm:px-60">
+        <main className="px-6 py-10 sm:px-40 md:px-52 xl:px-80">
           <article>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
               {title}
