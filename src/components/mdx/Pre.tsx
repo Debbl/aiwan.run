@@ -1,6 +1,7 @@
 import parse from "html-react-parser";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "~/lib/utils";
+import { ScrollArea } from "../ui/ScrollArea";
 import CopyButton from "./CopyButton";
 import type { JSX, ReactElement } from "react";
 
@@ -47,15 +48,17 @@ export function Pre({
 
       <div className={cn(`language-${lang}`, "relative")}>
         <CopyButton
-          className="absolute right-2 top-2 rounded-md p-1 text-gray-300 transition-opacity hover:bg-gray-700"
+          className="absolute right-2 top-2 z-10 rounded-md p-1 text-gray-300 transition-opacity hover:bg-gray-700"
           lang={lang}
           code={value}
         />
         <figure>
-          <pre
-            {...preJSXElement.props}
-            className="max-h-[300px] overflow-y-auto p-4 text-xs"
-          />
+          <ScrollArea
+            style={preJSXElement.props.style}
+            className="max-h-[300px] "
+          >
+            <pre {...preJSXElement.props} className="p-4 text-xs" />
+          </ScrollArea>
         </figure>
       </div>
     </div>

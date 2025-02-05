@@ -24,7 +24,7 @@ export function getMDXComponents(): MDXComponents {
     blockquote: (props) => (
       <blockquote
         className={cn(
-          "mt-6 border-gray-300 mb-4 italic px-4 border-l-2 text-gray-700 bg-gray-200/80 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-900",
+          "mt-6 border-l-2 pl-6 italic",
           "first:mt-0 border-l-2 pl-6",
         )}
         {...props}

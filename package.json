@@ -23,6 +23,7 @@
     "@codesandbox/sandpack-react": "^2.19.11",
     "@debbl/ahooks": "^0.3.4",
     "@debbl/utils": "^0.2.2",
+    "@radix-ui/react-scroll-area": "^1.2.2",
     "@repo/icons": "workspace:*",
     "@repo/motion": "workspace:*",
     "class-variance-authority": "^0.7.1",
