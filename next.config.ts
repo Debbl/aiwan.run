@@ -81,7 +81,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  transpilePackages: ["remark-plugins"],
 };
 
 export default [withBundleAnalyzer, withSerwist, withMDX].reduce(

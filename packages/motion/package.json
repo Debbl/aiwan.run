@@ -2,6 +2,6 @@
   "name": "@repo/motion",
   "main": "./src/index.ts",
   "dependencies": {
-    "motion": "^12.0.10"
+    "motion": "^12.4.0"
   }
 }
