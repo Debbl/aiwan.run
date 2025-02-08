@@ -35,7 +35,7 @@ export default async function Page() {
                       key={post.slug}
                     >
                       <li
-                        className="flex flex-col text-gray-900 hover:text-primary md:flex-row dark:text-gray-50 dark:hover:text-primary"
+                        className="hover:text-primary dark:hover:text-primary flex flex-col text-gray-900 md:flex-row dark:text-gray-50"
                         data-umami-event={`click-posts-${post.slug}`}
                       >
                         <span>{post.title}</span>

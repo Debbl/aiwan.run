@@ -194,7 +194,7 @@ export default function Home() {
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12">
               {Object.entries(projects).map(([_, project]) => (
                 <div key={project.name}>
-                  <h2 className="cursor-pointer text-lg font-bold text-black transition-colors hover:text-primary">
+                  <h2 className="hover:text-primary cursor-pointer text-lg font-bold text-black transition-colors">
                     {project.name}
                   </h2>
                   <div className="text-sm text-gray-600">{project.desc}</div>
@@ -204,7 +204,7 @@ export default function Home() {
                       <li className="my-3" key={item.name}>
                         <Link
                           href={item.link}
-                          className="text-sm transition-colors hover:text-primary"
+                          className="hover:text-primary text-sm transition-colors"
                           target="_blank"
                         >
                           <div className="flex items-center gap-x-3">
@@ -214,7 +214,7 @@ export default function Home() {
                                 src={item.favicon ?? ""}
                                 width={16}
                                 height={16}
-                                className="mr-1 inline-block size-4 dark:rounded dark:bg-foreground "
+                                className="dark:bg-foreground mr-1 inline-block size-4 dark:rounded"
                               />
                             </div>
                             <div>
@@ -238,7 +238,7 @@ export default function Home() {
                     key={i.name}
                     href={i.url}
                     data-umami-event={i["data-umami-event"]}
-                    className="inline-flex items-center gap-x-1 border-b px-2 transition-colors hover:border-primary"
+                    className="hover:border-primary inline-flex items-center gap-x-1 border-b px-2 transition-colors"
                   >
                     <i.icon className="size-5" />
                     <span>{i.name}</span>
