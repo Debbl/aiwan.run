@@ -12,6 +12,8 @@ duration: 3min
 
 ### 图片
 
+可以直接在相对路径下引入图片，使用 `remark-static-image` 插件，自动导入图片，具体可以查看 [Next.js 中使用 MDX 静态图片](/posts/nextjs-mdx-static-image) 。
+
 ![](./images/image.png)
 
 ### GitHub Alert
