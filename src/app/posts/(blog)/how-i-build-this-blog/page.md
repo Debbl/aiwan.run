@@ -54,6 +54,10 @@ duration: 3min
 
 - [为你的网站添加 PWA 和 Service Worker](/posts/add-pwa-and-service-worker-for-your-site)
 
+## 添加 OG 图片
+
+- [Next.js 中添加 Open Graph](/posts/nextjs-add-open-graph)
+
 ## Changelog
 
 ### 添加 OG 图片
