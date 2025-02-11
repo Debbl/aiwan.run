@@ -50,6 +50,10 @@ duration: 3min
 > [!CAUTION]  
 > Negative potential consequences of an action.
 
+## PWA
+
+- [为你的网站添加 PWA 和 Service Worker](/posts/add-pwa-and-service-worker-for-your-site)
+
 ## Changelog
 
 ### 添加 OG 图片
