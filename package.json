@@ -72,6 +72,7 @@
     "markdown-it": "^14.1.0",
     "postcss": "^8.5.2",
     "postcss-nesting": "^13.0.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "rehype-github-alerts": "^4.1.0",
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
