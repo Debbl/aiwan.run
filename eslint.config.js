@@ -9,5 +9,5 @@ export default defineConfig({
   react: {
     next: true,
   },
-  tailwindcss: true,
+  tailwindcss: "prettier",
 });

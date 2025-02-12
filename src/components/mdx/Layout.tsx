@@ -23,7 +23,7 @@ export default function Layout({
   return (
     <div className="relative flex min-h-0 flex-1 flex-col">
       <m.div
-        className="fixed inset-x-0 top-0 z-10 h-0.5 origin-left bg-primary"
+        className="bg-primary fixed inset-x-0 top-0 z-10 h-0.5 origin-left"
         style={{ scaleX: scrollYProgress as any }}
       />
 

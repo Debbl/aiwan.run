@@ -60,6 +60,12 @@ duration: 3min
 
 ## Changelog
 
+### 升级 tailwindcss v4
+
+> https://github.com/Debbl/aiwan.run/pull/19
+
+- https://tailwindcss.com/docs/upgrade-guide
+
 ### 添加 OG 图片
 
 > https://github.com/Debbl/aiwan.run/pull/14
