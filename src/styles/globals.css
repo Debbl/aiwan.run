@@ -43,8 +43,6 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
-  --animate-meteor: meteor 5s linear infinite;
-
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -75,16 +73,20 @@
       background-position: 0% 0%;
     }
   }
+
+  --animate-meteor: meteor 5s linear infinite;
   @keyframes meteor {
     0% {
-      transform: rotate(215deg) translateX(0);
+      rotate: 215deg;
+      transform: translateX(0);
       opacity: 1;
     }
     70% {
       opacity: 1;
     }
     100% {
-      transform: rotate(215deg) translateX(-500px);
+      rotate: 215deg;
+      transform: translateX(-500px);
       opacity: 0;
     }
   }
