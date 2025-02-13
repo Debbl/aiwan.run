@@ -1,5 +1,5 @@
 import { cn } from "~/lib/utils";
-import type { ComponentProps, ReactElement } from "react";
+import type { ComponentProps } from "react";
 
 export function HeadingLink({
   tag: Tag,
@@ -9,7 +9,7 @@ export function HeadingLink({
   ...props
 }: ComponentProps<"h2"> & {
   tag: `h${2 | 3 | 4 | 5 | 6}`;
-}): ReactElement {
+}) {
   const cls =
     className === "sr-only"
       ? "sr-only"
