@@ -3,7 +3,7 @@ import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "~/lib/utils";
 import { ScrollArea } from "../ui/ScrollArea";
 import CopyButton from "./CopyButton";
-import type { JSX, ReactElement } from "react";
+import type { JSX } from "react";
 
 const highlighter = await createHighlighter({
   themes: ["one-dark-pro"],
@@ -28,7 +28,7 @@ export function Pre({
   lang: string;
   meta: string;
   value: string;
-}): ReactElement {
+}) {
   const { filename } = parseMeta(meta);
 
   const renderedHTML = highlighter.codeToHtml(value, {

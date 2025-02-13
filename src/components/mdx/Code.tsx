@@ -1,11 +1,11 @@
 import { cn } from "~/lib/utils";
-import type { ComponentProps, ReactElement } from "react";
+import type { ComponentProps } from "react";
 
-export const Code = ({
+export function Code({
   children,
   className,
   ...props
-}: ComponentProps<"code">): ReactElement => {
+}: ComponentProps<"code">) {
   return (
     <code
       className={cn(
@@ -19,4 +19,4 @@ export const Code = ({
       {children}
     </code>
   );
-};
+}
