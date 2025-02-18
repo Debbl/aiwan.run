@@ -75,7 +75,7 @@
   --animate-meteor: meteor 5s linear infinite;
   @keyframes meteor {
     0% {
-      rotate: 215deg;
+      rotate: var(--angle);
       transform: translateX(0);
       opacity: 1;
     }
@@ -83,7 +83,7 @@
       opacity: 1;
     }
     100% {
-      rotate: 215deg;
+      rotate: var(--angle);
       transform: translateX(-500px);
       opacity: 0;
     }
