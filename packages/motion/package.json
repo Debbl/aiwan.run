@@ -1,7 +1,7 @@
 {
-  "name": "@repo/motion",
+  "name": "@workspace/motion",
   "main": "./src/index.ts",
   "dependencies": {
-    "motion": "^12.4.2"
+    "motion": "^12.4.3"
   }
 }

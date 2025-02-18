@@ -1,5 +1,5 @@
 "use client";
-import { MoonIcon, SunIcon } from "@repo/icons";
+import { MoonIcon, SunIcon } from "@workspace/icons";
 import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
 import type { MouseEventHandler } from "react";

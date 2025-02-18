@@ -1,4 +1,9 @@
-import { LuGithub, MAvatar, MdOutlineMail, RiBilibiliLine } from "@repo/icons";
+import {
+  LuGithub,
+  MAvatar,
+  MdOutlineMail,
+  RiBilibiliLine,
+} from "@workspace/icons";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -17,7 +22,7 @@ import {
   v,
 } from "../logos";
 import BackgroundStage from "./_components/BackgroundStage";
-import type { IconType } from "@repo/icons";
+import type { IconType } from "@workspace/icons";
 
 type Projects = Record<
   string,

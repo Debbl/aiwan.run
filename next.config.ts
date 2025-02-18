@@ -1,5 +1,6 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
+import withSerwistInit from "@serwist/next";
 import {
   remarkHeadings,
   remarkMdxFrontmatter,
@@ -7,8 +8,7 @@ import {
   remarkMdxPre,
   remarkMdxSlug,
   remarkStaticImage,
-} from "@repo/remark-plugins";
-import withSerwistInit from "@serwist/next";
+} from "@workspace/remark-plugins";
 import { rehypeGithubAlerts } from "rehype-github-alerts";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";

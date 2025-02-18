@@ -17,5 +17,5 @@
     "lib": "~/lib",
     "hooks": "~/hooks"
   },
-  "iconLibrary": "@repo/icons"
+  "iconLibrary": "@workspace/icons"
 }

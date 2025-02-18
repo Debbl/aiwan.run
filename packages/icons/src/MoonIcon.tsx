@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "@repo/motion";
-import type { Transition, Variants } from "@repo/motion";
+import { motion, useAnimation } from "@workspace/motion";
+import type { Transition, Variants } from "@workspace/motion";
 import type { ClassName } from "./types";
 
 const svgVariants: Variants = {

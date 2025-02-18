@@ -1,5 +1,5 @@
 "use client";
-import { m, useScroll } from "@repo/motion";
+import { m, useScroll } from "@workspace/motion";
 import { format } from "date-fns";
 import Link from "next/link";
 import { useRef } from "react";
