@@ -3,7 +3,7 @@
   "main": "./src/index.tsx",
   "dependencies": {
     "@workspace/motion": "workspace:*",
-    "lucide-react": "^0.475.0",
-    "react-icons": "^5.4.0"
+    "lucide-react": "^0.476.0",
+    "react-icons": "^5.5.0"
   }
 }
