@@ -77,9 +77,6 @@ const nextConfig: NextConfig = {
   cleanDistDir: true,
   reactStrictMode: true,
   poweredByHeader: false,
-  experimental: {
-    viewTransition: true,
-  },
   images: {
     unoptimized: true,
   },

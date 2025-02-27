@@ -1,7 +1,7 @@
 "use client";
 import { LucideRss } from "@workspace/icons";
-import Link from "next/link";
 import { useRef } from "react";
+import Link from "~/components/Link";
 import { useMobile } from "~/hooks/useMobile";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -41,11 +41,11 @@ export default function Header() {
   return (
     <nav ref={navRef} className={"flex items-center justify-between px-6 py-3"}>
       <div>
-        <button type="button" aria-label="home">
-          <Link href="/" aria-label="home page link">
+        <Link href="/" aria-label="home page link">
+          <button type="button" aria-label="home">
             ~
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
 
       <div className="flex items-center gap-x-3 sm:gap-x-6">

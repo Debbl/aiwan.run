@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import Link from "next/link";
+import Link from "~/components/Link";
 import BackgroundStage from "../_components/BackgroundStage";
 import { getPosts } from "./_data";
 
