@@ -19,7 +19,7 @@ const nav: {
   {
     "url": "/tools",
     "name": "Tools",
-    "data-umami-event": "click-blog-tools",
+    "data-umami-event": "click-tools-link",
   },
   {
     "url": "/slides",
