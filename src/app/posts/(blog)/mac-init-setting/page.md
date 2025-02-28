@@ -120,6 +120,99 @@ plugins=(
 
 完整文件 [.zshrc](https://github.com/Debbl/dotfiles/blob/main/_.zshrc), 文件名是 `.zshrc`
 
+## Git 设置
+
+生成 ssh 密钥
+
+```sh
+ssh-keygen -m PEM -t ed25519 -C "your.email@example.com"
+```
+
+查看 ssh 公钥
+
+```sh
+cat ~/.ssh/id_ed25519.pub
+```
+
+全局用户名邮箱
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+```
+
+当前仓库用户名邮箱
+
+```sh
+git config --local user.name "Your Name"
+git config --local user.email "email@example.com"
+```
+
+配置 `quotepath` 选项
+
+避免中文路径乱码
+
+```sh
+git config --global core.quotepath false
+```
+
+不忽略大小写
+
+```sh
+git config --global core.ignorecase false
+```
+
+完整的配置 [.gitconfig](https://github.com/Debbl/dotfiles/blob/main/_.gitconfig)
+
+```text filename=".gitconfig"
+[user]
+  name = "Your Name"
+  email = "email@example.com"
+
+[core]
+  quotepath = false
+  ignorecase = false
+```
+
+## SSH 配置 Git 多用户
+
+生成多个 ssh 密钥
+
+```sh
+ssh-keygen -m PEM -t ed25519 -C "your.email@example.com" -f ~/.ssh/id_ed25519
+```
+
+```sh
+ssh-keygen -m PEM -t ed25519 -C "your.email@example.com" -f ~/.ssh/id_ed25519_gitlab
+```
+
+配置 ssh 配置文件
+
+```sh
+vim ~/.ssh/config
+```
+
+完整的配置 [.ssh/config](https://github.com/Debbl/dotfiles/blob/main/_.config)
+
+```ssh-config filename=".ssh/config"
+# Personal account, - the default config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
+
+# Work account-1
+Host gitlab.com
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_gitlab
+```
+
+`IdentityFile` 为当前的 Host 配置 ssh 密钥
+
+`ProxyCommand` 为 GitHub 仓库配置代理，使用 `nc` 命令，`127.0.0.1:7890` 是本机代理端口
+
 ## Mac 设置
 
 仅在台前调度时，点击墙纸显示桌面
