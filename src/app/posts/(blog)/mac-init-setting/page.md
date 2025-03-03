@@ -164,7 +164,7 @@ git config --global core.ignorecase false
 
 完整的配置 [.gitconfig](https://github.com/Debbl/dotfiles/blob/main/_.gitconfig)
 
-```text filename=".gitconfig"
+```plain filename=".gitconfig"
 [user]
   name = "Your Name"
   email = "email@example.com"
@@ -222,6 +222,10 @@ Host gitlab.com
 调整鼠标指针大小
 
 ![](./images/mac-settting-cursor.png)
+
+关闭自动首字母大写
+
+![](./images/mac-setting-auto-capitalize-words.png)
 
 ## VSCode 设置
 
