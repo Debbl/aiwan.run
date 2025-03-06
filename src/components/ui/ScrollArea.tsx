@@ -19,7 +19,7 @@ function ScrollArea({
       <ScrollAreaPrimitive.Viewport className="w-full grow rounded-[inherit]">
         {children}
       </ScrollAreaPrimitive.Viewport>
-      <ScrollBar />
+      <ScrollBar className="w-1.5" />
       <ScrollAreaPrimitive.Corner />
     </ScrollAreaPrimitive.Root>
   );

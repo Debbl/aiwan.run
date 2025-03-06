@@ -47,7 +47,7 @@ export default function CopyButton({
     >
       <CopyButtonIcon
         isCopied={isCopied}
-        className={cn("size-4", isCopied && "text-green-500")}
+        className={cn("size-3", isCopied && "text-green-500")}
       />
       <span className="sr-only">Copy</span>
     </motion.button>
