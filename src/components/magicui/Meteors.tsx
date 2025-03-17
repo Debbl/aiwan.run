@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useMemo } from "react";
 import { cn } from "~/lib/utils";
 
 interface MeteorsProps {
@@ -22,11 +22,9 @@ export const Meteors = ({
   angle = 215,
   className,
 }: MeteorsProps) => {
-  const [meteorStyles, setMeteorStyles] = useState<Array<React.CSSProperties>>(
-    [],
-  );
+  const meteorStyles = useMemo(() => {
+    if (typeof window === "undefined") return [];
 
-  useEffect(() => {
     const styles = Array.from({ length: number }).map(() => ({
       "--angle": `${angle}deg`,
       "top": -5,
@@ -36,7 +34,8 @@ export const Meteors = ({
         Math.random() * (maxDuration - minDuration) + minDuration,
       )}s`,
     }));
-    setMeteorStyles(styles);
+
+    return styles;
   }, [number, minDelay, maxDelay, minDuration, maxDuration, angle]);
 
   return (
@@ -44,7 +43,7 @@ export const Meteors = ({
       {[...meteorStyles].map((style, idx) => (
         // Meteor Head
         <span
-          // eslint-disable-next-line react/no-array-index-key
+          // eslint-disable-next-line react-x/no-array-index-key
           key={idx}
           style={{ ...style }}
           className={cn(

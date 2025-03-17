@@ -43,7 +43,7 @@
     "twl": "0.0.0-alpha.7"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^3.10.0",
+    "@debbl/eslint-config": "^3.10.1",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/bundle-analyzer": "^15.2.2",
