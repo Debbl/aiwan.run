@@ -2,25 +2,20 @@
 import { MoonIcon, SunIcon } from "@workspace/icons";
 import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
+import { cn } from "~/lib/utils";
 import type { MouseEventHandler } from "react";
 
-const ThemeIcon = ({
-  icon,
-  className,
-}: {
-  icon: "Moon" | "Sun";
-  className?: string;
-}) => {
-  if (icon === "Moon") {
-    return <MoonIcon className={className} />;
-  }
-
-  return <SunIcon className={className} />;
+const ThemeIcon = ({ className }: { className?: string }) => {
+  return (
+    <>
+      <MoonIcon className={cn(className, "block dark:hidden")} />
+      <SunIcon className={cn(className, "hidden dark:block")} />
+    </>
+  );
 };
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
-  const icon: "Sun" | "Moon" = theme === "dark" ? "Sun" : "Moon";
 
   const toggleTheme: MouseEventHandler<HTMLButtonElement> = (e) => {
     const x = e.clientX;
@@ -39,6 +34,7 @@ export default function ThemeSwitcher() {
 
     document
       .startViewTransition(() => {
+        // eslint-disable-next-line react-dom/no-flush-sync
         flushSync(() => setTheme(theme === "dark" ? "light" : "dark"));
       })
       .ready.then(() => {
@@ -67,7 +63,7 @@ export default function ThemeSwitcher() {
   return (
     <>
       <button type="button" onClick={toggleTheme}>
-        <ThemeIcon icon={icon} className="size-5 cursor-pointer" />
+        <ThemeIcon className="size-5 cursor-pointer" />
         <span className="sr-only">theme-switcher</span>
       </button>
     </>
