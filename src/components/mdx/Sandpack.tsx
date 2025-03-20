@@ -1,6 +1,6 @@
 "use client";
 import { Sandpack as CodeSandboxSandpack } from "@codesandbox/sandpack-react";
-import { useTheme } from "next-themes";
+import { useTheme } from "~/hooks/useTheme";
 import type { SandpackInternal } from "@codesandbox/sandpack-react";
 
 export const Sandpack: SandpackInternal = (props) => {

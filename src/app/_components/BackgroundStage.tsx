@@ -1,7 +1,7 @@
 "use client";
-import { useTheme } from "next-themes";
 import Snowfall from "react-snowfall";
 import { Meteors } from "~/components/magicui/Meteors";
+import { useTheme } from "~/hooks/useTheme";
 
 export default function BackgroundStage() {
   const { theme } = useTheme();
