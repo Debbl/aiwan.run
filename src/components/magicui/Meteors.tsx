@@ -1,5 +1,6 @@
 "use client";
 
+import { useHydrated } from "@debbl/ahooks";
 import React, { useMemo } from "react";
 import { cn } from "~/lib/utils";
 
@@ -22,8 +23,10 @@ export const Meteors = ({
   angle = 215,
   className,
 }: MeteorsProps) => {
+  const { isHydrated } = useHydrated();
+
   const meteorStyles = useMemo(() => {
-    if (typeof window === "undefined") return [];
+    if (!isHydrated) return [];
 
     const styles = Array.from({ length: number }).map(() => ({
       "--angle": `${angle}deg`,
@@ -36,7 +39,7 @@ export const Meteors = ({
     }));
 
     return styles;
-  }, [number, minDelay, maxDelay, minDuration, maxDuration, angle]);
+  }, [isHydrated, number, angle, maxDelay, minDelay, maxDuration, minDuration]);
 
   return (
     <>
