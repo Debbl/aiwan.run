@@ -1,7 +1,7 @@
 "use client";
 import { MoonIcon, SunIcon } from "@workspace/icons";
+import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
-import { useTheme } from "~/hooks/useTheme";
 import type { MouseEventHandler } from "react";
 
 const ThemeIcon = ({
