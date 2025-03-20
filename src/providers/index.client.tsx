@@ -1,5 +1,5 @@
 "use client";
-import { AppProgressBar } from "next-nprogress-bar";
+import { AppProgressProvider } from "@bprogress/next";
 
 export default function ClientProviders({
   children,
@@ -7,9 +7,8 @@ export default function ClientProviders({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <AppProgressBar options={{ showSpinner: false }} shallowRouting />
+    <AppProgressProvider options={{ showSpinner: false }} shallowRouting>
       {children}
-    </>
+    </AppProgressProvider>
   );
 }
