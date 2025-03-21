@@ -34,7 +34,6 @@ export default function ThemeSwitcher() {
 
     document
       .startViewTransition(() => {
-        // eslint-disable-next-line react-dom/no-flush-sync
         flushSync(() => setTheme(theme === "dark" ? "light" : "dark"));
       })
       .ready.then(() => {

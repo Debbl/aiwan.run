@@ -49,7 +49,7 @@
     "@next/bundle-analyzer": "^15.2.3",
     "@next/mdx": "^15.2.3",
     "@serwist/next": "^9.0.12",
-    "@tailwindcss/postcss": "^4.0.14",
+    "@tailwindcss/postcss": "^4.0.15",
     "@types/hast": "^3.0.4",
     "@types/loader-utils": "^2.0.6",
     "@types/markdown-it": "^14.1.2",
@@ -84,8 +84,8 @@
     "serwist": "^9.0.12",
     "sharp": "^0.33.5",
     "shiki": "^3.2.1",
-    "simple-git-hooks": "^2.11.1",
-    "tailwindcss": "^4.0.14",
+    "simple-git-hooks": "^2.12.1",
+    "tailwindcss": "^4.0.15",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "unified": "^11.0.5",
@@ -94,7 +94,8 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "simple-git-hooks"
     ]
   },
   "simple-git-hooks": {
