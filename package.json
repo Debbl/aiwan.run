@@ -94,7 +94,9 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "es5-ext",
       "esbuild",
+      "sharp",
       "simple-git-hooks"
     ]
   },

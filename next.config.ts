@@ -47,7 +47,7 @@ const withMDX = createMDX({
               title,
               openGraph: {
                 url: `${WEBSITE.domain}/posts`,
-                title: `${file.data.title}` || title,
+                title: data.title,
                 description: WEBSITE.description,
                 type: "website",
                 images: [
