@@ -164,7 +164,7 @@ importers:
         version: 0.6.11(prettier@3.5.3)
       rehype-github-alerts:
         specifier: ^4.1.0
-        version: 4.1.0
+        version: 4.1.1
       remark:
         specifier: ^15.0.1
         version: 15.0.1
@@ -3360,8 +3360,8 @@ packages:
     resolution: {integrity: sha512-cnE+y8bz4NhMjISKbgeVJtqNbtf5QpjZP+Bslo+UqkIt9QPnX9q095eiRRASJG1/tz6dlNr6Z5NsBiWYokp6EQ==}
     hasBin: true
 
-  rehype-github-alerts@4.1.0:
-    resolution: {integrity: sha512-Tpdh3YIoSMpmh4wCFtd4HBYOAo+4/goCBYrTSc+GtDbOHeuC9NNVYArkWbpTX+4woW1eX8krYR8UeQn2wSH9RQ==}
+  rehype-github-alerts@4.1.1:
+    resolution: {integrity: sha512-4i9Oj/LPeU3GaBeqPRqdon4s0+mSHsRnMO7hMZs1YOtHtGG10dSghkvY0EsB8LYbZ9qkLF36J2RNXmcMfAcmqQ==}
 
   rehype-recma@1.0.0:
     resolution: {integrity: sha512-lqA4rGUf1JmacCNWWZx0Wv1dHqMwxzsDWYMTowuplHF3xH0N/MmrZ/G3BDZnzAkRmxDadujCjaKM2hqYdCBOGw==}
@@ -7502,7 +7502,7 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  rehype-github-alerts@4.1.0:
+  rehype-github-alerts@4.1.1:
     dependencies:
       '@primer/octicons': 19.15.1
       hast-util-from-html: 2.0.3
