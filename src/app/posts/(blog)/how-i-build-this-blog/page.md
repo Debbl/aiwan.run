@@ -62,7 +62,7 @@ duration: 3min
 
 ### 添加 twoslash
 
-> https://github.com/Debbl/aiwan.run/pull/12
+> https://github.com/Debbl/aiwan.run/pull/35
 
 - 添加 twoslash 支持
 - https://shiki.style/packages/twoslash#shikijs-twoslash
