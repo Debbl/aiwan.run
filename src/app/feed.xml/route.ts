@@ -36,7 +36,7 @@ export async function GET() {
       title: post.title,
       guid: `${post.slug}`,
       author: "me@aiwan.run (Brendan Dash)",
-      url: `${WEBSITE.domain}/posts/${slug}`,
+      url: `${WEBSITE.domain}${slug}`,
       description: post.title,
       date: post.date,
       categories: [post.category],

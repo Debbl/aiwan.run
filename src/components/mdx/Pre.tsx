@@ -3,6 +3,7 @@ import { rendererClassic, transformerTwoslash } from "@shikijs/twoslash";
 import parse from "html-react-parser";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "~/lib/utils";
+import { ScrollArea, ScrollBar } from "../ui/ScrollArea";
 import CopyButton from "./CopyButton";
 import type { JSX } from "react";
 
@@ -32,8 +33,6 @@ export async function Pre({
   meta: string;
   value: string;
 }) {
-  // console.log("🚀 ~ lang:", lang);
-
   const { filename, isTwoslash } = parseMeta(meta);
 
   const _TwoslashTransformer = isTwoslash
@@ -53,24 +52,29 @@ export async function Pre({
   const preJSXElement = parse(renderedHTML) as JSX.Element;
 
   return (
-    <div className="relative mt-6 overflow-hidden rounded-xl first:mt-0">
-      <div className="top-0 z-[1] flex w-full items-center justify-between truncate bg-gray-200/80 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
+    <div className="relative my-6 overflow-hidden rounded-xl first:mt-0">
+      <div className="top-0 z-1 flex w-full items-center justify-between truncate bg-gray-200/80 px-4 py-2 text-xs text-gray-700 dark:bg-gray-900 dark:text-gray-200">
         <span>{filename}</span>
 
-        <span>{lang}</span>
+        <div className="flex items-center gap-2">
+          <span>{lang}</span>
+          <CopyButton
+            className="cursor-pointer text-gray-600 transition-opacity"
+            lang={lang}
+            code={value}
+          />
+        </div>
       </div>
 
       <div className={cn(`language-${lang}`, "relative")}>
-        <CopyButton
-          className="absolute right-2 top-2 rounded-md p-1 text-gray-300 transition-opacity hover:bg-gray-700"
-          lang={lang}
-          code={value}
-        />
         <figure>
-          <pre
-            {...preJSXElement.props}
-            className="max-h-[300px] overflow-scroll p-4 text-xs"
-          />
+          <ScrollArea
+            style={preJSXElement.props.style}
+            className="max-h-[300px]"
+          >
+            <pre {...preJSXElement.props} className="p-4 text-xs" />
+            <ScrollBar orientation="horizontal" className="h-1.5" />
+          </ScrollArea>
         </figure>
       </div>
     </div>

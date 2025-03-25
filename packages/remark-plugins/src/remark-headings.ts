@@ -29,8 +29,8 @@ export const remarkHeadings: Plugin<
   [{ exportName?: string; isRemoteContent?: boolean }],
   Root
 > = ({ exportName = "__toc", isRemoteContent }) => {
-  let title: string;
-  let hasJsxInH1: boolean;
+  let title: string = "";
+  let hasJsxInH1: boolean = false;
 
   const slugger = new Slugger();
   const headings: (Heading | string)[] = [];
@@ -57,7 +57,7 @@ export const remarkHeadings: Plugin<
             if (hasJsx) {
               hasJsxInH1 = true;
             }
-            title ||= getFlattenedValue(node);
+            title = getFlattenedValue(node);
             tree.children.splice(index, 1);
             return;
           }

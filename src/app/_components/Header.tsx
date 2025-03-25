@@ -1,16 +1,15 @@
 "use client";
+import { LucideRss } from "@workspace/icons";
 import { useRef } from "react";
 import Link from "~/components/Link";
 import { useMobile } from "~/hooks/useMobile";
-import { Icon } from "~/icons";
 import ThemeSwitcher from "./ThemeSwitcher";
-import type { IconType } from "~/icons";
 
 const nav: {
   "url": string;
   "name": string;
   "data-umami-event": string;
-  "icon"?: IconType;
+  "icon"?: React.ReactNode;
 }[] = [
   {
     "url": "/posts",
@@ -20,7 +19,7 @@ const nav: {
   {
     "url": "/tools",
     "name": "Tools",
-    "data-umami-event": "click-blog-tools",
+    "data-umami-event": "click-tools-link",
   },
   {
     "url": "/slides",
@@ -31,7 +30,7 @@ const nav: {
     "url": "/feed.xml",
     "name": "RSS",
     "data-umami-event": "click-rss-link",
-    "icon": "Rss",
+    "icon": <LucideRss className="size-5" />,
   },
 ];
 
@@ -42,11 +41,15 @@ export default function Header() {
   return (
     <nav ref={navRef} className={"flex items-center justify-between px-6 py-3"}>
       <div>
-        <Link href="/" aria-label="home page link">
-          <button type="button" aria-label="home">
+        <button type="button" aria-label="home">
+          <Link
+            href="/"
+            className="inline-block size-full px-3"
+            aria-label="home page link"
+          >
             ~
-          </button>
-        </Link>
+          </Link>
+        </button>
       </div>
 
       <div className="flex items-center gap-x-3 sm:gap-x-6">
@@ -60,7 +63,9 @@ export default function Header() {
               href={n.url}
               prefetch={["/posts"].includes(n.url)}
             >
-              {n.icon ? <Icon className="size-5" icon={n.icon} /> : n.name}
+              {n.icon || n.name}
+
+              {n.icon && <span className="sr-only">{n.name}</span>}
             </Link>
           ))}
 

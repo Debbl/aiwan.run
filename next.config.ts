@@ -1,17 +1,22 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
 import withSerwistInit from "@serwist/next";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkGfm from "remark-gfm";
-import remarkGithub from "remark-github";
 import {
   remarkHeadings,
   remarkMdxFrontmatter,
   remarkMdxLayout,
   remarkMdxPre,
+  remarkMdxSlug,
   remarkStaticImage,
-} from "remark-plugins";
+} from "@workspace/remark-plugins";
+import { rehypeGithubAlerts } from "rehype-github-alerts";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkGfm from "remark-gfm";
+import remarkGithub from "remark-github";
+import { WEBSITE } from "~/constants";
 import type { Metadata, NextConfig } from "next";
+import type { VFile } from "vfile";
+import type { Frontmatter } from "~/app/posts/_data";
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -28,6 +33,7 @@ const withMDX = createMDX({
   options: {
     remarkPlugins: [
       [remarkHeadings, { isRemoteContent: false }],
+      remarkMdxSlug,
       remarkGfm,
       [remarkGithub, {}],
       remarkFrontmatter,
@@ -35,9 +41,28 @@ const withMDX = createMDX({
         remarkMdxFrontmatter,
         {
           name: "metadata",
-          format: (data: any) => {
+          format: (data: Frontmatter, file: VFile) => {
+            const title = `Posts | ${data.title}`;
+
             return {
-              title: `Posts | ${data.title}`,
+              title,
+              authors: WEBSITE.authors,
+              description: title,
+              openGraph: {
+                url: `${WEBSITE.domain}/posts`,
+                title: data.title,
+                description: title,
+                type: "website",
+                images: [
+                  {
+                    alt: `og-image-${file.data.slug}`,
+                    url: `/posts/og/${file.data.slug}.png`,
+                    width: 800,
+                    height: 400,
+                  },
+                ],
+                emails: [WEBSITE.email],
+              },
             } satisfies Metadata;
           },
         },
@@ -46,6 +71,7 @@ const withMDX = createMDX({
       [remarkStaticImage, { importPrefix: "" }],
       remarkMdxLayout,
     ],
+    rehypePlugins: [rehypeGithubAlerts],
   },
 });
 

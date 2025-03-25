@@ -1,8 +1,8 @@
 "use client";
+import { m, useScroll } from "@workspace/motion";
 import { format } from "date-fns";
 import Link from "next/link";
 import { useRef } from "react";
-import { m, useScroll } from "~/lib/motion";
 import type { Frontmatter } from "~/app/posts/_data";
 
 export default function Layout({
@@ -23,14 +23,14 @@ export default function Layout({
   return (
     <div className="relative flex min-h-0 flex-1 flex-col">
       <m.div
-        className="fixed inset-x-0 top-0 z-10 h-0.5 origin-left bg-primary"
-        style={{ scaleX: scrollYProgress as any }}
+        className="bg-primary fixed inset-x-0 top-0 z-10 h-0.5 origin-left"
+        style={{ scaleX: scrollYProgress }}
       />
 
       {/* <DotPattern width={30} height={30} /> */}
 
       <div className="relative flex-1 overflow-y-scroll" ref={containerRef}>
-        <main className="px-6 py-10 sm:px-60">
+        <main className="mx-auto max-w-screen-lg px-6 py-10">
           <article>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
               {title}

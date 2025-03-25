@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import Link from "~/components/Link";
-import { Meteors } from "~/components/magicui/Meteors";
+import BackgroundStage from "../_components/BackgroundStage";
 import { getPosts } from "./_data";
 
 export default async function Page() {
@@ -19,9 +19,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden">
-        <Meteors number={30} />
-      </div>
+      <BackgroundStage />
 
       <main className="relative flex-1 overflow-y-scroll">
         <div className="flex min-h-full w-full items-center justify-center">
@@ -37,12 +35,12 @@ export default async function Page() {
                       key={post.slug}
                     >
                       <li
-                        className="text-gray-900 hover:text-primary dark:text-gray-50 dark:hover:text-primary"
+                        className="hover:text-primary dark:hover:text-primary flex flex-col text-gray-900 md:flex-row dark:text-gray-50"
                         data-umami-event={`click-posts-${post.slug}`}
                       >
                         <span>{post.title}</span>
-                        <span className="ml-4 text-xs text-gray-500">
-                          {format(post.date, "MMM-dd")}
+                        <span className="ml-0 flex items-center text-xs text-gray-500 md:ml-4">
+                          {format(post.date, "MMM-dd, yyyy")}
                           {" · "}
                           {post.duration}
                         </span>
