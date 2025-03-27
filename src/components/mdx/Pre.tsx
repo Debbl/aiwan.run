@@ -1,3 +1,5 @@
+"use server";
+import { rendererClassic, transformerTwoslash } from "@shikijs/twoslash";
 import parse from "html-react-parser";
 import { bundledLanguages, createHighlighter } from "shiki";
 import { cn } from "~/lib/utils";
@@ -14,13 +16,15 @@ function parseMeta(meta?: string) {
   if (!meta) return {};
 
   const filenameRegex = /filename="(.+)"/;
+  const isTwoslash = /twoslash/.test(meta);
 
   return {
     filename: filenameRegex.test(meta) ? meta.match(filenameRegex)![1] : "",
+    isTwoslash,
   };
 }
 
-export function Pre({
+export async function Pre({
   lang,
   meta = "",
   value,
@@ -29,11 +33,20 @@ export function Pre({
   meta: string;
   value: string;
 }) {
-  const { filename } = parseMeta(meta);
+  const { filename, isTwoslash } = parseMeta(meta);
+
+  const _TwoslashTransformer = isTwoslash
+    ? [
+        transformerTwoslash({
+          renderer: rendererClassic(),
+        }),
+      ]
+    : [];
 
   const renderedHTML = highlighter.codeToHtml(value, {
     lang,
     theme: "one-dark-pro",
+    transformers: [],
   });
 
   const preJSXElement = parse(renderedHTML) as JSX.Element;

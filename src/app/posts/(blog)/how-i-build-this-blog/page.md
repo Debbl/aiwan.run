@@ -60,6 +60,14 @@ duration: 3min
 
 ## Changelog
 
+### 添加 twoslash
+
+> https://github.com/Debbl/aiwan.run/pull/35
+
+- 添加 twoslash 支持
+- https://shiki.style/packages/twoslash#shikijs-twoslash
+- https://nextra.site/docs/advanced/twoslash
+
 ### 升级 tailwindcss v4
 
 > https://github.com/Debbl/aiwan.run/pull/19
