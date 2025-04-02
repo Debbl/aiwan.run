@@ -2,6 +2,6 @@
   "name": "@workspace/motion",
   "main": "./src/index.ts",
   "dependencies": {
-    "motion": "^12.5.0"
+    "motion": "^12.6.3"
   }
 }
