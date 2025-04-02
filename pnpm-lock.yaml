@@ -185,7 +185,7 @@ importers:
         version: 1.2.2
       satori:
         specifier: ^0.12.1
-        version: 0.12.1
+        version: 0.12.2
       serwist:
         specifier: ^9.0.12
         version: 9.0.12(typescript@5.8.2)
@@ -3425,8 +3425,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  satori@0.12.1:
-    resolution: {integrity: sha512-0SbjchvDrDbeXeQgxWVtSWxww7qcFgk3DtSE2/blHOSlLsSHwIqO2fCrtVa/EudJ7Eqno8A33QNx56rUyGbLuw==}
+  satori@0.12.2:
+    resolution: {integrity: sha512-3C/laIeE6UUe9A+iQ0A48ywPVCCMKCNSTU5Os101Vhgsjd3AAxGNjyq0uAA8kulMPK5n0csn8JlxPN9riXEjLA==}
     engines: {node: '>=16'}
 
   scheduler@0.25.0:
@@ -7639,7 +7639,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  satori@0.12.1:
+  satori@0.12.2:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
