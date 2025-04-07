@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="flex items-center justify-between">
         <div className="flex h-5 items-center space-x-4 text-sm">
           <Link
-            href="https://github.com/aiwan-run"
+            href="https://github.com/Debbl"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -41,7 +41,7 @@ export default function Footer() {
           </Link>
           <Separator orientation="vertical" />
           <Link
-            href="https://bsky.app/profile/debbl.xyz"
+            href="https://bsky.app/profile/debbl.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
           >
