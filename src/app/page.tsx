@@ -191,8 +191,8 @@ export default function Home() {
     <>
       <BackgroundStage />
 
-      <main className="relative flex-1 overflow-y-scroll">
-        <div className="mb-10 flex flex-col items-center">
+      <main className="relative pb-10">
+        <div className="flex flex-col items-center">
           <div className="mt-20">
             <MAvatar
               whileHover={{

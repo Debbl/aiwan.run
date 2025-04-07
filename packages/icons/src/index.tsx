@@ -6,13 +6,18 @@ export { CheckIcon } from "./CheckIcon";
 export { CopyIcon } from "./CopyIcon";
 export { MoonIcon } from "./MoonIcon";
 
-export { SunIcon } from "./SunIcon";
+export { SettingsGearIcon } from "./SettingsGearIcon";
 
-export { LucideRss } from "lucide-react";
+export { SunIcon } from "./SunIcon";
+export { LucideCircle, LucideMonitorCog, LucideRss } from "lucide-react";
 export type { IconBaseProps, IconType } from "react-icons";
+export { IoLogoGithub } from "react-icons/io";
 export { LuGithub } from "react-icons/lu";
 export { MdOutlineMail } from "react-icons/md";
 export { RiBilibiliLine } from "react-icons/ri";
+export { SiGithub } from "react-icons/si";
+export { SiX } from "react-icons/si";
+export { SiBluesky } from "react-icons/si";
 
 export function Avatar(props: SVGProps<SVGSVGElement>) {
   return (

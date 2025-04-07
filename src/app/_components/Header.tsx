@@ -39,38 +39,43 @@ export default function Header() {
   const { isMobile } = useMobile();
 
   return (
-    <nav ref={navRef} className={"flex items-center justify-between px-6 py-3"}>
-      <div>
-        <button type="button" aria-label="home">
-          <Link
-            href="/"
-            className="inline-block size-full px-3"
-            aria-label="home page link"
-          >
-            ~
-          </Link>
-        </button>
-      </div>
-
-      <div className="flex items-center gap-x-3 sm:gap-x-6">
-        {nav
-          .filter((n) => !(isMobile && n.name === "Home"))
-          .map((n) => (
+    <header>
+      <nav
+        ref={navRef}
+        className={"flex items-center justify-between px-6 py-3"}
+      >
+        <div>
+          <button type="button" aria-label="home">
             <Link
-              data-umami-event={n["data-umami-event"]}
-              title={n.name}
-              key={n.name}
-              href={n.url}
-              prefetch={["/posts"].includes(n.url)}
+              href="/"
+              className="inline-block size-full px-3"
+              aria-label="home page link"
             >
-              {n.icon || n.name}
-
-              {n.icon && <span className="sr-only">{n.name}</span>}
+              ~
             </Link>
-          ))}
+          </button>
+        </div>
 
-        <ThemeSwitcher />
-      </div>
-    </nav>
+        <div className="flex items-center gap-x-3 sm:gap-x-6">
+          {nav
+            .filter((n) => !(isMobile && n.name === "Home"))
+            .map((n) => (
+              <Link
+                data-umami-event={n["data-umami-event"]}
+                title={n.name}
+                key={n.name}
+                href={n.url}
+                prefetch={["/posts"].includes(n.url)}
+              >
+                {n.icon || n.name}
+
+                {n.icon && <span className="sr-only">{n.name}</span>}
+              </Link>
+            ))}
+
+          <ThemeSwitcher />
+        </div>
+      </nav>
+    </header>
   );
 }

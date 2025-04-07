@@ -2,6 +2,7 @@ import { ViewTransitions } from "next-view-transitions";
 import Header from "~/app/_components/Header";
 import { WEBSITE } from "~/constants";
 import Providers from "~/providers";
+import Footer from "./_components/Footer";
 import "~/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -83,11 +84,14 @@ export default function RootLayout({
             data-domains="aiwan.run"
           />
         </head>
-        <body className="relative flex h-full flex-col">
+        <body>
           <Providers>
-            <Header />
-            {children}
-            <div className="pointer-events-none fixed bottom-0 left-0 h-20 w-full bg-white [mask-image:linear-gradient(transparent,#000000)] dark:bg-black" />
+            <div className="relative min-h-screen">
+              <Header />
+              {children}
+            </div>
+
+            <Footer />
           </Providers>
         </body>
       </html>
