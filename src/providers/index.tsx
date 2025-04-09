@@ -10,7 +10,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={domAnimation} strict>
         <ClientProviders>{children}</ClientProviders>
       </LazyMotion>
     </ThemeProvider>
