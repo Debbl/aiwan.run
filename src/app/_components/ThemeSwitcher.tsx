@@ -15,7 +15,7 @@ const ThemeIcon = ({ className }: { className?: string }) => {
 };
 
 export default function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   const toggleTheme: MouseEventHandler<HTMLButtonElement> = (e) => {
     const x = e.clientX;
@@ -25,17 +25,17 @@ export default function ThemeSwitcher() {
       Math.max(y, window.innerHeight - y),
     );
 
-    const isDark = theme === "dark";
+    const isDark = window.document.documentElement.classList.contains("dark");
 
     if (!document.startViewTransition) {
-      setTheme(theme === "dark" ? "light" : "dark");
+      setTheme(isDark ? "light" : "dark");
       return;
     }
 
     document
       .startViewTransition(() => {
         // eslint-disable-next-line react-dom/no-flush-sync
-        flushSync(() => setTheme(theme === "dark" ? "light" : "dark"));
+        flushSync(() => setTheme(isDark ? "light" : "dark"));
       })
       .ready.then(() => {
         const clipPath = [
