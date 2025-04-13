@@ -15,7 +15,7 @@ const ThemeIcon = ({ className }: { className?: string }) => {
 };
 
 export default function ThemeSwitcher() {
-  const { setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme: MouseEventHandler<HTMLButtonElement> = (e) => {
     const x = e.clientX;
@@ -25,7 +25,7 @@ export default function ThemeSwitcher() {
       Math.max(y, window.innerHeight - y),
     );
 
-    const isDark = window.document.documentElement.classList.contains("dark");
+    const isDark = resolvedTheme === "dark";
 
     if (!document.startViewTransition) {
       setTheme(isDark ? "light" : "dark");
