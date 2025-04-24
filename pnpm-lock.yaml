@@ -80,7 +80,7 @@ importers:
         version: 15.3.0(@mdx-js/loader@3.1.0(acorn@8.14.1))(@mdx-js/react@3.1.0(@types/react@19.1.2)(react@19.1.0))
       '@serwist/next':
         specifier: ^9.0.13
-        version: 9.0.13(next@15.3.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)
+        version: 9.0.14(next@15.3.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)
       '@tailwindcss/postcss':
         specifier: ^4.1.4
         version: 4.1.4
@@ -1177,8 +1177,8 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  '@serwist/build@9.0.13':
-    resolution: {integrity: sha512-Hoc6llxFmnsE8z5Cs95UmRRhRyoNh44OdrMWWPPX8BpW19z0CK/qnBquptjyBIe46jjoOxsPHK0Tt7oZOV4Mbw==}
+  '@serwist/build@9.0.14':
+    resolution: {integrity: sha512-CV8LBBT85c5juyVqodqUUxo9yMFt7LQ3TZUrz0Vzp1XwC+hpggfXfnoMyQfneP1La/85oNjrCxvrvLgp2eCJXQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1186,8 +1186,8 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/next@9.0.13':
-    resolution: {integrity: sha512-nI2N4oSEHJGH0YUsE4m1obPfudO3DZ/pXiHPaisw+28YjgkMqD6ePfhzeHGO07ahPmIUiyHca9VNO8OfarbQ1Q==}
+  '@serwist/next@9.0.14':
+    resolution: {integrity: sha512-6VOKuXbwFAM/V98GJs/FRvzcUvV1HCEACornbsPo5x9tfYI5BYhnaSdPRK5SQvXVIdifigS8Kzh/Dx1g0CpCGw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       next: '>=14.0.0'
@@ -1196,8 +1196,8 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/webpack-plugin@9.0.13':
-    resolution: {integrity: sha512-Z+Eve8dckM2FulRCa7Cj7VCF3EOP7QkRA76tI742olF7J2sYZSm3t9Ex13jDxTMmYiU1AxLq6V6gEMIdRAetVw==}
+  '@serwist/webpack-plugin@9.0.14':
+    resolution: {integrity: sha512-2CG7gsq/ZgC0fYbdfIIh3SrXXGRJFYlq0Wrph50ek8SABZccTIUx5QRzGkKaMl3I4ICzPJZyM8HVtz5FocVH2w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1208,8 +1208,8 @@ packages:
       webpack:
         optional: true
 
-  '@serwist/window@9.0.13':
-    resolution: {integrity: sha512-Cf3RizPuFInDcLt0P1Y5QzG1sA5mW131/PZfMYE3yBuNUSGNgOQGlYuLdwDOWPHgECYoVb/da8pspdQNKs0O5g==}
+  '@serwist/window@9.0.14':
+    resolution: {integrity: sha512-LjcgdZXDGJ2OmE8zo/ULxvLkaQ3dgjc2SsokZ9azt1Z+WR9Gt3fKiyyKf28us6VuCASPlkYtqsWjg7efNXI6pQ==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -2084,8 +2084,8 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411:
-    resolution: {integrity: sha512-R7ncuwbCPFAoeMlS56DGGSJFxmRtlWafYH/iWyep5Ks0RaPqTCL4k5gA87axUBBcITsaIgUGkbqAxDxl8Xfm5A==}
+  eslint-plugin-react-compiler@19.1.0-rc.1:
+    resolution: {integrity: sha512-3umw5eqZXapBl7aQGmvcjheKhUbsElb9jTETxRZg371e1LG4EPs/zCHt2JzP+wNcdaZWzjU/R730zPUJblY2zw==}
     engines: {node: ^14.17.0 || ^16.0.0 || >= 18.0.0}
     peerDependencies:
       eslint: '>=7'
@@ -3535,6 +3535,14 @@ packages:
       typescript:
         optional: true
 
+  serwist@9.0.14:
+    resolution: {integrity: sha512-vr4uqSeB7NxrAJeneCxhnEDDksovTcVAxkWyse4DFj/OP8UVJkdsSEJlzT94gRu5qrTZxKrb+pFrxsIStfWTWg==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   sharp@0.34.1:
     resolution: {integrity: sha512-1j0w61+eVxu7DawFJtnfYcvSv6qPFvfTaqzTQ2BLknVhHTwGS8sc63ZBF4rzkWMBVKybo4S5OBtDdZahh2A1xg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -3971,8 +3979,8 @@ packages:
     peerDependencies:
       zod: ^3.18.0
 
-  zod@3.24.2:
-    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+  zod@3.24.3:
+    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -4285,7 +4293,7 @@ snapshots:
       eslint-plugin-no-only-tests: 3.3.0
       eslint-plugin-perfectionist: 4.11.0(eslint@9.24.0(jiti@2.4.2))(typescript@5.8.3)
       eslint-plugin-prettier: 5.2.6(eslint-config-prettier@10.1.1(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2))(prettier@3.5.3)
-      eslint-plugin-react-compiler: 19.0.0-beta-ebf51a3-20250411(eslint@9.24.0(jiti@2.4.2))
+      eslint-plugin-react-compiler: 19.1.0-rc.1(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-react-hooks: 5.2.0(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-react-refresh: 0.4.19(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-solid: 0.14.5(eslint@9.24.0(jiti@2.4.2))(typescript@5.8.3)
@@ -5044,43 +5052,43 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  '@serwist/build@9.0.13(typescript@5.8.3)':
+  '@serwist/build@9.0.14(typescript@5.8.3)':
     dependencies:
       common-tags: 1.8.2
       glob: 10.4.5
       pretty-bytes: 6.1.1
       source-map: 0.8.0-beta.0
-      zod: 3.24.2
+      zod: 3.24.3
     optionalDependencies:
       typescript: 5.8.3
 
-  '@serwist/next@9.0.13(next@15.3.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)':
+  '@serwist/next@9.0.14(next@15.3.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)':
     dependencies:
-      '@serwist/build': 9.0.13(typescript@5.8.3)
-      '@serwist/webpack-plugin': 9.0.13(typescript@5.8.3)
-      '@serwist/window': 9.0.13(typescript@5.8.3)
+      '@serwist/build': 9.0.14(typescript@5.8.3)
+      '@serwist/webpack-plugin': 9.0.14(typescript@5.8.3)
+      '@serwist/window': 9.0.14(typescript@5.8.3)
       chalk: 5.4.1
       glob: 10.4.5
       next: 15.3.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      serwist: 9.0.13(typescript@5.8.3)
-      zod: 3.24.2
+      serwist: 9.0.14(typescript@5.8.3)
+      zod: 3.24.3
     optionalDependencies:
       typescript: 5.8.3
     transitivePeerDependencies:
       - webpack
 
-  '@serwist/webpack-plugin@9.0.13(typescript@5.8.3)':
+  '@serwist/webpack-plugin@9.0.14(typescript@5.8.3)':
     dependencies:
-      '@serwist/build': 9.0.13(typescript@5.8.3)
+      '@serwist/build': 9.0.14(typescript@5.8.3)
       pretty-bytes: 6.1.1
-      zod: 3.24.2
+      zod: 3.24.3
     optionalDependencies:
       typescript: 5.8.3
 
-  '@serwist/window@9.0.13(typescript@5.8.3)':
+  '@serwist/window@9.0.14(typescript@5.8.3)':
     dependencies:
       '@types/trusted-types': 2.0.7
-      serwist: 9.0.13(typescript@5.8.3)
+      serwist: 9.0.14(typescript@5.8.3)
     optionalDependencies:
       typescript: 5.8.3
 
@@ -5951,15 +5959,15 @@ snapshots:
     optionalDependencies:
       eslint-config-prettier: 10.1.1(eslint@9.24.0(jiti@2.4.2))
 
-  eslint-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411(eslint@9.24.0(jiti@2.4.2)):
+  eslint-plugin-react-compiler@19.1.0-rc.1(eslint@9.24.0(jiti@2.4.2)):
     dependencies:
       '@babel/core': 7.26.10
       '@babel/parser': 7.27.0
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.26.10)
       eslint: 9.24.0(jiti@2.4.2)
       hermes-parser: 0.25.1
-      zod: 3.24.2
-      zod-validation-error: 3.4.0(zod@3.24.2)
+      zod: 3.24.3
+      zod-validation-error: 3.4.0(zod@3.24.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -7835,6 +7843,12 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
+  serwist@9.0.14(typescript@5.8.3):
+    dependencies:
+      idb: 8.0.2
+    optionalDependencies:
+      typescript: 5.8.3
+
   sharp@0.34.1:
     dependencies:
       color: 4.2.3
@@ -8307,10 +8321,10 @@ snapshots:
 
   yoga-wasm-web@0.3.3: {}
 
-  zod-validation-error@3.4.0(zod@3.24.2):
+  zod-validation-error@3.4.0(zod@3.24.3):
     dependencies:
-      zod: 3.24.2
+      zod: 3.24.3
 
-  zod@3.24.2: {}
+  zod@3.24.3: {}
 
   zwitch@2.0.4: {}
