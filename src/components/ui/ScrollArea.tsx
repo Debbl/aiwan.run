@@ -1,6 +1,6 @@
 "use client";
 
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
+import { ScrollArea as ScrollAreaPrimitive } from "radix-ui";
 import { cn } from "~/lib/utils";
 import type { ComponentProps } from "react";
 
@@ -24,7 +24,6 @@ function ScrollArea({
     </ScrollAreaPrimitive.Root>
   );
 }
-ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
 
 function ScrollBar({
   className,
@@ -48,6 +47,5 @@ function ScrollBar({
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
   );
 }
-ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
 
 export { ScrollArea, ScrollBar };

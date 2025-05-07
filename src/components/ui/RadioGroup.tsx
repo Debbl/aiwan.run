@@ -1,7 +1,7 @@
 "use client";
 
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { LucideCircle } from "@workspace/icons";
+import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
 import * as React from "react";
 import { cn } from "~/lib/utils";
 
@@ -9,11 +9,7 @@ const RadioGroup = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> & {
-  ref?: React.RefObject<React.ElementRef<
-    typeof RadioGroupPrimitive.Root
-  > | null>;
-}) => {
+}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) => {
   return (
     <RadioGroupPrimitive.Root
       className={cn("grid gap-2", className)}
@@ -28,11 +24,7 @@ const RadioGroupItem = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> & {
-  ref?: React.RefObject<React.ElementRef<
-    typeof RadioGroupPrimitive.Item
-  > | null>;
-}) => {
+}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) => {
   return (
     <RadioGroupPrimitive.Item
       ref={ref}
