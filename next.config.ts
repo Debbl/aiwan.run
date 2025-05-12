@@ -100,6 +100,10 @@ const nextConfig: NextConfig = {
             from: 'motion/react-m',
             imports: [['*', 'm']],
           },
+          {
+            from: '~/components/icons/index.ts',
+            imports: ['Icon'],
+          },
         ],
         dts: true,
       }),

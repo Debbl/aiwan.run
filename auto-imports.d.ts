@@ -6,6 +6,7 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const Icon: typeof import('~/components/icons/index.ts')['Icon']
   const cn: typeof import('twl')['cn']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']

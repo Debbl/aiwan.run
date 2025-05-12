@@ -1,15 +1,15 @@
 'use client'
 import { useState } from 'react'
-import { CheckIcon, CopyIcon } from '~/components/icons'
+import { Icon } from '~/components/icons'
 import { cn } from '~/lib/utils'
-import type { IconBaseProps } from '~/components/icons'
+import type { IconBaseProps } from '../icons/exports'
 
 const CopyButtonIcon = ({ isCopied, ...props }: { isCopied: boolean } & IconBaseProps) => {
   if (isCopied) {
-    return <CheckIcon {...props} />
+    return <Icon.CheckIcon {...props} />
   }
 
-  return <CopyIcon {...props} />
+  return <Icon.CopyIcon {...props} />
 }
 
 export default function CopyButton({ lang, code, className }: { lang: string; code: string; className: string }) {

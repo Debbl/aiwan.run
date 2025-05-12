@@ -1,15 +1,14 @@
 'use client'
 import { useTheme } from 'next-themes'
 import { flushSync } from 'react-dom'
-import { MoonIcon, SunIcon } from '~/components/icons'
 import { cn } from '~/lib/utils'
 import type { MouseEventHandler } from 'react'
 
 const ThemeIcon = ({ className }: { className?: string }) => {
   return (
     <>
-      <MoonIcon className={cn(className, 'block dark:hidden')} />
-      <SunIcon className={cn(className, 'hidden dark:block')} />
+      <Icon.MoonIcon className={cn(className, 'block dark:hidden')} />
+      <Icon.SunIcon className={cn(className, 'hidden dark:block')} />
     </>
   )
 }

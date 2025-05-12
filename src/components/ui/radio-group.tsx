@@ -1,6 +1,5 @@
 'use client'
 
-import { LucideCircle } from '@workspace/icons'
 import { RadioGroup as RadioGroupPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { cn } from '~/lib/utils'
@@ -21,7 +20,7 @@ const RadioGroupItem = ({ ref, className, ...props }: React.ComponentProps<typeo
       {...props}
     >
       <RadioGroupPrimitive.Indicator className='flex items-center justify-center'>
-        <LucideCircle className='fill-primary h-3.5 w-3.5' />
+        <Icon.LucideCircle className='fill-primary h-3.5 w-3.5' />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

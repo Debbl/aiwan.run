@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { LuGithub, MAvatar, MdOutlineMail, RiBilibiliLine } from '~/components/icons'
 import {
   ai,
   biliShortLink,
@@ -18,7 +17,7 @@ import {
 } from '../logos'
 import BackgroundStage from './_components/background-stage'
 import type { StaticImageData } from 'next/image'
-import type { IconType } from '~/components/icons'
+import type { IconType } from '~/components/icons/exports'
 
 type Projects = Record<
   string,
@@ -165,19 +164,19 @@ const FindMeLinks: {
     'url': 'https://github.com/Debbl/',
     'name': 'Github',
     'data-umami-event': 'click-github-link',
-    'icon': (props) => <LuGithub {...props} />,
+    'icon': (props) => <Icon.LuGithub {...props} />,
   },
   {
     'url': 'https://space.bilibili.com/174865648/',
     'name': '哔哩哔哩',
     'data-umami-event': 'click-bilibili-link',
-    'icon': (props) => <RiBilibiliLine {...props} />,
+    'icon': (props) => <Icon.RiBilibiliLine {...props} />,
   },
   {
     'url': 'mailto:me@aiwan.run',
     'name': 'Email',
     'data-umami-event': 'click-email-link',
-    'icon': (props) => <MdOutlineMail {...props} />,
+    'icon': (props) => <Icon.MdOutlineMail {...props} />,
   },
 ]
 
@@ -189,7 +188,7 @@ export default function Home() {
       <main className='relative pb-10'>
         <div className='flex flex-col items-center'>
           <div className='mt-20'>
-            <MAvatar
+            <Icon.MAvatar
               whileHover={{
                 rotate: 0,
               }}
