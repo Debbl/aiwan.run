@@ -1,22 +1,18 @@
-import { cn } from "~/lib/utils";
-import type { ComponentProps } from "react";
+import { cn } from '~/lib/utils'
+import type { ComponentProps } from 'react'
 
-export function Code({
-  children,
-  className,
-  ...props
-}: ComponentProps<"code">) {
+export function Code({ children, className, ...props }: ComponentProps<'code'>) {
   return (
     <code
       className={cn(
-        "inline-block h-fit rounded-md border border-black/4 bg-black/3 px-2 py-0.5 font-mono leading-none font-normal break-words whitespace-nowrap",
-        "dark:border-white/10 dark:bg-white/10",
+        'inline-block h-fit rounded-md border border-black/4 bg-black/3 px-2 py-0.5 font-mono leading-none font-normal break-words whitespace-nowrap',
+        'dark:border-white/10 dark:bg-white/10',
         className,
       )}
-      dir="ltr"
+      dir='ltr'
       {...props}
     >
       {children}
     </code>
-  );
+  )
 }

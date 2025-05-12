@@ -13,7 +13,7 @@ duration: 2min
 在 motion 库中如何要减少打包的体积，需要使用
 
 ```ts
-import * as m from "motion/react-m";
+import * as m from 'motion/react-m'
 ```
 
 来导入 motion 的组件，这样在打包的时候有 tree shaking
@@ -22,26 +22,26 @@ import * as m from "motion/react-m";
 
 ```ts filename="foo.ts"
 function add(a: number, b: number) {
-  return a + b;
+  return a + b
 }
 
 function sub(a: number, b: number) {
-  return a - b;
+  return a - b
 }
 
-console.log("11111111");
+console.log('11111111')
 const module = {
   add,
   sub,
-};
+}
 
-export default module;
+export default module
 ```
 
 ```ts filename="index.ts"
-import foo from "./foo";
+import foo from './foo'
 
-console.log(foo.add(1, 2));
+console.log(foo.add(1, 2))
 ```
 
 最终打包产物, 可以看到即使没有使用 `sub` 函数，也会被打包进去
@@ -49,20 +49,20 @@ console.log(foo.add(1, 2));
 ```js filename="index.js"
 // src/foo.ts
 function add(a, b) {
-  return a + b;
+  return a + b
 }
 function sub(a, b) {
-  return a - b;
+  return a - b
 }
-console.log("11111111");
+console.log('11111111')
 var module = {
   add,
   sub,
-};
-var foo_default = module;
+}
+var foo_default = module
 
 // src/index.ts
-console.log(foo_default.add(1, 2));
+console.log(foo_default.add(1, 2))
 //# sourceMappingURL=index.js.map
 ```
 
@@ -70,19 +70,19 @@ console.log(foo_default.add(1, 2));
 
 ```ts filename="bar.ts"
 export function add(a: number, b: number) {
-  return a + b;
+  return a + b
 }
 
-console.log("111111");
+console.log('111111')
 export function sub(a: number, b: number) {
-  return a - b;
+  return a - b
 }
 ```
 
 ```ts filename="index.ts"
-import * as bar from "./bar";
+import * as bar from './bar'
 
-console.log(bar.add(1, 2));
+console.log(bar.add(1, 2))
 ```
 
 最终打包产物
@@ -90,12 +90,12 @@ console.log(bar.add(1, 2));
 ```js filename="index.js"
 // src/bar.ts
 function add(a, b) {
-  return a + b;
+  return a + b
 }
-console.log("111111");
+console.log('111111')
 
 // src/index.ts
-console.log(add(1, 2));
+console.log(add(1, 2))
 //# sourceMappingURL=index.js.map
 ```
 
@@ -109,7 +109,7 @@ console.log(add(1, 2));
 
 ```ts filename="next.config.ts"
 const nextConfig: NextConfig = {
-  output: "export",
+  output: 'export',
   experimental: {
     reactCompiler: true,
   },
@@ -120,20 +120,20 @@ const nextConfig: NextConfig = {
           /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         ],
         imports: [
-          "react",
+          'react',
           {
             // 自动导入 motion 的组件, 并且可以 tree shaking
-            from: "motion/react-m",
-            imports: [["*", "motion"]],
+            from: 'motion/react-m',
+            imports: [['*', 'motion']],
           },
         ],
         dts: true,
       }),
-    );
+    )
 
-    return config;
+    return config
   },
-};
+}
 ```
 
 ```ts filename="auto-import.d.ts"
@@ -145,6 +145,6 @@ const nextConfig: NextConfig = {
 // biome-ignore lint: disable
 export {}
 declare global {
-  const motion: typeof import("motion/react-m");
+  const motion: typeof import('motion/react-m')
 }
 ```

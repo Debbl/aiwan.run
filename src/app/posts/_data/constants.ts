@@ -1,4 +1,4 @@
-import path from "node:path";
-import { CWD } from "~/constants";
+import path from 'node:path'
+import { CWD } from '~/constants'
 
-export const postsRootPath = path.join(CWD, "src/app/posts");
+export const postsRootPath = path.join(CWD, 'src/app/posts')

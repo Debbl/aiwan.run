@@ -1,25 +1,25 @@
-import { visit } from "unist-util-visit";
-import type { Code } from "mdast";
-import type { Plugin } from "unified";
+import { visit } from 'unist-util-visit'
+import type { Code } from 'mdast'
+import type { Plugin } from 'unified'
 
 const remarkMdxPre: Plugin = () => {
   return (tree) => {
-    visit(tree, "code", (node: Code) => {
+    visit(tree, 'code', (node: Code) => {
       const getAttribute = (name: string, value: any) => {
         return {
-          type: "mdxJsxAttribute",
+          type: 'mdxJsxAttribute',
           name,
           value: {
-            type: "mdxJsxAttributeValueExpression",
+            type: 'mdxJsxAttributeValueExpression',
             value,
             data: {
               estree: {
-                type: "Program",
+                type: 'Program',
                 body: [
                   {
-                    type: "ExpressionStatement",
+                    type: 'ExpressionStatement',
                     expression: {
-                      type: "Literal",
+                      type: 'Literal',
                       value,
                     },
                   },
@@ -27,20 +27,18 @@ const remarkMdxPre: Plugin = () => {
               },
             },
           },
-        };
-      };
+        }
+      }
 
       const preNode = {
-        type: "mdxJsxFlowElement",
-        name: "Pre",
-        attributes: Object.entries(node).map(([key, value]) =>
-          getAttribute(key, value),
-        ),
-      };
+        type: 'mdxJsxFlowElement',
+        name: 'Pre',
+        attributes: Object.entries(node).map(([key, value]) => getAttribute(key, value)),
+      }
 
-      Object.assign(node, preNode);
-    });
-  };
-};
+      Object.assign(node, preNode)
+    })
+  }
+}
 
-export { remarkMdxPre };
+export { remarkMdxPre }

@@ -1,7 +1,7 @@
-import * as m from "motion/react-m";
+import * as m from 'motion/react-m'
 
-export * from "motion/react";
+export * from 'motion/react'
 
-const motion = m;
+const motion = m
 
-export { m, motion };
+export { m, motion }

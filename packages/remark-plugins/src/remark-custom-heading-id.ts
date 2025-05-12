@@ -1,28 +1,27 @@
-import { visit } from "unist-util-visit";
-import type { Root } from "mdast";
-import type { Plugin } from "unified";
+import { visit } from 'unist-util-visit'
+import type { Root } from 'mdast'
+import type { Plugin } from 'unified'
 
 export interface HProperties {
-  id?: string;
+  id?: string
 }
 
-export const remarkCustomHeadingId: Plugin<[], Root> =
-  () => (tree, _file, done) => {
-    visit(tree, "heading", (node) => {
-      const lastChild = node.children.at(-1);
-      if (!lastChild || lastChild.type !== "text") return;
+export const remarkCustomHeadingId: Plugin<[], Root> = () => (tree, _file, done) => {
+  visit(tree, 'heading', (node) => {
+    const lastChild = node.children.at(-1)
+    if (!lastChild || lastChild.type !== 'text') return
 
-      const heading = lastChild.value;
-      const matched = heading.match(/\s*\[#([^]+?)]\s*$/);
+    const heading = lastChild.value
+    const matched = heading.match(/\s*\[#([^]+?)]\s*$/)
 
-      if (!matched) return;
-      node.data ||= {};
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      const headingProps: HProperties = (node.data.hProperties ||= {});
-      headingProps.id = matched[1];
+    if (!matched) return
+    node.data ||= {}
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    const headingProps: HProperties = (node.data.hProperties ||= {})
+    headingProps.id = matched[1]
 
-      lastChild.value = heading.slice(0, matched.index);
-    });
-    done();
-  };
+    lastChild.value = heading.slice(0, matched.index)
+  })
+  done()
+}

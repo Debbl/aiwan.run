@@ -154,23 +154,20 @@ yarn build
 这里需要替换一下 `input.js` 文件，新版 ReactDom 里没有 render 函数了
 
 ```js filename="fixtures/packaging/webpack/dev/input.js"
-var React = require("react");
-var ReactDOM = require("react-dom");
+var React = require('react')
+var ReactDOM = require('react-dom')
 
-ReactDOM.render(
-  React.createElement("h1", null, "Hello World!"),
-  document.getElementById("container"),
-);
+ReactDOM.render(React.createElement('h1', null, 'Hello World!'), document.getElementById('container'))
 ```
 
 ```js
-var React = require("react");
-var { createRoot } = require("react-dom/client");
+var React = require('react')
+var { createRoot } = require('react-dom/client')
 
-console.log("react version:", React.version);
+console.log('react version:', React.version)
 
-const root = createRoot(document.getElementById("container"));
-root.render(React.createElement("h1", null, "Hello World!"));
+const root = createRoot(document.getElementById('container'))
+root.render(React.createElement('h1', null, 'Hello World!'))
 ```
 
 使用 [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)打开 `fixtures/packaging/webpack/dev/index.html`

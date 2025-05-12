@@ -16,23 +16,23 @@ duration: 5min
   <img src="https://avatars.githubusercontent.com/u/61053131" alt="" />
 </div>
 <script>
-  const img = document.querySelector("img");
+  const img = document.querySelector('img')
 
-  img.addEventListener("load", (e) => {
-    const img = e.target;
-    const parent = img.parentElement;
-    const scale = parent.clientWidth / parent.clientHeight;
+  img.addEventListener('load', (e) => {
+    const img = e.target
+    const parent = img.parentElement
+    const scale = parent.clientWidth / parent.clientHeight
 
     if (img.complete) {
       if (img.naturalWidth > img.naturalHeight * scale) {
-        img.style.width = "100%";
-        img.style.height = "auto";
+        img.style.width = '100%'
+        img.style.height = 'auto'
       } else {
-        img.style.width = "auto";
-        img.style.height = "100%";
+        img.style.width = 'auto'
+        img.style.height = '100%'
       }
     }
-  });
+  })
 </script>
 ```
 

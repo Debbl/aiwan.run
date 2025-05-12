@@ -1,53 +1,53 @@
-import { visit } from "unist-util-visit";
-import type { Image } from "mdast";
-import type { Plugin } from "unified";
+import { visit } from 'unist-util-visit'
+import type { Image } from 'mdast'
+import type { Plugin } from 'unified'
 
 interface RemarkStaticImageOptions {
-  importPrefix?: string;
+  importPrefix?: string
 }
 
 const remarkStaticImage: Plugin = (options: RemarkStaticImageOptions = {}) => {
-  const { importPrefix = "." } = options;
+  const { importPrefix = '.' } = options
 
   return (tree, _file) => {
-    const imports = new Map<string, string>();
-    let imageCounter = 0;
+    const imports = new Map<string, string>()
+    let imageCounter = 0
 
-    visit(tree, "image", (node: Image) => {
+    visit(tree, 'image', (node: Image) => {
       // Skip external images (starting with http:// or https://)
-      if (node.url.startsWith("http://") || node.url.startsWith("https://")) {
-        return;
+      if (node.url.startsWith('http://') || node.url.startsWith('https://')) {
+        return
       }
 
-      let variableName = `__image${imageCounter++}`;
-      const importPath = `${importPrefix}${node.url}`;
+      let variableName = `__image${imageCounter++}`
+      const importPath = `${importPrefix}${node.url}`
 
       if (imports.has(importPath)) {
-        variableName = imports.get(importPath)!;
+        variableName = imports.get(importPath)!
       } else {
-        imports.set(importPath, variableName);
+        imports.set(importPath, variableName)
       }
 
       // Convert node to MDX JSX element
       const mdxNode = {
-        type: "mdxJsxFlowElement",
-        name: "Image",
+        type: 'mdxJsxFlowElement',
+        name: 'Image',
         attributes: [
           {
-            type: "mdxJsxAttribute",
-            name: "src",
+            type: 'mdxJsxAttribute',
+            name: 'src',
             value: {
-              type: "mdxJsxAttributeValueExpression",
+              type: 'mdxJsxAttributeValueExpression',
               value: variableName,
               data: {
                 estree: {
-                  type: "Program",
-                  sourceType: "module",
+                  type: 'Program',
+                  sourceType: 'module',
                   body: [
                     {
-                      type: "ExpressionStatement",
+                      type: 'ExpressionStatement',
                       expression: {
-                        type: "Identifier",
+                        type: 'Identifier',
                         name: variableName,
                       },
                     },
@@ -57,47 +57,47 @@ const remarkStaticImage: Plugin = (options: RemarkStaticImageOptions = {}) => {
             },
           },
           {
-            type: "mdxJsxAttribute",
-            name: "alt",
-            value: node.alt || "",
+            type: 'mdxJsxAttribute',
+            name: 'alt',
+            value: node.alt || '',
           },
         ],
-      };
+      }
 
-      Object.assign(node, mdxNode);
-    });
+      Object.assign(node, mdxNode)
+    })
 
     // Add imports to the top of the file
     if (imports.size > 0) {
-      const importNodes = [];
+      const importNodes = []
       for (const [importPath, variableName] of imports.entries()) {
         importNodes.push({
-          type: "mdxjsEsm",
+          type: 'mdxjsEsm',
           data: {
             estree: {
-              type: "Program",
-              sourceType: "module",
+              type: 'Program',
+              sourceType: 'module',
               body: [
                 {
-                  type: "ImportDeclaration",
+                  type: 'ImportDeclaration',
                   specifiers: [
                     {
-                      type: "ImportDefaultSpecifier",
+                      type: 'ImportDefaultSpecifier',
                       local: {
-                        type: "Identifier",
+                        type: 'Identifier',
                         name: variableName,
                       },
                     },
                   ],
                   source: {
-                    type: "Literal",
+                    type: 'Literal',
                     value: importPath,
                   },
                 },
               ],
             },
           },
-        });
+        })
       }
 
       // Ensure next/image is imported first
@@ -130,9 +130,9 @@ const remarkStaticImage: Plugin = (options: RemarkStaticImageOptions = {}) => {
       //   },
       // };
 
-      (tree as any).children.unshift(...importNodes);
+      ;(tree as any).children.unshift(...importNodes)
     }
-  };
-};
+  }
+}
 
-export { remarkStaticImage };
+export { remarkStaticImage }

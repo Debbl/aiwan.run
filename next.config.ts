@@ -1,6 +1,6 @@
-import bundleAnalyzer from "@next/bundle-analyzer";
-import createMDX from "@next/mdx";
-import withSerwistInit from "@serwist/next";
+import bundleAnalyzer from '@next/bundle-analyzer'
+import createMDX from '@next/mdx'
+import withSerwistInit from '@serwist/next'
 import {
   remarkHeadings,
   remarkMdxFrontmatter,
@@ -8,25 +8,25 @@ import {
   remarkMdxPre,
   remarkMdxSlug,
   remarkStaticImage,
-} from "@workspace/remark-plugins";
-import { rehypeGithubAlerts } from "rehype-github-alerts";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkGfm from "remark-gfm";
-import remarkGithub from "remark-github";
-import { WEBSITE } from "~/constants";
-import type { Metadata, NextConfig } from "next";
-import type { VFile } from "vfile";
-import type { Frontmatter } from "~/app/posts/_data";
+} from '@workspace/remark-plugins'
+import { rehypeGithubAlerts } from 'rehype-github-alerts'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkGfm from 'remark-gfm'
+import remarkGithub from 'remark-github'
+import { WEBSITE } from '~/constants'
+import type { Metadata, NextConfig } from 'next'
+import type { VFile } from 'vfile'
+import type { Frontmatter } from '~/app/posts/_data'
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
-  enabled: process.env.ANALYZE === "true",
-});
+  enabled: process.env.ANALYZE === 'true',
+})
 
 const withSerwist = withSerwistInit({
-  swSrc: "src/sw.ts",
-  swDest: "public/sw.js",
-});
+  swSrc: 'src/sw.ts',
+  swDest: 'public/sw.js',
+})
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -40,9 +40,9 @@ const withMDX = createMDX({
       [
         remarkMdxFrontmatter,
         {
-          name: "metadata",
+          name: 'metadata',
           format: (data: Frontmatter, file: VFile) => {
-            const title = `Posts | ${data.title}`;
+            const title = `Posts | ${data.title}`
 
             return {
               title,
@@ -52,7 +52,7 @@ const withMDX = createMDX({
                 url: `${WEBSITE.domain}/posts`,
                 title: data.title,
                 description: title,
-                type: "website",
+                type: 'website',
                 images: [
                   {
                     alt: `og-image-${file.data.slug}`,
@@ -63,30 +63,27 @@ const withMDX = createMDX({
                 ],
                 emails: [WEBSITE.email],
               },
-            } satisfies Metadata;
+            } satisfies Metadata
           },
         },
       ],
       remarkMdxPre,
-      [remarkStaticImage, { importPrefix: "" }],
+      [remarkStaticImage, { importPrefix: '' }],
       remarkMdxLayout,
     ],
     rehypePlugins: [rehypeGithubAlerts],
   },
-});
+})
 
 const nextConfig: NextConfig = {
-  output: "export",
+  output: 'export',
   cleanDistDir: true,
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
     unoptimized: true,
   },
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-};
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+}
 
-export default [withBundleAnalyzer, withSerwist, withMDX].reduce(
-  (config, fn) => fn(config),
-  nextConfig,
-);
+export default [withBundleAnalyzer, withSerwist, withMDX].reduce((config, fn) => fn(config), nextConfig)

@@ -47,18 +47,18 @@ const nextConfig: NextConfig = {
 ## Lingui 配置
 
 ```ts filename="lingui.config.ts"
-import { defineConfig } from "@lingui/cli";
+import { defineConfig } from '@lingui/cli'
 
 export default defineConfig({
-  sourceLocale: "en",
-  locales: ["zh", "en"],
+  sourceLocale: 'en',
+  locales: ['zh', 'en'],
   catalogs: [
     {
-      path: "<rootDir>/src/locales/{locale}/messages",
-      include: ["src"],
+      path: '<rootDir>/src/locales/{locale}/messages',
+      include: ['src'],
     },
   ],
-});
+})
 ```
 
 ## 国际化
@@ -66,48 +66,45 @@ export default defineConfig({
 解析 `message.po` 文件，提供全局的 context
 
 ```ts filename="i18n.ts"
-import { setupI18n } from "@lingui/core";
-import linguiConfig from "../lingui.config";
-import "server-only";
-import type { I18n, Messages } from "@lingui/core";
+import { setupI18n } from '@lingui/core'
+import linguiConfig from '../lingui.config'
+import 'server-only'
+import type { I18n, Messages } from '@lingui/core'
 
-export const { locales, sourceLocale } = linguiConfig;
-type SupportedLocales = string;
+export const { locales, sourceLocale } = linguiConfig
+type SupportedLocales = string
 
 async function loadCatalog(locale: SupportedLocales): Promise<{
-  [k: string]: Messages;
+  [k: string]: Messages
 }> {
-  const { messages } = await import(`./locales/${locale}/messages.po`);
+  const { messages } = await import(`./locales/${locale}/messages.po`)
   return {
     [locale]: messages,
-  };
+  }
 }
-const catalogs = await Promise.all(locales.map(loadCatalog));
+const catalogs = await Promise.all(locales.map(loadCatalog))
 
 export const allMessages = catalogs.reduce((acc, oneCatalog) => {
-  return { ...acc, ...oneCatalog };
-}, {});
+  return { ...acc, ...oneCatalog }
+}, {})
 
-type AllI18nInstances = { [K in SupportedLocales]: I18n };
+type AllI18nInstances = { [K in SupportedLocales]: I18n }
 
-export const allI18nInstances: AllI18nInstances = locales.reduce(
-  (acc, locale) => {
-    const messages = allMessages[locale] ?? {};
-    const i18n = setupI18n({
-      locale,
-      messages: { [locale]: messages },
-    });
-    return { ...acc, [locale]: i18n };
-  },
-  {},
-);
+export const allI18nInstances: AllI18nInstances = locales.reduce((acc, locale) => {
+  const messages = allMessages[locale] ?? {}
+  const i18n = setupI18n({
+    locale,
+    messages: { [locale]: messages },
+  })
+  return { ...acc, [locale]: i18n }
+}, {})
 
 export const getI18nInstance = (locale: SupportedLocales): I18n => {
   if (!allI18nInstances[locale]) {
-    console.warn(`No i18n instance found for locale "${locale}"`);
+    console.warn(`No i18n instance found for locale "${locale}"`)
   }
-  return allI18nInstances[locale]! || allI18nInstances.en!;
-};
+  return allI18nInstances[locale]! || allI18nInstances.en!
+}
 ```
 
 provider
@@ -192,11 +189,11 @@ export function getRootLayout(lang: string) {
 然后在 lang 的路径里，导入对应的组件
 
 ```ts filename="layout.tsx"
-export { default, metadata } from "../../../(main)/base64/layout";
+export { default, metadata } from '../../../(main)/base64/layout'
 ```
 
 ```ts filename="page.tsx"
-export { default } from "../../../(main)/base64/page";
+export { default } from '../../../(main)/base64/page'
 ```
 
 主路由的默认设置为 `en`，lang 路由根据 `generateStaticParams`获取对应的 lang， 这里抽离的一个 `getRootLayout` 函数获取具体的 `RootLayout`
@@ -204,58 +201,55 @@ export { default } from "../../../(main)/base64/page";
 ```tsx filename="_layout.tsx"
 export function getRootLayout(lang: string) {
   function RootLayout({ children }: { children: ReactNode }) {
-    const i18n = getI18nInstance(lang);
-    setI18n(i18n);
+    const i18n = getI18nInstance(lang)
+    setI18n(i18n)
 
     return (
       <html lang={lang}>
         <body className={inter.className}>
           <Toaster />
-          <LinguiClientProvider
-            initialLocale={lang}
-            initialMessages={i18n.messages}
-          >
+          <LinguiClientProvider initialLocale={lang} initialMessages={i18n.messages}>
             <Providers>{children}</Providers>
           </LinguiClientProvider>
         </body>
       </html>
-    );
+    )
   }
-  return RootLayout;
+  return RootLayout
 }
 ```
 
 ```tsx filename="src/app/(main)/layout.tsx"
-import { getRootLayout } from "../_layout";
+import { getRootLayout } from '../_layout'
 
-export { metadata } from "../_layout";
+export { metadata } from '../_layout'
 
-const RootLayout = getRootLayout("en");
-export default RootLayout;
+const RootLayout = getRootLayout('en')
+export default RootLayout
 ```
 
 ```tsx filename="src/app/(lang)/[lang]/layout.tsx"
-import { locales } from "~/i18n";
-import { getRootLayout } from "../../_layout";
+import { locales } from '~/i18n'
+import { getRootLayout } from '../../_layout'
 
-export { metadata } from "../../_layout";
+export { metadata } from '../../_layout'
 
 interface Props {
   params: Promise<{
-    lang: string;
-  }>;
-  children: React.ReactNode;
+    lang: string
+  }>
+  children: React.ReactNode
 }
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ lang: locale }));
+  return locales.map((locale) => ({ lang: locale }))
 }
 
 export default async function Layout({ params, children }: Props) {
-  const { lang } = await params;
-  const RootLayout = getRootLayout(lang);
+  const { lang } = await params
+  const RootLayout = getRootLayout(lang)
 
-  return <RootLayout>{children}</RootLayout>;
+  return <RootLayout>{children}</RootLayout>
 }
 ```
 
@@ -264,41 +258,36 @@ export default async function Layout({ params, children }: Props) {
 添加 `en` `zh` 后，有些路由链接可能跳转的不是当前语言的，实现了 `useI18nHelper` 辅助
 
 ```ts
-import { useLingui } from "@lingui/react/macro";
-import { usePathname, useRouter } from "next/navigation";
+import { useLingui } from '@lingui/react/macro'
+import { usePathname, useRouter } from 'next/navigation'
 
 export function useI18nHelper() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const { i18n } = useLingui();
+  const router = useRouter()
+  const pathname = usePathname()
+  const { i18n } = useLingui()
 
-  const sourceLocale = "en";
-  const locales = ["en", "zh"];
+  const sourceLocale = 'en'
+  const locales = ['en', 'zh']
 
   const switchLocale = () => {
-    const newLocale =
-      locales.find((locale) => locale !== i18n.locale) || sourceLocale;
+    const newLocale = locales.find((locale) => locale !== i18n.locale) || sourceLocale
 
-    const realPathname = pathname.split("/").filter((i, index) => {
-      if (index === 1 && i === i18n.locale) return false;
-      return Boolean(i);
-    });
+    const realPathname = pathname.split('/').filter((i, index) => {
+      if (index === 1 && i === i18n.locale) return false
+      return Boolean(i)
+    })
 
     const newPathname =
-      newLocale === sourceLocale
-        ? `/${realPathname.join("/")}`
-        : `/${newLocale}/${realPathname.join("/")}`;
+      newLocale === sourceLocale ? `/${realPathname.join('/')}` : `/${newLocale}/${realPathname.join('/')}`
 
-    router.push(newPathname);
-  };
+    router.push(newPathname)
+  }
 
   const getRealPathname = (path: string) => {
-    const isLocalePath = locales.includes(pathname.split("/")[1]);
+    const isLocalePath = locales.includes(pathname.split('/')[1])
 
-    return isLocalePath
-      ? [i18n.locale, ...path.split("/").filter(Boolean)].join("/")
-      : path;
-  };
+    return isLocalePath ? [i18n.locale, ...path.split('/').filter(Boolean)].join('/') : path
+  }
 
   return {
     // FIXME import from config file
@@ -306,7 +295,7 @@ export function useI18nHelper() {
     locales,
     switchLocale,
     getRealPathname,
-  };
+  }
 }
 ```
 

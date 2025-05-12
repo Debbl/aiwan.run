@@ -1,93 +1,93 @@
-import type { Plugin } from "unified";
+import type { Plugin } from 'unified'
 
 const remarkMdxLayout: Plugin = () => {
   return (tree) => {
     // Create layout wrapper node
     const layoutWrapper = {
-      type: "mdxjsEsm",
+      type: 'mdxjsEsm',
       value:
-        "export default function MDXpage({ children }) {\n  return <MdxLayout frontmatter={frontmatter}>{children}</MdxLayout>\n}",
+        'export default function MDXpage({ children }) {\n  return <MdxLayout frontmatter={frontmatter}>{children}</MdxLayout>\n}',
       data: {
         estree: {
-          type: "Program",
+          type: 'Program',
           body: [
             {
-              type: "ExportDefaultDeclaration",
+              type: 'ExportDefaultDeclaration',
               declaration: {
-                type: "FunctionDeclaration",
+                type: 'FunctionDeclaration',
                 id: {
-                  type: "Identifier",
-                  name: "MDXpage",
+                  type: 'Identifier',
+                  name: 'MDXpage',
                 },
                 expression: false,
                 generator: false,
                 async: false,
                 params: [
                   {
-                    type: "ObjectPattern",
+                    type: 'ObjectPattern',
                     properties: [
                       {
-                        type: "Property",
+                        type: 'Property',
                         method: false,
                         shorthand: true,
                         computed: false,
                         key: {
-                          type: "Identifier",
-                          name: "children",
+                          type: 'Identifier',
+                          name: 'children',
                         },
-                        kind: "init",
+                        kind: 'init',
                         value: {
-                          type: "Identifier",
-                          name: "children",
+                          type: 'Identifier',
+                          name: 'children',
                         },
                       },
                     ],
                   },
                 ],
                 body: {
-                  type: "BlockStatement",
+                  type: 'BlockStatement',
                   body: [
                     {
-                      type: "ReturnStatement",
+                      type: 'ReturnStatement',
                       argument: {
-                        type: "JSXElement",
+                        type: 'JSXElement',
                         openingElement: {
-                          type: "JSXOpeningElement",
+                          type: 'JSXOpeningElement',
                           attributes: [
                             {
-                              type: "JSXAttribute",
+                              type: 'JSXAttribute',
                               name: {
-                                type: "JSXIdentifier",
-                                name: "frontmatter",
+                                type: 'JSXIdentifier',
+                                name: 'frontmatter',
                               },
                               value: {
-                                type: "JSXExpressionContainer",
+                                type: 'JSXExpressionContainer',
                                 expression: {
-                                  type: "Identifier",
-                                  name: "frontmatter",
+                                  type: 'Identifier',
+                                  name: 'frontmatter',
                                 },
                               },
                             },
                           ],
                           name: {
-                            type: "JSXIdentifier",
-                            name: "MdxLayout",
+                            type: 'JSXIdentifier',
+                            name: 'MdxLayout',
                           },
                           selfClosing: false,
                         },
                         closingElement: {
-                          type: "JSXClosingElement",
+                          type: 'JSXClosingElement',
                           name: {
-                            type: "JSXIdentifier",
-                            name: "MdxLayout",
+                            type: 'JSXIdentifier',
+                            name: 'MdxLayout',
                           },
                         },
                         children: [
                           {
-                            type: "JSXExpressionContainer",
+                            type: 'JSXExpressionContainer',
                             expression: {
-                              type: "Identifier",
-                              name: "children",
+                              type: 'Identifier',
+                              name: 'children',
                             },
                           },
                         ],
@@ -101,15 +101,15 @@ const remarkMdxLayout: Plugin = () => {
               },
             },
           ],
-          sourceType: "module",
+          sourceType: 'module',
           comments: [],
         },
       },
-    };
+    }
 
     // Add nodes to the tree
-    (tree as any).children.push(layoutWrapper);
-  };
-};
+    ;(tree as any).children.push(layoutWrapper)
+  }
+}
 
-export { remarkMdxLayout };
+export { remarkMdxLayout }
