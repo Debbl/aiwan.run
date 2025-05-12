@@ -1,8 +1,8 @@
 import parse from 'html-react-parser'
 import { bundledLanguages, createHighlighter } from 'shiki'
 import { cn } from '~/lib/utils'
-import { ScrollArea, ScrollBar } from '../ui/ScrollArea'
-import CopyButton from './CopyButton'
+import { ScrollArea, ScrollBar } from '../ui/scroll-area'
+import CopyButton from './copy-button'
 import type { JSX } from 'react'
 
 const highlighter = await createHighlighter({

@@ -1,8 +1,8 @@
 import { ViewTransitions } from 'next-view-transitions'
-import Header from '~/app/_components/Header'
 import { WEBSITE } from '~/constants'
 import Providers from '~/providers'
-import Footer from './_components/Footer'
+import { Footer } from './_components/footer'
+import { Header } from './_components/header'
 import '~/styles/globals.css'
 import type { Metadata } from 'next'
 

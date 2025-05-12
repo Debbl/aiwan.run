@@ -16,7 +16,7 @@ import {
   tools,
   v,
 } from '../logos'
-import BackgroundStage from './_components/BackgroundStage'
+import BackgroundStage from './_components/background-stage'
 import type { IconType } from '@workspace/icons'
 import type { StaticImageData } from 'next/image'
 

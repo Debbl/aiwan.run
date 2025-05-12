@@ -1,9 +1,9 @@
 'use client'
 import { LucideRss } from '@workspace/icons'
 import { useRef } from 'react'
-import Link from '~/components/Link'
-import { useMobile } from '~/hooks/useMobile'
-import ThemeSwitcher from './ThemeSwitcher'
+import Link from '~/components/link'
+import { useMobile } from '~/hooks/use-mobile'
+import ThemeSwitcher from './theme-switcher'
 
 const nav: {
   'url': string
@@ -34,7 +34,7 @@ const nav: {
   },
 ]
 
-export default function Header() {
+export function Header() {
   const navRef = useRef<HTMLElement>(null)
   const { isMobile } = useMobile()
 

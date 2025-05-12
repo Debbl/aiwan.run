@@ -2,13 +2,13 @@
 import { m } from '@workspace/motion'
 import type { SVGProps } from 'react'
 
-export { CheckIcon } from './CheckIcon'
-export { CopyIcon } from './CopyIcon'
-export { MoonIcon } from './MoonIcon'
+export { CheckIcon } from './check-icon'
+export { CopyIcon } from './copy-icon'
+export { MoonIcon } from './moon-icon'
 
-export { SettingsGearIcon } from './SettingsGearIcon'
+export { SettingsGearIcon } from './settings-gear-Icon'
 
-export { SunIcon } from './SunIcon'
+export { SunIcon } from './sun-icon'
 export { LucideCircle, LucideMonitorCog, LucideRss } from 'lucide-react'
 export type { IconBaseProps, IconType } from 'react-icons'
 export { IoLogoGithub } from 'react-icons/io'

@@ -2,11 +2,11 @@
 import { useHydrated } from '@debbl/ahooks'
 import { MoonIcon, SettingsGearIcon, SiBluesky, SiGithub, SiX, SunIcon } from '@workspace/icons'
 import { useTheme } from 'next-themes'
-import Link from '~/components/Link'
-import { Separator } from '~/components/ui/Separator'
+import Link from '~/components/link'
+import { Separator } from '~/components/ui/separator'
 import { cn } from '~/lib/utils'
 
-export default function Footer() {
+export function Footer() {
   const { theme, setTheme } = useTheme()
 
   const { isHydrated } = useHydrated()

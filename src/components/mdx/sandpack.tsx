@@ -1,5 +1,5 @@
 'use client'
-import { Sandpack as CodeSandboxSandpack } from '@codesandbox/sandpack-react'
+import { Sandpack as SandpackPrimitive } from '@codesandbox/sandpack-react'
 import { useTheme } from 'next-themes'
 import type { SandpackInternal } from '@codesandbox/sandpack-react'
 
@@ -9,7 +9,7 @@ export const Sandpack: SandpackInternal = (props) => {
 
   return (
     <div className='m-4'>
-      <CodeSandboxSandpack
+      <SandpackPrimitive
         theme={theme}
         options={{
           showConsoleButton: true,

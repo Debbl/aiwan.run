@@ -1,6 +1,6 @@
 'use client'
 import Snowfall from 'react-snowfall'
-import { Meteors } from '~/components/magicui/Meteors'
+import { Meteors } from '~/components/magicui/meteors'
 import { cn } from '~/lib/utils'
 
 export default function BackgroundStage() {
