@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useAnimation } from '@workspace/motion'
-import type { Variants } from '@workspace/motion'
+import { useAnimation } from 'motion/react'
+import type { Variants } from 'motion/react'
 import type { ClassName } from './types'
 
 const pathVariants: Variants = {
@@ -43,7 +43,7 @@ const CheckIcon = ({ className }: ClassName) => {
       strokeLinecap='round'
       strokeLinejoin='round'
     >
-      <motion.path variants={pathVariants} initial='normal' animate={controls} d='M4 12 9 17L20 6' />
+      <m.path variants={pathVariants} initial='normal' animate={controls} d='M4 12 9 17L20 6' />
     </svg>
   )
 }

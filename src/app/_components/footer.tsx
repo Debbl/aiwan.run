@@ -1,7 +1,7 @@
 'use client'
 import { useHydrated } from '@debbl/ahooks'
-import { MoonIcon, SettingsGearIcon, SiBluesky, SiGithub, SiX, SunIcon } from '@workspace/icons'
 import { useTheme } from 'next-themes'
+import { MoonIcon, SettingsGearIcon, SiBluesky, SiGithub, SiX, SunIcon } from '~/components/icons'
 import Link from '~/components/link'
 import { Separator } from '~/components/ui/separator'
 import { cn } from '~/lib/utils'

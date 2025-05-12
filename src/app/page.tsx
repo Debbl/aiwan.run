@@ -1,6 +1,6 @@
-import { LuGithub, MAvatar, MdOutlineMail, RiBilibiliLine } from '@workspace/icons'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LuGithub, MAvatar, MdOutlineMail, RiBilibiliLine } from '~/components/icons'
 import {
   ai,
   biliShortLink,
@@ -17,8 +17,8 @@ import {
   v,
 } from '../logos'
 import BackgroundStage from './_components/background-stage'
-import type { IconType } from '@workspace/icons'
 import type { StaticImageData } from 'next/image'
+import type { IconType } from '~/components/icons'
 
 type Projects = Record<
   string,

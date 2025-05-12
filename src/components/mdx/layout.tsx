@@ -1,6 +1,6 @@
 'use client'
-import { m, useScroll } from '@workspace/motion'
 import { format } from 'date-fns'
+import { useScroll } from 'motion/react'
 import Link from 'next/link'
 import { useRef } from 'react'
 import type { Frontmatter } from '~/app/posts/_data'

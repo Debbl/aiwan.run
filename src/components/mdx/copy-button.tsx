@@ -1,9 +1,8 @@
 'use client'
-import { CheckIcon, CopyIcon } from '@workspace/icons'
-import { motion } from '@workspace/motion'
 import { useState } from 'react'
+import { CheckIcon, CopyIcon } from '~/components/icons'
 import { cn } from '~/lib/utils'
-import type { IconBaseProps } from '@workspace/icons'
+import type { IconBaseProps } from '~/components/icons'
 
 const CopyButtonIcon = ({ isCopied, ...props }: { isCopied: boolean } & IconBaseProps) => {
   if (isCopied) {
@@ -24,7 +23,7 @@ export default function CopyButton({ lang, code, className }: { lang: string; co
   }
 
   return (
-    <motion.button
+    <m.button
       type='button'
       aria-label='Copy code'
       data-value={code}
@@ -36,6 +35,6 @@ export default function CopyButton({ lang, code, className }: { lang: string; co
     >
       <CopyButtonIcon isCopied={isCopied} className={cn('size-3', isCopied && 'text-green-500')} />
       <span className='sr-only'>Copy</span>
-    </motion.button>
+    </m.button>
   )
 }

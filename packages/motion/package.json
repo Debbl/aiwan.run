@@ -1,7 +1,0 @@
-{
-  "name": "@workspace/motion",
-  "main": "./src/index.ts",
-  "dependencies": {
-    "motion": "^12.11.0"
-  }
-}

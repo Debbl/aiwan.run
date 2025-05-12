@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useAnimation } from '@workspace/motion'
-import type { Variants } from '@workspace/motion'
+import { useAnimation } from 'motion/react'
+import type { Variants } from 'motion/react'
 import type { ClassName } from './types'
 
 const pathVariants: Variants = {
@@ -41,7 +41,7 @@ const SunIcon = ({ className }: ClassName) => {
         'M2 12h2',
         'm4.93 4.93 1.41 1.41',
       ].map((d, index) => (
-        <motion.path key={d} d={d} animate={controls} variants={pathVariants} custom={index + 1} />
+        <m.path key={d} d={d} animate={controls} variants={pathVariants} custom={index + 1} />
       ))}
     </svg>
   )

@@ -1,6 +1,6 @@
 'use client'
-import { LucideRss } from '@workspace/icons'
 import { useRef } from 'react'
+import { LucideRss } from '~/components/icons'
 import Link from '~/components/link'
 import { useMobile } from '~/hooks/use-mobile'
 import ThemeSwitcher from './theme-switcher'

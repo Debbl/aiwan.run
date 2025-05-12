@@ -8,7 +8,7 @@ duration: 2min
 
 ## motion
 
-> https://motion.dev/docs/react-reduce-bundle-size#reduce-size
+> https://m.dev/docs/react-reduce-bundle-size#reduce-size
 
 在 motion 库中如何要减少打包的体积，需要使用
 

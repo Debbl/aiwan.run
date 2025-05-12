@@ -1,5 +1,4 @@
 'use client'
-import { m } from '@workspace/motion'
 import type { SVGProps } from 'react'
 
 export { CheckIcon } from './check-icon'

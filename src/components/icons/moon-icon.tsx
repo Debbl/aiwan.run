@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useAnimation } from '@workspace/motion'
-import type { Transition, Variants } from '@workspace/motion'
+import { useAnimation } from 'motion/react'
+import type { Transition, Variants } from 'motion/react'
 import type { ClassName } from './types'
 
 const svgVariants: Variants = {
@@ -22,7 +22,7 @@ const MoonIcon = ({ className }: ClassName) => {
   const controls = useAnimation()
 
   return (
-    <motion.svg
+    <m.svg
       className={className}
       onMouseEnter={() => controls.start('animate')}
       onMouseLeave={() => controls.start('normal')}
@@ -40,7 +40,7 @@ const MoonIcon = ({ className }: ClassName) => {
       transition={svgTransition}
     >
       <path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' />
-    </motion.svg>
+    </m.svg>
   )
 }
 

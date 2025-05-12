@@ -1,4 +1,4 @@
-import { domAnimation, LazyMotion } from '@workspace/motion'
+import { domAnimation, LazyMotion } from 'motion/react'
 import { ThemeProvider } from 'next-themes'
 import ClientProviders from './index.client'
 

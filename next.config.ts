@@ -13,6 +13,7 @@ import { rehypeGithubAlerts } from 'rehype-github-alerts'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkGithub from 'remark-github'
+import AutoImport from 'unplugin-auto-import/webpack'
 import { WEBSITE } from '~/constants'
 import type { Metadata, NextConfig } from 'next'
 import type { VFile } from 'vfile'
@@ -84,6 +85,28 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  webpack: (config) => {
+    config.plugins.push(
+      AutoImport({
+        include: [
+          /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        ],
+        imports: [
+          'react',
+          {
+            twl: ['cn'],
+          },
+          {
+            from: 'motion/react-m',
+            imports: [['*', 'm']],
+          },
+        ],
+        dts: true,
+      }),
+    )
+
+    return config
+  },
 }
 
 export default [withBundleAnalyzer, withSerwist, withMDX].reduce((config, fn) => fn(config), nextConfig)
