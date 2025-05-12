@@ -6,7 +6,14 @@ duration: 10min
 
 # VSCode 中使用 Vim
 
+> 官方文档
 > https://github.com/VSCodeVim/Vim
+
+> VSCode when 条件
+> https://code.visualstudio.com/api/references/when-clause-contexts
+
+> VSCode 默认快捷键
+> https://code.visualstudio.com/docs/reference/default-keybindings
 
 ## 安装
 
