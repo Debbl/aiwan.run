@@ -14,7 +14,10 @@ duration: 5min
 
 ```tsx
 import __image_0 from './images/image.png'
-;<Image src={__image_0} alt='image' />
+
+function Page() {
+  return <Image src={__image_0} alt='image' />
+}
 ```
 
 因为这里所有的 md 文件都是可以直接当作组件来解析的说，所有说不需要关心这里 `./images/image.png` 相对路径的问题。
