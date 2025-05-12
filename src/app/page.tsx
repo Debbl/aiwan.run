@@ -17,7 +17,7 @@ import {
 } from '../logos'
 import BackgroundStage from './_components/background-stage'
 import type { StaticImageData } from 'next/image'
-import type { IconType } from '~/components/icons/exports'
+import type { IconType } from '~/components/icons'
 
 type Projects = Record<
   string,
@@ -176,7 +176,7 @@ const FindMeLinks: {
     'url': 'mailto:me@aiwan.run',
     'name': 'Email',
     'data-umami-event': 'click-email-link',
-    'icon': (props) => <Icon.MdOutlineMail {...props} />,
+    'icon': (props) => <Icon.MdiOutlineEmail {...props} />,
   },
 ]
 

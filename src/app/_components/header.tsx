@@ -29,7 +29,7 @@ const nav: {
     'url': '/feed.xml',
     'name': 'RSS',
     'data-umami-event': 'click-rss-link',
-    'icon': <Icon.LucideRss className='size-5' />,
+    'icon': <Icon.LuRss className='size-5' />,
   },
 ]
 

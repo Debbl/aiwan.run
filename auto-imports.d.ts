@@ -13,7 +13,6 @@ declare global {
   const lazy: typeof import('react')['lazy']
   const m: typeof import('motion/react-m')
   const memo: typeof import('react')['memo']
-  const motion: typeof import('motion/react-m')
   const startTransition: typeof import('react')['startTransition']
   const useCallback: typeof import('react')['useCallback']
   const useContext: typeof import('react')['useContext']
@@ -30,4 +29,10 @@ declare global {
   const useState: typeof import('react')['useState']
   const useSyncExternalStore: typeof import('react')['useSyncExternalStore']
   const useTransition: typeof import('react')['useTransition']
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { IconType, IconBaseProps } from '~/components/icons/index.ts'
+  import('~/components/icons/index.ts')
 }

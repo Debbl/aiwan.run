@@ -20,7 +20,7 @@ const RadioGroupItem = ({ ref, className, ...props }: React.ComponentProps<typeo
       {...props}
     >
       <RadioGroupPrimitive.Indicator className='flex items-center justify-center'>
-        <Icon.LucideCircle className='fill-primary h-3.5 w-3.5' />
+        <Icon.LuCircle className='fill-primary h-3.5 w-3.5' />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

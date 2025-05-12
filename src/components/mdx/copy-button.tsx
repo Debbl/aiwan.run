@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { Icon } from '~/components/icons'
 import { cn } from '~/lib/utils'
-import type { IconBaseProps } from '../icons/exports'
 
 const CopyButtonIcon = ({ isCopied, ...props }: { isCopied: boolean } & IconBaseProps) => {
   if (isCopied) {

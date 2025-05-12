@@ -104,6 +104,11 @@ const nextConfig: NextConfig = {
             from: '~/components/icons/index.ts',
             imports: ['Icon'],
           },
+          {
+            from: '~/components/icons/index.ts',
+            imports: ['IconType', 'IconBaseProps'],
+            type: true,
+          },
         ],
         dts: true,
       }),
