@@ -71,6 +71,12 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ]
 ```
 
+### 一些操作
+
+`m` + 字母 设置 mark
+
+`'` + 字母 跳转到 mark
+
 ## 非 Vim 模式下键盘操作
 
 ### 移动选择文件
