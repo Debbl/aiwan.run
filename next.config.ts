@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  transpilePackages: ['@workspace/mdx-plugins'],
   webpack: (config) => {
     config.plugins.push(
       AutoImport({

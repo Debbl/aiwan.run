@@ -4,6 +4,8 @@ date: 2024-05-26T12:24:14.000Z
 duration: 3min
 ---
 
+# 我是如何搭建这个博客的
+
 ## 信息
 
 - [MDX Playground](https://mdxjs.com/playground/)

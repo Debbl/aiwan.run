@@ -33,7 +33,8 @@
     "rehype",
     "serwist",
     "shadcn",
-    "shiki"
+    "shiki",
+    "tsdown"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

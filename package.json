@@ -10,15 +10,14 @@
     "url": "https://github.com/Debbl/aiwan.run.git"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "turbo run dev && next dev",
+    "build": "turbo run build && next build",
     "build:analyze": "ANALYZE=true next build",
     "typecheck": "tsc --noEmit",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "prepare": "simple-git-hooks",
-    "postinstall": "fumadocs-mdx"
+    "prepare": "simple-git-hooks"
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
@@ -84,6 +83,7 @@
     "simple-git-hooks": "^2.13.0",
     "tailwindcss": "^4.1.7",
     "tsx": "^4.19.4",
+    "turbo": "^2.5.3",
     "typescript": "^5.8.3",
     "unist-util-visit": "^5.0.0",
     "vfile": "^6.0.3"

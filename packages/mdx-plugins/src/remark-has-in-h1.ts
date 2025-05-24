@@ -8,15 +8,7 @@ export interface Heading {
   id: string
 }
 
-// const getFlattenedValue = (node: Parent): string =>
-//   node.children
-//     .map((child) => ('children' in child ? getFlattenedValue(child as Parent) : 'value' in child ? child.value : ''))
-//     .join('')
-
 export const remarkHasInH1: Plugin<[], Root> = () => {
-  // let title: string = ''
-  // let hasJsxInH1: boolean = false
-
   return (tree, file, done) => {
     visit(
       tree,
@@ -30,12 +22,7 @@ export const remarkHasInH1: Plugin<[], Root> = () => {
       (node, index, _parent) => {
         if (node.type === 'heading') {
           if (node.depth === 1 && typeof index === 'number') {
-            // const hasJsx = node.children.some((child: { type: string }) => child.type === 'mdxJsxTextElement')
-            // if (hasJsx) {
-            //   hasJsxInH1 = true
-            // }
-            // title = getFlattenedValue(node)
-            // tree.children.splice(index, 1)
+            tree.children.splice(index, 1)
           }
         }
       },

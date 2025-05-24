@@ -1,6 +1,13 @@
 {
   "name": "@workspace/mdx-plugins",
-  "main": "./src/index.ts",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
   "dependencies": {
     "estree-util-is-identifier-name": "^3.0.0",
     "estree-util-value-to-estree": "^3.4.0",
@@ -10,6 +17,7 @@
     "yaml": "^2.8.0"
   },
   "devDependencies": {
-    "@types/mdast": "^4.0.4"
+    "@types/mdast": "^4.0.4",
+    "tsdown": "^0.12.3"
   }
 }

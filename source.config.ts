@@ -1,3 +1,4 @@
+import { remarkHasInH1 } from '@workspace/mdx-plugins'
 import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from 'fumadocs-mdx/config'
 import { z } from 'zod'
 
@@ -15,5 +16,7 @@ export const docs = defineDocs({
 })
 
 export default defineConfig({
-  mdxOptions: {},
+  mdxOptions: {
+    remarkPlugins: [remarkHasInH1],
+  },
 })
