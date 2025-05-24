@@ -1,22 +1,9 @@
 import { format } from 'date-fns'
-import Link from '~/components/link'
+import { Link } from 'next-view-transitions'
+import { postsByCategory } from '~/lib/source'
 import BackgroundStage from '../_components/background-stage'
-import { getPosts } from './_data'
 
 export default async function Page() {
-  const { posts } = await getPosts()
-
-  const postsByCategory = [
-    {
-      title: 'Blog',
-      posts: posts.filter((p) => p.category === 'blog'),
-    },
-    {
-      title: 'TIL',
-      posts: posts.filter((p) => p.category === 'TIL'),
-    },
-  ]
-
   return (
     <>
       <BackgroundStage />
@@ -29,16 +16,16 @@ export default async function Page() {
                 <h2 className='text-3xl font-bold'>{category.title}</h2>
                 <ul className='mt-4 flex flex-col gap-y-2'>
                   {category.posts.map((post) => (
-                    <Link className='opacity-60 hover:opacity-100' href={post.slug} key={post.slug}>
+                    <Link className='opacity-60 hover:opacity-100' href={post.url} key={post.url}>
                       <li
                         className='hover:text-primary dark:hover:text-primary flex flex-col text-gray-900 md:flex-row dark:text-gray-50'
-                        data-umami-event={`click-posts-${post.slug}`}
+                        data-umami-event={`click-posts-${post.url}`}
                       >
-                        <span>{post.title}</span>
+                        <span>{post.data.title}</span>
                         <span className='ml-0 flex items-center text-xs text-gray-500 md:ml-4'>
-                          {format(post.date, 'MMM-dd, yyyy')}
+                          {format(post.data.date, 'MMM-dd, yyyy')}
                           {' · '}
-                          {post.duration}
+                          {post.data.duration}
                         </span>
                       </li>
                     </Link>

@@ -1,4 +1,6 @@
 @import './tailwindcss/index.css';
+@import 'fumadocs-ui/css/shadcn.css';
+@import 'fumadocs-ui/css/preset.css';
 
 @import './view-transition.css';
 @import './image-zoom.css';
