@@ -1,3 +1,4 @@
+import { format } from 'date-fns'
 import { Card, Cards } from 'fumadocs-ui/components/card'
 import { Toc, TOCItems, TOCScrollArea } from 'fumadocs-ui/components/layout/toc'
 import ClerkTOCItems from 'fumadocs-ui/components/layout/toc-clerk'
@@ -46,11 +47,15 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
+      <p className='text-muted-foreground mt-2'>
+        <span>{format(page.data.date, 'MMM-dd, yyyy')}</span>
+        {' · '}
+        <span>{page.data.duration}</span>
+      </p>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDXContent
           components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
           })}
         />
