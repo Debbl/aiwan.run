@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} sidebar={{ enabled: false }}>
+    <DocsLayout tree={source.pageTree} sidebar={{ enabled: false }} nav={{ enabled: false }}>
       {children}
     </DocsLayout>
   )

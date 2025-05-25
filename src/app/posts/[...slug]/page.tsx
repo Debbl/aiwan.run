@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
         <span>{page.data.duration}</span>
       </p>
       <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
+      <DocsBody className='break-words'>
         <MDXContent
           components={getMDXComponents({
             a: createRelativeLink(source, page),
