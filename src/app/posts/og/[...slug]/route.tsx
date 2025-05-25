@@ -1,20 +1,20 @@
 import { ImageResponse } from 'next/og'
 import { WEBSITE } from '~/constants'
-import { posts } from '~/lib/source'
+import { posts, source } from '~/lib/source'
 
 export async function generateStaticParams() {
   return posts.map((post) => {
     const slugs = post.slugs
-    return { slug: [...slugs.slice(0, -1), `${slugs.at(-1)}.png`] }
+    return { slugs: [...slugs.slice(0, -1), `${slugs.at(-1)}.png`] }
   })
 }
 
-export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params
 
-  const pageName = slug.slice(0, -4) // remove .png
+  const slugs = slug.map((s) => s.replace('.png', ''))
 
-  const post = posts.find((p) => p.url === pageName)
+  const post = source.getPage(slugs)
 
   return new ImageResponse(
     (

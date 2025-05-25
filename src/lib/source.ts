@@ -28,8 +28,8 @@ export const postsByCategory = [
   },
 ]
 
-export function getRelativePage(slug?: string[]) {
-  const currentPage = source.getPage(slug)
+export function getRelativePage(slugs?: string[]) {
+  const currentPage = source.getPage(slugs)
 
   const categoryIndex = currentPage?.file.dirname.startsWith('(blog') ? 0 : 1
   const posts = postsByCategory[categoryIndex].posts

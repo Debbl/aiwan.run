@@ -4,8 +4,10 @@ import ClerkTOCItems from 'fumadocs-ui/components/layout/toc-clerk'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
+import { WEBSITE } from '~/constants'
 import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
+import type { Metadata } from 'next'
 
 function TableOfContent(props: any) {
   const { items, style } = props
@@ -64,13 +66,28 @@ export async function generateStaticParams() {
   return [...source.generateParams()]
 }
 
-export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
+export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
   return {
-    title: page.data.title,
-    description: page.data.description,
+    title: `Posts | ${page.data.title}`,
+    description: page.data.description || `Post | ${page.data.title}`,
+    openGraph: {
+      type: 'website',
+      url: `${WEBSITE.domain}${page.url}`,
+      title: page.data.title,
+      description: page.data.description || `Post | ${page.data.title}`,
+      images: [
+        {
+          alt: `${page.data.title}`,
+          url: `/posts/og/${page.slugs.at(-1)}.png`,
+          width: 800,
+          height: 400,
+        },
+      ],
+      emails: [WEBSITE.email],
+    },
   }
 }
