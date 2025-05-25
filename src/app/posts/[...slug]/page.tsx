@@ -36,6 +36,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       full={page.data.full}
       breadcrumb={{ enabled: false }}
       tableOfContent={{
+        enabled: page.file.dirname.startsWith('(blog)'),
         style: 'clerk',
         header: null,
         component: <TableOfContent />,
