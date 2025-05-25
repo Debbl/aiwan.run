@@ -6,6 +6,9 @@ duration: 3min
 
 # 我是如何搭建这个博客的
 
+> [!NOTE]
+> 这篇文章已经过时了，请参考 [使用 FumaDocs 重构这个博客](/posts/refactor-this-blog-with-fumadocs)
+
 ## 信息
 
 - [MDX Playground](https://mdxjs.com/playground/)
