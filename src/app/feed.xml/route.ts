@@ -1,6 +1,6 @@
 import RSS from 'rss'
 import { WEBSITE } from '~/constants'
-import { getPosts } from '../posts/_data'
+import { posts } from '~/lib/source'
 import { markdownToHtml } from './markdown'
 
 export const dynamic = 'force-static'
@@ -27,29 +27,33 @@ export async function GET() {
       },
     ],
   })
-  const { posts } = await getPosts()
 
   posts.forEach((post) => {
-    const slug = post.slug
+    const slug = post.url
+
+    const slugs = post.slugs
+    const ogImgPath = [...slugs.slice(0, -1), `${slugs.at(-1)}.png`].join('/')
 
     const data: RSS.ItemOptions = {
-      title: post.title,
-      guid: `${post.slug}`,
+      title: post.data.title,
+      guid: `${post.url}`,
       author: 'me@aiwan.run (Brendan Dash)',
       url: `${WEBSITE.domain}${slug}`,
-      description: post.title,
-      date: post.date,
+      description: post.data.title,
+      date: post.data.date,
       categories: [post.category],
       custom_elements: [
         {
           'content:encoded': {
-            _cdata: markdownToHtml(post.content, post.path),
+            _cdata: markdownToHtml(post.data.content, post.data._file.absolutePath),
           },
         },
       ],
-    }
 
-    // if (p.coverImgUrl) data.enclosure = { url: p.coverImgUrl };
+      enclosure: {
+        url: `${WEBSITE.domain}/og/${ogImgPath}`,
+      },
+    }
 
     feed.item(data)
   })

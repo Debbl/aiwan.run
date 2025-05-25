@@ -1,5 +1,7 @@
 {
   "eslint.useFlatConfig": true,
+  // do not want to autofix some rules on save
+  "eslint.codeActionsOnSave.rules": ["!prefer-const", "!unused-imports/no-unused-imports", "*"],
   // set severity of some rules on save in vscode development
   "eslint.rules.customizations": [
     {
@@ -22,6 +24,7 @@
   "cSpell.words": [
     "bprogress",
     "frontmatter",
+    "fumadocs",
     "lingui",
     "magicui",
     "mdast",
@@ -30,7 +33,9 @@
     "rehype",
     "serwist",
     "shadcn",
-    "shiki"
+    "shiki",
+    "tsdown",
+    "twoslash"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

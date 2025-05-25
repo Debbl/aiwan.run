@@ -1,4 +1,4 @@
-import type { SandpackInternal } from '@codesandbox/sandpack-react/types'
+import type { SandpackInternal } from '@codesandbox/sandpack-react'
 
 export interface SandpackChildrenProps {
   filename?: string

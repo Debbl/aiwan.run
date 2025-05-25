@@ -2,7 +2,6 @@ import { cn } from '~/lib/utils'
 import { Code } from './code'
 import { HeadingLink } from './heading-link'
 import { Image } from './image'
-import Layout from './layout'
 import { Link } from './link'
 import { Pre } from './pre'
 import { Sandpack } from './sandpack'
@@ -45,7 +44,6 @@ export function getMDXComponents(): MDXComponents {
       return <Sandpack files={files} {..._props} />
     },
     Image,
-    MdxLayout: Layout,
     Pre,
     code: Code,
   }
