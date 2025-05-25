@@ -1,5 +1,7 @@
 import { remarkHasInH1 } from '@workspace/mdx-plugins'
+import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins'
 import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from 'fumadocs-mdx/config'
+import { transformerTwoslash } from 'fumadocs-twoslash'
 import { z } from 'zod'
 
 export const docs = defineDocs({
@@ -18,5 +20,12 @@ export const docs = defineDocs({
 export default defineConfig({
   mdxOptions: {
     remarkPlugins: [remarkHasInH1],
+    rehypeCodeOptions: {
+      themes: {
+        light: 'one-light',
+        dark: 'one-dark-pro',
+      },
+      transformers: [...(rehypeCodeDefaultOptions.transformers ?? []), transformerTwoslash()],
+    },
   },
 })

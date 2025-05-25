@@ -5,7 +5,7 @@ import { posts, source } from '~/lib/source'
 export async function generateStaticParams() {
   return posts.map((post) => {
     const slugs = post.slugs
-    return { slugs: [...slugs.slice(0, -1), `${slugs.at(-1)}.png`] }
+    return { slug: [...slugs.slice(0, -1), `${slugs.at(-1)}.png`] }
   })
 }
 

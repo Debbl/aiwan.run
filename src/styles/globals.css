@@ -1,6 +1,7 @@
 @import './tailwindcss/index.css';
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
+@import 'fumadocs-twoslash/twoslash.css';
 
 @import './view-transition.css';
 @import './image-zoom.css';

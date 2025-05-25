@@ -34,7 +34,8 @@
     "serwist",
     "shadcn",
     "shiki",
-    "tsdown"
+    "tsdown",
+    "twoslash"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
