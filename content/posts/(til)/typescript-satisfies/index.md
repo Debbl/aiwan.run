@@ -4,13 +4,14 @@ date: 2025-02-21T02:33:55.190Z
 duration: 1min
 ---
 
-## TypeScript satisfies
+# TypeScript satisfies
 
 - 官方文档 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator
 
 使一个表达式符合某个类型，而不改变表达式的类型。
 
-```ts
+```ts twoslash
+// @errors: 2353 2339
 type Colors = 'red' | 'green' | 'blue'
 type RGB = [red: number, green: number, blue: number]
 
@@ -27,7 +28,8 @@ const greenNormalized = palette.green.toUpperCase()
 
 使用 satisfies
 
-```ts
+```ts twoslash
+// @errors: 2353
 type Colors = 'red' | 'green' | 'blue'
 type RGB = [red: number, green: number, blue: number]
 
@@ -48,7 +50,8 @@ const greenNormalized = palette.green.toUpperCase()
 
 确保对象的 keys 符合某个类型
 
-```ts
+```ts twoslash
+// @errors: 2353
 type Colors = 'red' | 'green' | 'blue'
 
 // 确保对象的 keys 符合 Colors 类型
@@ -66,7 +69,8 @@ const g: boolean = favoriteColors.green
 
 确保对象的属性值符合某个类型
 
-```ts
+```ts twoslash
+// @errors: 2322
 type RGB = [red: number, green: number, blue: number]
 
 // 确保对象的属性值符合 string 和 RGB 类型
