@@ -63,21 +63,26 @@
 }
 
 .markdown-alert-note .markdown-alert-title {
+  fill: var(--github-alert-note-color);
   color: var(--github-alert-note-color);
 }
 
 .markdown-alert-tip .markdown-alert-title {
+  fill: var(--github-alert-tip-color);
   color: var(--github-alert-tip-color);
 }
 
 .markdown-alert-important .markdown-alert-title {
+  fill: var(--github-alert-important-color);
   color: var(--github-alert-important-color);
 }
 
 .markdown-alert-warning .markdown-alert-title {
+  fill: var(--github-alert-warning-color);
   color: var(--github-alert-warning-color);
 }
 
 .markdown-alert-caution .markdown-alert-title {
+  fill: var(--github-alert-caution-color);
   color: var(--github-alert-caution-color);
 }
