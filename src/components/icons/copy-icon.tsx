@@ -37,8 +37,8 @@ const CopyIcon = ({ className }: ClassName) => {
         rx='2'
         ry='2'
         variants={{
-          normal: { translateY: 0, translateX: 0 },
-          animate: { translateY: -3, translateX: -3 },
+          normal: { transform: 'translate(0, 0)' },
+          animate: { transform: 'translate(-3px, -3px)' },
         }}
         animate={controls}
         transition={defaultTransition}
