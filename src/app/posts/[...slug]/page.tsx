@@ -1,26 +1,21 @@
 import { format } from 'date-fns'
 import { Card, Cards } from 'fumadocs-ui/components/card'
-import { Toc, TOCItems, TOCScrollArea } from 'fumadocs-ui/components/layout/toc'
-import ClerkTOCItems from 'fumadocs-ui/components/layout/toc-clerk'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+} from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
 import { WEBSITE } from '~/constants'
 import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
 import type { Metadata } from 'next'
 
-function TableOfContent(props: any) {
-  const { items, style } = props
-
-  return (
-    <Toc>
-      <TOCScrollArea>{style === 'clerk' ? <ClerkTOCItems items={items} /> : <TOCItems items={items} />}</TOCScrollArea>
-    </Toc>
-  )
-}
-
-export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
+export default async function Page(props: {
+  params: Promise<{ slug?: string[] }>
+}) {
   const params = await props.params
   const slug = params.slug
 
@@ -37,10 +32,10 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       full={page.data.full}
       breadcrumb={{ enabled: false }}
       tableOfContent={{
-        enabled: page.file.dirname.startsWith('(blog)') && page.data.toc.length > 0,
+        enabled: page.path.startsWith('(blog)') && page.data.toc.length > 0,
         style: 'clerk',
         header: null,
-        component: <TableOfContent />,
+        footer: null,
       }}
       footer={{
         enabled: false,
@@ -72,7 +67,9 @@ export async function generateStaticParams() {
   return [...source.generateParams()]
 }
 
-export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug?: string[] }>
+}): Promise<Metadata> {
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
