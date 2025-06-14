@@ -55,7 +55,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
       images: posts.map((post) => {
         const slugs = post.slugs
-        const ogImgPath = [...slugs.slice(0, -1), `${slugs.at(-1)}.png`].join('/')
+        const ogImgPath = [...slugs.slice(0, -1), `${slugs.at(-1)}.png`].join(
+          '/',
+        )
 
         return `${WEBSITE.domain}/posts/og/${ogImgPath}`
       }),

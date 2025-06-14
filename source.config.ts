@@ -1,6 +1,11 @@
 import { remarkHasInH1 } from '@workspace/mdx-plugins'
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins'
-import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from 'fumadocs-mdx/config'
+import {
+  defineConfig,
+  defineDocs,
+  frontmatterSchema,
+  metaSchema,
+} from 'fumadocs-mdx/config'
 import { transformerTwoslash } from 'fumadocs-twoslash'
 import { rehypeGithubAlerts } from 'rehype-github-alerts'
 import { z } from 'zod'
@@ -27,7 +32,10 @@ export default defineConfig({
         light: 'one-light',
         dark: 'one-dark-pro',
       },
-      transformers: [...(rehypeCodeDefaultOptions.transformers ?? []), transformerTwoslash()],
+      transformers: [
+        ...(rehypeCodeDefaultOptions.transformers ?? []),
+        transformerTwoslash(),
+      ],
     },
   },
 })

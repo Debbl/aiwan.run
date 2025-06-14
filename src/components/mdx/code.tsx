@@ -1,7 +1,11 @@
 import { cn } from '~/lib/utils'
 import type { ComponentProps } from 'react'
 
-export function Code({ children, className, ...props }: ComponentProps<'code'>) {
+export function Code({
+  children,
+  className,
+  ...props
+}: ComponentProps<'code'>) {
   return (
     <code
       className={cn(

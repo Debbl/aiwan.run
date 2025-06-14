@@ -16,7 +16,11 @@ export default async function Page() {
                 <h2 className='text-3xl font-bold'>{category.title}</h2>
                 <ul className='mt-4 flex flex-col gap-y-2'>
                   {category.posts.map((post) => (
-                    <Link className='opacity-60 hover:opacity-100' href={post.url} key={post.url}>
+                    <Link
+                      className='opacity-60 hover:opacity-100'
+                      href={post.url}
+                      key={post.url}
+                    >
                       <li
                         className='hover:text-primary dark:hover:text-primary flex flex-col text-gray-900 md:flex-row dark:text-gray-50'
                         data-umami-event={`click-posts-${post.url}`}

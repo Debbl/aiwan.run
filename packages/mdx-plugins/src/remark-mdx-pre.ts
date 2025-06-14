@@ -33,7 +33,9 @@ const remarkMdxPre: Plugin = () => {
       const preNode = {
         type: 'mdxJsxFlowElement',
         name: 'Pre',
-        attributes: Object.entries(node).map(([key, value]) => getAttribute(key, value)),
+        attributes: Object.entries(node).map(([key, value]) =>
+          getAttribute(key, value),
+        ),
       }
 
       Object.assign(node, preNode)

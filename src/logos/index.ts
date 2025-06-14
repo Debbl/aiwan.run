@@ -12,4 +12,18 @@ import tictactoe from './tictactoe.webp'
 import tools from './tools.svg'
 import v from './v.svg'
 
-export { ai, biliShortLink, bubbleWrap, car, codeDiff, emoji, gameOfLife, minesweeper, peppa, rm, tictactoe, tools, v }
+export {
+  ai,
+  biliShortLink,
+  bubbleWrap,
+  car,
+  codeDiff,
+  emoji,
+  gameOfLife,
+  minesweeper,
+  peppa,
+  rm,
+  tictactoe,
+  tools,
+  v,
+}

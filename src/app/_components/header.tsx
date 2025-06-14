@@ -39,10 +39,17 @@ export function Header() {
 
   return (
     <header>
-      <nav ref={navRef} className={'flex items-center justify-between px-6 py-3'}>
+      <nav
+        ref={navRef}
+        className={'flex items-center justify-between px-6 py-3'}
+      >
         <div>
           <button type='button' aria-label='home'>
-            <Link href='/' className='inline-block size-full px-3' aria-label='home page link'>
+            <Link
+              href='/'
+              className='inline-block size-full px-3'
+              aria-label='home page link'
+            >
               ~
             </Link>
           </button>

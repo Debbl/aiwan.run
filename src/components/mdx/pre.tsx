@@ -20,7 +20,15 @@ function parseMeta(meta?: string) {
   }
 }
 
-export function Pre({ lang, meta = '', value }: { lang: string; meta: string; value: string }) {
+export function Pre({
+  lang,
+  meta = '',
+  value,
+}: {
+  lang: string
+  meta: string
+  value: string
+}) {
   const { filename } = parseMeta(meta)
 
   const renderedHTML = highlighter.codeToHtml(value, {
@@ -37,13 +45,20 @@ export function Pre({ lang, meta = '', value }: { lang: string; meta: string; va
 
         <div className='flex items-center gap-2'>
           <span>{lang}</span>
-          <CopyButton className='cursor-pointer text-gray-600 transition-opacity' lang={lang} code={value} />
+          <CopyButton
+            className='cursor-pointer text-gray-600 transition-opacity'
+            lang={lang}
+            code={value}
+          />
         </div>
       </div>
 
       <div className={cn(`language-${lang}`, 'relative')}>
         <figure>
-          <ScrollArea style={preJSXElement.props.style} className='max-h-[300px]'>
+          <ScrollArea
+            style={preJSXElement.props.style}
+            className='max-h-[300px]'
+          >
             <pre {...preJSXElement.props} className='p-4 text-xs' />
             <ScrollBar orientation='horizontal' className='h-1.5' />
           </ScrollArea>

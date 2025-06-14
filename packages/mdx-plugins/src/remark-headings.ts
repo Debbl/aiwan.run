@@ -14,15 +14,21 @@ export interface Heading {
 
 const getFlattenedValue = (node: Parent): string =>
   node.children
-    .map((child) => ('children' in child ? getFlattenedValue(child as Parent) : 'value' in child ? child.value : ''))
+    .map((child) =>
+      'children' in child
+        ? getFlattenedValue(child as Parent)
+        : 'value' in child
+          ? child.value
+          : '',
+    )
     .join('')
 
 const SKIP_FOR_PARENT_NAMES = new Set(['Tab', 'Tabs.Tab'])
 
-export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: boolean }], Root> = ({
-  exportName = '__toc',
-  isRemoteContent,
-}) => {
+export const remarkHeadings: Plugin<
+  [{ exportName?: string; isRemoteContent?: boolean }],
+  Root
+> = ({ exportName = '__toc', isRemoteContent }) => {
   let title: string = ''
   let hasJsxInH1: boolean = false
 
@@ -30,7 +36,8 @@ export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: bo
   const headings: (Heading | string)[] = []
 
   return (tree, file, done) => {
-    const PartialComponentToHeadingsName: Record<string, string> = Object.create(null)
+    const PartialComponentToHeadingsName: Record<string, string> =
+      Object.create(null)
 
     visit(
       tree,
@@ -44,7 +51,9 @@ export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: bo
       (node, index, parent) => {
         if (node.type === 'heading') {
           if (node.depth === 1 && typeof index === 'number') {
-            const hasJsx = node.children.some((child: { type: string }) => child.type === 'mdxJsxTextElement')
+            const hasJsx = node.children.some(
+              (child: { type: string }) => child.type === 'mdxJsxTextElement',
+            )
             if (hasJsx) {
               hasJsxInH1 = true
             }
@@ -77,7 +86,9 @@ export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: bo
             const isMdxImport = MARKDOWN_EXTENSION_REGEX.test(importPath)
             if (!isMdxImport) continue
 
-            const componentName = child.specifiers.find((o: any) => o.type === 'ImportDefaultSpecifier')?.local.name
+            const componentName = child.specifiers.find(
+              (o: any) => o.type === 'ImportDefaultSpecifier',
+            )?.local.name
 
             if (!componentName) continue
             const { length } = Object.keys(PartialComponentToHeadingsName)
@@ -92,7 +103,8 @@ export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: bo
           }
         } else {
           // If component name equals default export name from .md/.mdx import
-          const headingsName = PartialComponentToHeadingsName[(node as any).name]
+          const headingsName =
+            PartialComponentToHeadingsName[(node as any).name]
           if (headingsName) {
             headings.push(headingsName)
           }

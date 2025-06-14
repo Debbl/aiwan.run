@@ -4,7 +4,8 @@ import { Meteors } from '~/components/magicui/meteors'
 import { cn } from '~/lib/utils'
 
 export default function BackgroundStage() {
-  const className = 'pointer-events-none fixed inset-0 z-0 size-full overflow-hidden'
+  const className =
+    'pointer-events-none fixed inset-0 z-0 size-full overflow-hidden'
 
   return (
     <>

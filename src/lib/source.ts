@@ -34,7 +34,9 @@ export function getRelativePage(slugs?: string[]) {
   const categoryIndex = currentPage?.file.dirname.startsWith('(blog') ? 0 : 1
   const posts = postsByCategory[categoryIndex].posts
 
-  const currentPageIndex = posts.findIndex((p) => p.file.dirname === currentPage?.file.dirname)
+  const currentPageIndex = posts.findIndex(
+    (p) => p.file.dirname === currentPage?.file.dirname,
+  )
 
   if (!currentPage) return {}
 

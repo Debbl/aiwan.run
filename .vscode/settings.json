@@ -1,7 +1,11 @@
 {
   "eslint.useFlatConfig": true,
   // do not want to autofix some rules on save
-  "eslint.codeActionsOnSave.rules": ["!prefer-const", "!unused-imports/no-unused-imports", "*"],
+  "eslint.codeActionsOnSave.rules": [
+    "!prefer-const",
+    "!unused-imports/no-unused-imports",
+    "*"
+  ],
   // set severity of some rules on save in vscode development
   "eslint.rules.customizations": [
     {

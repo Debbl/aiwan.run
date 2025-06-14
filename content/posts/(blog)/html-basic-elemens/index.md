@@ -207,9 +207,10 @@ img 元素专门用来显示**图片**，img 是 **image** 的缩写
   </head>
   <body>
     <p id="one">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, velit neque. Numquam, fuga? Consequuntur beatae
-      pariatur velit commodi, omnis reprehenderit voluptas recusandae maiores, eveniet nostrum et accusamus nesciunt,
-      officia iusto!
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, velit
+      neque. Numquam, fuga? Consequuntur beatae pariatur velit commodi, omnis
+      reprehenderit voluptas recusandae maiores, eveniet nostrum et accusamus
+      nesciunt, officia iusto!
     </p>
 
     <a href="#one">到 p 元素</a>
@@ -234,7 +235,12 @@ img 元素专门用来显示**图片**，img 是 **image** 的缩写
 
 ```html
 <body>
-  <iframe src="./index.html" frameborder="0" width="1000px" height="600px"></iframe>
+  <iframe
+    src="./index.html"
+    frameborder="0"
+    width="1000px"
+    height="600px"
+  ></iframe>
 </body>
 ```
 
@@ -254,7 +260,10 @@ base 元素写在 head 元素中，指定用于一个文档中包含的所有相
   </head>
   <body>
     <a href="/Debbl/hexo-blog-imges/raw/master/images/favicon.png">logo</a>
-    <img src="/Debbl/hexo-blog-imges/raw/master/images/favicon.png" alt="logo" />
+    <img
+      src="/Debbl/hexo-blog-imges/raw/master/images/favicon.png"
+      alt="logo"
+    />
   </body>
 </html>
 ```

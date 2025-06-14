@@ -3,7 +3,10 @@ import { useState } from 'react'
 import { Icon } from '~/components/icons'
 import { cn } from '~/lib/utils'
 
-const CopyButtonIcon = ({ isCopied, ...props }: { isCopied: boolean } & IconBaseProps) => {
+const CopyButtonIcon = ({
+  isCopied,
+  ...props
+}: { isCopied: boolean } & IconBaseProps) => {
   if (isCopied) {
     return <Icon.CheckIcon {...props} />
   }
@@ -11,7 +14,15 @@ const CopyButtonIcon = ({ isCopied, ...props }: { isCopied: boolean } & IconBase
   return <Icon.CopyIcon {...props} />
 }
 
-export default function CopyButton({ lang, code, className }: { lang: string; code: string; className: string }) {
+export default function CopyButton({
+  lang,
+  code,
+  className,
+}: {
+  lang: string
+  code: string
+  className: string
+}) {
   const [isCopied, setIsCopied] = useState(false)
   const handleCopy = () => {
     setIsCopied(true)
@@ -32,7 +43,10 @@ export default function CopyButton({ lang, code, className }: { lang: string; co
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
-      <CopyButtonIcon isCopied={isCopied} className={cn('size-3', isCopied && 'text-green-500')} />
+      <CopyButtonIcon
+        isCopied={isCopied}
+        className={cn('size-3', isCopied && 'text-green-500')}
+      />
       <span className='sr-only'>Copy</span>
     </m.button>
   )

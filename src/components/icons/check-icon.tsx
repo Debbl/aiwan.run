@@ -43,7 +43,12 @@ const CheckIcon = ({ className }: ClassName) => {
       strokeLinecap='round'
       strokeLinejoin='round'
     >
-      <m.path variants={pathVariants} initial='normal' animate={controls} d='M4 12 9 17L20 6' />
+      <m.path
+        variants={pathVariants}
+        initial='normal'
+        animate={controls}
+        d='M4 12 9 17L20 6'
+      />
     </svg>
   )
 }

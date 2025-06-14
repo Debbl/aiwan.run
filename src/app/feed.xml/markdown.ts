@@ -40,7 +40,11 @@ md.renderer.rules.image = (tokens, idx, options, env, self) => {
 
   token!.attrs![token.attrIndex('src')][1] = url
 
-  token!.attrs![token.attrIndex('alt')][1] = self.renderInlineAsText(token.children!, options, env)
+  token!.attrs![token.attrIndex('alt')][1] = self.renderInlineAsText(
+    token.children!,
+    options,
+    env,
+  )
 
   return self.renderToken(tokens, idx, options)
 }

@@ -68,7 +68,11 @@ export const docs = defineDocs({
         <I18nLabel label='toc' />
       </h3>
       <TOCScrollArea>
-        {tocOptions.style === 'clerk' ? <ClerkTOCItems items={toc} /> : <TOCItems items={toc} />}
+        {tocOptions.style === 'clerk' ? (
+          <ClerkTOCItems items={toc} />
+        ) : (
+          <TOCItems items={toc} />
+        )}
       </TOCScrollArea>
       {tocOptions.footer}
     </Toc>,

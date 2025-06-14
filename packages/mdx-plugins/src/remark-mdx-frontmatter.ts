@@ -47,7 +47,9 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
   format,
 } = {}) => {
   if (!isIdentifierName(name)) {
-    throw new Error(`Name should be a valid identifier, got: ${JSON.stringify(name)}`)
+    throw new Error(
+      `Name should be a valid identifier, got: ${JSON.stringify(name)}`,
+    )
   }
 
   const allParsers: FrontmatterParsers = {
@@ -59,7 +61,9 @@ const remarkMdxFrontmatter: Plugin<[RemarkMdxFrontmatterOptions?], Root> = ({
   return (ast, file) => {
     let data: unknown
     let formatData: unknown
-    const node = ast.children.find((child) => Object.hasOwn(allParsers, child.type))
+    const node = ast.children.find((child) =>
+      Object.hasOwn(allParsers, child.type),
+    )
 
     if (node) {
       const parser = allParsers[node.type]

@@ -90,14 +90,17 @@ export const allMessages = catalogs.reduce((acc, oneCatalog) => {
 
 type AllI18nInstances = { [K in SupportedLocales]: I18n }
 
-export const allI18nInstances: AllI18nInstances = locales.reduce((acc, locale) => {
-  const messages = allMessages[locale] ?? {}
-  const i18n = setupI18n({
-    locale,
-    messages: { [locale]: messages },
-  })
-  return { ...acc, [locale]: i18n }
-}, {})
+export const allI18nInstances: AllI18nInstances = locales.reduce(
+  (acc, locale) => {
+    const messages = allMessages[locale] ?? {}
+    const i18n = setupI18n({
+      locale,
+      messages: { [locale]: messages },
+    })
+    return { ...acc, [locale]: i18n }
+  },
+  {},
+)
 
 export const getI18nInstance = (locale: SupportedLocales): I18n => {
   if (!allI18nInstances[locale]) {
@@ -208,7 +211,10 @@ export function getRootLayout(lang: string) {
       <html lang={lang}>
         <body className={inter.className}>
           <Toaster />
-          <LinguiClientProvider initialLocale={lang} initialMessages={i18n.messages}>
+          <LinguiClientProvider
+            initialLocale={lang}
+            initialMessages={i18n.messages}
+          >
             <Providers>{children}</Providers>
           </LinguiClientProvider>
         </body>
@@ -270,7 +276,8 @@ export function useI18nHelper() {
   const locales = ['en', 'zh']
 
   const switchLocale = () => {
-    const newLocale = locales.find((locale) => locale !== i18n.locale) || sourceLocale
+    const newLocale =
+      locales.find((locale) => locale !== i18n.locale) || sourceLocale
 
     const realPathname = pathname.split('/').filter((i, index) => {
       if (index === 1 && i === i18n.locale) return false
@@ -278,7 +285,9 @@ export function useI18nHelper() {
     })
 
     const newPathname =
-      newLocale === sourceLocale ? `/${realPathname.join('/')}` : `/${newLocale}/${realPathname.join('/')}`
+      newLocale === sourceLocale
+        ? `/${realPathname.join('/')}`
+        : `/${newLocale}/${realPathname.join('/')}`
 
     router.push(newPathname)
   }
@@ -286,7 +295,9 @@ export function useI18nHelper() {
   const getRealPathname = (path: string) => {
     const isLocalePath = locales.includes(pathname.split('/')[1])
 
-    return isLocalePath ? [i18n.locale, ...path.split('/').filter(Boolean)].join('/') : path
+    return isLocalePath
+      ? [i18n.locale, ...path.split('/').filter(Boolean)].join('/')
+      : path
   }
 
   return {

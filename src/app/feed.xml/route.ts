@@ -45,7 +45,10 @@ export async function GET() {
       custom_elements: [
         {
           'content:encoded': {
-            _cdata: markdownToHtml(post.data.content, post.data._file.absolutePath),
+            _cdata: markdownToHtml(
+              post.data.content,
+              post.data._file.absolutePath,
+            ),
           },
         },
       ],

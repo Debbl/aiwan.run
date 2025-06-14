@@ -59,4 +59,7 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default [withBundleAnalyzer, withSerwist, withMDX].reduce((config, fn) => fn(config), nextConfig)
+export default [withBundleAnalyzer, withSerwist, withMDX].reduce(
+  (config, fn) => fn(config),
+  nextConfig,
+)

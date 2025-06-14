@@ -21,19 +21,22 @@ ts-rest 推荐使用的是 [react-query](https://ts-rest.com/client/react-query-
 下面是我最初的使用方式
 
 ```tsx
-const values = useSWR(data?.user.id ? [contract.getCredits.path, data?.user.id] : null, async ([_, id]) => {
-  const res = await api.getCredits({
-    query: {
-      userId: id,
-    },
-  })
+const values = useSWR(
+  data?.user.id ? [contract.getCredits.path, data?.user.id] : null,
+  async ([_, id]) => {
+    const res = await api.getCredits({
+      query: {
+        userId: id,
+      },
+    })
 
-  if (res.status !== 200) {
-    return null
-  }
+    if (res.status !== 200) {
+      return null
+    }
 
-  return res.body
-})
+    return res.body
+  },
+)
 ```
 
 可以发现非常的繁琐，比如这个响应在非 200 的情况下，几乎每个请求都要做类似的处理
@@ -58,7 +61,12 @@ const values = api.getCredits.useSWR(
 返回的 `values` 的 `data` 只有 `200` 时的类型，可以通过 `enabled` 控制时候发送请求，整体的实现也比较简单，类型推导方面可能会比较的复杂，下面是具体的实现，参考了 ts-rest 的 [initClient](https://github.com/ts-rest/ts-rest/blob/main/libs/ts-rest/core/src/lib/client.ts#L465) 的实现
 
 ```ts title="create-api.ts"
-import { getRouteQuery, initClient, isAppRoute, isAppRouteQuery } from '@ts-rest/core'
+import {
+  getRouteQuery,
+  initClient,
+  isAppRoute,
+  isAppRouteQuery,
+} from '@ts-rest/core'
 import useSWR from 'swr'
 import useSWRMutation from 'swr/mutation'
 import type {
@@ -77,7 +85,10 @@ import type {
   Prettify,
 } from '@ts-rest/core'
 import type { SWRConfiguration, SWRResponse } from 'swr'
-import type { SWRMutationConfiguration, SWRMutationResponse } from 'swr/mutation'
+import type {
+  SWRMutationConfiguration,
+  SWRMutationResponse,
+} from 'swr/mutation'
 
 function getSWRRouteQuery(route: AppRouteQuery, clientArgs: InitClientArgs) {
   const queryFn = getRouteQuery(route, clientArgs)
@@ -109,7 +120,10 @@ function getSWRRouteQuery(route: AppRouteQuery, clientArgs: InitClientArgs) {
   }
 }
 
-function getSWRRouteMutation(route: AppRouteMutation | AppRouteDeleteNoBody, clientArgs: InitClientArgs) {
+function getSWRRouteMutation(
+  route: AppRouteMutation | AppRouteDeleteNoBody,
+  clientArgs: InitClientArgs,
+) {
   const mutationFn = getRouteQuery(route, clientArgs)
 
   return {
@@ -142,7 +156,9 @@ type AppSWRRouteFunction<
   TArgs = PartialClientInferRequest<TRoute, TClientArgs>,
 > =
   AreAllPropertiesOptional<TArgs> extends true
-    ? (args?: Prettify<TArgs>) => Promise<Prettify<ClientInferResponses<TRoute>>>
+    ? (
+        args?: Prettify<TArgs>,
+      ) => Promise<Prettify<ClientInferResponses<TRoute>>>
     : TRoute extends AppRouteQuery
       ? {
           useSWR: <Data = Prettify<ClientInferResponseBody<TRoute, 200>>>(
@@ -154,11 +170,16 @@ type AppSWRRouteFunction<
         }
       : TRoute extends AppRouteMutation | AppRouteDeleteNoBody
         ? {
-            useSWRMutation: <Data = Prettify<ClientInferResponseBody<TRoute, 200>>, ExtraArg = Prettify<TArgs>>(
+            useSWRMutation: <
+              Data = Prettify<ClientInferResponseBody<TRoute, 200>>,
+              ExtraArg = Prettify<TArgs>,
+            >(
               options?: SWRMutationConfiguration<Data, any, any, ExtraArg>,
             ) => SWRMutationResponse<Data, any, any, ExtraArg>
           }
-        : (args: Prettify<TArgs>) => Promise<Prettify<ClientInferResponses<TRoute>>>
+        : (
+            args: Prettify<TArgs>,
+          ) => Promise<Prettify<ClientInferResponses<TRoute>>>
 
 type RecursiveProxyObj<T extends AppRouter, TClientArgs extends ClientArgs> = {
   [TKey in keyof T]: T[TKey] extends AppRoute
@@ -168,12 +189,15 @@ type RecursiveProxyObj<T extends AppRouter, TClientArgs extends ClientArgs> = {
       : never
 }
 
-export type InitClientReturn<T extends AppRouter, TClientArgs extends ClientArgs> = RecursiveProxyObj<T, TClientArgs>
+export type InitClientReturn<
+  T extends AppRouter,
+  TClientArgs extends ClientArgs,
+> = RecursiveProxyObj<T, TClientArgs>
 
-export function createApi<T extends AppRouter, TClientArgs extends InitClientArgs>(
-  router: T,
-  args: TClientArgs,
-): InitClientReturn<T, TClientArgs> {
+export function createApi<
+  T extends AppRouter,
+  TClientArgs extends InitClientArgs,
+>(router: T, args: TClientArgs): InitClientReturn<T, TClientArgs> {
   const api = Object.fromEntries(
     Object.entries(router).map(([key, subRouter]) => {
       if (isAppRoute(subRouter)) {

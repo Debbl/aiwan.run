@@ -9,9 +9,14 @@ export function Image(props: NextImageProps) {
 
   const isString = (value: any): value is string => typeof value === 'string'
 
-  const isStaticRequire = (value: any): value is StaticRequire => typeof value === 'object' && 'default' in value
+  const isStaticRequire = (value: any): value is StaticRequire =>
+    typeof value === 'object' && 'default' in value
 
-  const src = isString(_src) ? _src : isStaticRequire(_src) ? _src.default.src : _src.src
+  const src = isString(_src)
+    ? _src
+    : isStaticRequire(_src)
+      ? _src.default.src
+      : _src.src
 
   return (
     <picture className='flex justify-center px-12'>
@@ -24,7 +29,11 @@ export function Image(props: NextImageProps) {
         ZoomContent={(data) => <>{data.img}</>}
         wrapElement='span'
       >
-        <NextImage className='mx-auto max-h-[300px] max-w-[60%] object-contain' priority {...props} />
+        <NextImage
+          className='mx-auto max-h-[300px] max-w-[60%] object-contain'
+          priority
+          {...props}
+        />
       </Zoom>
     </picture>
   )

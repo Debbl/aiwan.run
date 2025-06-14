@@ -14,17 +14,29 @@ export function Footer() {
     <footer className='border-border border-t px-8 py-10'>
       <div className='flex items-center justify-between'>
         <div className='flex h-5 items-center space-x-4 text-sm'>
-          <Link href='https://github.com/Debbl' target='_blank' rel='noopener noreferrer'>
+          <Link
+            href='https://github.com/Debbl'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <Icon.SiGithub className='size-4' />
             <span className='sr-only'>Github</span>
           </Link>
           <Separator orientation='vertical' />
-          <Link href='https://x.com/Debbl66' target='_blank' rel='noopener noreferrer'>
+          <Link
+            href='https://x.com/Debbl66'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <Icon.SiX className='size-4' />
             <span className='sr-only'>X</span>
           </Link>
           <Separator orientation='vertical' />
-          <Link href='https://bsky.app/profile/debbl.bsky.social' target='_blank' rel='noopener noreferrer'>
+          <Link
+            href='https://bsky.app/profile/debbl.bsky.social'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <Icon.SiBluesky className='size-4' />
             <span className='sr-only'>Bluesky</span>
           </Link>
@@ -35,7 +47,10 @@ export function Footer() {
             <div className='flex items-center rounded-3xl border p-1'>
               <button
                 type='button'
-                className={cn('cursor-pointer rounded-full p-2', theme === 'system' && 'bg-secondary')}
+                className={cn(
+                  'cursor-pointer rounded-full p-2',
+                  theme === 'system' && 'bg-secondary',
+                )}
                 onClick={() => setTheme('system')}
               >
                 <Icon.SettingsGearIcon className='size-4' />
@@ -43,7 +58,10 @@ export function Footer() {
               </button>
               <button
                 type='button'
-                className={cn('cursor-pointer rounded-full p-2', theme === 'light' && 'bg-secondary')}
+                className={cn(
+                  'cursor-pointer rounded-full p-2',
+                  theme === 'light' && 'bg-secondary',
+                )}
                 onClick={() => setTheme('light')}
               >
                 <Icon.SunIcon className='size-4' />
@@ -51,7 +69,10 @@ export function Footer() {
               </button>
               <button
                 type='button'
-                className={cn('cursor-pointer rounded-full p-2', theme === 'dark' && 'bg-secondary')}
+                className={cn(
+                  'cursor-pointer rounded-full p-2',
+                  theme === 'dark' && 'bg-secondary',
+                )}
                 onClick={() => setTheme('dark')}
               >
                 <Icon.MoonIcon className='size-4' />
