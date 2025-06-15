@@ -34,11 +34,12 @@ export default async function Page(props: {
       tableOfContent={{
         enabled: page.path.startsWith('(blog)') && page.data.toc.length > 0,
         style: 'clerk',
-        header: null,
-        footer: null,
       }}
       footer={{
         enabled: false,
+      }}
+      container={{
+        className: 'ml-auto mr-0',
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>

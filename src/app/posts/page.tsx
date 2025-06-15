@@ -12,7 +12,7 @@ export default async function Page() {
         <div className='flex min-h-full w-full items-center justify-center'>
           <div className='flex w-fit flex-col items-start justify-center gap-y-8 py-8'>
             {postsByCategory.map((category) => (
-              <div key={category.title} title={category.title}>
+              <div key={category.title}>
                 <h2 className='text-3xl font-bold'>{category.title}</h2>
                 <ul className='mt-4 flex flex-col gap-y-2'>
                   {category.posts.map((post) => (
