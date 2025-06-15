@@ -1,5 +1,11 @@
 import { format } from 'date-fns'
 import { Card, Cards } from 'fumadocs-ui/components/card'
+import {
+  PageTOCPopover,
+  PageTOCPopoverContent,
+  PageTOCPopoverItems,
+  PageTOCPopoverTrigger,
+} from 'fumadocs-ui/layouts/docs/page'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import {
   DocsBody,
@@ -25,21 +31,37 @@ export default async function Page(props: {
   const MDXContent = page.data.body
 
   const { prevPage, nextPage } = getRelativePage(slug)
+  const enabledToc = page.path.startsWith('(blog)') && page.data.toc.length > 0
 
   return (
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
       breadcrumb={{ enabled: false }}
+      tableOfContentPopover={{
+        enabled: enabledToc,
+        style: 'clerk',
+        component: (
+          <PageTOCPopover className='sticky top-0'>
+            <PageTOCPopoverTrigger />
+            <PageTOCPopoverContent>
+              <PageTOCPopoverItems variant='clerk' />
+            </PageTOCPopoverContent>
+          </PageTOCPopover>
+        ),
+      }}
       tableOfContent={{
-        enabled: page.path.startsWith('(blog)') && page.data.toc.length > 0,
+        enabled: enabledToc,
         style: 'clerk',
       }}
       footer={{
         enabled: false,
       }}
       container={{
-        className: 'ml-auto mr-0',
+        className: cn(
+          enabledToc &&
+            'mz-auto xl:ml-auto xl:mr-0 flex flex-col xl:flex-row pt-2!',
+        ),
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
