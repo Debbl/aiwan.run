@@ -25,6 +25,7 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
+    format: 'mdx',
     remarkPlugins: [remarkHasInH1],
     rehypePlugins: [rehypeGithubAlerts],
     rehypeCodeOptions: {

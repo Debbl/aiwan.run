@@ -23,7 +23,7 @@ duration: 5min
 
 - Trident 三叉戟
 
-IE<=10
+IE\<=10
 
 - Gecko 壁虎
 
@@ -31,7 +31,7 @@ Firefox
 
 - Presto 急板乐曲
 
-Opera(V<=12.16) 之后使用 Blink
+Opera(V\<=12.16) 之后使用 Blink
 
 - Webkit
 
