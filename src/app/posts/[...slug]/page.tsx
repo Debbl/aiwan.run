@@ -1,19 +1,9 @@
 import { format } from 'date-fns'
 import { Card, Cards } from 'fumadocs-ui/components/card'
-import {
-  PageTOCPopover,
-  PageTOCPopoverContent,
-  PageTOCPopoverItems,
-  PageTOCPopoverTrigger,
-} from 'fumadocs-ui/layouts/docs/page'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from 'fumadocs-ui/page'
+import { DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
+import Link from '~/components/link'
 import { WEBSITE } from '~/constants'
 import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
@@ -31,39 +21,9 @@ export default async function Page(props: {
   const MDXContent = page.data.body
 
   const { prevPage, nextPage } = getRelativePage(slug)
-  const enabledToc = page.path.startsWith('(blog)') && page.data.toc.length > 0
 
   return (
-    <DocsPage
-      toc={page.data.toc}
-      full={page.data.full}
-      breadcrumb={{ enabled: false }}
-      tableOfContentPopover={{
-        enabled: enabledToc,
-        style: 'clerk',
-        component: (
-          <PageTOCPopover className='sticky top-0'>
-            <PageTOCPopoverTrigger />
-            <PageTOCPopoverContent>
-              <PageTOCPopoverItems variant='clerk' />
-            </PageTOCPopoverContent>
-          </PageTOCPopover>
-        ),
-      }}
-      tableOfContent={{
-        enabled: enabledToc,
-        style: 'clerk',
-      }}
-      footer={{
-        enabled: false,
-      }}
-      container={{
-        className: cn(
-          enabledToc &&
-            'mz-auto xl:ml-auto xl:mr-0 flex flex-col xl:flex-row pt-2!',
-        ),
-      }}
-    >
+    <div className='mx-auto max-w-4xl p-4 pt-8'>
       <DocsTitle>{page.data.title}</DocsTitle>
       <p className='text-muted-foreground mt-2'>
         <span>{format(page.data.date, 'MMM-dd, yyyy')}</span>
@@ -71,18 +31,23 @@ export default async function Page(props: {
         <span>{page.data.duration}</span>
       </p>
       <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody className='break-words'>
+      <DocsBody className='mt-4 break-words'>
         <MDXContent
           components={getMDXComponents({
             a: createRelativeLink(source, page),
           })}
         />
+        <div className='text-accent my-2'>
+          <Link href='/posts' className='text-muted-foreground'>
+            &gt; cd ..
+          </Link>
+        </div>
         <Cards>
           {prevPage && <Card title={prevPage.data.title} href={prevPage.url} />}
           {nextPage && <Card title={nextPage.data.title} href={nextPage.url} />}
         </Cards>
       </DocsBody>
-    </DocsPage>
+    </div>
   )
 }
 
