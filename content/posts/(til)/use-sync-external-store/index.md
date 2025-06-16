@@ -40,6 +40,7 @@ export function useIsOnline() {
 
 
 <Sandpack template="react">
+
 ```js title="App.js"
 'use client'
 import { useIsOnline } from './use-is-online'
@@ -80,4 +81,5 @@ export function useIsOnline() {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }
 ```
+
 </Sandpack>
