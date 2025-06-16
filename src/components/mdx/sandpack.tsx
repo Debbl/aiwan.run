@@ -13,7 +13,7 @@ export const Sandpack: SandpackInternal = (props) => {
   const theme = resolvedTheme === 'dark' ? 'dark' : 'light'
 
   return (
-    <div className='m-4'>
+    <div className='my-4'>
       <SandpackPrimitive
         theme={theme}
         options={{
