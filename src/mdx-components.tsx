@@ -2,6 +2,7 @@ import * as Twoslash from 'fumadocs-twoslash/ui'
 import { CodeBlock, Pre } from 'fumadocs-ui/components/codeblock'
 import { ImageZoom } from 'fumadocs-ui/components/image-zoom'
 import defaultMdxComponents from 'fumadocs-ui/mdx'
+import { Sandpack } from './components/mdx/sandpack'
 import type { MDXComponents } from 'mdx/types'
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
@@ -17,6 +18,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         </CodeBlock>
       )
     },
+    Sandpack,
     ...components,
   }
 }

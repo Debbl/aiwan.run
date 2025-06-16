@@ -1,4 +1,4 @@
-import { remarkHasInH1 } from '@workspace/mdx-plugins'
+import { remarkHasInH1, remarkSandpack } from '@workspace/mdx-plugins'
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins'
 import {
   defineConfig,
@@ -26,7 +26,7 @@ export const docs = defineDocs({
 export default defineConfig({
   mdxOptions: {
     format: 'mdx',
-    remarkPlugins: [remarkHasInH1],
+    remarkPlugins: [remarkSandpack, remarkHasInH1],
     rehypePlugins: [rehypeGithubAlerts],
     rehypeCodeOptions: {
       themes: {

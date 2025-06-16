@@ -4,9 +4,7 @@ import { HeadingLink } from './heading-link'
 import { Image } from './image'
 import { Link } from './link'
 import { Pre } from './pre'
-import { Sandpack } from './sandpack'
 import type { MDXComponents } from 'mdx/types'
-import type { SandpackProps } from '~/app/posts/types'
 
 export function getMDXComponents(): MDXComponents {
   return {
@@ -32,25 +30,6 @@ export function getMDXComponents(): MDXComponents {
     hr: (props) => <hr {...props} />,
     a: Link,
     p: (props) => <p className='mt-6 leading-normal first:mt-0' {...props} />,
-    Sandpack: (props: SandpackProps) => {
-      const { children, ..._props } = props
-
-      const files: Record<string, string> = {}
-
-      if (Array.isArray(children)) {
-        children.forEach((child) => {
-          const filename = child.props.filename || 'index.js'
-          const fileContent = child.props.children.props.children
-          files[filename] = fileContent
-        })
-      } else {
-        const filename = children.props.filename || 'index.js'
-        const fileContent = children.props.children.props.children
-        files[filename] = fileContent
-      }
-
-      return <Sandpack files={files} {..._props} />
-    },
     Image,
     Pre,
     code: Code,
