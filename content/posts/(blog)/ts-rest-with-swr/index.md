@@ -127,14 +127,11 @@ function getSWRRouteMutation(
   const mutationFn = getRouteQuery(route, clientArgs)
 
   return {
-    useSWRMutation: (
-      args: ClientInferRequest<AppRouteMutation, ClientArgs>,
-      options: SWRMutationConfiguration<any, any, any> = {},
-    ) => {
+    useSWRMutation: (options: SWRMutationConfiguration<any, any, any> = {}) => {
       const values = useSWRMutation(
         [route.path],
-        async () => {
-          const res = await mutationFn(args)
+        async (_url: string, { arg }: { arg: any }) => {
+          const res = await mutationFn(arg)
 
           if (res.status !== 200) {
             throw new Error('error')
@@ -220,6 +217,7 @@ export const api = createApi(contract, {
   baseHeaders: {},
   throwOnUnknownStatus: true,
 })
+
 ```
 
 以上的实现可以自由的在 `getSWRRouteQuery` 和 `getSWRRouteMutation` 中添加中间件，比如添加错误处理并全局提示等
