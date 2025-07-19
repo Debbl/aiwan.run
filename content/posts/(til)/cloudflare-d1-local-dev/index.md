@@ -66,3 +66,7 @@ in `package.json`, you can use `wrangler d1 migrations apply` to apply migration
   }
 }
 ```
+
+## reference
+
+- [cloudflare-workers-nextjs-saas-template](https://github.com/LubomirGeorgiev/cloudflare-workers-nextjs-saas-template)
