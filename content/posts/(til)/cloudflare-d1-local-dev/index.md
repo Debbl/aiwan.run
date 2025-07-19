@@ -6,7 +6,7 @@ duration: 3min
 
 cloudflare d1 is a sqlite database, you can get db file from `.wrangler` folder in your local project. in below code, you can config drizzle to use d1 on local or remote.
 
-```ts
+```ts title="drizzle.config.ts"
 import fs from 'node:fs'
 import path from 'node:path'
 import { defineConfig } from 'drizzle-kit'
