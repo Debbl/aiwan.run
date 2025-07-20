@@ -34,6 +34,7 @@ export default async function Page(props: {
         </p>
         <Link
           href={enUrl}
+          replace
           className='flex size-6 cursor-pointer items-center justify-center'
         >
           <Icon.LuLanguages title='change language' />
