@@ -1,8 +1,10 @@
 // .source folder will be generated when you run `next dev`
 import { loader } from 'fumadocs-core/source'
 import { docs } from '../../.source'
+import { i18n } from './i18n'
 
 export const source = loader({
+  i18n,
   baseUrl: '/posts',
   source: docs.toFumadocsSource(),
 })
@@ -11,8 +13,9 @@ export const posts = source
   .getPages()
   .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .map((p) => {
-    const category = p.file.dirname.startsWith('(blog)') ? 'blog' : 'til'
-    return { ...p, category } as const
+    const category = p.path.startsWith('(blog)') ? 'blog' : 'til'
+    const url = p.url.startsWith('/en') ? p.url.slice(3) : p.url
+    return { ...p, category, url } as const
   })
 
 export const postsByCategory = [

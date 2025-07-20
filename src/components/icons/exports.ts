@@ -7,6 +7,7 @@ export { IoLogoGithub } from './Io-logo-github'
 
 export { LuCircle } from './lu-circle'
 export { LuGithub } from './lu-github'
+export { LuLanguages } from './lu-languages'
 export { LuMonitorCog } from './lu-monitor-cog'
 
 export { LuRss } from './lu-rss'

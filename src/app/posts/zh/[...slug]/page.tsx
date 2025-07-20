@@ -15,13 +15,13 @@ export default async function Page(props: {
   const params = await props.params
   const slug = params.slug
 
-  const page = source.getPage(slug, 'en')
+  const page = source.getPage(slug, 'zh')
   if (!page) notFound()
 
   const MDXContent = page.data.body
 
   const { prevPage, nextPage } = getRelativePage(slug)
-  const zhUrl = `/posts/zh/${page.slugs[0]}`
+  const enUrl = `/posts/${page.slugs[0]}`
 
   return (
     <div className='mx-auto max-w-4xl p-4 pt-8'>
@@ -33,7 +33,7 @@ export default async function Page(props: {
           <span>{page.data.duration}</span>
         </p>
         <Link
-          href={zhUrl}
+          href={enUrl}
           className='flex size-6 cursor-pointer items-center justify-center'
         >
           <Icon.LuLanguages title='change language' />
@@ -63,7 +63,7 @@ export default async function Page(props: {
 export async function generateStaticParams() {
   const slugs = source
     .generateParams('slug', 'lang')
-    .filter((s) => s.lang === 'en')
+    .filter((s) => s.lang === 'zh')
 
   return slugs
 }
@@ -72,7 +72,7 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }): Promise<Metadata> {
   const params = await props.params
-  const page = source.getPage(params.slug, 'en')
+  const page = source.getPage(params.slug, 'zh')
   if (!page) notFound()
 
   return {

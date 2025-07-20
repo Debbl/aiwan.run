@@ -1,7 +1,48 @@
 import { format } from 'date-fns'
 import { Link } from 'next-view-transitions'
-import { postsByCategory } from '~/lib/source'
+import { Fragment } from 'react'
+import { postsByCategory, source } from '~/lib/source'
 import BackgroundStage from '../_components/background-stage'
+
+function Item({
+  url,
+  title,
+  date,
+  duration,
+  className,
+  children,
+}: {
+  url: string
+  title: string
+  date: Date
+  duration: string
+  className?: string
+  children?: React.ReactNode
+}) {
+  return (
+    <li
+      className={cn(
+        'hover:text-primary dark:hover:text-primary flex flex-col items-center gap-1 text-gray-900 md:flex-row dark:text-gray-50',
+        className,
+      )}
+      data-umami-event={`click-posts-${url}`}
+    >
+      {children}
+      <Link
+        className='flex items-center opacity-60 hover:opacity-100'
+        href={url}
+        key={url}
+      >
+        <span>{title}</span>
+        <span className='ml-0 flex items-center text-xs text-gray-500 md:ml-4'>
+          {format(date, 'MMM-dd, yyyy')}
+          {' · '}
+          {duration}
+        </span>
+      </Link>
+    </li>
+  )
+}
 
 export default async function Page() {
   return (
@@ -15,25 +56,46 @@ export default async function Page() {
               <div key={category.title}>
                 <h2 className='text-3xl font-bold'>{category.title}</h2>
                 <ul className='mt-4 flex flex-col gap-y-2'>
-                  {category.posts.map((post) => (
-                    <Link
-                      className='opacity-60 hover:opacity-100'
-                      href={post.url}
-                      key={post.url}
-                    >
-                      <li
-                        className='hover:text-primary dark:hover:text-primary flex flex-col text-gray-900 md:flex-row dark:text-gray-50'
-                        data-umami-event={`click-posts-${post.url}`}
-                      >
-                        <span>{post.data.title}</span>
-                        <span className='ml-0 flex items-center text-xs text-gray-500 md:ml-4'>
-                          {format(post.data.date, 'MMM-dd, yyyy')}
-                          {' · '}
-                          {post.data.duration}
-                        </span>
-                      </li>
-                    </Link>
-                  ))}
+                  {category.posts.map((post) => {
+                    const zhPage = source.getPage(post.slugs, 'zh')
+                    const hasZhPage = zhPage?.absolutePath.endsWith('.zh.md')
+
+                    if (hasZhPage && zhPage) {
+                      const zhUrl = `/posts/zh/${post.slugs[0]}`
+
+                      return (
+                        <Fragment key={post.url}>
+                          <Item
+                            url={post.url}
+                            title={post.data.title}
+                            date={post.data.date}
+                            duration={post.data.duration}
+                          />
+                          <Item
+                            className='opacity-60'
+                            url={zhUrl}
+                            title={zhPage.data.title}
+                            date={zhPage.data.date}
+                            duration={zhPage.data.duration}
+                          >
+                            <Icon.LuLanguages
+                              title={`中文-${post.data.title}`}
+                            />
+                          </Item>
+                        </Fragment>
+                      )
+                    }
+
+                    return (
+                      <Item
+                        key={post.url}
+                        url={post.url}
+                        title={post.data.title}
+                        date={post.data.date}
+                        duration={post.data.duration}
+                      />
+                    )
+                  })}
                 </ul>
               </div>
             ))}
