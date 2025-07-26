@@ -8,6 +8,7 @@ const nav: {
   'url': string
   'zhUrl'?: string
   'name': string
+  'zhName'?: string
   'data-umami-event': string
   'icon'?: React.ReactNode
 }[] = [
@@ -26,6 +27,14 @@ const nav: {
     'url': '/slides',
     'name': 'Slides',
     'data-umami-event': 'click-slides-link',
+  },
+  {
+    'url': '/zh',
+    'zhUrl': '/',
+    'name': 'Switch Language',
+    'zhName': '切换语言',
+    'data-umami-event': 'click-language-link',
+    'icon': <Icon.LuLanguages className='size-5' />,
   },
   {
     'url': '/feed.xml',
@@ -68,7 +77,7 @@ export function Header({ lang = 'en' }: { lang?: 'en' | 'zh' }) {
                 href={lang === 'zh' ? n.zhUrl || n.url : n.url}
                 prefetch={['/posts'].includes(n.url)}
               >
-                {n.icon || n.name}
+                {n.icon || (lang === 'zh' ? n.zhName || n.name : n.name)}
 
                 {n.icon && <span className='sr-only'>{n.name}</span>}
               </Link>

@@ -28,7 +28,7 @@ function Item({
     >
       {children}
       <Link
-        className='flex items-center opacity-60 hover:opacity-100'
+        className='flex flex-col opacity-60 hover:opacity-100 md:flex-row'
         href={url}
         key={url}
       >
@@ -54,7 +54,7 @@ export default async function Page() {
             {postsByCategory.map((category) => (
               <div key={category.title}>
                 <h2 className='text-3xl font-bold'>{category.title}</h2>
-                <ul className='mt-4 flex flex-col gap-y-2'>
+                <ul className='mt-4 flex flex-col items-start gap-y-2'>
                   {category.posts.map((post) => {
                     return (
                       <Item
