@@ -208,6 +208,11 @@ export default function Home() {
             />
             <span className='sr-only'>Avatar</span>
           </div>
+          <h1 className='text-2xl font-bold'>Brendan Dash</h1>
+          <p className='px-4 text-sm text-gray-600'>
+            Hi, I'm Brendan Dash. You can find some toys, games, and other
+            projects here that I've created.
+          </p>
           <div>
             <div className='mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12'>
               {Object.entries(projects).map(([_, project]) => (
