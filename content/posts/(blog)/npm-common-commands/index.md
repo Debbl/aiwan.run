@@ -3,6 +3,13 @@ title: npm 常用命令
 description: npm 常用的命令
 date: 2021-05-30T07:31:04.000Z
 duration: 5min
+keywords:
+  - npm
+  - 常用命令
+  - 命令
+  - 安装
+  - 卸载
+  - 搜索
 ---
 
 ### 查看当前 npm 配置

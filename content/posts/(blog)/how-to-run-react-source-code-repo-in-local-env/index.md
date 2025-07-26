@@ -2,6 +2,15 @@
 title: 如何在本地环境运行 react 源码仓库
 date: 2024-05-26T10:24:13.000Z
 duration: 10min
+keywords:
+  - React
+  - 源码
+  - 本地环境
+  - 运行
+  - 测试
+  - 打包
+  - flow
+  - VSCode
 ---
 
 ## fork 官方仓库

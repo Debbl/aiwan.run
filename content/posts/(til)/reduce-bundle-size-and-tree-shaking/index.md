@@ -2,6 +2,13 @@
 title: 减少打包体积和 tree shaking
 date: 2025-04-12T12:46:36.526Z
 duration: 2min
+keywords:
+  - 打包
+  - 体积
+  - tree shaking
+  - motion
+  - unplugin-auto-import
+  - nextjs
 ---
 
 # 减少打包体积和 tree shaking

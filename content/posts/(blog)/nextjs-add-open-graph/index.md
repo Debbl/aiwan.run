@@ -2,6 +2,14 @@
 title: Next.js 中添加 Open Graph
 date: 2025-02-11T10:06:32.792Z
 duration: 8min
+keywords:
+  - Next.js
+  - Open Graph
+  - OG
+  - SEO
+  - satori
+  - 静态生成
+  - 静态网站
 ---
 
 ## 添加 OG 图片

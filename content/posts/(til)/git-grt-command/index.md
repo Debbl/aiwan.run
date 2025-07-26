@@ -2,6 +2,14 @@
 title: git grt 命令
 date: 2024-08-28T12:29:23.137Z
 duration: 3min
+keywords:
+  - git
+  - grt
+  - zsh
+  - alias
+  - cd
+  - git rev-parse
+  - git rev-parse --show-toplevel
 ---
 
 # git grt command

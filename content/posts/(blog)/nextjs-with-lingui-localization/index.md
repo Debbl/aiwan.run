@@ -2,6 +2,12 @@
 title: Next.js 使用 lingui 进行国际化
 date: 2025-01-11T15:29:07.296Z
 duration: 10min
+keywords:
+  - Next.js
+  - lingui
+  - 国际化
+  - macro
+  - babel
 ---
 
 相关文章

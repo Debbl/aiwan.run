@@ -3,6 +3,14 @@ title: 树莓派开机使用
 description: 树莓派开始使用
 date: 2021-08-30T09:22:23.000Z
 duration: 8min
+keywords:
+  - 树莓派
+  - 开机
+  - 使用
+  - SSH
+  - VNC
+  - 摄像头
+  - 扩展功能
 ---
 
 ### SSH 连接

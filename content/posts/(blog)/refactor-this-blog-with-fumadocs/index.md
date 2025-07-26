@@ -2,6 +2,14 @@
 title: 使用 FumaDocs 重构这个博客
 date: 2025-05-25T10:27:54.972Z
 duration: 5min
+keywords:
+  - FumaDocs
+  - Next.js
+  - mdx
+  - 重构
+  - 博客
+  - 静态网站生成器
+  - 静态网站
 ---
 
 # 使用 FumaDocs 重构这个博客

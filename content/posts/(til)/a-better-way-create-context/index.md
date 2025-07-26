@@ -2,6 +2,11 @@
 title: a better way to create context
 date: 2025-07-20T13:36:16.198Z
 duration: 1min
+keywords:
+  - context
+  - react
+  - react-context
+  - radix-ui
 ---
 
 a better way to create context

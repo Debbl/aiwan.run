@@ -3,6 +3,20 @@ title: HTML 基本元素
 description: HTML 的基本元素和一些 Web 基础
 date: 2021-08-30T12:07:54.000Z
 duration: 10min
+keywords:
+  - HTML
+  - 基本元素
+  - Web
+  - 基础
+  - 标签
+  - 语义化
+  - 像素
+  - URL
+  - 字符实体
+  - 图片格式
+  - 像素
+  - URL
+  - 字符实体
 ---
 
 # HTML基本元素

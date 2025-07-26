@@ -2,6 +2,17 @@
 title: Mac 初始化设置
 date: 2025-02-27T01:54:16.399Z
 duration: 10min
+keywords:
+  - Mac
+  - Homebrew
+  - Oh My Zsh
+  - Powerlevel10k
+  - VSCode
+  - Git
+  - SSH
+  - 代理
+  - 鼠标
+  - 键盘
 ---
 
 ## 安装 HomeBrew

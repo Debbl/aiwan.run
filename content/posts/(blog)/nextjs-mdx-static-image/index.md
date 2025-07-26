@@ -2,6 +2,13 @@
 title: Next.js 中使用 MDX 静态图片
 date: 2025-02-10T02:20:14.179Z
 duration: 5min
+keywords:
+  - Next.js
+  - MDX
+  - remark-static-image
+  - markdown
+  - 静态图片
+  - 静态网站
 ---
 
 如果按照官方文档 Next.js 集成 [MDX](https://nextjs.org/docs/pages/building-your-application/configuring/mdx)，是没有办法处理 md 文档中的静态图片资源的，通常的解决方法是把所有的图片资源放到 `public` 目录里，然后在 md 文档中使用，但是这样做有一个弊端就是在本地编辑器写 md 文档时是无法预览图片的，是否可以让 Next.js 可以正确的找到相对路径的图片资源。

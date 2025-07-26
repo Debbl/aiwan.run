@@ -2,6 +2,15 @@
 title: tailwindcss grid auto fill auto fit
 date: 2025-07-16T14:32:00.191Z
 duration: 1min
+keywords:
+  - tailwindcss
+  - grid
+  - auto fill
+  - auto fit
+  - grid-cols-fill-*
+  - grid-cols-fit-*
+  - utility
+  - tailwindcss custom utility
 ---
 
 

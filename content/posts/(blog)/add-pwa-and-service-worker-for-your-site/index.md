@@ -2,6 +2,10 @@
 title: 为你的网站添加 PWA 和 Service Worker
 date: 2025-01-14T10:24:13.000Z
 duration: 10min
+keywords:
+  - PWA
+  - Service Worker
+  - Next.js
 ---
 
 # 为你的网站添加 PWA 和 Service Worker

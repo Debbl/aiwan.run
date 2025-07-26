@@ -2,6 +2,17 @@
 title: ts-rest 集成 swr
 date: 2025-06-14T11:36:46.272Z
 duration: 5min
+keywords:
+  - ts-rest
+  - swr
+  - react-query
+  - ai-sdk
+  - ai
+  - orpc
+  - 类型安全
+  - 中间件
+  - 请求
+  - 响应
 ---
 
 ## 为什么选择 ts-rest

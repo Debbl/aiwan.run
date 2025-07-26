@@ -2,6 +2,10 @@
 title: TypeScript satisfies
 date: 2025-02-21T02:33:55.190Z
 duration: 1min
+keywords:
+  - typescript
+  - satisfies
+  - typescript satisfies
 ---
 
 # TypeScript satisfies

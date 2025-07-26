@@ -2,6 +2,13 @@
 title: windows git set eol to lf
 date: 2024-01-14T03:29:13.000Z
 duration: 3min
+keywords:
+  - windows
+  - git
+  - eol
+  - lf
+  - crlf
+  - github action
 ---
 
 # windows git set eol to lf

@@ -2,6 +2,12 @@
 title: 我是如何搭建这个博客的
 date: 2024-05-26T12:24:14.000Z
 duration: 3min
+keywords:
+  - 博客
+  - 搭建
+  - Next.js
+  - FumaDocs
+  - 静态网站生成器
 ---
 
 # 我是如何搭建这个博客的

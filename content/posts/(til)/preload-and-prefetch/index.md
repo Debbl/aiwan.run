@@ -2,6 +2,13 @@
 title: preload and prefetch
 date: 2024-01-14T08:20:13.000Z
 duration: 3min
+keywords:
+  - preload
+  - prefetch
+  - html
+  - link
+  - rel
+  - as
 ---
 
 # preload and prefetch

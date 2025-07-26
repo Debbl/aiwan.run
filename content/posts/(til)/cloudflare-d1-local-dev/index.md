@@ -2,6 +2,13 @@
 title: cloudflare d1 local dev
 date: 2025-07-19T13:36:16.198Z
 duration: 3min
+keywords:
+  - cloudflare
+  - d1
+  - local dev
+  - drizzle
+  - drizzle-kit
+  - drizzle-orm
 ---
 
 cloudflare d1 is a sqlite database, you can get db file from `.wrangler` folder in your local project. in below code, you can config drizzle to use d1 on local or remote.

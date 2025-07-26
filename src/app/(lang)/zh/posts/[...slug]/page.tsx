@@ -30,6 +30,7 @@ export async function generateMetadata(props: {
   return {
     title: `Posts | ${page.data.title}`,
     description: page.data.description || `Post | ${page.data.title}`,
+    keywords: page.data.keywords,
     openGraph: {
       type: 'website',
       url: `${WEBSITE.domain}${page.url}`,

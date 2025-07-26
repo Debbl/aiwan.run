@@ -2,6 +2,11 @@
 title: VSCode With Vim
 date: 2025-03-11T08:48:38.061Z
 duration: 10min
+keywords:
+  - VSCode
+  - Vim
+  - 快捷键
+  - extension
 ---
 
 # VSCode 中使用 Vim

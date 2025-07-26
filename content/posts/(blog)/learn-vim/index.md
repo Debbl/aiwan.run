@@ -3,6 +3,12 @@ title: Vim 学习
 description: Vim 学习
 date: 2021-08-14T08:25:51.000Z
 duration: 10min
+keywords:
+  - Vim
+  - 学习
+  - 编辑器
+  - 文本编辑
+  - VSCode
 ---
 
 ## 模式

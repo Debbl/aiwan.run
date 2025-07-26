@@ -2,6 +2,10 @@
 title: 模板字面量类型
 date: 2025-01-17T15:27:56.070Z
 duration: 1min
+keywords:
+  - typescript
+  - template literal types
+  - typescript template literal types
 ---
 
 ## 模板字面量类型（Template Literal Types）

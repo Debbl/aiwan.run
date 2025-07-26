@@ -2,6 +2,10 @@
 title: 使用 useSyncExternalStore 实现 useIsOnline
 date: 2025-06-16T12:25:09.320Z
 duration: 3min
+keywords:
+  - useSyncExternalStore
+  - react
+  - react useSyncExternalStore
 ---
 
 ```ts title="use-is-online.ts"

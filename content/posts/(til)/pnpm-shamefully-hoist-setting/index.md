@@ -2,6 +2,13 @@
 title: pnpm shamefully-hoist 设置
 date: 2024-06-23T03:38:22.000Z
 duration: 3min
+keywords:
+  - pnpm
+  - shamefully-hoist
+  - hoist-pattern
+  - public-hoist-pattern
+  - node_modules
+  - package.json
 ---
 
 ## shamefully-hoist

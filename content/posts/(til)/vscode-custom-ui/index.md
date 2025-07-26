@@ -2,6 +2,10 @@
 title: vscode custom ui
 date: 2025-07-21T12:25:09.320Z
 duration: 3min
+keywords:
+  - vscode
+  - custom ui
+  - vscode custom ui
 ---
 
 a vscode extension to customize the vscode ui

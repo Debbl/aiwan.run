@@ -2,6 +2,13 @@
 title: 在 Mac 上使用 caffeinate 防止睡眠
 date: 2025-02-05T09:44:51.339Z
 duration: 3min
+keywords:
+  - caffeinate
+  - mac
+  - 防止睡眠
+  - 睡眠
+  - 休眠
+  - 进程
 ---
 
 # 在 Mac 上使用 caffeinate 防止睡眠
