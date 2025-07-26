@@ -1,11 +1,11 @@
 import RSS from 'rss'
 import { WEBSITE } from '~/constants'
-import { posts } from '~/lib/source'
+import { posts, source } from '~/lib/source'
 import { markdownToHtml } from './markdown'
 
 export const dynamic = 'force-static'
 
-export async function GET() {
+export async function generateStaticFeed(lang: 'en' | 'zh' = 'en') {
   const feed = new RSS({
     title: 'Brendan Dash',
     description: "Brendan Dash's Blog",
@@ -28,7 +28,11 @@ export async function GET() {
     ],
   })
 
-  posts.forEach((post) => {
+  posts.forEach((rawPost) => {
+    const post = source.getPage(rawPost.slugs, lang)
+
+    if (!post) return
+
     const slug = post.url
 
     const slugs = post.slugs
@@ -41,7 +45,7 @@ export async function GET() {
       url: `${WEBSITE.domain}${slug}`,
       description: post.data.title,
       date: post.data.date,
-      categories: [post.category],
+      categories: [rawPost.category],
       custom_elements: [
         {
           'content:encoded': {
@@ -66,4 +70,8 @@ export async function GET() {
       'content-type': 'application/xml', // this header set by netlify.toml
     },
   })
+}
+
+export async function GET() {
+  return generateStaticFeed()
 }

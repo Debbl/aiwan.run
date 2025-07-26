@@ -38,6 +38,7 @@ const nav: {
   },
   {
     'url': '/feed.xml',
+    'zhUrl': '/zh/feed.xml',
     'name': 'RSS',
     'data-umami-event': 'click-rss-link',
     'icon': <Icon.LuRss className='size-5' />,

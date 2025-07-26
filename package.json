@@ -24,6 +24,7 @@
     "@codesandbox/sandpack-react": "^2.20.0",
     "@debbl/ahooks": "^0.4.1",
     "@debbl/utils": "^0.2.2",
+    "@total-typescript/ts-reset": "^0.6.1",
     "class-variance-authority": "^0.7.1",
     "date-fns": "^4.1.0",
     "fumadocs-core": "^15.6.4",
