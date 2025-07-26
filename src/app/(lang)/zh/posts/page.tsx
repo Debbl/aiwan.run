@@ -1,8 +1,7 @@
 import { format } from 'date-fns'
 import { Link } from 'next-view-transitions'
-import { Fragment } from 'react'
 import { postsByCategory, source } from '~/lib/source'
-import BackgroundStage from '../_components/background-stage'
+import BackgroundStage from '../../../_components/background-stage'
 
 function Item({
   url,
@@ -58,41 +57,16 @@ export default async function Page() {
                 <ul className='mt-4 flex flex-col gap-y-2'>
                   {category.posts.map((post) => {
                     const zhPage = source.getPage(post.slugs, 'zh')
-                    const hasZhPage = zhPage?.absolutePath.endsWith('.zh.md')
 
-                    if (hasZhPage && zhPage) {
-                      const zhUrl = `/posts/zh/${post.slugs[0]}`
-
-                      return (
-                        <Fragment key={post.url}>
-                          <Item
-                            url={post.url}
-                            title={post.data.title}
-                            date={post.data.date}
-                            duration={post.data.duration}
-                          />
-                          <Item
-                            className='opacity-60'
-                            url={zhUrl}
-                            title={zhPage.data.title}
-                            date={zhPage.data.date}
-                            duration={zhPage.data.duration}
-                          >
-                            <Icon.LuLanguages
-                              title={`中文-${post.data.title}`}
-                            />
-                          </Item>
-                        </Fragment>
-                      )
-                    }
+                    if (!zhPage) return null
 
                     return (
                       <Item
-                        key={post.url}
-                        url={post.url}
-                        title={post.data.title}
-                        date={post.data.date}
-                        duration={post.data.duration}
+                        key={zhPage?.url}
+                        url={zhPage?.url}
+                        title={zhPage?.data.title}
+                        date={zhPage?.data.date}
+                        duration={zhPage?.data.duration}
                       />
                     )
                   })}

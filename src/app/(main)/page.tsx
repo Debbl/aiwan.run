@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BackgroundStage from '~/app/_components/background-stage'
 import {
   ai,
   biliShortLink,
@@ -14,8 +15,7 @@ import {
   tictactoe,
   tools,
   v,
-} from '../logos'
-import BackgroundStage from './_components/background-stage'
+} from '~/logos'
 import type { StaticImageData } from 'next/image'
 import type { IconType } from '~/components/icons'
 

@@ -9,6 +9,42 @@ import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
 import type { Metadata } from 'next'
 
+export async function generateStaticParams() {
+  const slugs = source
+    .generateParams('slug', 'lang')
+    .filter((s) => s.lang === 'en')
+
+  return slugs
+}
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug?: string[] }>
+}): Promise<Metadata> {
+  const params = await props.params
+  const page = source.getPage(params.slug, 'en')
+  if (!page) notFound()
+
+  return {
+    title: `Posts | ${page.data.title}`,
+    description: page.data.description || `Post | ${page.data.title}`,
+    openGraph: {
+      type: 'website',
+      url: `${WEBSITE.domain}${page.url}`,
+      title: page.data.title,
+      description: page.data.description || `Post | ${page.data.title}`,
+      images: [
+        {
+          alt: `${page.data.title}`,
+          url: `/posts/og/${page.slugs.at(-1)}.png`,
+          width: 800,
+          height: 400,
+        },
+      ],
+      emails: [WEBSITE.email],
+    },
+  }
+}
+
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
 }) {
@@ -21,7 +57,7 @@ export default async function Page(props: {
   const MDXContent = page.data.body
 
   const { prevPage, nextPage } = getRelativePage(slug)
-  const zhUrl = `/posts/zh/${page.slugs[0]}`
+  const zhUrl = `/zh/posts/${page.slugs[0]}`
 
   return (
     <div className='mx-auto max-w-4xl p-4 pt-8'>
@@ -59,40 +95,4 @@ export default async function Page(props: {
       </DocsBody>
     </div>
   )
-}
-
-export async function generateStaticParams() {
-  const slugs = source
-    .generateParams('slug', 'lang')
-    .filter((s) => s.lang === 'en')
-
-  return slugs
-}
-
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>
-}): Promise<Metadata> {
-  const params = await props.params
-  const page = source.getPage(params.slug, 'en')
-  if (!page) notFound()
-
-  return {
-    title: `Posts | ${page.data.title}`,
-    description: page.data.description || `Post | ${page.data.title}`,
-    openGraph: {
-      type: 'website',
-      url: `${WEBSITE.domain}${page.url}`,
-      title: page.data.title,
-      description: page.data.description || `Post | ${page.data.title}`,
-      images: [
-        {
-          alt: `${page.data.title}`,
-          url: `/posts/og/${page.slugs.at(-1)}.png`,
-          width: 800,
-          height: 400,
-        },
-      ],
-      emails: [WEBSITE.email],
-    },
-  }
 }

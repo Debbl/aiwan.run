@@ -31,20 +31,21 @@ export const postsByCategory = [
   },
 ]
 
-export function getRelativePage(slugs?: string[]) {
-  const currentPage = source.getPage(slugs)
+export function getRelativePage(slugs?: string[], lang = 'en') {
+  const currentPage = source.getPage(slugs, lang)
 
-  const categoryIndex = currentPage?.file.dirname.startsWith('(blog') ? 0 : 1
+  const categoryIndex = currentPage?.path.startsWith('(blog)') ? 0 : 1
   const posts = postsByCategory[categoryIndex].posts
 
-  const currentPageIndex = posts.findIndex(
-    (p) => p.file.dirname === currentPage?.file.dirname,
-  )
+  const currentPageIndex = posts.findIndex((p) => p.path === currentPage?.path)
 
   if (!currentPage) return {}
 
-  const prevPage = posts[currentPageIndex + 1]
-  const nextPage = posts[currentPageIndex - 1]
+  const prevPageSlugs = posts[currentPageIndex + 1]?.slugs
+  const nextPageSlugs = posts[currentPageIndex - 1]?.slugs
+
+  const prevPage = prevPageSlugs ? source.getPage(prevPageSlugs, lang) : null
+  const nextPage = nextPageSlugs ? source.getPage(nextPageSlugs, lang) : null
 
   return { prevPage, nextPage }
 }

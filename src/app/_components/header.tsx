@@ -6,12 +6,14 @@ import ThemeSwitcher from './theme-switcher'
 
 const nav: {
   'url': string
+  'zhUrl'?: string
   'name': string
   'data-umami-event': string
   'icon'?: React.ReactNode
 }[] = [
   {
     'url': '/posts',
+    'zhUrl': '/zh/posts',
     'name': 'Blog',
     'data-umami-event': 'click-blog-link',
   },
@@ -33,7 +35,7 @@ const nav: {
   },
 ]
 
-export function Header() {
+export function Header({ lang = 'en' }: { lang?: 'en' | 'zh' }) {
   const navRef = useRef<HTMLElement>(null)
   const { isMobile } = useMobile()
 
@@ -46,7 +48,7 @@ export function Header() {
         <div>
           <button type='button' aria-label='home'>
             <Link
-              href='/'
+              href={lang === 'zh' ? '/zh' : '/'}
               className='inline-block size-full px-3'
               aria-label='home page link'
             >
@@ -63,7 +65,7 @@ export function Header() {
                 data-umami-event={n['data-umami-event']}
                 title={n.name}
                 key={n.name}
-                href={n.url}
+                href={lang === 'zh' ? n.zhUrl || n.url : n.url}
                 prefetch={['/posts'].includes(n.url)}
               >
                 {n.icon || n.name}
