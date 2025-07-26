@@ -1,4 +1,4 @@
-import { generateStaticFeed } from '~/app/(main)/feed.xml/route'
+import { generateStaticFeed } from '~/app/(main)/feed.xml/generate-static-feed'
 
 export const dynamic = 'force-static'
 

@@ -6,7 +6,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(WEBSITE.domain),
   title: WEBSITE.title,
   authors: WEBSITE.authors,
+  creator: WEBSITE.authors[0].name,
+  publisher: WEBSITE.authors[0].name,
   description: WEBSITE.description,
+  category: 'technology',
+  keywords: WEBSITE.keywords,
   appleWebApp: {
     title: WEBSITE.title,
   },
@@ -51,7 +55,11 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://aiwan.run/',
+    canonical: WEBSITE.domain,
+    languages: {
+      zh: '/zh',
+      en: '/',
+    },
     types: {
       'application/rss+xml': [
         {

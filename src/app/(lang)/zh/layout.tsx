@@ -2,12 +2,12 @@ import { WEBSITE } from '~/constants'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Brendan Dash's Posts",
+  title: "Brendan Dash's Blog",
   alternates: {
-    canonical: `${WEBSITE.domain}/posts`,
+    canonical: `${WEBSITE.domain}/zh`,
     languages: {
-      zh: '/zh/posts',
-      en: '/posts',
+      zh: '/zh',
+      en: '/',
     },
   },
 }

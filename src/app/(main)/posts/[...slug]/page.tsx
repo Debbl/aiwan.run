@@ -24,6 +24,9 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug, 'en')
   if (!page) notFound()
 
+  const currentPathname = page.url.slice((page.locale?.length ?? 0) + 1)
+  const currentUrl = `${WEBSITE.domain}${currentPathname}`
+
   return {
     title: `Posts | ${page.data.title}`,
     description: page.data.description || `Post | ${page.data.title}`,
@@ -41,6 +44,13 @@ export async function generateMetadata(props: {
         },
       ],
       emails: [WEBSITE.email],
+    },
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        zh: `${WEBSITE.domain}/zh${currentPathname}`,
+        en: currentUrl,
+      },
     },
   }
 }

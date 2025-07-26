@@ -7,8 +7,13 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
+        allow: '/',
         disallow: ['/_next'],
       },
+    ],
+    sitemap: [
+      'https://aiwan.run/sitemap.xml',
+      'https://aiwan.run/zh/sitemap.xml',
     ],
   }
 }
