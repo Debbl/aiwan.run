@@ -69,6 +69,10 @@ export default async function Page(props: {
   const { prevPage, nextPage } = getRelativePage(slug)
   const zhUrl = `/zh/posts/${page.slugs[0]}`
 
+  const getUrlWithoutLang = (page: typeof prevPage | typeof nextPage) => {
+    return `${page?.url.slice((page?.locale?.length ?? 0) + 1)}`
+  }
+
   return (
     <div className='mx-auto max-w-4xl p-4 pt-8'>
       <DocsTitle>{page.data.title}</DocsTitle>
@@ -99,8 +103,18 @@ export default async function Page(props: {
           </Link>
         </div>
         <Cards>
-          {prevPage && <Card title={prevPage.data.title} href={prevPage.url} />}
-          {nextPage && <Card title={nextPage.data.title} href={nextPage.url} />}
+          {prevPage && (
+            <Card
+              title={prevPage.data.title}
+              href={getUrlWithoutLang(prevPage)}
+            />
+          )}
+          {nextPage && (
+            <Card
+              title={nextPage.data.title}
+              href={getUrlWithoutLang(nextPage)}
+            />
+          )}
         </Cards>
       </DocsBody>
     </div>

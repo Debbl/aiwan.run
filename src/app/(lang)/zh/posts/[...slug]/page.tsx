@@ -94,7 +94,7 @@ export default async function Page(props: {
           })}
         />
         <div className='text-accent my-2'>
-          <Link href='/posts' className='text-muted-foreground'>
+          <Link href='/zh/posts' className='text-muted-foreground'>
             &gt; cd ..
           </Link>
         </div>
