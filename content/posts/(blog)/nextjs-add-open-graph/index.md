@@ -1,5 +1,6 @@
 ---
 title: Next.js 中添加 Open Graph
+description: 学习如何在 Next.js 项目中添加 Open Graph 图片，包括静态生成 OG 图片、使用 satori 库、配置路由处理器和 SEO 优化等完整实现方案
 date: 2025-02-11T10:06:32.792Z
 duration: 8min
 keywords:

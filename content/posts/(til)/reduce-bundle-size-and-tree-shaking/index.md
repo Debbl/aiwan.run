@@ -1,5 +1,6 @@
 ---
 title: 减少打包体积和 tree shaking
+description: 学习如何通过 tree shaking 技术减少打包体积，包括 motion 库的优化导入方式和模块导出策略
 date: 2025-04-12T12:46:36.526Z
 duration: 2min
 keywords:

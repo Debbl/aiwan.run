@@ -1,5 +1,6 @@
 ---
 title: pnpm shamefully-hoist 设置
+description: 了解 pnpm 的依赖提升配置，包括 shamefully-hoist、hoist-pattern 和 public-hoist-pattern 等选项的使用场景和配置方法
 date: 2024-06-23T03:38:22.000Z
 duration: 3min
 keywords:

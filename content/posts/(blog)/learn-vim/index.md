@@ -1,6 +1,6 @@
 ---
 title: Vim 学习
-description: Vim 学习
+description: 从零开始学习 Vim 编辑器，包括各种模式切换、文本编辑命令、移动操作、搜索替换等核心功能，帮助你掌握高效的文本编辑技能
 date: 2021-08-14T08:25:51.000Z
 duration: 10min
 keywords:

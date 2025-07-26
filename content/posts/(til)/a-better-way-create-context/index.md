@@ -1,5 +1,6 @@
 ---
 title: a better way to create context
+description: Learn a better approach to create React context with improved type safety, error handling, and scope management inspired by Radix UI patterns
 date: 2025-07-20T13:36:16.198Z
 duration: 1min
 keywords:

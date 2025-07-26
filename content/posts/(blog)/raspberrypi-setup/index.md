@@ -1,6 +1,6 @@
 ---
 title: 树莓派开机使用
-description: 树莓派开始使用
+description: 树莓派初始化和使用指南，包括 SSH 连接配置、无线网络设置、VNC 远程桌面、扩展功能启用和基本配置等完整流程
 date: 2021-08-30T09:22:23.000Z
 duration: 8min
 keywords:

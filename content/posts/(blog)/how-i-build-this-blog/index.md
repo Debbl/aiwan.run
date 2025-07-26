@@ -1,5 +1,6 @@
 ---
 title: 我是如何搭建这个博客的
+description: 详细介绍如何从零开始搭建一个基于 Next.js 和 MDX 的静态博客，包括组件开发、PWA 配置、Open Graph 图片生成等技术细节
 date: 2024-05-26T12:24:14.000Z
 duration: 3min
 keywords:

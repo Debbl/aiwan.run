@@ -1,5 +1,6 @@
 ---
 title: Mac 初始化设置
+description: 完整的 Mac 开发环境初始化指南，包括 Homebrew 安装、Oh My Zsh 配置、Powerlevel10k 主题设置、VSCode 配置、Git 和 SSH 设置等
 date: 2025-02-27T01:54:16.399Z
 duration: 10min
 keywords:

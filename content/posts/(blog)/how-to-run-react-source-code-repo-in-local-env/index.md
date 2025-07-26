@@ -1,5 +1,6 @@
 ---
 title: 如何在本地环境运行 react 源码仓库
+description: 详细指南：如何在本地环境搭建 React 源码开发环境，包括环境配置、依赖安装、Flow 类型检查、测试运行和打包构建等完整流程
 date: 2024-05-26T10:24:13.000Z
 duration: 10min
 keywords:

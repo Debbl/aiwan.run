@@ -1,6 +1,6 @@
 ---
 title: HTML 基本元素
-description: HTML 的基本元素和一些 Web 基础
+description: 全面介绍 HTML 基本元素和 Web 开发基础，包括文档结构、语义化标签、字符编码、图片格式等核心概念
 date: 2021-08-30T12:07:54.000Z
 duration: 10min
 keywords:

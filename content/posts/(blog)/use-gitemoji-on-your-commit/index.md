@@ -1,6 +1,6 @@
 ---
 title: gitmoji 使用
-description: "\U0001F389 gitmoji 的使用"
+description: 学习如何使用 gitmoji 为 Git 提交添加表情符号，让提交信息更加直观易懂，包括完整的 emoji 指南和最佳实践
 date: 2021-08-03T20:00:18.000Z
 duration: 5min
 keywords:

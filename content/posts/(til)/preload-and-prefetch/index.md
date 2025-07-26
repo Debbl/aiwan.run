@@ -1,5 +1,6 @@
 ---
 title: preload and prefetch
+description: Understanding the difference between preload and prefetch HTML link attributes for resource optimization and performance improvement
 date: 2024-01-14T08:20:13.000Z
 duration: 3min
 keywords:

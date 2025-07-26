@@ -1,5 +1,6 @@
 ---
 title: Next.js 中使用 MDX 静态图片
+description: 解决 Next.js MDX 中静态图片处理问题，通过自定义 remark 插件实现相对路径图片的自动导入和优化显示
 date: 2025-02-10T02:20:14.179Z
 duration: 5min
 keywords:

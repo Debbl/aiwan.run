@@ -1,5 +1,6 @@
 ---
 title: TypeScript satisfies
+description: 深入理解 TypeScript satisfies 操作符的使用方法，在保持类型推断的同时确保类型安全，提升代码质量和开发体验
 date: 2025-02-21T02:33:55.190Z
 duration: 1min
 keywords:

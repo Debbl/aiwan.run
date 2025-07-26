@@ -1,5 +1,6 @@
 ---
 title: 在 Mac 上使用 caffeinate 防止睡眠
+description: 学习如何使用 Mac 的 caffeinate 命令防止系统睡眠，确保长时间运行的程序（如开发服务器）不会因系统休眠而中断
 date: 2025-02-05T09:44:51.339Z
 duration: 3min
 keywords:

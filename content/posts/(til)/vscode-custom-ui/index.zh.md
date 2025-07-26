@@ -1,5 +1,6 @@
 ---
 title: 自定义 VSCode 界面
+description: 学习如何使用 Custom UI Style 插件自定义 VSCode 界面，包括各种 VSCode 组件和控件的 CSS 样式定制
 date: 2025-07-21T12:25:09.320Z
 duration: 3min
 keywords:

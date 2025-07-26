@@ -1,5 +1,6 @@
 ---
 title: 使用 FumaDocs 重构这个博客
+description: 详细介绍如何使用 FumaDocs 重构现有博客，包括 schema 定义、自定义组件开发、MDX 插件配置和类型安全的结构化数据处理
 date: 2025-05-25T10:27:54.972Z
 duration: 5min
 keywords:

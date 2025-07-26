@@ -1,5 +1,6 @@
 ---
 title: windows git set eol to lf
+description: Learn how to configure Git on Windows to use LF line endings instead of CRLF, including global settings and .gitattributes configuration for consistent cross-platform development
 date: 2024-01-14T03:29:13.000Z
 duration: 3min
 keywords:

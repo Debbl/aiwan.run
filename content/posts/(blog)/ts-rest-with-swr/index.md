@@ -1,5 +1,6 @@
 ---
 title: ts-rest 集成 swr
+description: 深入探讨如何将 ts-rest 与 SWR 集成，实现端到端类型安全的 API 调用，包括自定义 hooks 开发、错误处理和中间件配置
 date: 2025-06-14T11:36:46.272Z
 duration: 5min
 keywords:

@@ -1,6 +1,6 @@
 ---
 title: npm 常用命令
-description: npm 常用的命令
+description: 收集整理 npm 包管理器的常用命令，包括模块安装卸载、配置管理、镜像源设置、版本控制等实用技巧
 date: 2021-05-30T07:31:04.000Z
 duration: 5min
 keywords:

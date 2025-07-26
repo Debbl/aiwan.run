@@ -1,5 +1,6 @@
 ---
 title: 使用 useSyncExternalStore 实现 useIsOnline
+description: 学习如何使用 React 的 useSyncExternalStore hook 实现网络状态监听，创建可靠的在线状态检测组件
 date: 2025-06-16T12:25:09.320Z
 duration: 3min
 keywords:

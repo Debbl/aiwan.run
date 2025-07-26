@@ -1,5 +1,6 @@
 ---
 title: cloudflare d1 local dev
+description: Learn how to configure Cloudflare D1 database for local development using Drizzle ORM, including database file location and migration management
 date: 2025-07-19T13:36:16.198Z
 duration: 3min
 keywords:

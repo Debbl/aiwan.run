@@ -1,5 +1,6 @@
 ---
 title: Next.js 使用 lingui 进行国际化
+description: 完整指南：在 Next.js 项目中集成 lingui 国际化解决方案，包括 SWC 插件配置、PO 文件管理、多语言路由和翻译工作流程
 date: 2025-01-11T15:29:07.296Z
 duration: 10min
 keywords:

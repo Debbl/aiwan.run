@@ -1,5 +1,6 @@
 ---
 title: 调试 Popover 样式
+description: 学习如何调试 Popover 组件的样式问题，使用 Chrome DevTools 的 F8 快捷键暂停脚本执行来定位弹出框位置
 date: 2025-03-20T03:50:18.366Z
 duration: 3min
 keywords:

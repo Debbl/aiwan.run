@@ -17,7 +17,6 @@ export const docs = defineDocs({
       duration: z.string().optional().default('1m'),
       date: z.date().transform((val) => new Date(val)),
       keywords: z.array(z.string()).optional().default([]),
-      description: z.string().optional().default(''),
     }),
   },
   meta: {

@@ -87,7 +87,9 @@ export default async function Page(props: {
           <Icon.LuLanguages title='change language' />
         </Link>
       </div>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsDescription className='mt-2 text-sm'>
+        {page.data.description}
+      </DocsDescription>
       <DocsBody className='mt-4 break-words'>
         <MDXContent
           components={getMDXComponents({

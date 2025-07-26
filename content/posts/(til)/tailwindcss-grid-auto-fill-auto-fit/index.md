@@ -1,5 +1,6 @@
 ---
 title: tailwindcss grid auto fill auto fit
+description: Create custom Tailwind CSS utilities for auto-fill and auto-fit grid layouts using the new @utility directive for better responsive design
 date: 2025-07-16T14:32:00.191Z
 duration: 1min
 keywords:

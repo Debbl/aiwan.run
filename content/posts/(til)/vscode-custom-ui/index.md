@@ -1,5 +1,6 @@
 ---
 title: vscode custom ui
+description: Learn how to customize VSCode UI using the Custom UI Style extension, including CSS styling for various VSCode components and widgets
 date: 2025-07-21T12:25:09.320Z
 duration: 3min
 keywords:

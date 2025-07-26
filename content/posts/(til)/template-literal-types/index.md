@@ -1,5 +1,6 @@
 ---
 title: 模板字面量类型
+description: 学习 TypeScript 模板字面量类型的使用方法，通过字符串模板创建动态类型定义，提升类型安全性和代码可读性
 date: 2025-01-17T15:27:56.070Z
 duration: 1min
 keywords:

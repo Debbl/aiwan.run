@@ -1,5 +1,6 @@
 ---
 title: 为你的网站添加 PWA 和 Service Worker
+description: 学习如何在 Next.js 项目中添加 PWA 功能和 Service Worker，包括生成 favicon、配置 manifest 文件和使用 serwist 库实现离线功能
 date: 2025-01-14T10:24:13.000Z
 duration: 10min
 keywords:

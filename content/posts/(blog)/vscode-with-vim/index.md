@@ -1,5 +1,6 @@
 ---
 title: VSCode With Vim
+description: 在 VSCode 中集成 Vim 编辑器，提升开发效率，包括插件安装、快捷键配置、自定义设置和最佳实践指南
 date: 2025-03-11T08:48:38.061Z
 duration: 10min
 keywords:

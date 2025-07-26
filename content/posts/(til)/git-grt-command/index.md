@@ -1,5 +1,6 @@
 ---
 title: git grt 命令
+description: 了解 zsh 中内置的 grt 命令，这是一个用于快速切换到 Git 仓库根目录的实用别名，提高开发效率
 date: 2024-08-28T12:29:23.137Z
 duration: 3min
 keywords:

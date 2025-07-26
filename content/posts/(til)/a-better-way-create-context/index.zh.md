@@ -1,5 +1,6 @@
 ---
 title: 一个更好的创建 context 的方式
+description: 学习一种更好的 React context 创建方式，提供改进的类型安全、错误处理和范围管理，灵感来源于 Radix UI 模式
 date: 2025-07-20T13:36:16.198Z
 duration: 1min
 keywords:

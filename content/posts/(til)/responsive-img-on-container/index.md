@@ -1,5 +1,6 @@
 ---
 title: 容器内响应式图片
+description: 实现容器内响应式图片的 JavaScript 解决方案，根据容器宽高比自动调整图片尺寸以保持最佳显示效果
 date: 2024-08-20T12:43:02.068Z
 duration: 5min
 keywords:
