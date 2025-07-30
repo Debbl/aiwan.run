@@ -66,6 +66,10 @@ export const metadata: Metadata = {
           title: "Brendan Dash's RSS Feed",
           url: '/feed.xml',
         },
+        {
+          title: "Brendan Dash's RSS Feed (Chinese)",
+          url: '/zh/feed.xml',
+        },
       ],
     },
   },
