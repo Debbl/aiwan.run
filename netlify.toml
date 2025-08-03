@@ -1,4 +1,10 @@
 [[headers]]
+for = "/*"
+
+[headers.values]
+X-Robots-Tag = "all"
+
+[[headers]]
 for = "/feed.xml"
 
 [headers.values]
