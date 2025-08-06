@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import Link from '~/components/link'
 import { useMobile } from '~/hooks/use-mobile'
 import ThemeSwitcher from './theme-switcher'
+import type { Lang } from '~/types'
 
 const nav: {
   'url': string
@@ -45,7 +46,7 @@ const nav: {
   },
 ]
 
-export function Header({ lang = 'en' }: { lang?: 'en' | 'zh' }) {
+export function Header({ lang = 'en' }: { lang?: Lang }) {
   const navRef = useRef<HTMLElement>(null)
   const { isMobile } = useMobile()
 

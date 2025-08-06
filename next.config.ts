@@ -24,9 +24,19 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    swcPlugins: [['@lingui/swc-plugin', {}]],
+  },
   serverExternalPackages: ['typescript', 'twoslash'],
   transpilePackages: ['@workspace/mdx-plugins'],
   webpack: (config) => {
+    config.module.rules.push({
+      test: /\.po$/,
+      use: {
+        loader: '@lingui/loader',
+      },
+    })
+
     config.plugins.push(
       AutoImport({
         include: [
