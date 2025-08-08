@@ -1,5 +1,5 @@
 ---
-title: How I Built This Blog
+title: How I built this blog
 description: Learn how to build a static blog using Next.js and MDX, including component development, PWA configuration, and Open Graph image generation.
 date: 2024-05-26T12:24:14.000Z
 duration: 3min

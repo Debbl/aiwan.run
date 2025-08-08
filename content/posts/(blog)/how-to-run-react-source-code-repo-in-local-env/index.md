@@ -1,6 +1,6 @@
 ---
-title: How to Run React Source Code Repository in Local Environment
-description: Learn how to set up a React source code development environment in a local environment, including environment configuration, dependency installation, Flow type checking, test running, and packaging and building.
+title: How to run react source code repository in local environment
+description: Learn how to set up a react source code development environment in a local environment, including environment configuration, dependency installation, Flow type checking, test running, and packaging and building.
 date: 2024-05-26T10:24:13.000Z
 duration: 10min
 keywords:

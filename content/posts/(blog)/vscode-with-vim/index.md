@@ -1,5 +1,5 @@
 ---
-title: VSCode With Vim
+title: VSCode with Vim
 description: Integrate Vim editor in VSCode to improve development efficiency, including plugin installation, shortcut configuration, custom settings, and best practices.
 date: 2025-03-11T08:48:38.061Z
 duration: 10min

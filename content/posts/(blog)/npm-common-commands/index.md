@@ -1,5 +1,5 @@
 ---
-title: npm Common Commands
+title: npm common commands
 description: Collect and organize common commands for the npm package manager, including module installation and uninstallation, configuration management, mirror source settings, version control, and other practical techniques.
 date: 2021-05-30T07:31:04.000Z
 duration: 5min

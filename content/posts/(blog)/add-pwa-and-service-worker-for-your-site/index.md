@@ -1,5 +1,5 @@
 ---
-title: Add PWA and Service Worker to Your Site
+title: Add PWA and Service Worker to your site
 description: Learn how to add PWA and Service Worker to your site, including generating favicon, configuring manifest file, and using serwist library to implement offline functionality.
 date: 2025-01-14T10:24:13.000Z
 duration: 10min
