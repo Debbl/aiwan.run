@@ -64,6 +64,7 @@
     "@workspace/mdx-plugins": "workspace:*",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
     "github-slugger": "^2.0.0",
     "globby": "^14.1.0",
     "gray-matter": "^4.0.3",
