@@ -6,7 +6,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: zh\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/constants/index.server.ts:29
+msgid "ai"
+msgstr "ai"
+
+#: src/constants/index.server.ts:30
+msgid "ai-sdk"
+msgstr "ai-sdk"
+
+#: src/constants/index.server.ts:24
+msgid "Blog"
+msgstr "博客"
+
+#: src/constants/index.server.ts:22
+msgid "Brendan Dash"
+msgstr "Brendan Dash"
 
 #: src/app/[lang]/posts/layout.tsx:16
+#: src/app/[lang]/root-layout.tsx:130
+#: src/constants/index.server.ts:14
 msgid "Brendan Dash's Blog"
 msgstr "Brendan Dash 的博客"
+
+#: src/constants/index.server.ts:16
+msgid "Brendan Dash's Blog, a place to share my thoughts and ideas"
+msgstr "Brendan Dash 的博客，一个分享我的想法和想法的地方"
+
+#: src/constants/index.server.ts:19
+msgid "Brendan Dash's personal website, a place to share my thoughts and ideas"
+msgstr "Brendan Dash 的个人网站，一个分享我的想法和想法的地方"
+
+#: src/constants/index.server.ts:35
+msgid "css"
+msgstr "css"
+
+#: src/constants/index.server.ts:23
+msgid "Debbl"
+msgstr "Debbl"
+
+#: src/constants/index.server.ts:34
+msgid "html"
+msgstr "html"
+
+#: src/constants/index.server.ts:33
+msgid "javascript"
+msgstr "javascript"
+
+#: src/constants/index.server.ts:28
+msgid "nextjs"
+msgstr "nextjs"
+
+#: src/app/[lang]/root-layout.tsx:158
+#~ msgid "Personal blog sharing thoughts and ideas about technology, development, and life"
+#~ msgstr "个人博客，分享关于技术、开发和生活的想法和想法"
+
+#: src/constants/index.server.ts:25
+msgid "Personal Website"
+msgstr "个人网站"
+
+#: src/constants/index.server.ts:27
+msgid "react"
+msgstr "react"
+
+#: src/constants/index.server.ts:31
+msgid "tailwindcss"
+msgstr "tailwindcss"
+
+#: src/constants/index.server.ts:26
+msgid "TIL"
+msgstr "TIL"
+
+#: src/constants/index.server.ts:32
+msgid "typescript"
+msgstr "typescript"

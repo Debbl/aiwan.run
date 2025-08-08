@@ -8,6 +8,7 @@ import { WEBSITE } from '~/constants'
 import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
 import type { Metadata } from 'next'
+import type { Lang } from '~/types'
 
 export async function generateStaticParams() {
   const slugs = source
@@ -17,11 +18,13 @@ export async function generateStaticParams() {
   return slugs
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Lang; slug?: string[] }>
 }): Promise<Metadata> {
-  const params = await props.params
-  const page = source.getPage(params.slug, 'zh')
+  const { lang, slug } = await params
+  const page = source.getPage(slug, lang)
   if (!page) notFound()
 
   const currentPathname = page.url
@@ -39,7 +42,7 @@ export async function generateMetadata(props: {
       images: [
         {
           alt: `${page.data.title}`,
-          url: `/posts/og/${page.slugs.at(-1)}.png`,
+          url: `${lang === 'en' ? '' : `/${lang}`}/posts/og/${page.slugs.at(-1)}.png`,
           width: 800,
           height: 400,
         },

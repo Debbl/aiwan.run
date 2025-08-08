@@ -1,13 +1,15 @@
-import { WEBSITE } from '~/constants'
+import { getServerWebsiteConstants } from '~/constants/index.server'
 import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
-export default function manifest(): MetadataRoute.Manifest {
+export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  const { name, description } = await getServerWebsiteConstants('en')
+
   return {
-    name: WEBSITE.title,
-    short_name: WEBSITE.title,
-    description: WEBSITE.description,
+    name,
+    short_name: name,
+    description,
     start_url: '/',
     theme_color: '#ffffff',
     background_color: '#ffffff',
