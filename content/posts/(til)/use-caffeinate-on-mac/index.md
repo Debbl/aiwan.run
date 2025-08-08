@@ -1,28 +1,28 @@
 ---
-title: 在 Mac 上使用 caffeinate 防止睡眠
-description: 学习如何使用 Mac 的 caffeinate 命令防止系统睡眠，确保长时间运行的程序（如开发服务器）不会因系统休眠而中断
+title: Use caffeinate on Mac to prevent sleep
+description: Learn how to use the caffeinate command on Mac to prevent system sleep, ensuring that long-running programs (such as development servers) will not be interrupted by system sleep
 date: 2025-02-05T09:44:51.339Z
 duration: 3min
 keywords:
   - caffeinate
   - mac
-  - 防止睡眠
-  - 睡眠
-  - 休眠
-  - 进程
+  - prevent sleep
+  - sleep
+  - hibernate
+  - process
 ---
 
-# 在 Mac 上使用 caffeinate 防止睡眠
+# Use caffeinate on Mac to prevent sleep
 
-有时候一些程序需要长时间运行，比如 `npm run dev` 或者 `pnpm dev`，这些程序运行时，当 Mac 进入睡眠状态，可能会导致程序中断。
+Sometimes some programs need to run for a long time, such as `npm run dev` or `pnpm dev`, these programs run when Mac enters sleep, which may cause the program to interrupt.
 
-可以使用 `caffeinate` 命令来防止 Mac 进入睡眠状态。
+You can use the `caffeinate` command to prevent Mac from entering sleep.
 
 ```sh
 caffeinate -i npm run dev
 ```
 
-## 一些其他的参数
+## Some other parameters
 
 ```sh
 ❯ caffeinate --help
@@ -31,20 +31,20 @@ usage: caffeinate [-disu] [-t timeout] [-w Process ID] [command arguments...]
 ```
 
 ```sh
-# 阻止机器休眠（后台跑程序、听歌等，屏幕过段时间后会自动关闭）
+# Prevent machine sleep (run programs in the background, listen to music, etc., the screen will automatically close after a period of time)
 caffeinate
 
-# 阻止屏幕（-d display）休眠
+# Prevent screen sleep (-d display)
 caffeinate -d
 
-# 阻止休眠一段时间（-t [阻止休眠秒数]）
+# Prevent sleep for a period of time (-t [prevent sleep seconds])
 caffeinate -t 3600
 
-# 该命令能让进程一直保持运行
+# This command keeps the process running
 caffeinate -w <进程号>
 ```
 
-## 参考
+## Reference
 
 - https://xujinzh.github.io/2021/08/31/mac-pid-keep-runing-caffeinate/index.html
 - https://gist.github.com/xkniu/6561069c10de812b7521217aafb2e46f?utm_source=chatgpt.com

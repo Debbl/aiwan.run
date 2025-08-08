@@ -1,6 +1,6 @@
 ---
-title: Template Literal Types
-description: Learn how to use template literal types in TypeScript, create dynamic type definitions through string templates, and improve type safety and code readability
+title: 模板字面量类型
+description: 学习 TypeScript 模板字面量类型的使用方法，通过字符串模板创建动态类型定义，提升类型安全性和代码可读性
 date: 2025-01-17T15:27:56.070Z
 duration: 1min
 keywords:
@@ -9,9 +9,9 @@ keywords:
   - typescript template literal types
 ---
 
-## Template Literal Types
+## 模板字面量类型（Template Literal Types）
 
-Template Literal Types is a type in TypeScript, it allows you to create a string type that can contain variables.
+模板字面量类型是 TypeScript 中的一种类型，它允许你创建可以包含变量的字符串类型。
 
 ```ts twoslash
 type World = 'world'
@@ -27,6 +27,6 @@ type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`
 //   ^?
 ```
 
-## Related articles
+## 相关文章
 
 - https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html

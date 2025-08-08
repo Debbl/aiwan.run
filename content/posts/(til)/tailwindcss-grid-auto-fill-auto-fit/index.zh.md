@@ -1,6 +1,6 @@
 ---
 title: tailwindcss grid auto fill auto fit
-description: Create custom Tailwind CSS utilities for auto-fill and auto-fit grid layouts using the new @utility directive for better responsive design
+description: 创建自定义 Tailwind CSS 实用程序，用于自动填充和自动适应网格布局，使用新的 @utility 指令进行更好的响应式设计
 date: 2025-07-16T14:32:00.191Z
 duration: 1min
 keywords:
@@ -14,7 +14,7 @@ keywords:
   - tailwindcss custom utility
 ---
 
-a custom utility to set the `grid-cols-fill-12` to `grid-template-columns: repeat(auto-fill, minmax(3rem, 12))`
+一个自定义工具，将 `grid-cols-fill-12` 设置为 `grid-template-columns: repeat(auto-fill, minmax(3rem, 12))`
 
 ```css
 @utility grid-cols-fill-* {
