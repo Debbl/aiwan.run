@@ -1,0 +1,9 @@
+{
+  "name": "aiwan-run",
+  "main": "worker.js",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS"
+  }
+}
