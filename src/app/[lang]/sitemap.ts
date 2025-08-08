@@ -48,13 +48,25 @@ export function generateStaticSitemap(
       priority: 0.9,
     },
     {
-      url: `${WEBSITE.domain}/tools`,
+      url: `https://tools.aiwan.run`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${WEBSITE.domain}/slides`,
+      url: `https://slides.aiwan.run`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `https://game.aiwan.run`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `https://emoji.aiwan.run`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
