@@ -1,30 +1,30 @@
 ---
-title: How I Built This Blog
-description: Learn how to build a static blog using Next.js and MDX, including component development, PWA configuration, and Open Graph image generation.
+title: 我是如何搭建这个博客的
+description: 详细介绍如何从零开始搭建一个基于 Next.js 和 MDX 的静态博客，包括组件开发、PWA 配置、Open Graph 图片生成等技术细节
 date: 2024-05-26T12:24:14.000Z
 duration: 3min
 keywords:
-  - Blog
-  - Build
+  - 博客
+  - 搭建
   - Next.js
   - FumaDocs
-  - Static Site Generator
+  - 静态网站生成器
 ---
 
-# How I Built This Blog
+# 我是如何搭建这个博客的
 
 > [!NOTE]
-> This article is outdated, please refer to [Refactor This Blog With FumaDocs](/posts/refactor-this-blog-with-fumadocs)
+> 这篇文章已经过时了，请参考 [使用 FumaDocs 重构这个博客](/posts/refactor-this-blog-with-fumadocs)
 
-## Related Links
+## 信息
 
 - [MDX Playground](https://mdxjs.com/playground/)
 
-## Components
+## 组件
 
-### Images
+### 图片
 
-> Can directly import images in the relative path, use the `remark-static-image` plugin, automatically import images, see [Using MDX Static Images in Next.js](/posts/nextjs-mdx-static-image) for details.
+可以直接在相对路径下引入图片，使用 `remark-static-image` 插件，自动导入图片，具体可以查看 [Next.js 中使用 MDX 静态图片](/posts/nextjs-mdx-static-image) 。
 
 ![](./images/image.png)
 
@@ -64,52 +64,52 @@ keywords:
 
 ## PWA
 
-- [Add PWA and Service Worker to Your Site](/posts/add-pwa-and-service-worker-for-your-site)
+- [为你的网站添加 PWA 和 Service Worker](/posts/add-pwa-and-service-worker-for-your-site)
 
-## Add OG Image
+## 添加 OG 图片
 
-- [Add Open Graph in Next.js](/posts/nextjs-add-open-graph)
+- [Next.js 中添加 Open Graph](/posts/nextjs-add-open-graph)
 
 ## Changelog
 
-### Upgrade tailwindcss v4
+### 升级 tailwindcss v4
 
 > https://github.com/Debbl/aiwan.run/pull/19
 
 - https://tailwindcss.com/docs/upgrade-guide
 
-### Add OG Image
+### 添加 OG 图片
 
 > https://github.com/Debbl/aiwan.run/pull/14
 
 - https://og-playground.vercel.app/
 - https://vercel.com/docs/functions/og-image-generation
 - https://orcascan.com/tools/open-graph-validator
-- Static generate OG Image
-  - Use `[og/[slug]/route.tsx]` to change the slug to `[post.pageName].png`
-  - `generateStaticParams` to generate OG images for posts
-  - `remark-mdx-slug` to get the `slug`
-  - `remark-mdx-formatter` to configure `openGraph` to use `[/og/${post.pageName}.png]` as the OG image
+- 静态生成 OG 图片
+  - 使用 `[og/[slug]/route.tsx]` 更改 slug 为 `[post.pageName].png`
+  - `generateStaticParams` 生成 posts 的 OG 图片
+  - `remark-mdx-slug` 获取 `slug`
+  - `remark-mdx-formatter` 配置 `openGraph` 使用 `[/og/${post.pageName}.png]` 作为 OG 图片
 
-### Add GitHub Alert
+### 添加 GitHub Alert
 
 > https://github.com/Debbl/aiwan.run/commit/c9cb8268eb2037bec897ffbdeb780135d2145039
 
 - https://github.com/chrisweb/rehype-github-alerts
 
-### Add NProgress
+### 添加 NProgress
 
 > https://github.com/Debbl/aiwan.run/pull/12
 
-- Show progress bar when switching routes on the current website
+- 当前网站路由切换时显示进度条
 - https://github.com/Skyleen77/next-nprogress-bar
 
 ### refactor use mdx
 
 > https://github.com/Debbl/aiwan.run/pull/11
 
-- Use mdx to refactor the blog [nextjs documentation](https://nextjs.org/docs/app/building-your-application/configuring/mdx)
-- Reference the implementation of [nextra](https://github.com/shuding/nextra)
-- Use app router as page to load mdx file
-- remark-mdx-layout global layout component
-- remark-static-image import static images from relative paths
+- 使用 mdx 重构了博客 [nextjs文档](https://nextjs.org/docs/app/building-your-application/configuring/mdx)
+- 参考了 [nextra](https://github.com/shuding/nextra) 的实现
+- 使用 app router 作为 page 加载 mdx 文件
+- remark-mdx-layout 全局的 Layout 组件
+- remark-static-image 相对路径引入静态图片文件

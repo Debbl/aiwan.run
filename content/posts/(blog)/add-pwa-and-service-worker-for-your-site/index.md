@@ -1,6 +1,6 @@
 ---
-title: 为你的网站添加 PWA 和 Service Worker
-description: 学习如何在 Next.js 项目中添加 PWA 功能和 Service Worker，包括生成 favicon、配置 manifest 文件和使用 serwist 库实现离线功能
+title: Add PWA and Service Worker to Your Site
+description: Learn how to add PWA and Service Worker to your site, including generating favicon, configuring manifest file, and using serwist library to implement offline functionality.
 date: 2025-01-14T10:24:13.000Z
 duration: 10min
 keywords:
@@ -9,18 +9,18 @@ keywords:
   - Next.js
 ---
 
-# 为你的网站添加 PWA 和 Service Worker
+## Add PWA and Service Worker to Your Site
 
-## Next.js 中如何添加 PWA
+## How to Add PWA in Next.js
 
-### 官方文档
+### Official documentation
 
-- [PWA 文档](https://nextjs.org/docs/app/building-your-application/configuring/progressive-web-apps)
+- [PWA documentation](https://nextjs.org/docs/app/building-your-application/configuring/progressive-web-apps)
 
-### 生成 favicon
+### Generate favicon
 
 - [real favicon generator](https://realfavicongenerator.net/)
 
-### service worker
+### Service worker
 
-server worker 推荐使用 [serwist](https://github.com/serwist/serwist), 文档比较清晰，支持多个框架
+> Server worker recommended using [serwist](https://github.com/serwist/serwist), documentation is clear, supports multiple frameworks

@@ -1,29 +1,29 @@
 ---
-title: HTML 基本元素
-description: 全面介绍 HTML 基本元素和 Web 开发基础，包括文档结构、语义化标签、字符编码、图片格式等核心概念
+title: HTML Basic Elements
+description: Learn about the basic elements of HTML and the basics of web development, including document structure, semantic tags, character encoding, image formats, and other core concepts.
 date: 2021-08-30T12:07:54.000Z
 duration: 10min
 keywords:
   - HTML
-  - 基本元素
+  - Basic Elements
   - Web
-  - 基础
-  - 标签
-  - 语义化
-  - 像素
+  - Basic
+  - Tags
+  - Semantic
+  - Pixel
   - URL
-  - 字符实体
-  - 图片格式
-  - 像素
+  - Character Entity
+  - Image Format
+  - Pixel
   - URL
-  - 字符实体
+  - Character Entity
 ---
 
-# HTML基本元素
+# HTML Basic Elements
 
-> HTML 超文本标记语言 HyperText Marup Language
+> HTML HyperText Marup Language
 
-## HTML 基本的结构
+## HTML Basic Structure
 
 ```html
 <!DOCTYPE html>
@@ -42,27 +42,27 @@ keywords:
 
 > \<!DOCTYPE html>
 
-HTML 文档声明，告诉浏览器当前页面是 HTML5 页面，让浏览器用 HTML5 的标准去解析和识别 HTML 文档，省略可能会出现浏览器兼容问题
+> HTML document declaration, tells the browser that the current page is an HTML5 page, and the browser uses the HTML5 standard to parse and recognize the HTML document, omitting may cause browser compatibility issues
 
-## html 元素
+## html element
 
-- html 元素是 HTML 文档的根元素，一个文档只能有一个，其他所有元素是其后代元素
+- The html element is the root element of the HTML document, a document can only have one, and all other elements are its descendant elements
 
-- W3C 标准建议为为 html 元素增加一个 `lang` 属性
+- W3C standard suggests adding a `lang` attribute to the html element
 
-  > - `lang=en` ，HTML 文档语言是英文
-  > - `lang=zh-CN` ，HTMl 文档语言是中文
+  > - `lang=en` , HTML document language is English
+  > - `lang=zh-CN` , HTMl document language is Chinese
 
-  - 帮助翻译工具确定要是使用的翻译规则
-  - 帮助语音合成工具确定使用的发音
+  - Help translation tools determine the translation rules to use
+  - Help speech synthesis tools determine the pronunciation to use
 
-### head 元素
+### head element
 
-head 元素里面的内容是一些**元数据**（描述数据的数据），一般用于描述网页的各种信息，比如**字符编码、网页标题、网页图标** 等
+> The content inside the head element is some **meta data** (data that describes data), generally used to describe various information about the web page, such as **character encoding, web page title, web page icon** etc.
 
-#### title 元素
+#### title element
 
-> 网页标题，显示在浏览器标签页上
+> Web page title, displayed in the browser tab
 
 ```html
 <head>
@@ -70,10 +70,10 @@ head 元素里面的内容是一些**元数据**（描述数据的数据），�
 </head>
 ```
 
-#### meta 元素
+#### meta element
 
-- 可以用于设置网页的**字符编码**，让浏览器更精准地显示每一个文字，不设置或错误可能会导致文字乱码
-- 一般都使用 `UTF-8` 编码，包含世界上所有文字
+- Can be used to set the **character encoding** of the web page, so that the browser can display each character more accurately, not setting or incorrect may cause garbled text
+- Generally use `UTF-8` encoding, including all characters in the world
 
 ```html
 <head>
@@ -81,7 +81,7 @@ head 元素里面的内容是一些**元数据**（描述数据的数据），�
 </head>
 ```
 
-head 内的一些常用元素
+> Some common elements inside the head
 
 - meta
 - title
@@ -102,24 +102,24 @@ head 内的一些常用元素
     }
   </style>
   <script src="./index.js"></script>
-  <noscript>你的浏览器不支持 JavaScript </noscript>
+  <noscript>Your browser does not support JavaScript </noscript>
   <base href="https://blog.aiwan.run" target="_self" />
 </head>
 ```
 
-### body 元素
+### body element
 
-body 元素里面的内容是具体显示在浏览器的内容和结构
+> The content inside the body element is the content that is displayed in the browser
 
 #### h
 
-表示标题，有h1~h6共六级标题
+> Title, there are six levels of titles from h1 to h6
 
 ```html
 <body>
-  <h1>一级标题</h1>
-  <h2>二级标题</h2>
-  <h3>三级标题</h3>
+  <h1>First level title</h1>
+  <h2>Second level title</h2>
+  <h3>Third level title</h3>
 </body>
 ```
 
@@ -127,7 +127,7 @@ body 元素里面的内容是具体显示在浏览器的内容和结构
 
 > paragreph
 
-表示文章中的一个段落
+> A paragraph in an article
 
 ```html
 <body>
@@ -137,7 +137,7 @@ body 元素里面的内容是具体显示在浏览器的内容和结构
 
 #### strong
 
-用于强调某些文本，加粗的效果
+> Used to emphasize some text, the effect of bolding
 
 ```html
 <body>
@@ -147,7 +147,7 @@ body 元素里面的内容是具体显示在浏览器的内容和结构
 
 #### code
 
-用于显示程序代码
+> Used to display program code
 
 ```html
 <body>
@@ -157,23 +157,23 @@ body 元素里面的内容是具体显示在浏览器的内容和结构
 
 #### br
 
-单标签，强制换行
+> Single tag, force line break
 
 #### hr
 
-单标签，分割线
+> Single tag, line break
 
 #### span
 
-默认情况下，跟普通文本几乎没差别，其用于区分特殊文本和普通文本，比如用来显示一些关键字
+> By default, it is almost no different from normal text, it is used to distinguish special text and normal text, such as displaying some keywords
 
 #### div
 
-一般作为其他元素的父容器，把其他元素包住，代表一个整体，用于把网页分割为多个独立的部分
+Generally used as a parent container for other elements, wrapping other elements, representing a whole, used to divide the webpage into multiple independent parts
 
 #### img
 
-img 元素专门用来显示**图片**，img 是 **image** 的缩写
+> img element is used to display **images**, img is the abbreviation of **image**
 
 ```html
 <body>
@@ -181,20 +181,19 @@ img 元素专门用来显示**图片**，img 是 **image** 的缩写
 </body>
 ```
 
-- src 属性 **source** 的缩写，用来设置图片的 URL ，可以是**本地图片**和**网图**
+- src attribute is short for **source**, used to set the image URL, can be **local images** or **web images**
+- Absolute path
+- Relative path
 
-  - 绝对路径
-  - 相对路径
+  > . represents the current path, .. represents the previous level path.
 
-  > . 代表当前路径，.. 代表上一级路径
+- alt is a necessary attribute of the img element, indicating that when the image is not loaded, the text is displayed as a substitute
 
-- alt 是 img 元素的必要属性，表示没有加载图片是**替代**显示文本
-
-- width (height) 如果只设置了 width (height) ，浏览器会自动根据图片的宽高计算出 height (width)
+- width (height) if only width (height) is set, the browser will automatically calculate the height (width) based on the image width and height
 
 #### a
 
-定义超链接，到其他网页、文件、同一页面内的位置、电子邮件地址或任何其他 URL 的超链接
+> Hyperlink, to other web pages, files, positions within the same page, email addresses or any other URL
 
 ```html
 <body>
@@ -202,15 +201,15 @@ img 元素专门用来显示**图片**，img 是 **image** 的缩写
 </body>
 ```
 
-- href （hypertext reference） 指定要打开的 URL，
-- target 在哪里打开 URL
-  - \_self（默认值）：自己
-  - \_blank : 在新的浏览器空白页打开
-  - \_parent : 在父级打开，要和 iframe 一起使用
-  - \_top : 在顶层打开，要和 iframe 一起使用
-  - 某个 frame 的 name 值，在某个 frame 中打开
+- href (hypertext reference) specifies the URL to open,
+- target where to open the URL
+  - \_self (default value): self
+  - \_blank : open in a new browser blank page
+  - \_parent : open in the parent level, must be used with iframe
+  - \_top : open in the top level, must be used with iframe
+  - The name value of a frame, open in a frame
 
-> 锚点链接，实现跳转的当前文档的具体位置
+> Anchor link, to jump to the specific position of the current document
 
 ```html
 <!DOCTYPE html>
@@ -227,25 +226,25 @@ img 元素专门用来显示**图片**，img 是 **image** 的缩写
       nesciunt, officia iusto!
     </p>
 
-    <a href="#one">到 p 元素</a>
+    <a href="#one">To p element</a>
   </body>
 </html>
 ```
 
-> 伪链接
+> Pseudo link, we hope that when we click, the URL is not opened, but some other things are triggered
 
-有时候我们希望点击时不打开 URL，而是触发一些其他的东西
+> Sometimes we hope that when we click, the URL is not opened, but some other things are triggered
 
 ```html
 <body>
-  <a href="javascript: alert('Hello world!')">弹窗</a>
-  <a href="" onclick="alert('Hello world!')">弹窗</a>
+  <a href="javascript: alert('Hello world!')">Alert</a>
+  <a href="" onclick="alert('Hello world!')">Alert</a>
 </body>
 ```
 
 #### iframe
 
-利用 iframe 元素可以实现，在一个 HTMl 文档中嵌入其他 HTML 文档
+> Using the iframe element can achieve, embedding other HTML documents in an HTMl document
 
 ```html
 <body>
@@ -258,11 +257,11 @@ img 元素专门用来显示**图片**，img 是 **image** 的缩写
 </body>
 ```
 
-- frameborder 表示是否显示边框 `1` 显示 `0` 不显示
+- frameborder indicates whether to display the border `1` display `0` do not display
 
 #### base
 
-base 元素写在 head 元素中，指定用于一个文档中包含的所有相对 URL 的根 URL。一份中只能有一个 \<base> 元素。
+> The base element is written in the head element, specifying the root URL for all relative URLs contained in a document. A document can only have one \<base> element.
 
 ```html
 <!DOCTYPE html>
@@ -282,24 +281,24 @@ base 元素写在 head 元素中，指定用于一个文档中包含的所有相
 </html>
 ```
 
-## 一些补充
+## Some supplements
 
-### h 元素和 SEO
+### h element and SEO
 
-h 元素有助于网站的 SEO （Search Engine Optimization）优化，促进关键词排名
+> h element helps to optimize the SEO (Search Engine Optimization) of the website, promoting keyword rankings
 
-- 建议一个网页最多有**一个**h1元素
-- h 元素的可以表示一些关键词的权重
+- It is recommended that a web page has **one** h1 element
+- h element can represent the weight of some keywords
 
-### 字符实体（Character Entity）
+### Character Entity
 
-因为 HTMl 中的一些字符有特殊用途（预留字符）如 `<` 、`>` ，当我们想要显示这些字符时就需要使用字符实体
+> Because some characters in HTMl have special purposes (reserved characters) such as `<` , `>`, when we want to display these characters, we need to use character entities
 
 https://www.w3school.com.cn/html/html_entities.asp
 
-> 实体名称对大小写敏感
+> Entity name is case-sensitive
 
-| 显示结果 | 描述              | 实体名称           | 实体编号 |
+| Display result | Description           | Entity name          | Entity number |
 | :------- | :---------------- | :----------------- | :------- |
 |          | 空格              | \&nbsp;            | \&#160;  |
 | \<       | 小于号            | \&lt;              | \&#60;   |
@@ -318,22 +317,22 @@ https://www.w3school.com.cn/html/html_entities.asp
 | ×        | 乘号              | \&times;           | \&#215;  |
 | ÷        | 除号              | \&divide;          | \&#247;  |
 
-### 常用的图片格式
+### Common image formats
 
-- png 静态图片，支持透明
-- jpg 静态图片，不支持透明
-- gif 动态图片、静态图片，支持透明
+- png static image, supports transparency
+- jpg static image, does not support transparency
+- gif dynamic image, static image, supports transparency
 
-### 像素
+### Pixel
 
-像素 px （pixel）图像显示的最小单位，每个像素显示一种颜色
+> Pixel px (pixel) is the smallest unit of image display, each pixel displays one color
 
-### URl 格式
+### URl format
 
 ```
 protocol://hostname[:port]/path/[;parameters][?query]#fragment
 ```
 
-### 标签语义化
+### Semantic tags
 
-在 HTML 我们可以使别的标签来实现另一个标签的功能，但我们应尽量使用标签本来的意思，便于开发和维护等等
+> In HTML, we can use other tags to implement the functionality of another tag, but we should尽量使用标签本来的意思,便于开发和维护等等

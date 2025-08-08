@@ -1,6 +1,6 @@
 ---
-title: Next.js 中添加 Open Graph
-description: 学习如何在 Next.js 项目中添加 Open Graph 图片，包括静态生成 OG 图片、使用 satori 库、配置路由处理器和 SEO 优化等完整实现方案
+title: Add Open Graph in Next.js
+description: Learn how to add Open Graph images in a Next.js project, including static generation of OG images, using the satori library, configuring route handlers, and SEO optimization.
 date: 2025-02-11T10:06:32.792Z
 duration: 8min
 keywords:
@@ -9,20 +9,20 @@ keywords:
   - OG
   - SEO
   - satori
-  - 静态生成
-  - 静态网站
+  - Static Generation
+  - Static Site
 ---
 
-## 添加 OG 图片
+## Add OG Image
 
-[官方文档](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) 推荐的方式是
+[Official documentation](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) recommends the following methods:
 
-- 在相关的路由下使用 `opengraph-image.jpg` 作为 OG 图片
-- 使用 `opengraph-image.js` 动态生成
+- Use `opengraph-image.jpg` as OG image in the related routes
+- Use `opengraph-image.js` to dynamically generate
 
-但是这两个中方式都不符合我的需求，我需要让整个网站尽量是静态的，并且这些 OG 图片可以在 build 的时候通过一些配置生成。
+But neither of these methods meets my needs, I need the entire website to be as static as possible, and these OG images can be generated through some configurations during the build.
 
-目前想到的方案是使用 Next.js 的 [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers) 来在 build 的时候生成 OG 图片。
+The current idea is to use Next.js's [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers) to generate OG images during the build.
 
 ```ts
 import { ImageResponse } from "next/og";
@@ -30,7 +30,7 @@ import { ImageResponse } from "next/og";
 export async function generateStaticParams() {
   const { posts } = await getPosts();
 
-  // 获取 posts 的相关信息
+  // Get the related information of posts
   return posts.map((post) => ({
     slug: `${post.pageName}.png`,
   }));
@@ -42,7 +42,7 @@ export async function GET(
 ) {
   const { slug } = await params;
 
-  // 返回对应的 png 图片
+  // Return the corresponding png image
   return new ImageResponse(
     <div>
       <h1>{slug.slice(0, -4)}</h1>
@@ -51,28 +51,28 @@ export async function GET(
 }
 ```
 
-使用 `generateStaticParams` 获取生成 OG 图片的相关信息，**注意这里返回的路径添加了 `.png` 后缀，避免静态站点无法区分响应类型。**
+> Note that the path returned here adds the `.png` suffix to avoid the static site from being unable to distinguish the response type.
 
-相关 PR
+Use `generateStaticParams` to get the related information for generating OG images.
 
 - https://github.com/Debbl/aiwan.run/pull/14
 
-[satori](https://github.com/vercel/satori) 是一个用于生成 OG 图片的库，可以生成 SVG 和 PNG 图片。
+[satori](https://github.com/vercel/satori) is a library for generating OG images, which can generate SVG and PNG images.
 
 - https://og-playground.vercel.app/
 
-vercel 的 OG 图片生成文档
+vercel's OG image generation documentation
 
 - https://vercel.com/docs/functions/og-image-generation
 
-orcascan 的 OG 图片验证工具
+orcascan's OG image verification tool
 
 - https://orcascan.com/tools/open-graph-validator
 
-简要信息
+Brief information
 
-- 静态生成 OG 图片
-  - 使用 `[og/[slug]/route.tsx]` 更改 slug 为 `[post.pageName].png`
-  - `generateStaticParams` 生成 posts 的 OG 图片
-  - `[remark-mdx-slug]` 获取 `slug` [remark-mdx-slug.ts](https://github.com/Debbl/aiwan.run/pull/14/files#diff-9016d48db42b7fcedec38c84d3245de98d46f3a54ed336a615fc0a940f258935)
-  - `remark-mdx-formatter` 配置 `openGraph` 使用 `[/og/${post.pageName}.png]` 作为 OG 图片, 具体可以查看 [next.config.ts](https://github.com/Debbl/aiwan.run/pull/14/files#diff-e3f38f2f0e7ba92f0dd56c086ec5de704229d58d5371e8cc57e43961757d8c7b), [remark-mdx-formatter.ts](https://github.com/Debbl/aiwan.run/pull/14/files#diff-78208911507da68d782a62255fce95e8097c1541bae857b07b59389dd8cbc25b) 文件
+- Static generate OG Image
+  - Use `[og/[slug]/route.tsx]` to change the slug to `[post.pageName].png`
+  - `generateStaticParams` to generate OG images for posts
+  - `[remark-mdx-slug]` to get the `slug` [remark-mdx-slug.ts](https://github.com/Debbl/aiwan.run/pull/14/files#diff-9016d48db42b7fcedec38c84d3245de98d46f3a54ed336a615fc0a940f258935)
+  - `remark-mdx-formatter` to configure `openGraph` to use `[/og/${post.pageName}.png]` as the OG image, see [next.config.ts](https://github.com/Debbl/aiwan.run/pull/14/files#diff-e3f38f2f0e7ba92f0dd56c086ec5de704229d58d5371e8cc57e43961757d8c7b), [remark-mdx-formatter.ts](https://github.com/Debbl/aiwan.run/pull/14/files#diff-78208911507da68d782a62255fce95e8097c1541bae857b07b59389dd8cbc25b) file
