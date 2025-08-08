@@ -91,7 +91,8 @@
     "turbo": "^2.5.5",
     "typescript": "^5.9.2",
     "unist-util-visit": "^5.0.0",
-    "vfile": "^6.0.3"
+    "vfile": "^6.0.3",
+    "wrangler": "^4.28.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
