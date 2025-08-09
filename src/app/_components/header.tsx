@@ -9,6 +9,7 @@ const nav: {
   'zhUrl'?: string
   'name': string
   'zhName'?: string
+  'target'?: string
   'data-umami-event': string
   'icon'?: React.ReactNode
 }[] = [
@@ -21,11 +22,13 @@ const nav: {
   {
     'url': '/tools',
     'name': 'Tools',
+    'target': '_blank',
     'data-umami-event': 'click-tools-link',
   },
   {
     'url': '/slides',
     'name': 'Slides',
+    'target': '_blank',
     'data-umami-event': 'click-slides-link',
   },
   {
@@ -40,6 +43,7 @@ const nav: {
     'url': '/feed.xml',
     'zhUrl': '/zh/feed.xml',
     'name': 'RSS',
+    'target': '_blank',
     'data-umami-event': 'click-rss-link',
     'icon': <Icon.LuRss className='size-5' />,
   },
@@ -77,6 +81,7 @@ export function Header({ lang = 'en' }: { lang?: 'en' | 'zh' }) {
                 key={n.name}
                 href={lang === 'zh' ? n.zhUrl || n.url : n.url}
                 prefetch={['/posts'].includes(n.url)}
+                target={n.target}
               >
                 {n.icon || (lang === 'zh' ? n.zhName || n.name : n.name)}
 
