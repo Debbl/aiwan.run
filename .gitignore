@@ -45,3 +45,6 @@ public/swe-worker*
 
 # fumadocs
 .source
+
+# wrangler
+.wrangler

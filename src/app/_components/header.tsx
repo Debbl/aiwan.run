@@ -12,6 +12,7 @@ export function Header() {
     'data-umami-event': string
     'icon'?: React.ReactNode
     'noLocale'?: boolean
+    'target'?: string
   }[] = [
     {
       'url': '/posts',
@@ -22,11 +23,13 @@ export function Header() {
       'url': '/tools',
       'name': t`Tools`,
       'noLocale': true,
+      'target': '_blank',
       'data-umami-event': 'click-tools-link',
     },
     {
       'url': '/slides',
       'name': t`Slides`,
+      'target': '_blank',
       'data-umami-event': 'click-slides-link',
     },
     {
@@ -40,6 +43,7 @@ export function Header() {
       'url': '/feed.xml',
       'noLocale': true,
       'name': t`RSS`,
+      'target': '_blank',
       'data-umami-event': 'click-rss-link',
       'icon': <Icon.LuRss className='size-5' />,
     },
@@ -76,6 +80,7 @@ export function Header() {
                 href={n.url}
                 noLocale={n.noLocale}
                 prefetch={['/posts'].includes(n.url)}
+                target={n.target}
               >
                 {n.icon || n.name}
 

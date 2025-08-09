@@ -1,0 +1,10 @@
+{
+  "name": "aiwan-run",
+  "main": "worker.ts",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+    "binding": "ASSETS"
+  }
+}

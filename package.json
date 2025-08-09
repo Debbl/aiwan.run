@@ -70,6 +70,7 @@
     "@workspace/mdx-plugins": "workspace:*",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
     "github-slugger": "^2.0.0",
     "globby": "^14.1.0",
     "gray-matter": "^4.0.3",
@@ -96,7 +97,8 @@
     "turbo": "^2.5.5",
     "typescript": "^5.9.2",
     "unist-util-visit": "^5.0.0",
-    "vfile": "^6.0.3"
+    "vfile": "^6.0.3",
+    "wrangler": "^4.28.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

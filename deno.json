@@ -1,0 +1,13 @@
+{
+  "nodeModulesDir": "auto",
+  "unstable": ["unsafe-proto", "sloppy-imports"],
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true,
+    "jsx": "preserve"
+  },
+  "workspace": ["packages/*"],
+  "tasks": {
+    "build": "deno run -A --unstable-detect-cjs npm:turbo@latest build && deno run -A --unstable-detect-cjs npm:next@latest build"
+  }
+}
