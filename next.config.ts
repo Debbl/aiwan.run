@@ -24,9 +24,19 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    swcPlugins: [['@lingui/swc-plugin', {}]],
+  },
   serverExternalPackages: ['typescript', 'twoslash'],
   transpilePackages: ['@workspace/mdx-plugins'],
   webpack: (config) => {
+    config.module.rules.push({
+      test: /\.po$/,
+      use: {
+        loader: '@lingui/loader',
+      },
+    })
+
     config.plugins.push(
       AutoImport({
         include: [
@@ -49,6 +59,10 @@ const nextConfig: NextConfig = {
             from: '~/components/icons/index.ts',
             imports: ['IconType', 'IconBaseProps'],
             type: true,
+          },
+          {
+            from: '~/components/link.tsx',
+            imports: ['Link'],
           },
         ],
         dts: true,

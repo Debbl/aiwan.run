@@ -1,6 +1,6 @@
 ---
-title: Mac 初始化设置
-description: 完整的 Mac 开发环境初始化指南，包括 Homebrew 安装、Oh My Zsh 配置、Powerlevel10k 主题设置、VSCode 配置、Git 和 SSH 设置等
+title: Mac Initialization Settings
+description: Comprehensive guide to setting up a Mac development environment, including Homebrew installation, Oh My Zsh configuration, Powerlevel10k theme settings, VSCode configuration, Git and SSH settings, and more.
 date: 2025-02-27T01:54:16.399Z
 duration: 10min
 keywords:
@@ -11,14 +11,14 @@ keywords:
   - VSCode
   - Git
   - SSH
-  - 代理
-  - 鼠标
-  - 键盘
+  - Proxy
+  - Mouse
+  - Keyboard
 ---
 
-## 安装 HomeBrew
+## Install HomeBrew
 
-> 确保有良好的网络环境
+> Ensure a good network environment
 
 - https://brew.sh/
 
@@ -26,71 +26,71 @@ keywords:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-这里安装完成后会需要执行几个命令设置环境变量，由对应的提示
+> After installation, you will need to execute several commands to set environment variables, as prompted
 
-## 安装 Oh My Zsh
+## Install Oh My Zsh
 
 - https://github.com/ohmyzsh/ohmyzsh#manual-installation
 
-克隆仓库
+Clone the repository
 
 ```sh
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 ```
 
-复制模板文件
+Copy the template file
 
 ```sh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
-重新加载配置
+Reload the configuration
 
 ```sh
 source ~/.zshrc
 ```
 
-## 安装 Powerlevel10k
+## Install Powerlevel10k
 
 - https://github.com/romkatv/powerlevel10k#oh-my-zsh
 
-克隆仓库
+Clone the repository
 
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
 
-在 `.zshrc` 中添加
+Add to `.zshrc`
 
 ```sh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
-重新加载配置
+Reload the configuration
 
 ```sh
 source ~/.zshrc
 ```
 
-安装支持图标的字体文件
+Install the font file that supports icons
 
 - https://github.com/romkatv/powerlevel10k#manual-font-installation
 
-终端设置使用字体
+Terminal settings use font
 
 ![](./images/terminal-set-font.png)
 
-自定义配置
+Custom configuration
 
 ```sh
 p10k configure
 ```
 
-配置显示的数据
+Configure the data to be displayed
 
 - https://github.com/romkatv/powerlevel10k#extremely-customizable
 
-配置显示 node 版本号和 package.json 版本
+Configure the node version and package.json version to be displayed
 
 ```sh
 vim ~/.p10k.zsh
@@ -100,7 +100,7 @@ vim ~/.p10k.zsh
 
 ![](./images/zsh-termainal.png)
 
-安装 zsh 插件
+Install zsh plugins
 
 zsh-autosuggestions
 
@@ -118,7 +118,7 @@ zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-在 `.zshrc` 中添加
+Add to `.zshrc`
 
 ```sh title=".zshrc"
 plugins=(
@@ -130,51 +130,51 @@ plugins=(
 )
 ```
 
-完整文件 [.zshrc](https://github.com/Debbl/dotfiles/blob/main/_.zshrc), 文件名是 `.zshrc`
+Complete file [.zshrc](https://github.com/Debbl/dotfiles/blob/main/_.zshrc), the file name is `.zshrc`
 
-## Git 设置
+## Git settings
 
-生成 ssh 密钥
+Generate ssh keys
 
 ```sh
 ssh-keygen -m PEM -t ed25519 -C "your.email@example.com"
 ```
 
-查看 ssh 公钥
+View ssh public key
 
 ```sh
 cat ~/.ssh/id_ed25519.pub
 ```
 
-全局用户名邮箱
+Global user name email
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 ```
 
-当前仓库用户名邮箱
+Current repository user name email
 
 ```sh
 git config --local user.name "Your Name"
 git config --local user.email "email@example.com"
 ```
 
-配置 `quotepath` 选项
+Configure `quotepath` option
 
-避免中文路径乱码
+> Avoid Chinese path乱码
 
 ```sh
 git config --global core.quotepath false
 ```
 
-不忽略大小写
+> Do not ignore case
 
 ```sh
 git config --global core.ignorecase false
 ```
 
-完整的配置 [.gitconfig](https://github.com/Debbl/dotfiles/blob/main/_.gitconfig)
+Complete configuration [.gitconfig](https://github.com/Debbl/dotfiles/blob/main/_.gitconfig)
 
 ```plain title=".gitconfig"
 [user]
@@ -186,9 +186,9 @@ git config --global core.ignorecase false
   ignorecase = false
 ```
 
-## SSH 配置 Git 多用户
+## SSH configuration for Git multi-user
 
-生成多个 ssh 密钥
+Generate multiple ssh keys
 
 ```sh
 ssh-keygen -m PEM -t ed25519 -C "your.email@example.com" -f ~/.ssh/id_ed25519
@@ -198,13 +198,13 @@ ssh-keygen -m PEM -t ed25519 -C "your.email@example.com" -f ~/.ssh/id_ed25519
 ssh-keygen -m PEM -t ed25519 -C "your.email@example.com" -f ~/.ssh/id_ed25519_gitlab
 ```
 
-配置 ssh 配置文件
+Configure ssh configuration file
 
 ```sh
 vim ~/.ssh/config
 ```
 
-完整的配置 [.ssh/config](https://github.com/Debbl/dotfiles/blob/main/_.config)
+Complete configuration [.ssh/config](https://github.com/Debbl/dotfiles/blob/main/_.config)
 
 ```ssh-config title=".ssh/config"
 # Personal account, - the default config
@@ -221,33 +221,33 @@ Host gitlab.com
   IdentityFile ~/.ssh/id_ed25519_gitlab
 ```
 
-`IdentityFile` 为当前的 Host 配置 ssh 密钥
+> `IdentityFile` is the ssh key configured for the current Host
 
-`ProxyCommand` 为 GitHub 仓库配置代理，使用 `nc` 命令，`127.0.0.1:7890` 是本机代理端口
+> `ProxyCommand` is the proxy configured for the GitHub repository, using the `nc` command, `127.0.0.1:7890` is the local proxy port
 
-## Mac 设置
+## Mac settings
 
-仅在台前调度时，点击墙纸显示桌面
+> Only when the desktop wallpaper is displayed when the front is scheduled
 
 ![](./images/mac-setting.png)
 
-调整鼠标指针大小
+Adjust the size of the mouse pointer
 
 ![](./images/mac-settting-cursor.png)
 
-关闭自动首字母大写
+Disable automatic capitalization
 
 ![](./images/mac-setting-auto-capitalize-words.png)
 
-## VSCode 设置
+## VSCode settings
 
 - https://github.com/Debbl/vscode-settings
 
-vim 设置键盘重复
+vim settings keyboard repeat
 
 ![](./images/mac-setting-keyboard.png)
 
-全局打开键盘长按连续输入
+Global open keyboard long press continuous input
 
 ```sh
 defaults write -g ApplePressAndHoldEnabled -bool false

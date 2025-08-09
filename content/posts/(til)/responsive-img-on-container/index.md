@@ -1,18 +1,16 @@
 ---
-title: 容器内响应式图片
-description: 实现容器内响应式图片的 JavaScript 解决方案，根据容器宽高比自动调整图片尺寸以保持最佳显示效果
+title: Responsive image on container
+description: Implement a JavaScript solution for responsive images on containers, automatically adjusting image dimensions based on container aspect ratios to maintain optimal display
 date: 2024-08-20T12:43:02.068Z
 duration: 5min
 keywords:
-  - 响应式图片
-  - 容器
-  - 图片
-  - 宽高比
-  - 响应式
-  - 响应式图片
+  - responsive image
+  - container
+  - image
+  - aspect ratio
 ---
 
-# 容器内响应式图片
+# Responsive image on container
 
 ```html
 <style>
@@ -44,4 +42,4 @@ keywords:
 </script>
 ```
 
-在图片加载完成后，获取父容器的宽高比，如果图片的原始宽度大于其原始高度乘以容器的宽高比，则设置图片的宽度为 100%否则设置图片的高度为 100%。
+After the image is loaded, get the aspect ratio of the parent container. If the original width of the image is greater than the original height multiplied by the aspect ratio of the container, set the width of the image to 100%, otherwise set the height of the image to 100%.

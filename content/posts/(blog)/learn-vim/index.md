@@ -1,54 +1,53 @@
 ---
-title: Vim 学习
-description: 从零开始学习 Vim 编辑器，包括各种模式切换、文本编辑命令、移动操作、搜索替换等核心功能，帮助你掌握高效的文本编辑技能
+title: Learn Vim
+description: Learn Vim editor, including various mode switching, text editing commands, movement operations, search and replace, etc.
 date: 2021-08-14T08:25:51.000Z
 duration: 10min
 keywords:
   - Vim
-  - 学习
-  - 编辑器
-  - 文本编辑
+  - Editor
+  - Text Editing
   - VSCode
 ---
 
-## 模式
+## Mode
 
-> VIM 中有多种模式：基本模式和派生模式
+> VIM has multiple modes: basic mode and derived mode
 
-### 基本模式
+### Basic mode
 
-#### Normal mode 普通模式、默认模式、命令模式
+#### Normal mode
 
-默认模式，首次用 VIM 打开文件进入该模式，在其他模式中可以使用 `ESC` 进入该模式。也叫命令模式
+> Default mode, the first time you open a file with VIM, you enter this mode. Also called command mode
 
-> 使用 `Ctrl + g` 可显示当前文件名和一些其他信息
+> Use `Ctrl + g` to display the current file name and some other information
 
-#### Visual mode 可视模式
+#### Visual mode
 
-在 Normal mode 下，输入 `v` , `V` 或者 `Ctrl + v` 进入可视化模式，该模式可以选择一块编辑区域，然后对选中的文件内容执行 `插入`、`删除`、`替换`、`改变大小写` 等操作。
+> In Normal mode, enter `v` , `V` or `Ctrl + v` to enter visual mode. This mode can select an editing area, and then perform `insert` , `delete` , `replace` , `change case` etc. operations on the selected file content.
 
-- 字符选择模式：选中光标经过的所有**字符**，普通模式下按 `v` 进入
+- Character selection mode: select all **characters** passed by the cursor, enter `v` in normal mode
 
-- 行选择模式：选中光标经过的所有**行**，普通模式下按 `V` 进入
-- 块选择模式：选中一整个矩形框表示的所有文本，普通模式下按 `Ctrl + v` 进入
+- Line selection mode: select all **lines** passed by the cursor, enter `V` in normal mode
+- Block selection mode: select all text in a rectangular box, enter `Ctrl + v` in normal mode
 
-> 可以使用 `o` 在选中区域的**左上角**和**右下角**切换
+> Use `o` to switch between the **top left** and **bottom right** of the selected area
 
-#### Select mode 选择模式
+#### Select mode
 
-- 可以用鼠标或光标键高亮选择文本
+- Use mouse or cursor key to highlight text
 
-- 任何输入都会替换选择的高亮文本
+- Any input will replace the highlighted text
 
-- 并进入插入模式
+- Enter insert mode
 
-参考 https://www.bilibili.com/read/cv12497070
+> https://www.bilibili.com/read/cv12497070
 
-#### Insert mode 插入模式、编辑模式
+#### Insert mode
 
-可以将你的输入插入当前文档
+> You can insert your input into the current document
 
-> 从**普通模式**进入**插入模式**
+> Enter **insert mode** from **normal mode**
 
 - `i` 光标的**前**一个字符处
 - `I` 光标当前行的**行首**
@@ -57,103 +56,101 @@ keywords:
 - `o` 光标当前行的**下一行**
 - `O` 光标当前行的**上一行**
 
-#### Command-Line mode 命令行模式
+#### Command-Line mode
 
-**普通模式**输入 `:` 进入**命令行模式**
+> Enter **command-line mode** from **normal mode**
 
-> 一些常用的命令
+> Some commonly used commands
 
-- `:set number` 显示行号，简写 `:se[t] nu[mber]`
-- `:set nonumber` 关闭显示行号，简写 `:se[t] nonu[mber]`
-- `:set relativenumber` 显示相对行号，简写 `se[t] rnu` ，这时同时设置 `:se nu` 会，当前行显示绝对行号，上下部分显示相对行号
-- `:w` 保存当前编辑的文件
-- `:wq` 保存当前编辑的文件并退出
-- `:w!` 强制将当前文件保存
-- `:q` 退出vim
-- `:q!` 强制退出
-- `:write [fileName]` 将当前文件另存为 `fileName` 并打开
-- `:saveas [fileName]` 将当前文件另存为 `fileName`，简写 `:sav [fileName]`
-- `/` 查询，`n` 查找上一个， `N` 查找上一个
+- `:set number` display line number, short for `:se[t] nu[mber]`
+- `:set nonumber` close display line number, short for `:se[t] nonu[mber]`
+- `:set relativenumber` display relative line number, short for `se[t] rnu` , this will set `:se nu` at the same time, the current line will display the absolute line number, and the upper and lower parts will display the relative line number
+- `:w` save the current edited file
+- `:wq` save the current edited file and exit
+- `:w!` force to save the current file
+- `:q` exit vim
+- `:q!` force exit
+- `:write [fileName]` save the current file as `fileName` and open
+- `:saveas [fileName]` save the current file as `fileName`, short for `:sav [fileName]`
+- `/` search, `n` find the previous, `N` find the previous
 
-参考
+reference
 
 https://www.bilibili.com/read/cv12686699
 
-#### Ex mode 多行命令执行模式
+#### Ex mode
 
-> Ex 指的是 Execute
+> Ex means Execute
 
-在**普通模式**使用 `gQ` 进入，使用 `:visual` 退出
+> Use `gQ` in **normal mode** to enter, use `:visual` to exit
 
-参考 https://www.bilibili.com/read/cv12497070
+> https://www.bilibili.com/read/cv12497070
 
-### Vim 文本编辑命令
+### Vim text editing commands
 
-#### 插入
+#### Insert
 
-> 从**普通模式**进入**插入模式**
+> Enter **insert mode** from **normal mode**
 
-- `i` 光标的**前**一个字符处
-- `I` 光标当前行的**行首**
-- `a` 光标的**后**一个字符处
-- `A` 光标当前行的**行尾**
-- `o` 光标当前行的**下一行**
-- `O` 光标当前行的**上一行**
+- `i` the **previous** character of the cursor
+- `I` the **beginning** of the current line
+- `a` the **next** character of the cursor
+- `A` the **end** of the current line
+- `o` the **next line** below the cursor
+- `O` the **previous line** above the cursor
 
-#### 删除
+#### Delete
 
-> 在普通模式下
+> In **normal mode**
 
-- `x` 删除光标位置的**一个字符**
-- `dd` 删除光标所在**行**
-- `d0` 删除光标位置到当前的**行首**
-- `d$` 删除光标位置到当前的**行尾**
-- `db` 、`dB` 删除从光标位置到当前**单词开始**部分
-- `dw` 、`dW ` 删除从光标位置当当前**单词结束**部分
-- `cb` 、`cB` 删除从光标位置到当前单词开始部分，并进入**插入模式**
+- `x` delete the **one** character at the cursor position
+- `dd` delete the **line** where the cursor is located
+- `d0` delete the **beginning** of the current line
+- `d$` delete the **end** of the current line
+- `db` 、`dB` delete the **beginning** of the current word
+- `dw` 、`dW ` delete the **end** of the current word
+- `cb` 、`cB` delete the **beginning** of the current word, and enter **insert mode**
+- `cw` 、`cW` delete the **end** of the current word, and enter **insert mode**
 
-- `cw` 、`cW` 删除从光标位置到当前**单词结束**部分，并进入**插入模式**
+#### Copy, paste
 
-#### 复制、粘贴
+> In **normal mode**
 
-> 在普通模式下
+- `yw` copy the content from the cursor position to the **end** of the current word
+- `yy` copy the current **line**
 
-- `yw` 复制从光标位置到当前**单词结束**部分的内容
-- `yy` 复制当前**行**
+- `p` copy the copied text content to the **next** character of the cursor
+- `P` copy the copied text content to the **previous** character of the cursor
 
-- `p` 将复制的文本内容复制到光标所在的字符**后**
-- `P`将复制的文本内容复制到光标所在的字符**前**
+#### Replace
 
-#### 替换
+- `r` replace the **one** character at the cursor position
+- `R` replace until the `ESC` key is pressed
 
-- `r` 替换光标所在字符**一次**
-- `R` 一直替换，直到按下 `ESC` 键
+#### Undo
 
-#### 撤销
+- `u` undo
+- `U` undo the content
 
-- `u` 撤销
-- `U` 撤销撤销的内容
+#### Save
 
-#### 保存
+- `:w` save the current edited file
+- `:wq` save the current edited file and exit
+- `:w!` force to save the current file
 
-- `:w` 保存当前编辑的文件
-- `:wq` 保存当前编辑的文件并退出
-- `:w!` 强制将当前文件保存
+#### Save as
 
-#### 另存为
+- `:write [fileName]` save the current file as `fileName` and open
+- `:saveas [fileName]` save the current file as `fileName`, short for `:sav [fileName]`
 
-- `:write [fileName]` 将当前文件另存为 `fileName` 并打开
-- `:saveas [fileName]` 将当前文件另存为 `fileName`，简写 `:sav [fileName]`
+### Vim position
 
-### Vim 中的位置
+- In **normal mode**, you can use `h` 、`j` 、`k` 、`l` to move **left** , **down** , **up** , **right**
 
-- 在普通模式下可以使用 `h` 、`j` 、`k` 、`l` ，移动**左、下、上、右**
+- `gg` to the **beginning** of the current line
+- `G` to the **end** of the current line
 
-- `gg` 到当前文本的**行首**
-- `G` 到当前文本的**行尾**
+### Reference
 
-### 参考
-
-http://vimdoc.sourceforge.net/
-
-https://www.runoob.com/linux/linux-vim.html
+- http://vimdoc.sourceforge.net/
+- https://www.runoob.com/linux/linux-vim.html

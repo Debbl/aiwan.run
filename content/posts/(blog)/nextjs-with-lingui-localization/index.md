@@ -1,36 +1,36 @@
 ---
-title: Next.js 使用 lingui 进行国际化
-description: 完整指南：在 Next.js 项目中集成 lingui 国际化解决方案，包括 SWC 插件配置、PO 文件管理、多语言路由和翻译工作流程
+title: Next.js with lingui for localization
+description: "Complete guide: Integrate lingui localization solution in Next.js project, including SWC plugin configuration, PO file management, multi-language routing, and translation workflow."
 date: 2025-01-11T15:29:07.296Z
 duration: 10min
 keywords:
   - Next.js
   - lingui
-  - 国际化
+  - Localization
   - macro
   - babel
 ---
 
-相关文章
+Related articles
 
 - https://dodov.dev/blog/how-to-set-up-simple-nextjs-localization
 - https://lingui.dev/tutorials/react-rsc
 
-实现
+Implementation
 
 - https://github.com/Debbl/tools.aiwan.run/pull/28
 - https://github.com/lingui/js-lingui/tree/main/examples/nextjs-swc
 
 ![lingui-workflow](./images/lingui-workflow.png)
 
-## 安装依赖
+## Install dependencies
 
 ```sh
 pnpm add @lingui/core @lingui/react
 pnpm add @lingui/cli @lingui/loader @lingui/swc-plugin -D
 ```
 
-## 配置 nextjs swc 插件解析 `.po` 文件
+## Configure nextjs swc plugin to parse `.po` file
 
 ```diff
 const nextConfig: NextConfig = {
@@ -51,7 +51,7 @@ const nextConfig: NextConfig = {
 };
 ```
 
-## Lingui 配置
+## Lingui configuration
 
 ```ts title="lingui.config.ts"
 import { defineConfig } from '@lingui/cli'
@@ -68,9 +68,9 @@ export default defineConfig({
 })
 ```
 
-## 国际化
+## Localization
 
-解析 `message.po` 文件，提供全局的 context
+Parse the `message.po` file, provide a global context
 
 ```ts title="i18n.ts"
 import { setupI18n } from '@lingui/core'
@@ -146,7 +146,7 @@ export function LinguiClientProvider({
 }
 ```
 
-全局配置
+Global configuration
 
 ```diff
 import { setI18n } from "@lingui/react/server";
@@ -190,13 +190,13 @@ export function getRootLayout(lang: string) {
 }
 ```
 
-## 路由
+## Routing
 
-需要实现的效果是有两个 `en` 和 `zh`，并且 `en` 路径可以隐藏，具体思路是实现两个 [RootLayout](https://nextjs.org/docs/app/building-your-application/routing/route-groups#creating-multiple-root-layouts)
+The effect to be achieved is that there are two `en` and `zh`, and the `en` path can be hidden, the specific idea is to implement two [RootLayout](https://nextjs.org/docs/app/building-your-application/routing/route-groups#creating-multiple-root-layouts)
 
 ![en-and-zh-directory](./images/en-and-zh-directory.png)
 
-然后在 lang 的路径里，导入对应的组件
+Then in the lang path, import the corresponding component
 
 ```ts title="layout.tsx"
 export { default, metadata } from '../../../(main)/base64/layout'
@@ -206,7 +206,7 @@ export { default, metadata } from '../../../(main)/base64/layout'
 export { default } from '../../../(main)/base64/page'
 ```
 
-主路由的默认设置为 `en`，lang 路由根据 `generateStaticParams`获取对应的 lang， 这里抽离的一个 `getRootLayout` 函数获取具体的 `RootLayout`
+The default setting of the main route is `en`, the lang route obtains the corresponding lang according to `generateStaticParams`, and here a `getRootLayout` function is extracted to obtain the specific `RootLayout`
 
 ```tsx title="_layout.tsx"
 export function getRootLayout(lang: string) {
@@ -266,9 +266,9 @@ export default async function Layout({ params, children }: Props) {
 }
 ```
 
-## 链接
+## Link
 
-添加 `en` `zh` 后，有些路由链接可能跳转的不是当前语言的，实现了 `useI18nHelper` 辅助
+After adding `en` `zh`, some route links may not jump to the current language, `useI18nHelper` is implemented as a helper
 
 ```ts
 import { useLingui } from '@lingui/react/macro'
@@ -319,7 +319,7 @@ export function useI18nHelper() {
 
 ## Build
 
-添加提取命令
+Add extraction command
 
 ```json
 {
@@ -330,6 +330,6 @@ export function useI18nHelper() {
 }
 ```
 
-手动翻译或借助工具翻译
+Manual translation or translation with tools
 
 ![translate-po-file](./images/translate-po-file.png)

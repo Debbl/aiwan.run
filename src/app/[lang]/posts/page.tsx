@@ -1,7 +1,7 @@
 import { format } from 'date-fns'
 import { Link } from 'next-view-transitions'
+import BackgroundStage from '~/app/_components/background-stage'
 import { postsByCategory, source } from '~/lib/source'
-import BackgroundStage from '../../../_components/background-stage'
 
 function Item({
   url,
@@ -43,7 +43,13 @@ function Item({
   )
 }
 
-export default async function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'zh' }>
+}) {
+  const { lang = 'en' } = await params
+
   return (
     <>
       <BackgroundStage />
@@ -58,15 +64,17 @@ export default async function Page() {
                   {category.posts.map((post) => {
                     const zhPage = source.getPage(post.slugs, 'zh')
 
-                    if (!zhPage) return null
+                    const postValue = lang === 'zh' ? zhPage : post
+
+                    if (!postValue) return null
 
                     return (
                       <Item
-                        key={zhPage?.url}
-                        url={zhPage?.url}
-                        title={zhPage?.data.title}
-                        date={zhPage?.data.date}
-                        duration={zhPage?.data.duration}
+                        key={postValue?.url}
+                        url={postValue?.url}
+                        title={postValue?.data.title}
+                        date={postValue?.data.date}
+                        duration={postValue?.data.duration}
                       />
                     )
                   })}

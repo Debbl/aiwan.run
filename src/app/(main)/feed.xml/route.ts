@@ -1,4 +1,4 @@
-import { generateStaticFeed } from './generate-static-feed'
+import { generateStaticFeed } from '../../[lang]/feed.xml/generate-static-feed'
 
 export const dynamic = 'force-static'
 

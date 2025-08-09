@@ -1,43 +1,43 @@
 ---
-title: VSCode With Vim
-description: 在 VSCode 中集成 Vim 编辑器，提升开发效率，包括插件安装、快捷键配置、自定义设置和最佳实践指南
+title: VSCode with Vim
+description: Integrate Vim editor in VSCode to improve development efficiency, including plugin installation, shortcut configuration, custom settings, and best practices.
 date: 2025-03-11T08:48:38.061Z
 duration: 10min
 keywords:
   - VSCode
   - Vim
-  - 快捷键
+  - Shortcut
   - extension
 ---
 
-# VSCode 中使用 Vim
+# VSCode With Vim
 
-> 官方文档
+> Official documentation
 > https://github.com/VSCodeVim/Vim
 
-> VSCode when 条件
+> VSCode when conditions
 > https://code.visualstudio.com/api/references/when-clause-contexts
 
-> VSCode 默认快捷键
+> VSCode default shortcut keys
 > https://code.visualstudio.com/docs/reference/default-keybindings
 
-## 安装
+## Install
 
 ```
 vscodevim.vim
 ```
 
-对于 Mac 用户，如果要启用全局按键重复
+For Mac users, if you want to enable global key repeat, you need to run the following command
 
 ```sh
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
-## 配置
+## Configuration
 
-> VSCode 默认快捷键命令 https://code.visualstudio.com/docs/reference/default-keybindings
+> VSCode default shortcut key commands https://code.visualstudio.com/docs/reference/default-keybindings
 
-### `x` 删除不保存到寄存器
+### `x` delete without saving to register
 
 > https://harttle.land/2016/07/25/vim-registers.html
 
@@ -51,7 +51,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ]
 ```
 
-### 跳转到问题提示
+### Jump to problem prompt
 
 ```json
 "vim.normalModeKeyBindingsNonRecursive": [
@@ -66,7 +66,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ]
 ```
 
-### 保存文件
+### Save file
 
 ```json
 "vim.normalModeKeyBindingsNonRecursive": [
@@ -77,17 +77,17 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ]
 ```
 
-### 一些操作
+### Some operations
 
-`m` + 字母 设置 mark
+`m` + letter set mark
 
-`'` + 字母 跳转到 mark
+`'` + letter jump to mark
 
-## 非 Vim 模式下键盘操作
+## Keyboard operations in non-Vim mode
 
-### 移动选择文件
+### Move to select file
 
-`j` `k` 移动选择文件, `l` `o` 展开文件夹或打开文件
+`j` `k` move to select file, `l` `o` expand folder or open file
 
 ### keybindings
 
@@ -106,13 +106,13 @@ defaults write -g ApplePressAndHoldEnabled -bool false
     "when": "editorTextFocus"
   },
 
-  // 移动到下一个建议
+  // Move to next suggestion
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
-  // 移动到上一个建议
+  // Move to previous suggestion
   {
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
@@ -138,74 +138,74 @@ defaults write -g ApplePressAndHoldEnabled -bool false
     "when": "terminalFocus"
   },
 
-  // 将光标向上动1屏
+  // Move the cursor up 1 screen
   {
     "key": "ctrl+k",
     "command": "workbench.action.focusAboveGroup",
     "when": "inputFocus && vim.mode == 'Normal'"
   },
-  // 将光标向下动1屏
+  // Move the cursor down 1 screen
   {
     "key": "ctrl+j",
     "command": "workbench.action.focusBelowGroup",
     "when": "inputFocus && vim.mode == 'Normal'"
   },
-  // 将光标向左移动1屏
+  // Move the cursor left 1 screen
   {
     "key": "ctrl+h",
     "command": "workbench.action.focusLeftGroup",
     "when": "inputFocus && vim.mode == 'Normal'"
   },
-  // 将光标向右移动1屏
+  // Move the cursor right 1 screen
   {
     "key": "ctrl+l",
     "command": "workbench.action.focusRightGroup",
     "when": "inputFocus && vim.mode == 'Normal'"
   },
 
-  // 新建文件
+  // New file
   {
     "key": "a",
     "command": "explorer.newFile",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
-  // 新建目录
+  // New folder
   {
     "key": "shift+a",
     "command": "explorer.newFolder",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
-  // 刷新资源管理器
+  // Refresh resource manager
   {
     "key": "r",
     "command": "workbench.files.action.refreshFilesExplorer",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
-  // 重命名文件或目录
+  // Rename file or directory
   {
     "key": "r",
     "command": "renameFile",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
-  // 删除文件或目录
+  // Delete file or directory
   {
     "key": "d",
     "command": "deleteFile",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
-  // 剪切文件或目录
+  // Cut file or directory
   {
     "key": "x",
     "command": "filesExplorer.cut",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // 复制文件或目录
+  // Copy file or directory
   {
     "key": "y",
     "command": "filesExplorer.copy",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
   },
-  // 粘贴文件或目录
+  // Paste file or directory
   {
     "key": "p",
     "command": "filesExplorer.paste",

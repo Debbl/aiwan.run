@@ -14,9 +14,9 @@ keywords:
 
 # windows git set eol to lf
 
-## 原因
+## Reason
 
-在写 [Debbl/eslint-config](https://github.com/Debbl/eslint-config) 的测试时
+When writing the test of [Debbl/eslint-config](https://github.com/Debbl/eslint-config)
 
 ```ts title="fixture.text.ts"
 await Promise.all(
@@ -33,7 +33,7 @@ await Promise.all(
 )
 ```
 
-在 github action 中有使用多个系统的测试
+In github action, there is a test using multiple systems
 
 ```yml
 strategy:
@@ -43,13 +43,13 @@ strategy:
   fail-fast: false
 ```
 
-但是在测试 windows 时总是报错 [test](https://github.com/Debbl/eslint-config/actions/runs/6914251251/job/18811912790)，显示 input 和 output 不符合，在测试后发现是 windows 默认的在 git 下载是的 `eol` 是 `crlf`
+When testing windows, there is always an error [test](https://github.com/Debbl/eslint-config/actions/runs/6914251251/job/18811912790), the input and output do not match, and after testing, it is found that the `eol` of windows default when git is downloaded is `crlf`
 
-所以搜了一下在 GitHub Action 如何设置 `eol` 为 `lf` [actions/checkout#135](https://github.com/actions/checkout/issues/135)
+So I searched for how to set `eol` to `lf` in GitHub Action [actions/checkout#135](https://github.com/actions/checkout/issues/135)
 
-最终添加如下命令 [ci.yml](https://github.com/Debbl/eslint-config/blob/main/.github/workflows/ci.yml)
+Finally, add the following command [ci.yml](https://github.com/Debbl/eslint-config/blob/main/.github/workflows/ci.yml)
 
-windows 可以通过以下命令设置为 `lf`
+Windows can be set to `lf` through the following command
 
 ```bash
 git config --global core.autocrlf false
@@ -63,12 +63,12 @@ git config --global core.eol lf
     git config --global core.eol lf
 ```
 
-## 通过 `.gitattributes` 设置
+## Set through `.gitattributes`
 
 ```
 * text=auto eol=lf
 ```
 
-## 引用
+## Reference
 
 - [https://git-scm.com/docs/gitattributes](https://git-scm.com/docs/gitattributes)

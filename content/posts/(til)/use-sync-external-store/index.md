@@ -1,6 +1,6 @@
 ---
-title: 使用 useSyncExternalStore 实现 useIsOnline
-description: 学习如何使用 React 的 useSyncExternalStore hook 实现网络状态监听，创建可靠的在线状态检测组件
+title: Use useSyncExternalStore to implement useIsOnline
+description: Learn how to use the React useSyncExternalStore hook to implement network status monitoring, creating a reliable online status detection component
 date: 2025-06-16T12:25:09.320Z
 duration: 3min
 keywords:
@@ -35,13 +35,13 @@ export function useIsOnline() {
 }
 ```
 
-每次 `subscribe` 的 `onStoreChange` 函数执行的时候都会执行一遍 `getSnapshot` 获取一遍最新的值，触发渲染
+Each time the `subscribe` `onStoreChange` function is executed, it will execute `getSnapshot` to get the latest value, triggering rendering
 
-`getSnapshot` 每次返回一个不可变的值
+`getSnapshot` returns an immutable value each time
 
-`getServerSnapshot` 在服务端渲染初始化的值
+`getServerSnapshot` is the value initialized in server-side rendering
 
-官方文档 [useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)
+Official documentation [useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)
 
 
 <Sandpack template="react">

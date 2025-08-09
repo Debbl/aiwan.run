@@ -1,27 +1,27 @@
 ---
-title: 调试 Popover 样式
-description: 学习如何调试 Popover 组件的样式问题，使用 Chrome DevTools 的 F8 快捷键暂停脚本执行来定位弹出框位置
+title: Debug Popover Style
+description: Learn how to debug the style of Popover components, using the F8 shortcut key in Chrome DevTools to pause script execution to locate the pop-up box position
 date: 2025-03-20T03:50:18.366Z
 duration: 3min
 keywords:
   - popover
-  - 调试
+  - debug
   - chrome
   - chrome devtools
   - chrome debug
 ---
 
-一般在调试类似 `Popover` 组件的样式时，比较难定位到弹出框的位置，如果弹出框是通过 js 展开的，可以通过 `F8` 暂停脚本的执行
+When debugging the style of components like `Popover`, it is difficult to locate the position of the pop-up box. If the pop-up box is expanded through js, you can pause the script execution through `F8` to locate the position of the pop-up box.
 
-**注意要在 `Sources` 面板操作**
+**Note: You need to operate in the `Sources` panel**
 
 ![](./images/sources.png)
 
-## Chrome 快捷键
+## Chrome shortcuts
 
 - https://developer.chrome.com/docs/devtools/shortcuts?hl=zh-cn
 
-## 暂停脚本执行
+## Pause script execution
 
 - https://developer.chrome.com/docs/devtools/shortcuts?hl=zh-cn#sources
 

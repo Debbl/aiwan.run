@@ -1,113 +1,113 @@
 ---
-title: gitmoji 使用
-description: 学习如何使用 gitmoji 为 Git 提交添加表情符号，让提交信息更加直观易懂，包括完整的 emoji 指南和最佳实践
+title: Use gitmoji on your commit
+description: Learn how to use gitmoji to add emoji to your Git commit, making the commit message more intuitive and easy to understand, including a complete emoji guide and best practices.
 date: 2021-08-03T20:00:18.000Z
 duration: 5min
 keywords:
   - gitmoji
-  - 使用
-  - 提交
-  - github
-  - 提交格式
+  - Use
+  - Commit
+  - Github
+  - Commit Format
   - git commit
 ---
 
-### 🎉 为什么使用 Gitmoji
+### 🎉 Why use Gitmoji
 
-在我们执行`git commit` 是使用 emoji 为本次提交打一个标签, 使得此次 commit 的主要工作得以凸现，也能够使得其在整个提交历史中易于区分与查找。
+When we execute `git commit`, we use emoji to label the commit, making the main work of this commit stand out, and also making it easier to distinguish and find in the entire commit history.
 
 ![Gitemoji](./images/image-20210803201124334.png)
 
-### 👌Commit 提交格式
+### 👌 Commit format
 
 ```sh
-git commit -m ":emoji1: :emoji2: 不超过 50 个字的摘要，首字母大写，使用祈使语气，句末不要加句号"
+git commit -m ":emoji1: :emoji2: summary of no more than 50 words, the first letter is capitalized, use the imperative tone, and do not add a period at the end"
 ```
 
-#### 初次提交示例
+#### Initial commit example
 
 ```sh
 git commit -m ":tada: Initialize Repo"
 ```
 
-### 📝emoji 指南
+### 📝emoji guide
 
-|       emoji        |          emoji 代码           |                commit 说明                 |
-| :----------------: | :---------------------------: | :----------------------------------------: |
-|     🎉（庆祝）     |           `:tada:`            |            初次提交，初始化仓库            |
-|    🎨（调色板）    |            `:art:`            |           改进代码结构/代码格式            |
-|     ⚡（闪电）     |            `:zap:`            |                  提高性能                  |
-|     🔥（火焰）     |           `:fire:`            |               删除代码或文件               |
-|     🐛（bug）      |            `:bug:`            |                修复一个 bug                |
-|    🚑（急救车）    |         `:ambulance:`         |                  重要补丁                  |
-|   ✨（闪闪发光）   |         `:sparkles:`          |                介绍新的特性                |
-|    📝（备忘录）    |           `:memo:`            |               添加或更新文档               |
-|     🚀（火箭）     |          `:rocket:`           |                  部署功能                  |
-|     💄（口红）     |         `:lipstick:`          |          添加或更新 UI 和样式文件          |
-|  ✅（白色复选框）  |     `:white_check_mark:`      |            添加、更新或通过测试            |
-|      🔒（锁）      |           `:lock:`            |                修复安全问题                |
-|     🔖（书签）     |         `:bookmark:`          |               发布/版本标签                |
-|    🚨（警告灯）    |      `:rotating_light:`       |           修复编译器/linter 警告           |
-|     🚧（施工）     |       `:construction:`        |               工作正在进行中               |
-|     💚（绿心）     |        `:green_heart:`        |                修复 CI 构建                |
-|   ⬇️（向下箭头）   |        `:arrow_down:`         |                 降级依赖项                 |
-|   ⬆️（向上箭头）   |         `:arrow_up:`          |                 升级依赖项                 |
-|     📌（图钉）     |          `:pushpin:`          |           将依赖项固定到特定版本           |
-|   👷（建筑工人）   |    `:construction_worker:`    |           添加或更新 CI 构建系统           |
-|   📈（上升图表）   | `:chart_with_upwards_trend:`  |             添加分析或跟踪代码             |
-|   ♻️（回收标志）   |          `:recycle:`          |                  重构代码                  |
-|     ➕（加号）     |      `:heavy_plus_sign:`      |                 添加依赖项                 |
-|     ➖（减号）     |     `:heavy_minus_sign:`      |                 删除依赖项                 |
-|     🔧（扳手）     |          `:wrench:`           |             添加或更新配置文件             |
-|     🔨（锤子）     |          `:hammer:`           |             添加或更新开发脚本             |
-|   🌐（地球经络）   |   `:globe_with_meridians:`    |               国际化和本地化               |
-|     ✏️（铅笔）     |          `:pencil2:`          |                 修正错别字                 |
-|     💩（粪便）     |           `:poop:`            |           编写需要改进的糟糕代码           |
-|   ⏪（还原按钮）   |          `:rewind:`           |                  还原更改                  |
-| 🔀（随机播放按钮） | `:twisted_rightwards_arrows:` |                  合并分支                  |
-|     📦（包裹）     |          `:package:`          |         添加或更新已编译的文件或包         |
-|    👽（外星人）    |           `:alien:`           |        由于外部 API 更改而更新代码         |
-|    🚚（送货车）    |           `:truck:`           | 移动或重命名资源（例如：文件、路径、路由） |
-|     📄（页面）     |      `:page_facing_up:`       |              添加或更新许可证              |
-|     💥（爆炸）     |           `:boom:`            |                引入重大改变                |
-|    🍱（便当盒）    |           `:bento:`           |               添加或更新资产               |
-|   ♿（轮椅标志）   |        `:wheelchair:`         |                提高可访问性                |
-|    💡（电灯泡）    |           `:bulb:`            |          在源代码中添加或更新注释          |
-|     🍻（碰杯）     |           `:beers:`           |              没有考虑的写代码              |
-|   💬（语音气球）   |      `:speech_balloon:`       |            添加或更新文本和文字            |
-|  🗃️（卡片档案盒）  |       `:card_file_box:`       |           执行与数据库相关的更改           |
-|     🔊（声音）     |        `:loud_sound:`         |               添加或更新日志               |
-|     🔇（静音）     |           `:mute:`            |                  删除日志                  |
-|    👥（剪影像）    |    `:busts_in_silhouette:`    |            添加或更新贡献者/们             |
-|  🚸（儿童交叉口）  |     `:children_crossing:`     |            改善用户体验/可用性             |
-|   🏗️（建筑工程）   |   `:building_construction:`   |                进行架构更改                |
-|     📱（手机）     |          `:iphone:`           |                 移动端设计                 |
-|    🤡（小丑脸）    |        `:clown_face:`         |                 模拟的东西                 |
-|     🥚（鸡蛋）     |            `:egg:`            |            添加或更新复活节彩蛋            |
-|    🙈（看不见）    |        `:see_no_evil:`        |         添加或更新 .gitignore 文件         |
-|   📸（闪光相机）   |       `:camera_flash:`        |               添加或更新快照               |
-|    ⚗️（蒸馏瓶）    |          `:alembic:`          |                  进行实验                  |
-|     🔍（搜索）     |            `:mag:`            |          提高搜索引擎优化（SEO）           |
-|     🏷️（标签）     |           `:label:`           |               添加或更新类型               |
-|     🌱（幼苗）     |         `:seedling:`          |         添加或更新种子（模板）文件         |
-|   🚩（三角旗杆）   |  `:triangular_flag_on_post:`  |          添加、更新或删除功能标志          |
-|    🥅（目标网）    |         `:goal_net:`          |                  捕捉错误                  |
-|     💫（眩晕）     |           `:dizzy:`           |            添加或更新动画和过渡            |
-|    🗑️（废纸篓）    |        `:wastebasket:`        |             弃用需要清理的代码             |
-|   🛂（护照检查）   |     `:passport_control:`      |      处理与授权、角色和权限相关的代码      |
-|   🩹（胶布绷带）   |     `:adhesive_bandage:`      |         - 对非关键问题的简单修复 -         |
-|     🧐（查看）     |       `:monocle_face:`        |             - 数据探索/检查 -              |
-|     ⚰️（棺材）     |          `:coffin:`           |               删除失效的代码               |
-|     🧪（试管）     |         `:test_tube`          |             - 添加失败的测试 -             |
-|     👔（领带）     |          `:necktie:`          |             添加或更新业务逻辑             |
+|              emoji              |          emoji code           |                      commit description                      |
+| :-----------------------------: | :---------------------------: | :----------------------------------------------------------: |
+|           🎉（tada）            |           `:tada:`            |            Initial commit, initialize repository             |
+|            🎨（art）            |            `:art:`            |              Improve code structure/code format              |
+|            ⚡（zap）            |            `:zap:`            |                     Improve performance                      |
+|           🔥（fire）            |           `:fire:`            |                     Delete code or file                      |
+|            🐛（bug）            |            `:bug:`            |                          Fix a bug                           |
+|         🚑（ambulance）         |         `:ambulance:`         |                       Important patch                        |
+|         ✨（sparkles）          |         `:sparkles:`          |                    Introduce new features                    |
+|           📝（memo）            |           `:memo:`            |                    Add or update document                    |
+|          🚀（rocket）           |          `:rocket:`           |                        Deploy feature                        |
+|         💄（lipstick）          |         `:lipstick:`          |               Add or update UI and style file                |
+|     ✅（white_check_mark）      |     `:white_check_mark:`      |                   Add, update or pass test                   |
+|           🔒（lock）            |           `:lock:`            |                      Fix security issue                      |
+|         🔖（bookmark）          |         `:bookmark:`          |                     Release/version tag                      |
+|      🚨（rotating_light）       |      `:rotating_light:`       |                 Fix compiler/linter warning                  |
+|       🚧（construction）        |       `:construction:`        |                       Work in progress                       |
+|        💚（green_heart）        |        `:green_heart:`        |                         Fix CI build                         |
+|        ⬇️（arrow_down）         |        `:arrow_down:`         |                    Downgrade dependencies                    |
+|         ⬆️（arrow_up）          |         `:arrow_up:`          |                     Upgrade dependencies                     |
+|          📌（pushpin）          |          `:pushpin:`          |            Pin dependencies to a specific version            |
+|    👷（construction_worker）    |    `:construction_worker:`    |                Add or update CI build system                 |
+| 📈（chart_with_upwards_trend）  | `:chart_with_upwards_trend:`  |                  Add analysis or track code                  |
+|          ♻️（recycle）          |          `:recycle:`          |                        Refactor code                         |
+|      ➕（heavy_plus_sign）      |      `:heavy_plus_sign:`      |                       Add dependencies                       |
+|     ➖（heavy_minus_sign）      |     `:heavy_minus_sign:`      |                     Delete dependencies                      |
+|          🔧（wrench）           |          `:wrench:`           |               Add or update configuration file               |
+|          🔨（hammer）           |          `:hammer:`           |               Add or update development script               |
+|   🌐（globe_with_meridians）    |   `:globe_with_meridians:`    |            Internationalization and localization             |
+|          ✏️（pencil2）          |          `:pencil2:`          |                          Fix typos                           |
+|           💩（poop）            |           `:poop:`            |           Write bad code that needs to be improved           |
+|          ⏪（rewind）           |          `:rewind:`           |                        Revert changes                        |
+| 🔀（twisted_rightwards_arrows） | `:twisted_rightwards_arrows:` |                        Merge branches                        |
+|          📦（package）          |          `:package:`          |            Add or update compiled file or package            |
+|           👽（alien）           |           `:alien:`           |           Update code due to external API changes            |
+|           🚚（truck）           |           `:truck:`           |    Move or rename resources (e.g., files, paths, routes)     |
+|      📄（page_facing_up）       |      `:page_facing_up:`       |                    Add or update license                     |
+|           💥（boom）            |           `:boom:`            |                   Introduce major changes                    |
+|           🍱（bento）           |           `:bento:`           |                     Add or update assets                     |
+|        ♿（wheelchair）         |        `:wheelchair:`         |                    Improve accessibility                     |
+|           💡（bulb）            |           `:bulb:`            |             Add or update comment in source code             |
+|           🍻（beers）           |           `:beers:`           |              Write code that was not considered              |
+|      💬（speech_balloon）       |      `:speech_balloon:`       |                 Add or update text and text                  |
+|       🗃️（card_file_box）       |       `:card_file_box:`       |           Execute changes related to the database            |
+|        🔊（loud_sound）         |        `:loud_sound:`         |                      Add or update log                       |
+|           🔇（mute）            |           `:mute:`            |                          Delete log                          |
+|    👥（busts_in_silhouette）    |    `:busts_in_silhouette:`    |               Add or update contributors/them                |
+|     🚸（children_crossing）     |     `:children_crossing:`     |              Improve user experience/usability               |
+|   🏗️（building_construction）   |   `:building_construction:`   |                 Perform architecture changes                 |
+|          📱（iphone）           |          `:iphone:`           |                        Mobile design                         |
+|        🤡（clown_face）         |        `:clown_face:`         |                       Simulate things                        |
+|            🥚（egg）            |            `:egg:`            |                   Add or update Easter egg                   |
+|        🙈（see_no_evil）        |        `:see_no_evil:`        |                Add or update .gitignore file                 |
+|       📸（camera_flash）        |       `:camera_flash:`        |                    Add or update snapshot                    |
+|          ⚗️（alembic）          |          `:alembic:`          |                      Perform experiment                      |
+|            🔍（mag）            |            `:mag:`            |           Improve search engine optimization (SEO)           |
+|           🏷️（label）           |           `:label:`           |                      Add or update type                      |
+|         🌱（seedling）          |         `:seedling:`          |              Add or update seed (template) file              |
+|  🚩（triangular_flag_on_post）  |  `:triangular_flag_on_post:`  |              Add, update or delete feature flag              |
+|         🥅（goal_net）          |         `:goal_net:`          |                         Catch error                          |
+|           💫（dizzy）           |           `:dizzy:`           |            Add or update animation and transition            |
+|        🗑️（wastebasket）        |        `:wastebasket:`        |           Deprecated code that needs to be cleaned           |
+|     🛂（passport_control）      |     `:passport_control:`      | Handle code related to authorization, roles, and permissions |
+|     🩹（adhesive_bandage）      |     `:adhesive_bandage:`      |             - Fix simple non-critical problems -             |
+|       🧐（monocle_face）        |       `:monocle_face:`        |                  - Data exploration/check -                  |
+|          ⚰️（coffin）           |          `:coffin:`           |                     Delete invalid code                      |
+|         🧪（test_tube）         |         `:test_tube`          |                     - Add failed test -                      |
+|          👔（necktie）          |          `:necktie:`          |                 Add or update business logic                 |
 
-### 🔍 参考
+### 🔍 Reference
 
 https://github.com/carloscuesta/gitmoji
 
 https://github.com/liuchengxu/git-commit-emoji-cn
 
-### 🌐 emoji 网站
+### 🌐 Emoji website
 
 https://gitmoji.dev/
 

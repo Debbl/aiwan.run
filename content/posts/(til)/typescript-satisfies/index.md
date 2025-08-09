@@ -1,6 +1,6 @@
 ---
 title: TypeScript satisfies
-description: 深入理解 TypeScript satisfies 操作符的使用方法，在保持类型推断的同时确保类型安全，提升代码质量和开发体验
+description: Deeply understand the usage of the TypeScript satisfies operator, ensuring type safety while maintaining type inference, improving code quality and development experience
 date: 2025-02-21T02:33:55.190Z
 duration: 1min
 keywords:
@@ -11,9 +11,9 @@ keywords:
 
 # TypeScript satisfies
 
-- 官方文档 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator
+- Official documentation https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator
 
-使一个表达式符合某个类型，而不改变表达式的类型。
+Make an expression conform to a type, without changing the type of the expression.
 
 ```ts twoslash
 // @errors: 2353 2339
@@ -24,14 +24,14 @@ const palette: Record<Colors, string | RGB> = {
   red: [255, 0, 0],
   green: '#00ff00',
   bleu: [0, 0, 255],
-  // 这里会报错，因为 bleu 不是 Colors 类型
+  // It will report an error because bleu is not a Colors type
 }
 
-// 这里会报错，因为 palette.green 可能是 string 类型，也可能是 RGB 类型，而 string 类型没有 toUpperCase 方法
+// It will report an error because palette.green may be a string type, or an RGB type, and the string type does not have a toUpperCase method
 const greenNormalized = palette.green.toUpperCase()
 ```
 
-使用 satisfies
+Using satisfies
 
 ```ts twoslash
 // @errors: 2353
@@ -42,51 +42,51 @@ const palette = {
   red: [255, 0, 0],
   green: '#00ff00',
   bleu: [0, 0, 255],
-  // 这里会报错，因为 bleu 不是 Colors 类型
+  // It will report an error because bleu is not a Colors type
 } satisfies Record<Colors, string | RGB>
 
-// 这里不会报错，因为 palette.green 是 string 类型，有 toUpperCase 方法
+// It will not report an error because palette.green is a string type, and has a toUpperCase method
 const greenNormalized = palette.green.toUpperCase()
 ```
 
-这里使用 satisfies 后，palette 符合 `Record<Colors, string | RGB>` 类型，并且保留了其原有的类型，所以这个推断 palette.green 是 string 类型
+After using satisfies, palette conforms to the `Record<Colors, string | RGB>` type, and retains its original type, so this inference palette.green is a string type
 
-## 其他使用场景
+## Other usage scenarios
 
-确保对象的 keys 符合某个类型
+Ensure that the keys of the object conform to a certain type
 
 ```ts twoslash
 // @errors: 2353
 type Colors = 'red' | 'green' | 'blue'
 
-// 确保对象的 keys 符合 Colors 类型
+// Ensure that the keys of the object conform to the Colors type
 const favoriteColors = {
   red: 'yes',
   green: false,
   blue: 'kinda',
   platypus: false,
-  // 错误：platypus 没有在 Colors 类型中列出
+  // It will report an error because platypus is not a Colors type
 } satisfies Record<Colors, unknown>
 
-// 所有关于 'red', 'green', 和 'blue' 属性的信息都被保留了，不是 unknown 类型
+// All information about the 'red', 'green', and 'blue' properties is retained, not unknown type
 const g: boolean = favoriteColors.green
 ```
 
-确保对象的属性值符合某个类型
+Ensure that the property values of the object conform to a certain type
 
 ```ts twoslash
 // @errors: 2322
 type RGB = [red: number, green: number, blue: number]
 
-// 确保对象的属性值符合 string 和 RGB 类型
+// Ensure that the property values of the object conform to the string and RGB type
 const palette = {
   red: [255, 0, 0],
   green: '#00ff00',
   blue: [0, 0],
-  // 错误：blue 的类型既不是 string 类型，也不是 RGB 类型
+  // It will report an error because the type of blue is neither a string type nor an RGB type
 } satisfies Record<string, string | RGB>
 
-// 每个属性的信息仍然被保留。
-const redComponent = palette.red.at(0) // red 是 RGB 类型
-const greenNormalized = palette.green.toUpperCase() // green 是 string 类型
+// The information about each property is still retained.
+const redComponent = palette.red.at(0) // red is an RGB type
+const greenNormalized = palette.green.toUpperCase() // green is a string type
 ```

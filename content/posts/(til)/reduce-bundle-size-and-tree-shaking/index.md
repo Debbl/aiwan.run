@@ -1,32 +1,32 @@
 ---
-title: 减少打包体积和 tree shaking
-description: 学习如何通过 tree shaking 技术减少打包体积，包括 motion 库的优化导入方式和模块导出策略
+title: Reduce bundle size and tree shaking
+description: Learn how to reduce bundle size through tree shaking technology, including the optimized import method of the motion library and the module export strategy
 date: 2025-04-12T12:46:36.526Z
 duration: 2min
 keywords:
-  - 打包
-  - 体积
+  - bundle
+  - size
   - tree shaking
   - motion
   - unplugin-auto-import
   - nextjs
 ---
 
-# 减少打包体积和 tree shaking
+# Reduce bundle size and tree shaking
 
 ## motion
 
 > https://m.dev/docs/react-reduce-bundle-size#reduce-size
 
-在 motion 库中如何要减少打包的体积，需要使用
+In the motion library, to reduce the bundle size, you need to use
 
 ```ts
 import * as m from 'motion/react-m'
 ```
 
-来导入 motion 的组件，这样在打包的时候有 tree shaking
+to import the components of motion, so that there is tree shaking when bundling.
 
-## 解释
+## Explanation
 
 ```ts title="foo.ts"
 function add(a: number, b: number) {
@@ -52,7 +52,7 @@ import foo from './foo'
 console.log(foo.add(1, 2))
 ```
 
-最终打包产物, 可以看到即使没有使用 `sub` 函数，也会被打包进去
+The final bundled product, it can be seen that even if the `sub` function is not used, it will be packaged in.
 
 ```js title="index.js"
 // src/foo.ts
@@ -74,7 +74,7 @@ console.log(foo_default.add(1, 2))
 //# sourceMappingURL=index.js.map
 ```
 
-使用 `* as` 导入模块
+Using `* as` to import modules
 
 ```ts title="bar.ts"
 export function add(a: number, b: number) {
@@ -93,7 +93,7 @@ import * as bar from './bar'
 console.log(bar.add(1, 2))
 ```
 
-最终打包产物
+The final bundled product
 
 ```js title="index.js"
 // src/bar.ts
@@ -107,13 +107,13 @@ console.log(add(1, 2))
 //# sourceMappingURL=index.js.map
 ```
 
-可以看出使用 `* as` 导入模块，在打包的时候有 tree shaking, 并且可以识别到 `console.log` 是副作用
+It can be seen that using `* as` to import modules has tree shaking when bundling, and it can also identify that `console.log` is a side effect.
 
-## 使用 [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) 简化写法
+## Use [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) to simplify the writing
 
-为了避免持续的使用 `* as m` 没有办法自动导入，可以使用 [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) 来简化写法导入
+To avoid the problem of `* as m` not being able to be automatically imported, you can use [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) to simplify the writing.
 
-这是一段 nextjs 的配置
+This is a nextjs configuration
 
 ```ts title="next.config.ts"
 const nextConfig: NextConfig = {
@@ -130,7 +130,7 @@ const nextConfig: NextConfig = {
         imports: [
           'react',
           {
-            // 自动导入 motion 的组件, 并且可以 tree shaking
+            // Automatically import the components of motion, and can tree shaking
             from: 'motion/react-m',
             imports: [['*', 'motion']],
           },

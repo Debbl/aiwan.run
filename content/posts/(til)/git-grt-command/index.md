@@ -1,6 +1,6 @@
 ---
-title: git grt 命令
-description: 了解 zsh 中内置的 grt 命令，这是一个用于快速切换到 Git 仓库根目录的实用别名，提高开发效率
+title: Git grt command
+description: Learn about the grt command built-in in zsh, which is a practical alias for quickly switching to the root directory of a Git repository, improving development efficiency
 date: 2024-08-28T12:29:23.137Z
 duration: 3min
 keywords:
@@ -13,47 +13,47 @@ keywords:
   - git rev-parse --show-toplevel
 ---
 
-# git grt command
+# Git grt command
 
-在 `zsh` 中内置了 `grt` 命令的 alias，可以直接在终端中输入 `grt` 命令，会自动切换到当前 git 仓库的根目录
+In `zsh`, there is an alias for the `grt` command, which can be directly entered in the terminal to automatically switch to the root directory of the current git repository.
 
 ```bash
 grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 ```
 
-> 来自 ChatGPT 4o 的解释
+> From ChatGPT 4o
 
-> **prompt: grt='cd "$(git rev-parse --show-toplevel || echo .)"' 解释一下这个命令**
+> **prompt: grt='cd "$(git rev-parse --show-toplevel || echo .)"' explain this command**
 
-这个命令是一个在 Git 仓库中常用的快捷命令。我们来逐步解释它：
+This command is a commonly used shortcut in Git repositories. Let's break it down step by step:
 
-### 命令分解
+### Command decomposition
 
 1. **`git rev-parse --show-toplevel`**：
 
-   - `git rev-parse` 是一个 Git 命令，用于解析 Git 内部的各种信息。
-   - `--show-toplevel` 参数会返回当前工作目录所在的 Git 仓库的顶层目录（即包含 `.git` 文件夹的目录）。
-   - 如果当前目录不是 Git 仓库的一部分，该命令将不会返回任何值。
+   - `git rev-parse` is a Git command that parses various information inside Git.
+   - The `--show-toplevel` parameter returns the top-level directory of the Git repository where the current working directory is located (i.e., the directory containing the `.git` folder).
+   - If the current directory is not part of a Git repository, this command will not return any value.
 
 2. **`||`**：
 
-   - 这是一个逻辑 OR 运算符。它用于在前一个命令失败时执行后一个命令。
-   - 在 Shell 中，命令返回 0 表示成功，非 0 表示失败。
+   - This is a logical OR operator. It is used to execute the second command when the first command fails.
+   - In Shell, a command returning 0 indicates success, and a non-0 value indicates failure.
 
 3. **`echo .`**：
 
-   - `echo .` 只是输出一个点（`.`），代表当前目录。
-   - 这是一个备用操作，只有当 `git rev-parse --show-toplevel` 命令失败时（也就是当前目录不是一个 Git 仓库的一部分时），`echo .` 才会被执行。
+   - `echo .` just outputs a dot (`.`), representing the current directory.
+   - This is a fallback operation, only executed when the `git rev-parse --show-toplevel` command fails (i.e., the current directory is not part of a Git repository).
 
 4. **`cd "$( ... )"`**：
-   - `cd` 是更改目录的命令。
-   - `$( ... )` 是命令替换，它会先执行括号内的命令并返回结果，然后把结果作为 `cd` 命令的参数。
+   - `cd` is the command to change directories.
+   - `$( ... )` is command substitution, it will first execute the command in the parentheses and return the result, and then use the result as the parameter of the `cd` command.
 
-### 命令的整体解释
+### Overall explanation of the command
 
-整个命令 `cd "$(git rev-parse --show-toplevel || echo .)"` 的作用是将当前目录切换到 Git 仓库的顶层目录（如果当前目录是 Git 仓库的一部分）。如果当前目录不是 Git 仓库的一部分，它将保持在当前目录。
+The command `cd "$(git rev-parse --show-toplevel || echo .)"` switches the current directory to the top-level directory of the Git repository (if the current directory is part of a Git repository). If the current directory is not part of a Git repository, it remains in the current directory.
 
-- 如果你在 Git 仓库中执行这个命令，它会将你的工作目录切换到该仓库的顶层目录。
-- 如果你不在 Git 仓库中，命令不会做任何改变，因为 `cd "."` 意味着保持在当前目录。
+- If you execute this command in a Git repository, it will switch your working directory to the top-level directory of that repository.
+- If you are not in a Git repository, the command will not make any changes, because `cd "."` means staying in the current directory.
 
-这个命令的用途通常是在不同的子目录中执行某些操作时确保在 Git 仓库的顶层目录中进行，避免由于路径问题导致命令失败。
+This command is usually used to ensure that operations are performed in the top-level directory of the Git repository when executing in different subdirectories, avoiding command failures due to path issues.

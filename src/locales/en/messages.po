@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-08-05 23:11+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/app/[lang]/page.tsx:76
+msgid "A Bubble Wrap game use react"
+msgstr "A Bubble Wrap game use react"
+
+#: src/app/[lang]/page.tsx:105
+msgid "A code diff tool."
+msgstr "A code diff tool."
+
+#: src/app/[lang]/page.tsx:148
+msgid "A emoji kitchen."
+msgstr "A emoji kitchen."
+
+#: src/app/[lang]/page.tsx:134
+msgid "A free client first AI apps."
+msgstr "A free client first AI apps."
+
+#: src/app/[lang]/page.tsx:69
+msgid "A Game-of-Life game use react"
+msgstr "A Game-of-Life game use react"
+
+#: src/app/[lang]/page.tsx:155
+msgid "A markdown reader by web."
+msgstr "A markdown reader by web."
+
+#: src/app/[lang]/page.tsx:55
+msgid "A minesweeper game use react."
+msgstr "A minesweeper game use react."
+
+#: src/app/[lang]/page.tsx:83
+msgid "A self driving car game with neural network."
+msgstr "A self driving car game with neural network."
+
+#: src/app/[lang]/page.tsx:62
+msgid "A Tic-tac-toe game use solid.js."
+msgstr "A Tic-tac-toe game use solid.js."
+
+#: src/app/[lang]/page.tsx:98
+msgid "A tool collection."
+msgstr "A tool collection."
+
+#: src/app/[lang]/page.tsx:119
+msgid "A tool for leaning English by Peppa Pig."
+msgstr "A tool for leaning English by Peppa Pig."
+
+#: src/constants/index.server.ts:29
+msgid "ai"
+msgstr "ai"
+
+#: src/app/[lang]/page.tsx:130
+msgid "Ai"
+msgstr "Ai"
+
+#: src/constants/index.server.ts:30
+msgid "ai-sdk"
+msgstr "ai-sdk"
+
+#: src/app/[lang]/page.tsx:175
+msgid "Bilibili"
+msgstr "Bilibili"
+
+#: src/app/[lang]/page.tsx:108
+msgid "Bilibili ShortLink Converter"
+msgstr "Bilibili ShortLink Converter"
+
+#: src/app/[lang]/page.tsx:112
+msgid "Bilibili shortLink converter."
+msgstr "Bilibili shortLink converter."
+
+#: src/app/_components/header.tsx:20
+#: src/constants/index.server.ts:24
+msgid "Blog"
+msgstr "Blog"
+
+#: src/constants/index.server.ts:22
+msgid "Brendan Dash"
+msgstr "Brendan Dash"
+
+#: src/app/[lang]/posts/layout.tsx:16
+#: src/app/[lang]/root-layout.tsx:129
+#: src/constants/index.server.ts:14
+msgid "Brendan Dash's Blog"
+msgstr "Brendan Dash's Blog"
+
+#: src/constants/index.server.ts:16
+msgid "Brendan Dash's Blog, a place to share my thoughts and ideas"
+msgstr "Brendan Dash's Blog, a place to share my thoughts and ideas"
+
+#: src/constants/index.server.ts:19
+msgid "Brendan Dash's personal website, a place to share my thoughts and ideas"
+msgstr "Brendan Dash's personal website, a place to share my thoughts and ideas"
+
+#: src/app/[lang]/page.tsx:72
+msgid "Bubble Wrap"
+msgstr "Bubble Wrap"
+
+#: src/app/[lang]/page.tsx:101
+msgid "Code Diff"
+msgstr "Code Diff"
+
+#: src/constants/index.server.ts:35
+msgid "css"
+msgstr "css"
+
+#: src/constants/index.server.ts:23
+msgid "Debbl"
+msgstr "Debbl"
+
+#: src/app/[lang]/page.tsx:181
+msgid "Email"
+msgstr "Email"
+
+#: src/app/[lang]/page.tsx:144
+msgid "Emoji Kitchen"
+msgstr "Emoji Kitchen"
+
+#: src/app/[lang]/page.tsx:264
+msgid "Find Me"
+msgstr "Find Me"
+
+#: src/app/[lang]/page.tsx:45
+msgid "Game"
+msgstr "Game"
+
+#: src/app/[lang]/page.tsx:65
+msgid "Game of Life"
+msgstr "Game of Life"
+
+#: src/app/[lang]/page.tsx:169
+msgid "Github"
+msgstr "Github"
+
+#: src/app/[lang]/page.tsx:216
+msgid "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
+msgstr "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
+
+#: src/constants/index.server.ts:34
+msgid "html"
+msgstr "html"
+
+#: src/constants/index.server.ts:33
+msgid "javascript"
+msgstr "javascript"
+
+#: src/app/[lang]/page.tsx:51
+msgid "Minesweeper"
+msgstr "Minesweeper"
+
+#: src/constants/index.server.ts:28
+msgid "nextjs"
+msgstr "nextjs"
+
+#: src/app/[lang]/page.tsx:115
+msgid "Peppa Pig Quotes"
+msgstr "Peppa Pig Quotes"
+
+#: src/app/[lang]/root-layout.tsx:158
+#~ msgid "Personal blog sharing thoughts and ideas about technology, development, and life"
+#~ msgstr "Personal blog sharing thoughts and ideas about technology, development, and life"
+
+#: src/constants/index.server.ts:25
+msgid "Personal Website"
+msgstr "Personal Website"
+
+#: src/constants/index.server.ts:27
+msgid "react"
+msgstr "react"
+
+#: src/app/[lang]/page.tsx:151
+msgid "Reader Markdown"
+msgstr "Reader Markdown"
+
+#: src/app/_components/header.tsx:43
+msgid "RSS"
+msgstr "RSS"
+
+#: src/app/[lang]/page.tsx:79
+msgid "Self driving car"
+msgstr "Self driving car"
+
+#: src/app/_components/header.tsx:30
+msgid "Slides"
+msgstr "Slides"
+
+#: src/app/[lang]/page.tsx:47
+msgid "some games"
+msgstr "some games"
+
+#: src/app/[lang]/page.tsx:90
+msgid "some tools"
+msgstr "some tools"
+
+#: src/app/[lang]/page.tsx:126
+msgid "some toys"
+msgstr "some toys"
+
+#: src/app/[lang]/page.tsx:141
+msgid "some visualization"
+msgstr "some visualization"
+
+#: src/app/_components/header.tsx:36
+msgid "Switch Language"
+msgstr "Switch Language"
+
+#: src/constants/index.server.ts:31
+msgid "tailwindcss"
+msgstr "tailwindcss"
+
+#: src/app/[lang]/page.tsx:58
+msgid "Tic tac toe"
+msgstr "Tic tac toe"
+
+#: src/constants/index.server.ts:26
+msgid "TIL"
+msgstr "TIL"
+
+#: src/app/_components/header.tsx:25
+#: src/app/[lang]/page.tsx:88
+msgid "Tools"
+msgstr "Tools"
+
+#: src/app/[lang]/page.tsx:124
+msgid "Toys"
+msgstr "Toys"
+
+#: src/constants/index.server.ts:32
+msgid "typescript"
+msgstr "typescript"
+
+#: src/app/[lang]/page.tsx:137
+msgid "V"
+msgstr "V"

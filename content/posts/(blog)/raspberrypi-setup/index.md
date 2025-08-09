@@ -1,81 +1,81 @@
 ---
-title: 树莓派开机使用
-description: 树莓派初始化和使用指南，包括 SSH 连接配置、无线网络设置、VNC 远程桌面、扩展功能启用和基本配置等完整流程
+title: Raspberry Pi Setup
+description: Raspberry Pi initialization and usage guide, including SSH connection configuration, wireless network settings, VNC remote desktop, extended function enablement, and basic configuration.
 date: 2021-08-30T09:22:23.000Z
 duration: 8min
 keywords:
-  - 树莓派
-  - 开机
-  - 使用
+  - Raspberry Pi
+  - Boot
+  - Use
   - SSH
   - VNC
-  - 摄像头
-  - 扩展功能
+  - Camera
+  - Extended Function
 ---
 
-### SSH 连接
+### SSH Connection
 
-- 有屏幕
+- With screen
 
-  - 直接用鼠标点击操作
+  - Directly use the mouse to click to operate
 
-- 无屏幕有线网络
+- No screen wired network
 
-  - 在 SD 卡的根目录（ boot ）中新建 `SSH` 文件（文件无内容）
+  - In the root directory of the SD card (boot), create an `SSH` file (file with no content)
 
-  - 获取树莓派的 IP 地址
+  - Get the IP address of the Raspberry Pi
 
-  - 用 SSH 连接工具连接树莓派
+  - Use the SSH connection tool to connect to the Raspberry Pi
 
-- 无屏幕无线网络
+- No screen wireless network
 
-  - 开启 SSH， 即第二步的在 SD 卡的根目录新建 `SSH` 文件
+  - Enable SSH, that is, create an `SSH` file in the root directory of the SD card in the second step
 
-  - 在 SD 卡的根目录（ boot ），新建 `wpa_supplicant.conf` 文件（这个文件是用来添加无线连接的）
+  - In the root directory of the SD card (boot), create a `wpa_supplicant.conf` file (this file is used to add wireless connection)
 
     ```text title="config"
     ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
     update_config=1
     country=GB
-    # 修改下面的配置
+    # Modify the configuration below
     network={
-      ssid="Wi-Fi名"
-      psk="Wi-Fi密码"
+      ssid="Wi-Fi name"
+      psk="Wi-Fi password"
       key_mgmt=WPA-PSK
     }
     ```
 
-  - 使用 SSH 连接工具
+  - Use the SSH connection tool
 
-### 扩展功能
+### Extended function
 
 - SSH
 - VNC
-- 摄像头
-- 等
+- Camera
+- etc.
 
-在终端中输入
+Enter the terminal
 
 ```bash
 sudo raspi-config
 ```
 
-### 连接 VNC
+### Connect VNC
 
-- 鼠标操作
+- Mouse operation
 
-- 直接在终端输入，这个是临时的而且一次只能开一个
+- Directly enter the terminal, this is temporary and can only open one at a time
 
   ```bash
   vncserver
   ```
 
   ```
-  # 1 是端口，geometry 是分辨率
+  # 1 is the port, geometry is the resolution
   vncserver :1 -geometry 800x480
   ```
 
-  > 树莓派 4B 默认没有分辨率设置，所以第一次使用 VNC 可能无法显示，需要配置一下
+  > The Raspberry Pi 4B default does not have resolution settings, so the first time VNC is used may not be displayed, you need to configure it
 
   ![DisplayOptions](./images/display-options.png)
 
@@ -83,11 +83,11 @@ sudo raspi-config
 
   ![Resolution Mode](./images/resolution-mode.png)
 
-- 使用命令 `sudo respi-config` 打开 VNC
+- Use the command `sudo respi-config` to open VNC
 
-### 补充
+### Supplement
 
-#### 查看基本配置和引脚
+#### View basic configuration and pins
 
 ```bash
 pinout

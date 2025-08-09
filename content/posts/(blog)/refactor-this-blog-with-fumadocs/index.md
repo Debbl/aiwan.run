@@ -1,48 +1,48 @@
 ---
-title: 使用 FumaDocs 重构这个博客
-description: 详细介绍如何使用 FumaDocs 重构现有博客，包括 schema 定义、自定义组件开发、MDX 插件配置和类型安全的结构化数据处理
+title: Refactor this blog with FumaDocs
+description: Detailed introduction to how to refactor the existing blog with FumaDocs, including schema definition, custom component development, MDX plugin configuration, and type-safe structured data processing.
 date: 2025-05-25T10:27:54.972Z
 duration: 5min
 keywords:
   - FumaDocs
   - Next.js
   - mdx
-  - 重构
-  - 博客
-  - 静态网站生成器
-  - 静态网站
+  - Refactor
+  - Blog
+  - Static Site Generator
+  - Static Site
 ---
 
-# 使用 FumaDocs 重构这个博客
+# Refactor this blog with FumaDocs
 
-## 相关链接
+## Related links
 
 - [FumaDocs](https://github.com/fuma-nama/fumadocs)
-- [相关 PR](https://github.com/Debbl/aiwan.run/pull/51)
+- [Related PR](https://github.com/Debbl/aiwan.run/pull/51)
 
-## 为什么选择 FumaDocs
+## Why choose FumaDocs
 
-之前使用的是 Nextjs 与 mdx 的组合，使用 mdx 作为一个 page 来渲染文章，具体可以看这篇文章[我是如何搭建这个博客的](/posts/how-i-build-this-blog)，但是有个问题就是不是特别好获取结构化数据，而且一些 mdx 的插件从头实现有点儿复杂，最近在 X 上看到 FumaDocs 这个项目，感觉挺不错的，就决定试试看。
+Previously, I used the combination of Nextjs and mdx, using mdx as a page to render articles. For details, please refer to this article [How I Built This Blog](/posts/how-i-build-this-blog), but there is a problem that it is not very easy to obtain structured data, and some mdx plugins are complex to implement from scratch. Recently, I saw the FumaDocs project on X, and it felt quite good, so I decided to try it out.
 
-总体试下来还是感觉不错的，自定义程度非常高，类型安全的结构化数据，可以为不同的集合配置不同的 mdx 插件，比如在为每一个文章生成 og 图片时可以直接通过 `source.getPages()` 获取到全部的文章数据。
+Overall, it felt good, with high customization, type-safe structured data, and the ability to configure different mdx plugins for different collections. For example, when generating og images for each article, I can directly get all the article data through `source.getPages()`.
 
-## 重构过程遇到的一些问题
+## Refactor process
 
-### 定义 date 类型的 schema
+### Define date type schema
 
-一般的文章我通常会定义三个 frontmatter 字段，分别是 `title`、`date` 和 `duration`，但是 FumaDocs 的 schema 中没有提供 `date` 类型的 schema，所以需要自己定义。
+For most articles, I usually define three frontmatter fields, namely `title`, `date`, and `duration`. However, the schema in FumaDocs does not provide a `date` type schema, so I need to define it myself.
 
 ```md
 ---
-title: 使用 FumaDocs 重构这个博客
+title: Refactor this blog with FumaDocs
 date: 2025-05-25T10:27:54.972Z
 duration: 5min
 ---
 ```
 
-fumadocs 内部使用的是 gray-matter 来解析 frontmatter 的，对于 `data` 类型, 需要使用 [zod transform](https://zod.dev/api?id=transforms) 方法来将字符串转换为日期类型。
+FumaDocs uses gray-matter to parse frontmatter, for `data` type, you need to use the [zod transform](https://zod.dev/api?id=transforms) method to convert the string to a date type.
 
-- [fumadocs 源码位置](https://github.com/fuma-nama/fumadocs/blob/fe54a5696dc0c505f222a0974ee28996e99537d4/packages/mdx/src/loader-mdx.ts#L28)
+- [FumaDocs source code position](https://github.com/fuma-nama/fumadocs/blob/fe54a5696dc0c505f222a0974ee28996e99537d4/packages/mdx/src/loader-mdx.ts#L28)
 
 ```ts
 export const docs = defineDocs({
@@ -59,11 +59,11 @@ export const docs = defineDocs({
 })
 ```
 
-### 自定义 Toc 组件
+### Custom Toc component
 
-[fumadocs 源码位置](https://github.com/fuma-nama/fumadocs/blob/fe54a5696dc0c505f222a0974ee28996e99537d4/packages/ui/src/page.tsx#L195-L216)
+[FumaDocs source code position](https://github.com/fuma-nama/fumadocs/blob/fe54a5696dc0c505f222a0974ee28996e99537d4/packages/ui/src/page.tsx#L195-L216)
 
-这里主要想去掉 `on this page` 的标题，所以需要自定义 Toc 组件。
+Here, I mainly want to remove the title `on this page`, so I need to customize the Toc component.
 
 ```tsx {1-10}
 {
@@ -93,7 +93,7 @@ export const docs = defineDocs({
 }
 ```
 
-传递 component 参数，可以自定义 Toc 组件。
+Passing the `component` parameter allows you to customize the Toc component.
 
 ```tsx
 {/* [!code highlight:9] */}
@@ -157,6 +157,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 }
 ```
 
-## 集成 twoslash
+## Integrate twoslash
 
-[fumadocs 文档](https://fumadocs.dev/docs/ui/markdown/twoslash)
+[FumaDocs documentation](https://fumadocs.dev/docs/ui/markdown/twoslash)
