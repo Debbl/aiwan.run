@@ -60,6 +60,10 @@ const nextConfig: NextConfig = {
             imports: ['IconType', 'IconBaseProps'],
             type: true,
           },
+          {
+            from: '~/components/link.tsx',
+            imports: ['Link'],
+          },
         ],
         dts: true,
       }),

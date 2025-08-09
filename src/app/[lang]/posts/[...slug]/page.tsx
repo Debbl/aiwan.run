@@ -3,7 +3,6 @@ import { Card, Cards } from 'fumadocs-ui/components/card'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
-import Link from '~/components/link'
 import { WEBSITE } from '~/constants'
 import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
@@ -85,6 +84,7 @@ export default async function Page(props: {
         <Link
           href={enUrl}
           replace
+          noLocale
           className='flex size-6 cursor-pointer items-center justify-center'
         >
           <Icon.LuLanguages title='change language' />

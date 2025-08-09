@@ -1,7 +1,6 @@
 'use client'
 import { useHydrated } from '@debbl/ahooks'
 import { useTheme } from 'next-themes'
-import Link from '~/components/link'
 import { Separator } from '~/components/ui/separator'
 import { cn } from '~/lib/utils'
 

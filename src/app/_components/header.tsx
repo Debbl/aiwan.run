@@ -1,52 +1,49 @@
 'use client'
+import { useLingui } from '@lingui/react/macro'
 import { useRef } from 'react'
-import Link from '~/components/link'
 import { useMobile } from '~/hooks/use-mobile'
 import ThemeSwitcher from './theme-switcher'
-import type { Lang } from '~/types'
 
-const nav: {
-  'url': string
-  'zhUrl'?: string
-  'name': string
-  'zhName'?: string
-  'data-umami-event': string
-  'icon'?: React.ReactNode
-}[] = [
-  {
-    'url': '/posts',
-    'zhUrl': '/zh/posts',
-    'name': 'Blog',
-    'data-umami-event': 'click-blog-link',
-  },
-  {
-    'url': '/tools',
-    'name': 'Tools',
-    'data-umami-event': 'click-tools-link',
-  },
-  {
-    'url': '/slides',
-    'name': 'Slides',
-    'data-umami-event': 'click-slides-link',
-  },
-  {
-    'url': '/zh',
-    'zhUrl': '/',
-    'name': 'Switch Language',
-    'zhName': '切换语言',
-    'data-umami-event': 'click-language-link',
-    'icon': <Icon.LuLanguages className='size-5' />,
-  },
-  {
-    'url': '/feed.xml',
-    'zhUrl': '/zh/feed.xml',
-    'name': 'RSS',
-    'data-umami-event': 'click-rss-link',
-    'icon': <Icon.LuRss className='size-5' />,
-  },
-]
-
-export function Header({ lang = 'en' }: { lang?: Lang }) {
+export function Header() {
+  const { t, i18n } = useLingui()
+  const nav: {
+    'url': string
+    'name': string
+    'data-umami-event': string
+    'icon'?: React.ReactNode
+    'noLocale'?: boolean
+  }[] = [
+    {
+      'url': '/posts',
+      'name': t`Blog`,
+      'data-umami-event': 'click-blog-link',
+    },
+    {
+      'url': '/tools',
+      'name': t`Tools`,
+      'noLocale': true,
+      'data-umami-event': 'click-tools-link',
+    },
+    {
+      'url': '/slides',
+      'name': t`Slides`,
+      'data-umami-event': 'click-slides-link',
+    },
+    {
+      'url': i18n.locale === 'zh' ? '/' : '/zh',
+      'noLocale': true,
+      'name': t`Switch Language`,
+      'data-umami-event': 'click-language-link',
+      'icon': <Icon.LuLanguages className='size-5' />,
+    },
+    {
+      'url': '/feed.xml',
+      'noLocale': true,
+      'name': t`RSS`,
+      'data-umami-event': 'click-rss-link',
+      'icon': <Icon.LuRss className='size-5' />,
+    },
+  ]
   const navRef = useRef<HTMLElement>(null)
   const { isMobile } = useMobile()
 
@@ -59,7 +56,7 @@ export function Header({ lang = 'en' }: { lang?: Lang }) {
         <div>
           <button type='button' aria-label='home'>
             <Link
-              href={lang === 'zh' ? '/zh' : '/'}
+              href='/'
               className='inline-block size-full px-3'
               aria-label='home page link'
             >
@@ -76,10 +73,11 @@ export function Header({ lang = 'en' }: { lang?: Lang }) {
                 data-umami-event={n['data-umami-event']}
                 title={n.name}
                 key={n.name}
-                href={lang === 'zh' ? n.zhUrl || n.url : n.url}
+                href={n.url}
+                noLocale={n.noLocale}
                 prefetch={['/posts'].includes(n.url)}
               >
-                {n.icon || (lang === 'zh' ? n.zhName || n.name : n.name)}
+                {n.icon || n.name}
 
                 {n.icon && <span className='sr-only'>{n.name}</span>}
               </Link>

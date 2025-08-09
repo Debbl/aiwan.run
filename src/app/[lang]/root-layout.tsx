@@ -153,7 +153,7 @@ export default async function RootLayout({
       <body>
         <Providers lang={lang}>
           <div className='relative min-h-screen'>
-            <Header lang={lang} />
+            <Header />
             {children}
           </div>
 
