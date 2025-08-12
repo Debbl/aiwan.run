@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "turbo run dev && next dev",
-    "build": "turbo run build && next build",
+    "build": "pnpm extract && turbo run build && next build",
     "build:analyze": "ANALYZE=true next build",
     "extract": "lingui extract",
     "typecheck": "tsc --noEmit",
