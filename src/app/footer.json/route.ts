@@ -47,11 +47,6 @@ export async function GET() {
           desc: 'A tool collection.',
         },
         {
-          name: 'Code Diff',
-          link: 'https://tools.aiwan.run/code-diff/',
-          desc: 'A code diff tool.',
-        },
-        {
           name: 'Bilibili ShortLink Converter',
           link: 'https://bili-shortlink.vercel.app/',
           desc: 'Bilibili shortLink converter.',
@@ -87,6 +82,42 @@ export async function GET() {
           name: 'Reader Markdown',
           link: 'https://rm.aiwan.run/',
           desc: 'A markdown reader by web.',
+        },
+        {
+          name: 'Slides',
+          link: 'https://slides.aiwan.run/',
+          desc: 'my slides',
+        },
+      ],
+    },
+    Media: {
+      name: 'Media',
+      desc: 'some media',
+      content: [
+        {
+          name: 'Github',
+          link: 'https://github.com/Debbl',
+          desc: 'My Github.',
+        },
+        {
+          name: 'X',
+          link: 'https://x.com/Debbl66',
+          desc: 'My X.',
+        },
+        {
+          name: 'Email',
+          link: 'me@aiwan.run',
+          desc: 'My Email.',
+        },
+        {
+          name: 'Bluesky',
+          link: 'https://bsky.app/profile/debbl.bsky.social',
+          desc: 'My Bluesky.',
+        },
+        {
+          name: 'Bilibili',
+          link: 'https://space.bilibili.com/174865648',
+          desc: 'My Bilibili.',
         },
       ],
     },
