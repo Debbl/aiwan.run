@@ -1,26 +1,13 @@
-// index.js
 export default {
   async fetch(request: Request, env: Env) {
     const url = new URL(request.url)
 
     if (url.pathname === '/rss') {
-      return Response.redirect('https://aiwan.run/feed.xml', 301)
+      return Response.redirect(`${url.origin}/feed.xml`, 301)
     }
 
-    if (url.pathname === '/feed.xml') {
-      return env.ASSETS.fetch(request, {
-        headers: {
-          'content-type': 'application/xml',
-        },
-      })
-    }
-
-    if (url.pathname === '/tools') {
-      return Response.redirect(`https://tools.aiwan.run`, 301)
-    }
-
-    if (url.pathname === '/slides') {
-      return Response.redirect(`https://slides.aiwan.run`, 301)
+    if (url.pathname === '/zh/rss') {
+      return Response.redirect(`${url.origin}/zh/feed.xml`, 301)
     }
 
     if (url.pathname === '/blog') {

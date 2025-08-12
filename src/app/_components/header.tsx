@@ -20,14 +20,21 @@ export function Header() {
       'data-umami-event': 'click-blog-link',
     },
     {
-      'url': '/tools',
+      'url': 'https://ai.aiwan.run',
+      'name': t`AI`,
+      'noLocale': true,
+      'target': '_blank',
+      'data-umami-event': 'click-ai-link',
+    },
+    {
+      'url': 'https://tools.aiwan.run',
       'name': t`Tools`,
       'noLocale': true,
       'target': '_blank',
       'data-umami-event': 'click-tools-link',
     },
     {
-      'url': '/slides',
+      'url': 'https://slides.aiwan.run',
       'name': t`Slides`,
       'target': '_blank',
       'data-umami-event': 'click-slides-link',
