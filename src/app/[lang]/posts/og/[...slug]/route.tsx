@@ -11,11 +11,11 @@ export async function generateStaticParams() {
 
 export async function GET(
   _request: Request,
-  { params }: { params: Promise<{ lang: Lang; slug: string[] }> },
+  { params }: { params: Promise<{ lang: string; slug: string[] }> },
 ) {
   const { lang, slug } = await params
 
   const slugs = slug.map((s) => s.replace('.png', ''))
 
-  return generatePostOpenGraphImage(slugs, lang)
+  return generatePostOpenGraphImage(slugs, lang as Lang)
 }

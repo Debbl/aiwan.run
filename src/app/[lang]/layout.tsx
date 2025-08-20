@@ -11,9 +11,9 @@ export default async function Layout({
   params,
 }: {
   children: React.ReactNode
-  params: Promise<{ lang: Lang }>
+  params: Promise<{ lang: string }>
 }) {
   const { lang } = await params
 
-  return <RootLayout lang={lang}>{children}</RootLayout>
+  return <RootLayout lang={lang as Lang}>{children}</RootLayout>
 }

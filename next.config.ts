@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
   experimental: {
     swcPlugins: [['@lingui/swc-plugin', {}]],
   },
+  typedRoutes: false,
   serverExternalPackages: ['typescript', 'twoslash'],
   transpilePackages: ['@workspace/mdx-plugins'],
   webpack: (config) => {

@@ -11,7 +11,7 @@ export async function GET(
   {
     params,
   }: {
-    params: Promise<{ lang: 'en' | 'zh' }>
+    params: Promise<{ lang: string }>
   },
 ) {
   const { lang } = await params
