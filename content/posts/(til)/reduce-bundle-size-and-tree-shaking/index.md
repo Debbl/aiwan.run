@@ -16,7 +16,7 @@ keywords:
 
 ## motion
 
-> https://m.dev/docs/react-reduce-bundle-size#reduce-size
+> https://motion.dev/docs/react-reduce-bundle-size#reduce-size
 
 In the motion library, to reduce the bundle size, you need to use
 
