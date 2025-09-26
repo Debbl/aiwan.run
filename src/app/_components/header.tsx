@@ -9,7 +9,7 @@ export function Header() {
   const nav: {
     'url': string
     'name': string
-    'data-umami-event': string
+    'data-umami-event'?: string
     'icon'?: React.ReactNode
     'noLocale'?: boolean
     'target'?: string
@@ -40,19 +40,17 @@ export function Header() {
       'data-umami-event': 'click-slides-link',
     },
     {
-      'url': i18n.locale === 'zh' ? '/' : '/zh',
-      'noLocale': true,
-      'name': t`Switch Language`,
-      'data-umami-event': 'click-language-link',
-      'icon': <Icon.LuLanguages className='size-5' />,
+      url: i18n.locale === 'zh' ? '/' : '/zh',
+      noLocale: true,
+      name: t`Switch Language`,
+      icon: <Icon.LuLanguages className='size-5' />,
     },
     {
-      'url': '/feed.xml',
-      'noLocale': true,
-      'name': t`RSS`,
-      'target': '_blank',
-      'data-umami-event': 'click-rss-link',
-      'icon': <Icon.LuRss className='size-5' />,
+      url: '/feed.xml',
+      noLocale: true,
+      name: t`RSS`,
+      target: '_blank',
+      icon: <Icon.LuRss className='size-5' />,
     },
   ]
   const navRef = useRef<HTMLElement>(null)
@@ -81,7 +79,9 @@ export function Header() {
             .filter((n) => !(isMobile && n.name === 'Home'))
             .map((n) => (
               <Link
-                data-umami-event={n['data-umami-event']}
+                {...(n['data-umami-event']
+                  ? { 'data-umami-event': n['data-umami-event'] }
+                  : {})}
                 title={n.name}
                 key={n.name}
                 href={n.url}

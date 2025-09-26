@@ -24,7 +24,6 @@ function Item({
         'hover:text-primary dark:hover:text-primary flex flex-col items-center gap-1 text-gray-900 md:flex-row dark:text-gray-50',
         className,
       )}
-      data-umami-event={`click-posts-${url}`}
     >
       {children}
       <Link
