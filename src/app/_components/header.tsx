@@ -15,9 +15,8 @@ export function Header() {
     'target'?: string
   }[] = [
     {
-      'url': '/posts',
-      'name': t`Blog`,
-      'data-umami-event': 'click-blog-link',
+      url: '/posts',
+      name: t`Blog`,
     },
     {
       'url': 'https://ai.aiwan.run',
