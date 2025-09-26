@@ -56,9 +56,6 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      next-view-transitions:
-        specifier: ^0.3.4
-        version: 0.3.4(next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       radix-ui:
         specifier: ^1.4.3
         version: 1.4.3(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -4731,13 +4728,6 @@ packages:
 
   next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
-
-  next-view-transitions@0.3.4:
-    resolution: {integrity: sha512-SSiskenQ8JkEFGzPjvFwC5LGGoqgTxM5dxexkeugxvcXFLpWI2ZUh4IsCURD3ovW+8Ue7xXlrtrpy8b7XR7IwQ==}
-    peerDependencies:
-      next: '>=14.0.0'
-      react: ^18.2.0
-      react-dom: ^18.2.0
 
   next@15.5.4:
     resolution: {integrity: sha512-xH4Yjhb82sFYQfY3vbkJfgSDgXvBB6a8xPs9i35k6oZJRoQRihZH+4s9Yo2qsWpzBmZ3lPXaJ2KPXLfkvW4LnA==}
@@ -11007,12 +10997,6 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
 
   next-tick@1.1.0: {}
-
-  next-view-transitions@0.3.4(next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
-    dependencies:
-      next: 15.5.4(@babel/core@7.28.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
 
   next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:

@@ -1,5 +1,4 @@
 import { format } from 'date-fns'
-import { Link } from 'next-view-transitions'
 import BackgroundStage from '~/app/_components/background-stage'
 import { postsByCategory, source } from '~/lib/source'
 
