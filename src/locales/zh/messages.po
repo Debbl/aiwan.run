@@ -192,7 +192,7 @@ msgstr "react"
 msgid "Reader Markdown"
 msgstr "Markdown 阅读器"
 
-#: src/app/_components/header.tsx:52
+#: src/app/_components/header.tsx:51
 msgid "RSS"
 msgstr "RSS"
 

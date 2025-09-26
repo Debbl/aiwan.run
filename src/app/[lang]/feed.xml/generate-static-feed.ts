@@ -26,7 +26,7 @@ export async function generateStaticFeed(lang: 'en' | 'zh' = 'en') {
     ],
   })
 
-  posts.forEach((rawPost) => {
+  posts.forEach(async (rawPost) => {
     const post = source.getPage(rawPost.slugs, lang)
 
     if (!post) return
@@ -48,8 +48,8 @@ export async function generateStaticFeed(lang: 'en' | 'zh' = 'en') {
         {
           'content:encoded': {
             _cdata: markdownToHtml(
-              post.data.content,
-              post.data._file.absolutePath,
+              (await post.data.getText('raw')) || '',
+              post.absolutePath,
             ),
           },
         },
