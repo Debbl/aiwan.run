@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffectEvent } from '@debbl/ahooks'
 import React, { useEffect, useRef, useState } from 'react'
 import { cn } from '~/lib/utils'
 import type { ComponentPropsWithoutRef } from 'react'
@@ -294,15 +293,15 @@ export const Particles: React.FC<ParticlesProps> = ({
     const cleanup = onColorChange()
 
     return cleanup
-  }, [color, onColorChange])
+  }, [color])
 
   useEffect(() => {
     onMouseMove()
-  }, [mousePosition.x, mousePosition.y, onMouseMove])
+  }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
     initCanvas()
-  }, [refresh, initCanvas])
+  }, [refresh])
 
   return (
     <div

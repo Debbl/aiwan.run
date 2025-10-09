@@ -25,6 +25,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   experimental: {
+    reactCompiler: true,
     swcPlugins: [['@lingui/swc-plugin', {}]],
   },
   typedRoutes: false,
