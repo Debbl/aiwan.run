@@ -95,7 +95,7 @@ msgid "Brendan Dash"
 msgstr "Brendan Dash"
 
 #: src/app/[lang]/posts/layout.tsx:16
-#: src/app/[lang]/root-layout.tsx:129
+#: src/app/[lang]/root-layout.tsx:121
 #: src/constants/index.server.ts:14
 msgid "Brendan Dash's Blog"
 msgstr "Brendan Dash's Blog"

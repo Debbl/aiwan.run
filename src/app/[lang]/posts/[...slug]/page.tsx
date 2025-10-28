@@ -38,14 +38,6 @@ export async function generateMetadata({
       url: `${WEBSITE.domain}${page.url}`,
       title: page.data.title,
       description: page.data.description || `Post | ${page.data.title}`,
-      images: [
-        {
-          alt: `${page.data.title}`,
-          url: `${lang === 'en' ? '' : `/${lang}`}/posts/og/${page.slugs.at(-1)}.png`,
-          width: 800,
-          height: 400,
-        },
-      ],
       emails: [WEBSITE.email],
     },
     alternates: {
@@ -93,7 +85,7 @@ export default async function Page(props: {
       <DocsDescription className='mt-2 text-sm'>
         {page.data.description}
       </DocsDescription>
-      <DocsBody className='mt-4 break-words'>
+      <DocsBody className='mt-4 wrap-break-word'>
         <MDXContent
           components={getMDXComponents({
             a: createRelativeLink(source, page),

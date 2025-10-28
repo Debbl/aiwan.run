@@ -1,8 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import { ImageResponse } from 'next/og'
 
 export const dynamic = 'force-static'
 
-export async function GET() {
+export const contentType = 'image/png'
+
+export default async function Image() {
   return new ImageResponse(
     (
       <div

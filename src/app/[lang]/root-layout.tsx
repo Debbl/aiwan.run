@@ -62,14 +62,6 @@ export const generateMetadata = async ({
       description,
       emails: [WEBSITE.email],
       type: 'website',
-      images: [
-        {
-          alt: 'og-image',
-          url: '/opengraph-image.png',
-          width: 800,
-          height: 400,
-        },
-      ],
     },
     alternates: {
       canonical: `${WEBSITE.domain}${lang === 'en' ? '' : `/${lang}`}`,
