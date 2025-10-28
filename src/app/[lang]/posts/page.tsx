@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 import BackgroundStage from '~/app/_components/background-stage'
-import { postsByCategory, source } from '~/lib/source'
+import { postsByCategory } from '~/lib/source'
 
 function Item({
   url,
@@ -59,23 +59,21 @@ export default async function Page({
               <div key={category.title}>
                 <h2 className='text-3xl font-bold'>{category.title}</h2>
                 <ul className='mt-4 flex flex-col gap-y-2'>
-                  {category.posts.map((post) => {
-                    const zhPage = source.getPage(post.slugs, 'zh')
+                  {category.posts
+                    .filter((post) => post.locale === lang)
+                    .map((post) => {
+                      if (!post) return null
 
-                    const postValue = lang === 'zh' ? zhPage : post
-
-                    if (!postValue) return null
-
-                    return (
-                      <Item
-                        key={postValue?.url}
-                        url={postValue?.url}
-                        title={postValue?.data.title}
-                        date={postValue?.data.date}
-                        duration={postValue?.data.duration}
-                      />
-                    )
-                  })}
+                      return (
+                        <Item
+                          key={post?.url}
+                          url={post?.url}
+                          title={post?.data.title}
+                          date={post?.data.date}
+                          duration={post?.data.duration}
+                        />
+                      )
+                    })}
                 </ul>
               </div>
             ))}
