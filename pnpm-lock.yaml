@@ -22,10 +22,10 @@ importers:
         version: 0.2.2
       '@lingui/core':
         specifier: ^5.5.1
-        version: 5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))
+        version: 5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))
       '@lingui/react':
         specifier: ^5.5.1
-        version: 5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))(react@19.2.0)
+        version: 5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))(react@19.2.0)
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
@@ -98,7 +98,7 @@ importers:
         version: 5.5.1(typescript@5.9.3)(webpack@5.101.0)
       '@lingui/swc-plugin':
         specifier: ^5.6.1
-        version: 5.6.1(@lingui/core@5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3)))(next@15.5.6(@babel/core@7.28.4)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        version: 5.6.1(@lingui/core@5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3)))(next@15.5.6(@babel/core@7.28.4)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       '@mdx-js/loader':
         specifier: ^3.1.1
         version: 3.1.1(acorn@8.15.0)(webpack@5.101.0)
@@ -1307,6 +1307,18 @@ packages:
       babel-plugin-macros:
         optional: true
 
+  '@lingui/core@5.5.2':
+    resolution: {integrity: sha512-YhKdfXOSEr64mEsPL7DbgGhoXJhI+DSysZHA43K9ZuG322JEql+luvRZpH/NobLBMiM1SjoLVWazEsqIkGuPDQ==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      '@lingui/babel-plugin-lingui-macro': 5.5.2
+      babel-plugin-macros: 2 || 3
+    peerDependenciesMeta:
+      '@lingui/babel-plugin-lingui-macro':
+        optional: true
+      babel-plugin-macros:
+        optional: true
+
   '@lingui/format-po@5.5.1':
     resolution: {integrity: sha512-2pLQLiQsFjAygbXbZFQojfvQFVbANaiGJ2irntJ227/1DL/ZEglKM5IwfkylDr8D0g37Q4Uh0VN9Ila81IVwew==}
     engines: {node: '>=20.0.0'}
@@ -1321,11 +1333,15 @@ packages:
     resolution: {integrity: sha512-RV3WjkSDTYIhNQwAj5MUHjpfOgPJFBXDuBW3aFZZmPqAkFrSJJbrKxVmBoja59b3CEX5QuCGOHnijrCehBpU+w==}
     engines: {node: '>=20.0.0'}
 
-  '@lingui/react@5.5.1':
-    resolution: {integrity: sha512-chh/rfjg1vezy43/RUD+Uh5eAZUqn6ev2P4sYe5Q762SkkG2aiP5VGZS7c4jGJ/r0BMD1KknixZRl/HPnOcTug==}
+  '@lingui/message-utils@5.5.2':
+    resolution: {integrity: sha512-0/xu0nAzYm4ZLUHAdowkTLcP2iM+UOuFEpIsJ40iOIYgHeub1idtn8EFnliCiN83rfrcMaPK63MgGKmyTI4Umg==}
+    engines: {node: '>=20.0.0'}
+
+  '@lingui/react@5.5.2':
+    resolution: {integrity: sha512-ZX0ubBM66m11lVErQNP3EfWbfVgfW74Lm/iOXeT1kHm+HuwIOrbulDD0v7JsbeH6TUSE+LXYImtGuEwnN9IxGQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@lingui/babel-plugin-lingui-macro': 5.5.1
+      '@lingui/babel-plugin-lingui-macro': 5.5.2
       babel-plugin-macros: 2 || 3
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
@@ -7286,6 +7302,13 @@ snapshots:
     optionalDependencies:
       '@lingui/babel-plugin-lingui-macro': 5.5.1(typescript@5.9.3)
 
+  '@lingui/core@5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))':
+    dependencies:
+      '@babel/runtime': 7.28.4
+      '@lingui/message-utils': 5.5.2
+    optionalDependencies:
+      '@lingui/babel-plugin-lingui-macro': 5.5.1(typescript@5.9.3)
+
   '@lingui/format-po@5.5.1(typescript@5.9.3)':
     dependencies:
       '@lingui/conf': 5.5.1(typescript@5.9.3)
@@ -7311,17 +7334,22 @@ snapshots:
       '@messageformat/parser': 5.1.1
       js-sha256: 0.10.1
 
-  '@lingui/react@5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))(react@19.2.0)':
+  '@lingui/message-utils@5.5.2':
+    dependencies:
+      '@messageformat/parser': 5.1.1
+      js-sha256: 0.10.1
+
+  '@lingui/react@5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))(react@19.2.0)':
     dependencies:
       '@babel/runtime': 7.28.4
-      '@lingui/core': 5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))
+      '@lingui/core': 5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))
       react: 19.2.0
     optionalDependencies:
       '@lingui/babel-plugin-lingui-macro': 5.5.1(typescript@5.9.3)
 
-  '@lingui/swc-plugin@5.6.1(@lingui/core@5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3)))(next@15.5.6(@babel/core@7.28.4)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
+  '@lingui/swc-plugin@5.6.1(@lingui/core@5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3)))(next@15.5.6(@babel/core@7.28.4)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
-      '@lingui/core': 5.5.1(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))
+      '@lingui/core': 5.5.2(@lingui/babel-plugin-lingui-macro@5.5.1(typescript@5.9.3))
     optionalDependencies:
       next: 15.5.6(@babel/core@7.28.4)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
 
