@@ -46,7 +46,7 @@ importers:
         version: 12.0.3(fumadocs-core@15.8.5(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       fumadocs-twoslash:
         specifier: ^3.1.8
-        version: 3.1.9(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(fumadocs-ui@15.8.5(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.16))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)
+        version: 3.1.10(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(fumadocs-ui@15.8.5(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.16))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)
       fumadocs-ui:
         specifier: ^15.8.5
         version: 15.8.5(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.16)
@@ -2468,6 +2468,9 @@ packages:
   '@shikijs/core@3.14.0':
     resolution: {integrity: sha512-qRSeuP5vlYHCNUIrpEBQFO7vSkR7jn7Kv+5X3FO/zBKVDGQbcnlScD3XhkrHi/R8Ltz0kEjvFR9Szp/XMRbFMw==}
 
+  '@shikijs/core@3.15.0':
+    resolution: {integrity: sha512-8TOG6yG557q+fMsSVa8nkEDOZNTSxjbbR8l6lF2gyr6Np+jrPlslqDxQkN6rMXCECQ3isNPZAGszAfYoJOPGlg==}
+
   '@shikijs/engine-javascript@3.13.0':
     resolution: {integrity: sha512-Ty7xv32XCp8u0eQt8rItpMs6rU9Ki6LJ1dQOW3V/56PKDcpvfHPnYFbsx5FFUP2Yim34m/UkazidamMNVR4vKg==}
 
@@ -2498,8 +2501,8 @@ packages:
   '@shikijs/transformers@3.13.0':
     resolution: {integrity: sha512-833lcuVzcRiG+fXvgslWsM2f4gHpjEgui1ipIknSizRuTgMkNZupiXE5/TVJ6eSYfhNBFhBZKkReKWO2GgYmqA==}
 
-  '@shikijs/twoslash@3.14.0':
-    resolution: {integrity: sha512-Eh8Kg9ZZF+kY5zLFrnkA8iFNWZ8L25g2B5sviHwyx6G38pVDSIBpNmchHnx5qS8lUCNtt/Os3S5VmC0JBEDz+A==}
+  '@shikijs/twoslash@3.15.0':
+    resolution: {integrity: sha512-3GoJvYMm2oj4Mq+yJyXt9vmMFfih34FBlLMYLRAIXNmBrj3/6jsuHKakGHMVza5jui6TmmjbS5bmJI29UHftQQ==}
     peerDependencies:
       typescript: '>=5.5.0'
 
@@ -2508,6 +2511,9 @@ packages:
 
   '@shikijs/types@3.14.0':
     resolution: {integrity: sha512-bQGgC6vrY8U/9ObG1Z/vTro+uclbjjD/uG58RvfxKZVD5p9Yc1ka3tVyEFy7BNJLzxuWyHH5NWynP9zZZS59eQ==}
+
+  '@shikijs/types@3.15.0':
+    resolution: {integrity: sha512-BnP+y/EQnhihgHy4oIAN+6FFtmfTekwOLsQbRw9hOKwqgNy8Bdsjq8B05oAt/ZgvIWWFrshV71ytOrlPfYjIJw==}
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
@@ -4100,8 +4106,8 @@ packages:
       vite:
         optional: true
 
-  fumadocs-twoslash@3.1.9:
-    resolution: {integrity: sha512-b6Zo5dRLQGVBitPKpSBPjYj0Qez2O7gyH0fHdxu3D4S77/wx5VIUtfGVlfbpzBHJ4ZMaC7U7LAyA8FCJd/zzIA==}
+  fumadocs-twoslash@3.1.10:
+    resolution: {integrity: sha512-x45dgfCRyUSjqd/APhf4EWJBnqoEqNH7kp7P4GbVWJqvptNsr5kQtRjMRTbhbg28XsrsBNHRTa8q1/w+rDfm1Q==}
     peerDependencies:
       '@types/react': '*'
       fumadocs-ui: ^15.0.0 || ^16.0.0
@@ -5811,6 +5817,9 @@ packages:
 
   tailwind-merge@3.3.1:
     resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
+
+  tailwind-merge@3.4.0:
+    resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
 
   tailwindcss@4.1.16:
     resolution: {integrity: sha512-pONL5awpaQX4LN5eiv7moSiSPd/DLDzKVRJz8Q9PgzmAdd1R4307GQS2ZpfiN7ZmekdQrfhZZiSE5jkLR4WNaA==}
@@ -8554,6 +8563,13 @@ snapshots:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
+  '@shikijs/core@3.15.0':
+    dependencies:
+      '@shikijs/types': 3.15.0
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+      hast-util-to-html: 9.0.5
+
   '@shikijs/engine-javascript@3.13.0':
     dependencies:
       '@shikijs/types': 3.13.0
@@ -8606,10 +8622,10 @@ snapshots:
       '@shikijs/core': 3.13.0
       '@shikijs/types': 3.13.0
 
-  '@shikijs/twoslash@3.14.0(typescript@5.9.3)':
+  '@shikijs/twoslash@3.15.0(typescript@5.9.3)':
     dependencies:
-      '@shikijs/core': 3.14.0
-      '@shikijs/types': 3.14.0
+      '@shikijs/core': 3.15.0
+      '@shikijs/types': 3.15.0
       twoslash: 0.3.4(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -8621,6 +8637,11 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/types@3.14.0':
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+
+  '@shikijs/types@3.15.0':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -10375,17 +10396,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-twoslash@3.1.9(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(fumadocs-ui@15.8.5(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.16))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3):
+  fumadocs-twoslash@3.1.10(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(fumadocs-ui@15.8.5(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.16))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3):
     dependencies:
       '@radix-ui/react-popover': 1.1.15(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@shikijs/twoslash': 3.14.0(typescript@5.9.3)
+      '@shikijs/twoslash': 3.15.0(typescript@5.9.3)
       fumadocs-ui: 15.8.5(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(next@15.5.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.16)
       mdast-util-from-markdown: 2.0.2
       mdast-util-gfm: 3.1.0
       mdast-util-to-hast: 13.2.0
       react: 19.2.0
       shiki: 3.14.0
-      tailwind-merge: 3.3.1
+      tailwind-merge: 3.4.0
       twoslash: 0.3.4(typescript@5.9.3)
     optionalDependencies:
       '@types/react': 19.2.2
@@ -12457,6 +12478,8 @@ snapshots:
   tailwind-merge@3.1.0: {}
 
   tailwind-merge@3.3.1: {}
+
+  tailwind-merge@3.4.0: {}
 
   tailwindcss@4.1.16: {}
 
