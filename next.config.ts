@@ -24,8 +24,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  reactCompiler: true,
   experimental: {
-    reactCompiler: true,
     swcPlugins: [['@lingui/swc-plugin', {}]],
   },
   typedRoutes: false,
