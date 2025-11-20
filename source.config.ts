@@ -1,4 +1,3 @@
-import path from 'node:path'
 import { remarkHasInH1, remarkSandpack } from '@workspace/mdx-plugins'
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins'
 import {
