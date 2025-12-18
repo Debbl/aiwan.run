@@ -1,4 +1,5 @@
 import { msg } from '@lingui/core/macro'
+import Script from 'next/script'
 import { Footer } from '~/app/_components/footer'
 import { Header } from '~/app/_components/header'
 import { WEBSITE } from '~/constants'
@@ -127,12 +128,17 @@ export default async function RootLayout({
   return (
     <html lang={lang} className='h-full' suppressHydrationWarning>
       <head>
-        <script
+        <Script
           async
           defer
           src='https://cloud.umami.is/script.js'
           data-website-id='6ed314b0-fc17-4333-870a-d9e5af82626e'
           data-domains='aiwan.run'
+        />
+        <Script
+          src='https://app.rybbit.io/api/script.js'
+          data-site-id='242b9158c21a'
+          defer
         />
         <script
           type='application/ld+json'

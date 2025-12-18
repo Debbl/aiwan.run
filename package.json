@@ -100,17 +100,6 @@
     "vfile": "^6.0.3",
     "wrangler": "^4.49.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@tailwindcss/oxide",
-      "es5-ext",
-      "esbuild",
-      "sharp",
-      "simple-git-hooks",
-      "unrs-resolver",
-      "workerd"
-    ]
-  },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
