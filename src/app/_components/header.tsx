@@ -7,6 +7,7 @@ import ThemeSwitcher from './theme-switcher'
 export function Header() {
   const { t, i18n } = useLingui()
   const nav: {
+    'id': string
     'url': string
     'name': string
     'data-umami-event'?: string
@@ -15,10 +16,12 @@ export function Header() {
     'target'?: string
   }[] = [
     {
+      id: 'blog',
       url: '/posts',
       name: t`Blog`,
     },
     {
+      'id': 'ai',
       'url': 'https://ai.aiwan.run',
       'name': t`AI`,
       'noLocale': true,
@@ -26,6 +29,7 @@ export function Header() {
       'data-umami-event': 'click-ai-link',
     },
     {
+      'id': 'tools',
       'url': 'https://tools.aiwan.run',
       'name': t`Tools`,
       'noLocale': true,
@@ -33,18 +37,21 @@ export function Header() {
       'data-umami-event': 'click-tools-link',
     },
     {
+      'id': 'slides',
       'url': 'https://slides.aiwan.run',
       'name': t`Slides`,
       'target': '_blank',
       'data-umami-event': 'click-slides-link',
     },
     {
+      id: 'language',
       url: i18n.locale === 'zh' ? '/' : '/zh',
       noLocale: true,
       name: t`Switch Language`,
       icon: <Icon.LuLanguages className='size-5' />,
     },
     {
+      id: 'rss',
       url: '/feed.xml',
       noLocale: true,
       name: t`RSS`,
@@ -82,7 +89,7 @@ export function Header() {
                   ? { 'data-umami-event': n['data-umami-event'] }
                   : {})}
                 title={n.name}
-                key={n.name}
+                key={n.id}
                 href={n.url}
                 noLocale={n.noLocale}
                 prefetch={['/posts'].includes(n.url)}

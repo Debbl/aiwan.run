@@ -9,3 +9,6 @@ onlyBuiltDependencies:
   - 'simple-git-hooks'
   - 'unrs-resolver'
   - 'workerd'
+
+overrides:
+  'eslint-plugin-react-hooks>zod-validation-error': '4.0.2'

@@ -1,4 +1,4 @@
-import { RootProvider } from 'fumadocs-ui/provider'
+import { RootProvider } from 'fumadocs-ui/provider/next'
 import { domAnimation, LazyMotion } from 'motion/react'
 import { ThemeProvider } from 'next-themes'
 import { getI18nInstance } from '~/i18n'

@@ -1,7 +1,7 @@
 {
   "name": "@workspace/mdx-plugins",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "files": [
     "dist"
   ],
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "estree-util-is-identifier-name": "^3.0.0",
-    "estree-util-value-to-estree": "^3.4.0",
+    "estree-util-value-to-estree": "^3.5.0",
     "toml": "^3.0.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
@@ -18,6 +18,6 @@
   },
   "devDependencies": {
     "@types/mdast": "^4.0.4",
-    "tsdown": "^0.15.7"
+    "tsdown": "^0.16.5"
   }
 }

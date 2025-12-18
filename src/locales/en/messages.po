@@ -65,7 +65,7 @@ msgstr "ai"
 msgid "Ai"
 msgstr "Ai"
 
-#: src/app/_components/header.tsx:23
+#: src/app/_components/header.tsx:26
 msgid "AI"
 msgstr "AI"
 
@@ -85,7 +85,7 @@ msgstr "Bilibili ShortLink Converter"
 msgid "Bilibili shortLink converter."
 msgstr "Bilibili shortLink converter."
 
-#: src/app/_components/header.tsx:19
+#: src/app/_components/header.tsx:21
 #: src/constants/index.server.ts:24
 msgid "Blog"
 msgstr "Blog"
@@ -188,7 +188,7 @@ msgstr "react"
 msgid "Reader Markdown"
 msgstr "Reader Markdown"
 
-#: src/app/_components/header.tsx:50
+#: src/app/_components/header.tsx:57
 msgid "RSS"
 msgstr "RSS"
 
@@ -196,7 +196,7 @@ msgstr "RSS"
 msgid "Self driving car"
 msgstr "Self driving car"
 
-#: src/app/_components/header.tsx:37
+#: src/app/_components/header.tsx:42
 msgid "Slides"
 msgstr "Slides"
 
@@ -216,7 +216,7 @@ msgstr "some toys"
 msgid "some visualization"
 msgstr "some visualization"
 
-#: src/app/_components/header.tsx:44
+#: src/app/_components/header.tsx:50
 msgid "Switch Language"
 msgstr "Switch Language"
 
@@ -232,7 +232,7 @@ msgstr "Tic tac toe"
 msgid "TIL"
 msgstr "TIL"
 
-#: src/app/_components/header.tsx:30
+#: src/app/_components/header.tsx:34
 #: src/app/[lang]/page.tsx:88
 msgid "Tools"
 msgstr "Tools"

@@ -65,7 +65,7 @@ msgstr "ai"
 msgid "Ai"
 msgstr "Ai"
 
-#: src/app/_components/header.tsx:23
+#: src/app/_components/header.tsx:26
 msgid "AI"
 msgstr "AI"
 
@@ -85,7 +85,7 @@ msgstr "哔哩哔哩短链接转换器"
 msgid "Bilibili shortLink converter."
 msgstr "哔哩哔哩短链接转换器"
 
-#: src/app/_components/header.tsx:19
+#: src/app/_components/header.tsx:21
 #: src/constants/index.server.ts:24
 msgid "Blog"
 msgstr "博客"
@@ -192,7 +192,7 @@ msgstr "react"
 msgid "Reader Markdown"
 msgstr "Markdown 阅读器"
 
-#: src/app/_components/header.tsx:50
+#: src/app/_components/header.tsx:57
 msgid "RSS"
 msgstr "RSS"
 
@@ -200,7 +200,7 @@ msgstr "RSS"
 msgid "Self driving car"
 msgstr "自动驾驶汽车"
 
-#: src/app/_components/header.tsx:37
+#: src/app/_components/header.tsx:42
 msgid "Slides"
 msgstr "幻灯片"
 
@@ -220,7 +220,7 @@ msgstr "一些玩具"
 msgid "some visualization"
 msgstr "可视化"
 
-#: src/app/_components/header.tsx:44
+#: src/app/_components/header.tsx:50
 msgid "Switch Language"
 msgstr "切换语言"
 
@@ -236,7 +236,7 @@ msgstr "井字棋"
 msgid "TIL"
 msgstr "TIL"
 
-#: src/app/_components/header.tsx:30
+#: src/app/_components/header.tsx:34
 #: src/app/[lang]/page.tsx:88
 msgid "Tools"
 msgstr "工具"
