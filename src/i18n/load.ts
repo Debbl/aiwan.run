@@ -8,7 +8,7 @@ export const { locales, sourceLocale } = linguiConfig
 export async function loadCatalog(locale: Locale): Promise<{
   [k: string]: Messages
 }> {
-  const { messages } = await import(`../locales/${locale}/messages.po`)
+  const { messages } = await import(`../locales/${locale}/messages.mjs`)
   return {
     [locale]: messages,
   }
