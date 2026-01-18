@@ -1,23 +1,37 @@
-/* eslint-disable react-refresh/only-export-components */
+import { notFound } from 'next/navigation'
 import { ImageResponse } from 'next/og'
+import { getServerWebsiteConstants } from '~/constants/index.server'
+import { source } from '~/lib/source'
+import type { NextRequest } from 'next/server'
+import type { Lang } from '~/types'
 
-export const dynamic = 'force-static'
+export async function withGenerateStaticParams(lang: Lang) {
+  return source
+    .generateParams('slug', 'lang')
+    .filter((s) => s.lang === 'en')
+    .map((s) => ({
+      ...(lang === 'zh' ? { lang: 'zh' } : {}),
+      slug: s.slug.concat(['opengraph-image.png']),
+    }))
+}
 
-export const contentType = 'image/png'
+export async function generatePostOpenGraphImage(
+  slugs: string[],
+  lang: Lang = 'en',
+) {
+  const post = source.getPage(slugs, lang)
+  const { name } = await getServerWebsiteConstants(lang)
 
-export default async function Image() {
   return new ImageResponse(
     <div
       style={{
-        height: '100%',
+        fontSize: 48,
+        background: 'white',
         width: '100%',
+        height: '100%',
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#fff',
-        fontSize: 32,
-        fontWeight: 600,
       }}
     >
       <div
@@ -82,17 +96,25 @@ export default async function Image() {
           </g>
         </svg>
       </div>
-
-      <div style={{ marginTop: 8, fontSize: 14, color: '#64748b' }}>
-        @Brendan Dash
+      <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 12 }}>
+        <div style={{ fontSize: 24 }}>{name}</div>
+        <div style={{ fontWeight: 500, fontSize: 32 }}>{post?.data.title}</div>
       </div>
-      <h4 style={{ marginTop: 4, fontSize: 30, color: '#020617' }}>
-        aiwan.run
-      </h4>
     </div>,
-    {
-      width: 800,
-      height: 400,
-    },
   )
+}
+
+export async function withGET(
+  lang: Lang,
+  _req: NextRequest,
+  {
+    params,
+  }: {
+    params: Promise<{ slug?: string[] }>
+  },
+) {
+  const { slug } = await params
+  if (!slug) notFound()
+
+  return generatePostOpenGraphImage(slug.slice(0, -1), lang as Lang)
 }

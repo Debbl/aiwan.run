@@ -49,7 +49,7 @@ export async function generateStaticFeed(lang: 'en' | 'zh' = 'en') {
           'content:encoded': {
             _cdata: markdownToHtml(
               (await post.data.getText('raw')) || '',
-              post.absolutePath,
+              post.absolutePath || '',
             ),
           },
         },

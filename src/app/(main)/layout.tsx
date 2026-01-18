@@ -1,7 +1,10 @@
-import RootLayout from '../[lang]/root-layout'
+import { withGenerateMetadata, WithLayout } from '../[lang]/layout.with'
+import type { Metadata } from 'next'
 
-export { generateMetadata } from '../[lang]/root-layout'
+export async function generateMetadata(): Promise<Metadata> {
+  return withGenerateMetadata('en')
+}
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <RootLayout lang='en'>{children}</RootLayout>
+export default function Layout(props: { children: React.ReactNode }) {
+  return WithLayout('en', props)
 }

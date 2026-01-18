@@ -43,6 +43,9 @@ next-env.d.ts
 public/sw*
 public/swe-worker*
 
+# Lingui
+src/locales/**/*.mjs
+
 # fumadocs
 .source
 

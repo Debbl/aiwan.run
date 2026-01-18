@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { msg } from '@lingui/core/macro'
 import Script from 'next/script'
 import { Footer } from '~/app/_components/footer'
@@ -8,16 +9,12 @@ import Providers from '~/providers'
 import type { Metadata } from 'next'
 import type { Lang } from '~/types'
 
-export function generateStaticParams() {
-  return [{ lang: 'zh' }]
+export function withGenerateStaticParams(lang: Lang) {
+  if (lang === 'en') return []
+  return [{ lang }]
 }
 
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<{ lang: Lang }>
-}): Promise<Metadata> => {
-  const { lang = 'en' } = await params
+export const withGenerateMetadata = async (lang: Lang): Promise<Metadata> => {
   const { title, description, keywords } = await getServerWebsiteConstants(lang)
 
   return {
@@ -55,6 +52,7 @@ export const generateMetadata = async ({
       },
     ],
     twitter: {
+      site: WEBSITE.domain,
       creator: 'Debbl66',
     },
     openGraph: {
@@ -86,13 +84,13 @@ export const generateMetadata = async ({
   }
 }
 
-export default async function RootLayout({
-  children,
-  lang,
-}: {
-  children: React.ReactNode
-  lang: Lang
-}) {
+export async function WithLayout(
+  lang: Lang,
+  props: {
+    children: React.ReactNode
+  },
+) {
+  const { children } = props
   const { i18n, description, baseUrl } = await getServerWebsiteConstants(lang)
 
   const structuredData = {

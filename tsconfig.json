@@ -1,22 +1,20 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "ESNext",
+    "target": "esnext",
     "jsx": "react-jsx",
-    "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
-    "module": "ESNext",
+    "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
       "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
-    "types": ["@serwist/next/typings"],
     "allowJs": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "skipLibCheck": true,
     "plugins": [
@@ -30,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
   ],
   "exclude": ["node_modules"]
 }
