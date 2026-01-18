@@ -31,7 +31,8 @@ export async function withGenerateMetadata(
   const page = source.getPage(slug, lang)
   if (!page) notFound()
 
-  const currentPathname = page.url
+  const pathName = `/${page.url.split('/').slice(2).join('/')}`
+  const currentPathname = lang === 'zh' ? page.url : pathName
   const langPath = lang === 'zh' ? `${WEBSITE.domain}/zh` : WEBSITE.domain
 
   return {
@@ -43,17 +44,17 @@ export async function withGenerateMetadata(
       images: [
         `${langPath}/posts/og/${page.slugs.concat(['opengraph-image.png']).join('/')}`,
       ],
-      url: `${langPath}${page.url}`,
+      url: currentPathname,
       title: page.data.title,
       description: page.data.description || `Post | ${page.data.title}`,
       emails: [WEBSITE.email],
     },
     alternates: {
-      canonical: langPath + currentPathname,
+      canonical: currentPathname,
       languages: linguiConfig.locales.reduce(
         (acc, l) => ({
           ...acc,
-          [l]: `${langPath}${currentPathname}`,
+          [l]: l === 'en' ? pathName : `/${l}${pathName}`,
         }),
         {},
       ),

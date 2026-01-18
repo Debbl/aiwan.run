@@ -1,19 +1,27 @@
-import RootLayout from './root-layout'
+import {
+  withGenerateMetadata,
+  withGenerateStaticParams,
+  WithLayout,
+} from './layout.with'
+import type { Metadata } from 'next'
 import type { Lang } from '~/types'
 
-export {
-  generateMetadata,
-  generateStaticParams,
-} from '~/app/[lang]/root-layout'
+export async function generateStaticParams() {
+  return withGenerateStaticParams('zh')
+}
 
-export default async function Layout({
-  children,
-  params,
-}: {
+export async function generateMetadata(props: {
+  params: Promise<{ lang: Lang }>
+}): Promise<Metadata> {
+  const { lang } = await props.params
+  return withGenerateMetadata(lang)
+}
+
+export default async function Layout(props: {
   children: React.ReactNode
   params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
+  const { lang } = await props.params
 
-  return <RootLayout lang={lang as Lang}>{children}</RootLayout>
+  return WithLayout(lang as Lang, props)
 }

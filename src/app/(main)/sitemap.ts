@@ -1,7 +1,7 @@
-import { generateStaticSitemap } from '../[lang]/sitemap'
+import { withSitemap } from '../[lang]/sitemap.with'
 
 export const dynamic = 'force-static'
 
 export default function sitemap() {
-  return generateStaticSitemap('en')
+  return withSitemap('en')
 }
