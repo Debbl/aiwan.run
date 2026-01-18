@@ -94,8 +94,8 @@ msgstr "博客"
 msgid "Brendan Dash"
 msgstr "Brendan Dash"
 
+#: src/app/[lang]/layout.with.tsx:120
 #: src/app/[lang]/posts/layout.tsx:16
-#: src/app/[lang]/root-layout.tsx:122
 #: src/constants/index.server.ts:14
 msgid "Brendan Dash's Blog"
 msgstr "Brendan Dash 的博客"
@@ -136,7 +136,7 @@ msgstr "邮箱"
 msgid "Emoji Kitchen"
 msgstr "emoji kitchen"
 
-#: src/app/[lang]/page.tsx:264
+#: src/app/[lang]/page.tsx:260
 msgid "Find Me"
 msgstr "找到我"
 
@@ -152,7 +152,7 @@ msgstr "生命游戏"
 msgid "Github"
 msgstr "Github"
 
-#: src/app/[lang]/page.tsx:216
+#: src/app/[lang]/page.tsx:212
 msgid "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
 msgstr "你好，我是 Brendan Dash， 你可以在这里找到我创建的一些玩具、游戏和其他项目。"
 

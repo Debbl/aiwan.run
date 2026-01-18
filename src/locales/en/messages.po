@@ -94,8 +94,8 @@ msgstr "Blog"
 msgid "Brendan Dash"
 msgstr "Brendan Dash"
 
+#: src/app/[lang]/layout.with.tsx:120
 #: src/app/[lang]/posts/layout.tsx:16
-#: src/app/[lang]/root-layout.tsx:122
 #: src/constants/index.server.ts:14
 msgid "Brendan Dash's Blog"
 msgstr "Brendan Dash's Blog"
@@ -132,7 +132,7 @@ msgstr "Email"
 msgid "Emoji Kitchen"
 msgstr "Emoji Kitchen"
 
-#: src/app/[lang]/page.tsx:264
+#: src/app/[lang]/page.tsx:260
 msgid "Find Me"
 msgstr "Find Me"
 
@@ -148,7 +148,7 @@ msgstr "Game of Life"
 msgid "Github"
 msgstr "Github"
 
-#: src/app/[lang]/page.tsx:216
+#: src/app/[lang]/page.tsx:212
 msgid "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
 msgstr "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
 
