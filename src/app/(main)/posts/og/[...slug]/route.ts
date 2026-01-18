@@ -1,24 +1,18 @@
-import { notFound } from 'next/navigation'
-import { generatePostOpenGraphImage } from '~/app/[lang]/posts/og/[...slug]/route.index'
-import { source } from '~/lib/source'
+import {
+  withGenerateStaticParams,
+  withGET,
+} from '~/app/[lang]/posts/og/[...slug]/route.with'
 import type { NextRequest } from 'next/server'
 
 export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
-  return source
-    .generateParams('slug', 'lang')
-    .filter((s) => s.lang === 'en')
-    .map((s) => ({ slug: s.slug.concat(['opengraph-image.png']) }))
+  return withGenerateStaticParams('zh')
 }
 
 export async function GET(
   _req: NextRequest,
   ctx: RouteContext<'/posts/og/[...slug]'>,
 ) {
-  const { slug } = await ctx.params
-
-  if (!slug) notFound()
-
-  return generatePostOpenGraphImage(slug.slice(0, -1))
+  return withGET('en', _req, ctx)
 }

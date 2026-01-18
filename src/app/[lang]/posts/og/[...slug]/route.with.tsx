@@ -1,7 +1,19 @@
+import { notFound } from 'next/navigation'
 import { ImageResponse } from 'next/og'
 import { getServerWebsiteConstants } from '~/constants/index.server'
 import { source } from '~/lib/source'
+import type { NextRequest } from 'next/server'
 import type { Lang } from '~/types'
+
+export async function withGenerateStaticParams(lang: Lang) {
+  return source
+    .generateParams('slug', 'lang')
+    .filter((s) => s.lang === 'en')
+    .map((s) => ({
+      ...(lang === 'zh' ? { lang: 'zh' } : {}),
+      slug: s.slug.concat(['opengraph-image.png']),
+    }))
+}
 
 export async function generatePostOpenGraphImage(
   slugs: string[],
@@ -90,4 +102,19 @@ export async function generatePostOpenGraphImage(
       </div>
     </div>,
   )
+}
+
+export async function withGET(
+  lang: Lang,
+  _req: NextRequest,
+  {
+    params,
+  }: {
+    params: Promise<{ slug?: string[] }>
+  },
+) {
+  const { slug } = await params
+  if (!slug) notFound()
+
+  return generatePostOpenGraphImage(slug.slice(0, -1), lang as Lang)
 }

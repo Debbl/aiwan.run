@@ -1,9 +1,10 @@
-import { generateStaticFeed } from '~/app/[lang]/feed.xml/generate-static-feed'
+import { withGenerateStaticParams, withGET } from './route.with'
+import type { Lang } from '~/types'
 
 export const dynamic = 'force-static'
 
 export function generateStaticParams() {
-  return [{ lang: 'zh' }]
+  return withGenerateStaticParams('zh')
 }
 
 export async function GET(
@@ -16,5 +17,5 @@ export async function GET(
 ) {
   const { lang } = await params
 
-  return generateStaticFeed(lang as 'en' | 'zh')
+  return withGET(lang as Lang)
 }
