@@ -111,6 +111,9 @@ importers:
       '@next/mdx':
         specifier: ^16.1.3
         version: 16.1.3(@mdx-js/loader@3.1.1(acorn@8.15.0)(webpack@5.101.0(esbuild@0.27.2)))(@mdx-js/react@3.1.1(@types/react@19.2.8)(react@19.2.3))
+      '@serwist/cli':
+        specifier: ^9.5.0
+        version: 9.5.0(@types/node@25.0.9)(esbuild@0.27.2)(typescript@5.9.3)
       '@serwist/next':
         specifier: ^9.5.0
         version: 9.5.0(@serwist/cli@9.5.0(@types/node@25.0.9)(esbuild@0.27.2)(typescript@5.9.3))(next@16.1.3(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(webpack@5.101.0(esbuild@0.27.2))
@@ -7656,8 +7659,7 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
-  '@inquirer/ansi@2.0.3':
-    optional: true
+  '@inquirer/ansi@2.0.3': {}
 
   '@inquirer/checkbox@5.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7667,7 +7669,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/confirm@6.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7675,7 +7676,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/core@11.1.1(@types/node@25.0.9)':
     dependencies:
@@ -7688,7 +7688,6 @@ snapshots:
       wrap-ansi: 9.0.2
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/editor@5.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7697,7 +7696,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/expand@5.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7705,7 +7703,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/external-editor@2.0.3(@types/node@25.0.9)':
     dependencies:
@@ -7713,10 +7710,8 @@ snapshots:
       iconv-lite: 0.7.2
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
-  '@inquirer/figures@2.0.3':
-    optional: true
+  '@inquirer/figures@2.0.3': {}
 
   '@inquirer/input@5.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7724,7 +7719,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/number@4.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7732,7 +7726,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/password@5.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7741,7 +7734,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/prompts@8.1.0(@types/node@25.0.9)':
     dependencies:
@@ -7757,7 +7749,6 @@ snapshots:
       '@inquirer/select': 5.0.4(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/rawlist@5.2.0(@types/node@25.0.9)':
     dependencies:
@@ -7765,7 +7756,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/search@4.1.0(@types/node@25.0.9)':
     dependencies:
@@ -7774,7 +7764,6 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/select@5.0.4(@types/node@25.0.9)':
     dependencies:
@@ -7784,12 +7773,10 @@ snapshots:
       '@inquirer/type': 4.0.3(@types/node@25.0.9)
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@inquirer/type@4.0.3(@types/node@25.0.9)':
     optionalDependencies:
       '@types/node': 25.0.9
-    optional: true
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -8143,20 +8130,17 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@pnpm/config.env-replace@1.1.0':
-    optional: true
+  '@pnpm/config.env-replace@1.1.0': {}
 
   '@pnpm/network.ca-file@1.0.2':
     dependencies:
       graceful-fs: 4.2.10
-    optional: true
 
   '@pnpm/npm-conf@3.0.2':
     dependencies:
       '@pnpm/config.env-replace': 1.1.0
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
-    optional: true
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -9017,7 +9001,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
       - typescript
-    optional: true
 
   '@serwist/next@9.5.0(@serwist/cli@9.5.0(@types/node@25.0.9)(esbuild@0.27.2)(typescript@5.9.3))(next@16.1.3(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(webpack@5.101.0(esbuild@0.27.2))':
     dependencies:
@@ -9723,7 +9706,6 @@ snapshots:
   ansi-align@3.0.1:
     dependencies:
       string-width: 4.2.3
-    optional: true
 
   ansi-escapes@7.1.1:
     dependencies:
@@ -9775,7 +9757,6 @@ snapshots:
     dependencies:
       stubborn-fs: 2.0.0
       when-exit: 2.1.5
-    optional: true
 
   autoprefixer@10.4.23(postcss@8.5.6):
     dependencies:
@@ -9826,7 +9807,6 @@ snapshots:
       type-fest: 4.41.0
       widest-line: 5.0.0
       wrap-ansi: 9.0.2
-    optional: true
 
   brace-expansion@1.1.12:
     dependencies:
@@ -9877,8 +9857,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  camelcase@8.0.0:
-    optional: true
+  camelcase@8.0.0: {}
 
   camelize@1.0.1: {}
 
@@ -9891,8 +9870,7 @@ snapshots:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
 
-  chalk@5.6.2:
-    optional: true
+  chalk@5.6.2: {}
 
   change-case@5.4.4: {}
 
@@ -9904,8 +9882,7 @@ snapshots:
 
   character-reference-invalid@2.0.1: {}
 
-  chardet@2.1.1:
-    optional: true
+  chardet@2.1.1: {}
 
   chokidar@3.5.1:
     dependencies:
@@ -9937,8 +9914,7 @@ snapshots:
 
   clean-set@1.1.2: {}
 
-  cli-boxes@3.0.0:
-    optional: true
+  cli-boxes@3.0.0: {}
 
   cli-cursor@3.1.0:
     dependencies:
@@ -9959,8 +9935,7 @@ snapshots:
       slice-ansi: 7.1.2
       string-width: 8.1.0
 
-  cli-width@4.1.0:
-    optional: true
+  cli-width@4.1.0: {}
 
   client-only@0.0.1: {}
 
@@ -10008,7 +9983,6 @@ snapshots:
     dependencies:
       ini: 1.3.8
       proto-list: 1.2.4
-    optional: true
 
   configstore@7.1.0:
     dependencies:
@@ -10016,10 +9990,8 @@ snapshots:
       dot-prop: 9.0.0
       graceful-fs: 4.2.11
       xdg-basedir: 5.1.0
-    optional: true
 
-  convert-hrtime@5.0.0:
-    optional: true
+  convert-hrtime@5.0.0: {}
 
   convert-source-map@2.0.0: {}
 
@@ -10088,8 +10060,7 @@ snapshots:
     dependencies:
       character-entities: 2.0.2
 
-  deep-extend@0.6.0:
-    optional: true
+  deep-extend@0.6.0: {}
 
   deep-is@0.1.4: {}
 
@@ -10132,7 +10103,6 @@ snapshots:
   dot-prop@9.0.0:
     dependencies:
       type-fest: 4.41.0
-    optional: true
 
   dotenv@16.4.7: {}
 
@@ -10305,8 +10275,7 @@ snapshots:
 
   escape-carriage@1.3.1: {}
 
-  escape-goat@4.0.0:
-    optional: true
+  escape-goat@4.0.0: {}
 
   escape-html@1.0.3: {}
 
@@ -11020,8 +10989,7 @@ snapshots:
   function-bind@1.1.2:
     optional: true
 
-  function-timeout@1.0.2:
-    optional: true
+  function-timeout@1.0.2: {}
 
   gensync@1.0.0-beta.2: {}
 
@@ -11029,8 +10997,7 @@ snapshots:
 
   get-nonce@1.0.1: {}
 
-  get-own-enumerable-keys@1.0.0:
-    optional: true
+  get-own-enumerable-keys@1.0.0: {}
 
   get-tsconfig@4.13.0:
     dependencies:
@@ -11069,7 +11036,6 @@ snapshots:
   global-directory@4.0.1:
     dependencies:
       ini: 4.1.1
-    optional: true
 
   globals@14.0.0: {}
 
@@ -11090,8 +11056,7 @@ snapshots:
 
   globrex@0.1.2: {}
 
-  graceful-fs@4.2.10:
-    optional: true
+  graceful-fs@4.2.10: {}
 
   graceful-fs@4.2.11: {}
 
@@ -11257,14 +11222,12 @@ snapshots:
   iconv-lite@0.7.2:
     dependencies:
       safer-buffer: 2.1.2
-    optional: true
 
   idb@8.0.3: {}
 
   identifier-regex@1.0.1:
     dependencies:
       reserved-identifiers: 1.2.0
-    optional: true
 
   ieee754@1.2.1: {}
 
@@ -11287,11 +11250,9 @@ snapshots:
 
   inherits@2.0.4: {}
 
-  ini@1.3.8:
-    optional: true
+  ini@1.3.8: {}
 
-  ini@4.1.1:
-    optional: true
+  ini@4.1.1: {}
 
   inline-style-parser@0.2.6: {}
 
@@ -11347,7 +11308,6 @@ snapshots:
     dependencies:
       identifier-regex: 1.0.1
       super-regex: 1.1.0
-    optional: true
 
   is-immutable-type@5.0.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
@@ -11359,24 +11319,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  is-in-ci@1.0.0:
-    optional: true
+  is-in-ci@1.0.0: {}
 
   is-installed-globally@1.0.0:
     dependencies:
       global-directory: 4.0.1
       is-path-inside: 4.0.0
-    optional: true
 
   is-interactive@1.0.0: {}
 
-  is-npm@6.1.0:
-    optional: true
+  is-npm@6.1.0: {}
 
   is-number@7.0.0: {}
 
-  is-obj@3.0.0:
-    optional: true
+  is-obj@3.0.0: {}
 
   is-observable@2.1.0: {}
 
@@ -11386,8 +11342,7 @@ snapshots:
 
   is-plain-object@5.0.0: {}
 
-  is-regexp@3.1.0:
-    optional: true
+  is-regexp@3.1.0: {}
 
   is-unicode-supported@0.1.0: {}
 
@@ -11474,13 +11429,11 @@ snapshots:
 
   kolorist@1.8.0: {}
 
-  ky@1.14.2:
-    optional: true
+  ky@1.14.2: {}
 
   latest-version@9.0.0:
     dependencies:
       package-json: 10.0.1
-    optional: true
 
   leven@3.1.0: {}
 
@@ -11624,7 +11577,6 @@ snapshots:
       p-event: 6.0.1
       type-fest: 4.41.0
       web-worker: 1.2.0
-    optional: true
 
   markdown-extensions@2.0.0: {}
 
@@ -11829,8 +11781,7 @@ snapshots:
 
   mdurl@2.0.0: {}
 
-  meow@14.0.0:
-    optional: true
+  meow@14.0.0: {}
 
   merge-stream@2.0.0: {}
 
@@ -12188,8 +12139,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mute-stream@3.0.0:
-    optional: true
+  mute-stream@3.0.0: {}
 
   nano-spawn@2.0.0: {}
 
@@ -12309,7 +12259,6 @@ snapshots:
   p-event@6.0.1:
     dependencies:
       p-timeout: 6.1.4
-    optional: true
 
   p-limit@3.1.0:
     dependencies:
@@ -12319,8 +12268,7 @@ snapshots:
     dependencies:
       p-limit: 3.1.0
 
-  p-timeout@6.1.4:
-    optional: true
+  p-timeout@6.1.4: {}
 
   package-json-from-dist@1.0.1: {}
 
@@ -12330,7 +12278,6 @@ snapshots:
       registry-auth-token: 5.1.1
       registry-url: 6.0.1
       semver: 7.7.3
-    optional: true
 
   pako@0.2.9: {}
 
@@ -12467,8 +12414,7 @@ snapshots:
 
   property-information@7.1.0: {}
 
-  proto-list@1.2.4:
-    optional: true
+  proto-list@1.2.4: {}
 
   pseudolocale@2.1.0:
     dependencies:
@@ -12481,7 +12427,6 @@ snapshots:
   pupa@3.3.0:
     dependencies:
       escape-goat: 4.0.0
-    optional: true
 
   quansync@0.2.11: {}
 
@@ -12562,7 +12507,6 @@ snapshots:
       ini: 1.3.8
       minimist: 1.2.8
       strip-json-comments: 2.0.1
-    optional: true
 
   react-devtools-inline@4.4.0:
     dependencies:
@@ -12678,12 +12622,10 @@ snapshots:
   registry-auth-token@5.1.1:
     dependencies:
       '@pnpm/npm-conf': 3.0.2
-    optional: true
 
   registry-url@6.0.1:
     dependencies:
       rc: 1.2.8
-    optional: true
 
   regjsparser@0.13.0:
     dependencies:
@@ -12863,8 +12805,7 @@ snapshots:
 
   safe-buffer@5.2.1: {}
 
-  safer-buffer@2.1.2:
-    optional: true
+  safer-buffer@2.1.2: {}
 
   satori@0.19.1:
     dependencies:
@@ -13065,7 +13006,6 @@ snapshots:
       is-identifier: 1.0.1
       is-obj: 3.0.0
       is-regexp: 3.1.0
-    optional: true
 
   strip-ansi@6.0.1:
     dependencies:
@@ -13081,8 +13021,7 @@ snapshots:
 
   strip-indent@4.1.1: {}
 
-  strip-json-comments@2.0.1:
-    optional: true
+  strip-json-comments@2.0.1: {}
 
   strip-json-comments@3.1.1: {}
 
@@ -13093,10 +13032,8 @@ snapshots:
   stubborn-fs@2.0.0:
     dependencies:
       stubborn-utils: 1.0.2
-    optional: true
 
-  stubborn-utils@1.0.2:
-    optional: true
+  stubborn-utils@1.0.2: {}
 
   style-mod@4.1.2: {}
 
@@ -13128,7 +13065,6 @@ snapshots:
       function-timeout: 1.0.2
       make-asynchronous: 1.0.1
       time-span: 5.1.0
-    optional: true
 
   supports-color@10.2.2: {}
 
@@ -13197,7 +13133,6 @@ snapshots:
   time-span@5.1.0:
     dependencies:
       convert-hrtime: 5.0.0
-    optional: true
 
   tiny-inflate@1.0.3: {}
 
@@ -13354,8 +13289,7 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
 
-  type-fest@4.41.0:
-    optional: true
+  type-fest@4.41.0: {}
 
   type@2.7.3: {}
 
@@ -13520,7 +13454,6 @@ snapshots:
       pupa: 3.3.0
       semver: 7.7.3
       xdg-basedir: 5.1.0
-    optional: true
 
   uri-js@4.4.1:
     dependencies:
@@ -13591,8 +13524,7 @@ snapshots:
 
   web-namespaces@2.0.1: {}
 
-  web-worker@1.2.0:
-    optional: true
+  web-worker@1.2.0: {}
 
   webidl-conversions@4.0.2: {}
 
@@ -13657,8 +13589,7 @@ snapshots:
       tr46: 1.0.1
       webidl-conversions: 4.0.2
 
-  when-exit@2.1.5:
-    optional: true
+  when-exit@2.1.5: {}
 
   which@2.0.2:
     dependencies:
@@ -13667,7 +13598,6 @@ snapshots:
   widest-line@5.0.0:
     dependencies:
       string-width: 7.2.0
-    optional: true
 
   word-wrap@1.2.5: {}
 
@@ -13717,8 +13647,7 @@ snapshots:
 
   ws@8.18.0: {}
 
-  xdg-basedir@5.1.0:
-    optional: true
+  xdg-basedir@5.1.0: {}
 
   xml-name-validator@4.0.0: {}
 

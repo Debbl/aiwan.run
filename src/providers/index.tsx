@@ -16,7 +16,7 @@ export default async function Providers({
   const i18n = await getI18nInstance(lang)
 
   return (
-    <SerwistProvider swUrl='/serwist/sw.js'>
+    <SerwistProvider swUrl='/sw.js'>
       <RootProvider>
         <ThemeProvider
           attribute='class'
