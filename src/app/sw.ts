@@ -1,4 +1,3 @@
-/// <reference no-default-lib="true" />
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 import { defaultCache } from '@serwist/turbopack/worker'
@@ -19,6 +18,7 @@ declare const self: ServiceWorkerGlobalScope
 
 const serwist = new Serwist({
   precacheEntries: self.__SW_MANIFEST,
+  disableDevLogs: true,
   skipWaiting: true,
   clientsClaim: true,
   navigationPreload: true,

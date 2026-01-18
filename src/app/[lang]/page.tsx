@@ -197,15 +197,11 @@ export default function Home() {
               }}
               animate={{
                 rotate: 360,
-                transition: {
-                  delay: 0.5,
-                  duration: 1,
-                  type: 'spring',
-                },
               }}
               transition={{
                 type: 'spring',
                 duration: 0.8,
+                delay: 0.5,
               }}
               className='size-12 cursor-pointer rounded-full'
             />

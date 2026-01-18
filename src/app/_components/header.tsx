@@ -95,9 +95,14 @@ export function Header() {
                 prefetch={['/posts'].includes(n.url)}
                 target={n.target}
               >
-                {n.icon || n.name}
-
-                {n.icon && <span className='sr-only'>{n.name}</span>}
+                {n.icon ? (
+                  <>
+                    {n.icon}
+                    <span className='sr-only'>{n.name}</span>
+                  </>
+                ) : (
+                  n.name
+                )}
               </Link>
             ))}
 

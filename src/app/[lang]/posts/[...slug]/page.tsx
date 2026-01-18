@@ -35,6 +35,9 @@ export async function generateMetadata({
     keywords: page.data.keywords,
     openGraph: {
       type: 'website',
+      images: [
+        `${WEBSITE.domain}/${lang}/posts/og/${page.slugs.concat(['opengraph-image.png']).join('/')}`,
+      ],
       url: `${WEBSITE.domain}${page.url}`,
       title: page.data.title,
       description: page.data.description || `Post | ${page.data.title}`,
