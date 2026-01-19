@@ -1,4 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { format } from 'date-fns'
 import { Card, Cards } from 'fumadocs-ui/components/card'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
@@ -34,6 +37,17 @@ export async function withGenerateMetadata(
   const pathName = `/${page.url.split('/').slice(2).join('/')}`
   const currentPathname = lang === 'zh' ? page.url : pathName
   const langPath = lang === 'zh' ? `${WEBSITE.domain}/zh` : WEBSITE.domain
+  // Calculate hash of the opengraph route file
+  const routeFilePath = join(
+    // eslint-disable-next-line n/prefer-global/process
+    process.cwd(),
+    'src/app/[lang]/posts/og/[...slug]/route.with.tsx',
+  )
+  const routeFileContent = readFileSync(routeFilePath, 'utf-8')
+  const hash = createHash('sha256')
+    .update(routeFileContent)
+    .digest('hex')
+    .slice(0, 16)
 
   return {
     title: `Posts | ${page.data.title}`,
@@ -42,7 +56,10 @@ export async function withGenerateMetadata(
     openGraph: {
       type: 'website',
       images: [
-        `${langPath}/posts/og/${page.slugs.concat(['opengraph-image.png']).join('/')}`,
+        {
+          url: `${langPath}/posts/og/${page.slugs.concat(['opengraph-image']).join('/')}?${hash}`,
+          type: 'image/png',
+        },
       ],
       url: currentPathname,
       title: page.data.title,
