@@ -1,4 +1,3 @@
-import { remarkHasInH1, remarkSandpack } from '@workspace/mdx-plugins'
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins'
 import {
   defineConfig,
@@ -9,6 +8,7 @@ import {
 import { transformerTwoslash } from 'fumadocs-twoslash'
 import { rehypeGithubAlerts } from 'rehype-github-alerts'
 import { z } from 'zod'
+import { remarkHasInH1, remarkSandpack } from './mdx-plugins'
 
 export const docs = defineDocs({
   dir: 'content/posts',
