@@ -85,9 +85,10 @@ function withGenerateStaticSitemap(
         priority: 0.75,
         images: posts.map((post) => {
           const slugs = post.slugs
-          const ogImgPath = [...slugs.slice(0, -1), `${slugs.at(-1)}.png`].join(
-            '/',
-          )
+          const ogImgPath = [
+            ...slugs.slice(0, -1),
+            `${slugs.at(-1)}/opengraph-image`,
+          ].join('/')
 
           return `${WEBSITE.domain}/posts/og/${ogImgPath}`
         }),
@@ -146,9 +147,10 @@ function withGenerateStaticSitemap(
       priority: 0.75,
       images: posts.map((post) => {
         const slugs = post.slugs
-        const ogImgPath = [...slugs.slice(0, -1), `${slugs.at(-1)}.png`].join(
-          '/',
-        )
+        const ogImgPath = [
+          ...slugs.slice(0, -1),
+          `${slugs.at(-1)}/opengraph-image`,
+        ].join('/')
 
         return `${WEBSITE.domain}/posts/og/${ogImgPath}`
       }),
