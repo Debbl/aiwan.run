@@ -39,7 +39,6 @@ const withMDX = createMDX()
 
 const nextConfig: NextConfig = {
   output: 'export',
-  cleanDistDir: true,
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
@@ -49,9 +48,7 @@ const nextConfig: NextConfig = {
   experimental: {
     swcPlugins: [['@lingui/swc-plugin', {}]],
   },
-  typedRoutes: false,
-  serverExternalPackages: ['typescript', 'twoslash', 'esbuild-wasm'],
-  transpilePackages: ['@workspace/mdx-plugins'],
+  serverExternalPackages: ['typescript', 'twoslash'],
 }
 
 export default [withBundleAnalyzer, withMDX, withAutoImport].reduce(
