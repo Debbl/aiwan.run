@@ -81,7 +81,7 @@
     "html-react-parser": "^5.2.11",
     "lint-staged": "^16.2.7",
     "loader-utils": "^3.3.1",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.1.1",
     "next-auto-import": "0.0.4",
     "postcss": "^8.5.6",
     "prettier-plugin-tailwindcss": "^0.7.2",
