@@ -85,11 +85,11 @@ export function Header() {
             .filter((n) => !(isMobile && n.name === 'Home'))
             .map((n) => (
               <Link
+                key={n.id}
                 {...(n['data-umami-event']
                   ? { 'data-umami-event': n['data-umami-event'] }
                   : {})}
                 title={n.name}
-                key={n.id}
                 href={n.url}
                 noLocale={n.noLocale}
                 prefetch={['/posts'].includes(n.url)}
