@@ -1,6 +1,7 @@
 import { RootProvider } from 'fumadocs-ui/provider/next'
 import { domAnimation, LazyMotion } from 'motion/react'
 import { ThemeProvider } from 'next-themes'
+import { isDev } from '~/constants'
 import { getI18nInstance } from '~/i18n'
 import { SerwistProvider } from '~/serwist'
 import ClientProviders from './index.client'
@@ -16,7 +17,7 @@ export default async function Providers({
   const i18n = await getI18nInstance(lang)
 
   return (
-    <SerwistProvider swUrl='/sw.js'>
+    <SerwistProvider swUrl='/sw.js' disable={isDev}>
       <RootProvider>
         <ThemeProvider
           attribute='class'
