@@ -13,47 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/app/[lang]/page.tsx:76
+#: src/app/[lang]/page.tsx:84
 msgid "A Bubble Wrap game use react"
 msgstr "A Bubble Wrap game use react"
 
-#: src/app/[lang]/page.tsx:105
+#: src/app/[lang]/page.tsx:117
 msgid "A code diff tool."
 msgstr "A code diff tool."
 
-#: src/app/[lang]/page.tsx:148
+#: src/app/[lang]/page.tsx:191
+msgid "A comprehensive React Hooks Collection built with Shadcn"
+msgstr "A comprehensive React Hooks Collection built with Shadcn"
+
+#: src/app/[lang]/page.tsx:166
 msgid "A emoji kitchen."
 msgstr "A emoji kitchen."
 
-#: src/app/[lang]/page.tsx:134
+#: src/app/[lang]/page.tsx:150
 msgid "A free client first AI apps."
 msgstr "A free client first AI apps."
 
-#: src/app/[lang]/page.tsx:69
+#: src/app/[lang]/page.tsx:76
 msgid "A Game-of-Life game use react"
 msgstr "A Game-of-Life game use react"
 
-#: src/app/[lang]/page.tsx:155
+#: src/app/[lang]/page.tsx:174
 msgid "A markdown reader by web."
 msgstr "A markdown reader by web."
 
-#: src/app/[lang]/page.tsx:55
+#: src/app/[lang]/page.tsx:60
 msgid "A minesweeper game use react."
 msgstr "A minesweeper game use react."
 
-#: src/app/[lang]/page.tsx:83
+#: src/app/[lang]/page.tsx:92
 msgid "A self driving car game with neural network."
 msgstr "A self driving car game with neural network."
 
-#: src/app/[lang]/page.tsx:62
+#: src/app/[lang]/page.tsx:205
+msgid "a tailwindcss tools"
+msgstr "a tailwindcss tools"
+
+#: src/app/[lang]/page.tsx:68
 msgid "A Tic-tac-toe game use solid.js."
 msgstr "A Tic-tac-toe game use solid.js."
 
-#: src/app/[lang]/page.tsx:98
+#: src/app/[lang]/page.tsx:109
 msgid "A tool collection."
 msgstr "A tool collection."
 
-#: src/app/[lang]/page.tsx:119
+#: src/app/[lang]/page.tsx:133
 msgid "A tool for leaning English by Peppa Pig."
 msgstr "A tool for leaning English by Peppa Pig."
 
@@ -61,7 +69,7 @@ msgstr "A tool for leaning English by Peppa Pig."
 msgid "ai"
 msgstr "ai"
 
-#: src/app/[lang]/page.tsx:130
+#: src/app/[lang]/page.tsx:146
 msgid "Ai"
 msgstr "Ai"
 
@@ -73,15 +81,15 @@ msgstr "AI"
 msgid "ai-sdk"
 msgstr "ai-sdk"
 
-#: src/app/[lang]/page.tsx:175
+#: src/app/[lang]/page.tsx:225
 msgid "Bilibili"
 msgstr "Bilibili"
 
-#: src/app/[lang]/page.tsx:108
+#: src/app/[lang]/page.tsx:121
 msgid "Bilibili ShortLink Converter"
 msgstr "Bilibili ShortLink Converter"
 
-#: src/app/[lang]/page.tsx:112
+#: src/app/[lang]/page.tsx:125
 msgid "Bilibili shortLink converter."
 msgstr "Bilibili shortLink converter."
 
@@ -108,11 +116,11 @@ msgstr "Brendan Dash's Blog, a place to share my thoughts and ideas"
 msgid "Brendan Dash's personal website, a place to share my thoughts and ideas"
 msgstr "Brendan Dash's personal website, a place to share my thoughts and ideas"
 
-#: src/app/[lang]/page.tsx:72
+#: src/app/[lang]/page.tsx:80
 msgid "Bubble Wrap"
 msgstr "Bubble Wrap"
 
-#: src/app/[lang]/page.tsx:101
+#: src/app/[lang]/page.tsx:113
 msgid "Code Diff"
 msgstr "Code Diff"
 
@@ -124,31 +132,35 @@ msgstr "css"
 msgid "Debbl"
 msgstr "Debbl"
 
-#: src/app/[lang]/page.tsx:181
+#: src/app/[lang]/page.tsx:231
 msgid "Email"
 msgstr "Email"
 
-#: src/app/[lang]/page.tsx:144
+#: src/app/[lang]/page.tsx:162
 msgid "Emoji Kitchen"
 msgstr "Emoji Kitchen"
 
-#: src/app/[lang]/page.tsx:260
+#: src/app/[lang]/page.tsx:198
+msgid "feishu <-> relay <-> codex"
+msgstr "feishu <-> relay <-> codex"
+
+#: src/app/[lang]/page.tsx:316
 msgid "Find Me"
 msgstr "Find Me"
 
-#: src/app/[lang]/page.tsx:45
+#: src/app/[lang]/page.tsx:49
 msgid "Game"
 msgstr "Game"
 
-#: src/app/[lang]/page.tsx:65
+#: src/app/[lang]/page.tsx:72
 msgid "Game of Life"
 msgstr "Game of Life"
 
-#: src/app/[lang]/page.tsx:169
+#: src/app/[lang]/page.tsx:219
 msgid "Github"
 msgstr "Github"
 
-#: src/app/[lang]/page.tsx:212
+#: src/app/[lang]/page.tsx:262
 msgid "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
 msgstr "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
 
@@ -160,7 +172,7 @@ msgstr "html"
 msgid "javascript"
 msgstr "javascript"
 
-#: src/app/[lang]/page.tsx:51
+#: src/app/[lang]/page.tsx:56
 msgid "Minesweeper"
 msgstr "Minesweeper"
 
@@ -168,7 +180,7 @@ msgstr "Minesweeper"
 msgid "nextjs"
 msgstr "nextjs"
 
-#: src/app/[lang]/page.tsx:115
+#: src/app/[lang]/page.tsx:129
 msgid "Peppa Pig Quotes"
 msgstr "Peppa Pig Quotes"
 
@@ -180,39 +192,55 @@ msgstr "Peppa Pig Quotes"
 msgid "Personal Website"
 msgstr "Personal Website"
 
+#: src/app/[lang]/page.tsx:180
+msgid "Projects"
+msgstr "Projects"
+
 #: src/constants/index.server.ts:27
 msgid "react"
 msgstr "react"
 
-#: src/app/[lang]/page.tsx:151
+#: src/app/[lang]/page.tsx:170
 msgid "Reader Markdown"
 msgstr "Reader Markdown"
+
+#: src/app/[lang]/page.tsx:195
+msgid "Relay"
+msgstr "Relay"
 
 #: src/app/_components/header.tsx:57
 msgid "RSS"
 msgstr "RSS"
 
-#: src/app/[lang]/page.tsx:79
+#: src/app/[lang]/page.tsx:88
 msgid "Self driving car"
 msgstr "Self driving car"
+
+#: src/app/[lang]/page.tsx:187
+msgid "Shadcn Hooks"
+msgstr "Shadcn Hooks"
 
 #: src/app/_components/header.tsx:42
 msgid "Slides"
 msgstr "Slides"
 
-#: src/app/[lang]/page.tsx:47
+#: src/app/[lang]/page.tsx:51
 msgid "some games"
 msgstr "some games"
 
-#: src/app/[lang]/page.tsx:90
+#: src/app/[lang]/page.tsx:182
+msgid "some projects"
+msgstr "some projects"
+
+#: src/app/[lang]/page.tsx:100
 msgid "some tools"
 msgstr "some tools"
 
-#: src/app/[lang]/page.tsx:126
+#: src/app/[lang]/page.tsx:141
 msgid "some toys"
 msgstr "some toys"
 
-#: src/app/[lang]/page.tsx:141
+#: src/app/[lang]/page.tsx:158
 msgid "some visualization"
 msgstr "some visualization"
 
@@ -224,7 +252,7 @@ msgstr "Switch Language"
 msgid "tailwindcss"
 msgstr "tailwindcss"
 
-#: src/app/[lang]/page.tsx:58
+#: src/app/[lang]/page.tsx:64
 msgid "Tic tac toe"
 msgstr "Tic tac toe"
 
@@ -233,18 +261,23 @@ msgid "TIL"
 msgstr "TIL"
 
 #: src/app/_components/header.tsx:34
-#: src/app/[lang]/page.tsx:88
+#: src/app/[lang]/page.tsx:98
+#: src/app/[lang]/page.tsx:105
 msgid "Tools"
 msgstr "Tools"
 
-#: src/app/[lang]/page.tsx:124
+#: src/app/[lang]/page.tsx:139
 msgid "Toys"
 msgstr "Toys"
+
+#: src/app/[lang]/page.tsx:202
+msgid "twl"
+msgstr "twl"
 
 #: src/constants/index.server.ts:32
 msgid "typescript"
 msgstr "typescript"
 
-#: src/app/[lang]/page.tsx:137
+#: src/app/[lang]/page.tsx:154
 msgid "V"
 msgstr "V"

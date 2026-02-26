@@ -8,6 +8,7 @@ import gameOfLife from './game-of-life.webp'
 import minesweeper from './minesweeper.svg'
 import peppa from './peppa.svg'
 import rm from './rm.svg'
+import shadcnHooks from './shadcn-hooks.svg'
 import tictactoe from './tictactoe.webp'
 import tools from './tools.svg'
 import v from './v.svg'
@@ -23,6 +24,7 @@ export {
   minesweeper,
   peppa,
   rm,
+  shadcnHooks,
   tictactoe,
   tools,
   v,

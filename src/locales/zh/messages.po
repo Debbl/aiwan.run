@@ -13,47 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/app/[lang]/page.tsx:76
+#: src/app/[lang]/page.tsx:84
 msgid "A Bubble Wrap game use react"
 msgstr "一个用 react 实现的泡泡纸游戏"
 
-#: src/app/[lang]/page.tsx:105
+#: src/app/[lang]/page.tsx:117
 msgid "A code diff tool."
 msgstr "代码 diff 工具"
 
-#: src/app/[lang]/page.tsx:148
+#: src/app/[lang]/page.tsx:191
+msgid "A comprehensive React Hooks Collection built with Shadcn"
+msgstr "一个用 Shadcn 构建的全面的 React Hooks 集合"
+
+#: src/app/[lang]/page.tsx:166
 msgid "A emoji kitchen."
 msgstr "emoji kitchen"
 
-#: src/app/[lang]/page.tsx:134
+#: src/app/[lang]/page.tsx:150
 msgid "A free client first AI apps."
 msgstr "一个免费客户端优先的 AI 应用"
 
-#: src/app/[lang]/page.tsx:69
+#: src/app/[lang]/page.tsx:76
 msgid "A Game-of-Life game use react"
 msgstr "一个用 react 实现的 Game of Life 游戏"
 
-#: src/app/[lang]/page.tsx:155
+#: src/app/[lang]/page.tsx:174
 msgid "A markdown reader by web."
 msgstr "一个用 web 实现的 markdown 阅读器"
 
-#: src/app/[lang]/page.tsx:55
+#: src/app/[lang]/page.tsx:60
 msgid "A minesweeper game use react."
 msgstr "用 react 实现的扫雷游戏"
 
-#: src/app/[lang]/page.tsx:83
+#: src/app/[lang]/page.tsx:92
 msgid "A self driving car game with neural network."
 msgstr "神经网络实现的自动驾驶汽车游戏"
 
-#: src/app/[lang]/page.tsx:62
+#: src/app/[lang]/page.tsx:205
+msgid "a tailwindcss tools"
+msgstr "tailwindcss 小工具"
+
+#: src/app/[lang]/page.tsx:68
 msgid "A Tic-tac-toe game use solid.js."
 msgstr "Tic-tac-toe 游戏"
 
-#: src/app/[lang]/page.tsx:98
+#: src/app/[lang]/page.tsx:109
 msgid "A tool collection."
 msgstr "工具集合"
 
-#: src/app/[lang]/page.tsx:119
+#: src/app/[lang]/page.tsx:133
 msgid "A tool for leaning English by Peppa Pig."
 msgstr "一个用 Peppa Pig 学习的工具"
 
@@ -61,7 +69,7 @@ msgstr "一个用 Peppa Pig 学习的工具"
 msgid "ai"
 msgstr "ai"
 
-#: src/app/[lang]/page.tsx:130
+#: src/app/[lang]/page.tsx:146
 msgid "Ai"
 msgstr "Ai"
 
@@ -73,15 +81,15 @@ msgstr "AI"
 msgid "ai-sdk"
 msgstr "ai-sdk"
 
-#: src/app/[lang]/page.tsx:175
+#: src/app/[lang]/page.tsx:225
 msgid "Bilibili"
 msgstr "哔哩哔哩"
 
-#: src/app/[lang]/page.tsx:108
+#: src/app/[lang]/page.tsx:121
 msgid "Bilibili ShortLink Converter"
 msgstr "哔哩哔哩短链接转换器"
 
-#: src/app/[lang]/page.tsx:112
+#: src/app/[lang]/page.tsx:125
 msgid "Bilibili shortLink converter."
 msgstr "哔哩哔哩短链接转换器"
 
@@ -108,11 +116,11 @@ msgstr "Brendan Dash 的博客，一个分享我的想法和想法的地方"
 msgid "Brendan Dash's personal website, a place to share my thoughts and ideas"
 msgstr "Brendan Dash 的个人网站，一个分享我的想法和想法的地方"
 
-#: src/app/[lang]/page.tsx:72
+#: src/app/[lang]/page.tsx:80
 msgid "Bubble Wrap"
 msgstr "泡泡纸"
 
-#: src/app/[lang]/page.tsx:101
+#: src/app/[lang]/page.tsx:113
 msgid "Code Diff"
 msgstr "代码 diff"
 
@@ -128,31 +136,35 @@ msgstr "css"
 msgid "Debbl"
 msgstr "Debbl"
 
-#: src/app/[lang]/page.tsx:181
+#: src/app/[lang]/page.tsx:231
 msgid "Email"
 msgstr "邮箱"
 
-#: src/app/[lang]/page.tsx:144
+#: src/app/[lang]/page.tsx:162
 msgid "Emoji Kitchen"
 msgstr "emoji kitchen"
 
-#: src/app/[lang]/page.tsx:260
+#: src/app/[lang]/page.tsx:198
+msgid "feishu <-> relay <-> codex"
+msgstr "feishu <-> relay <-> codex"
+
+#: src/app/[lang]/page.tsx:316
 msgid "Find Me"
 msgstr "找到我"
 
-#: src/app/[lang]/page.tsx:45
+#: src/app/[lang]/page.tsx:49
 msgid "Game"
 msgstr "游戏"
 
-#: src/app/[lang]/page.tsx:65
+#: src/app/[lang]/page.tsx:72
 msgid "Game of Life"
 msgstr "生命游戏"
 
-#: src/app/[lang]/page.tsx:169
+#: src/app/[lang]/page.tsx:219
 msgid "Github"
 msgstr "Github"
 
-#: src/app/[lang]/page.tsx:212
+#: src/app/[lang]/page.tsx:262
 msgid "Hi, I'm Brendan Dash. You can find some toys, games, and other projects here that I've created."
 msgstr "你好，我是 Brendan Dash， 你可以在这里找到我创建的一些玩具、游戏和其他项目。"
 
@@ -164,7 +176,7 @@ msgstr "html"
 msgid "javascript"
 msgstr "javascript"
 
-#: src/app/[lang]/page.tsx:51
+#: src/app/[lang]/page.tsx:56
 msgid "Minesweeper"
 msgstr "扫雷"
 
@@ -172,7 +184,7 @@ msgstr "扫雷"
 msgid "nextjs"
 msgstr "nextjs"
 
-#: src/app/[lang]/page.tsx:115
+#: src/app/[lang]/page.tsx:129
 msgid "Peppa Pig Quotes"
 msgstr "Peppa Pig 台词"
 
@@ -184,39 +196,55 @@ msgstr "Peppa Pig 台词"
 msgid "Personal Website"
 msgstr "个人网站"
 
+#: src/app/[lang]/page.tsx:180
+msgid "Projects"
+msgstr "项目"
+
 #: src/constants/index.server.ts:27
 msgid "react"
 msgstr "react"
 
-#: src/app/[lang]/page.tsx:151
+#: src/app/[lang]/page.tsx:170
 msgid "Reader Markdown"
 msgstr "Markdown 阅读器"
+
+#: src/app/[lang]/page.tsx:195
+msgid "Relay"
+msgstr "Relay"
 
 #: src/app/_components/header.tsx:57
 msgid "RSS"
 msgstr "RSS"
 
-#: src/app/[lang]/page.tsx:79
+#: src/app/[lang]/page.tsx:88
 msgid "Self driving car"
 msgstr "自动驾驶汽车"
+
+#: src/app/[lang]/page.tsx:187
+msgid "Shadcn Hooks"
+msgstr "Shadcn Hooks"
 
 #: src/app/_components/header.tsx:42
 msgid "Slides"
 msgstr "幻灯片"
 
-#: src/app/[lang]/page.tsx:47
+#: src/app/[lang]/page.tsx:51
 msgid "some games"
 msgstr "一些游戏"
 
-#: src/app/[lang]/page.tsx:90
+#: src/app/[lang]/page.tsx:182
+msgid "some projects"
+msgstr "一些项目"
+
+#: src/app/[lang]/page.tsx:100
 msgid "some tools"
 msgstr "一些工具"
 
-#: src/app/[lang]/page.tsx:126
+#: src/app/[lang]/page.tsx:141
 msgid "some toys"
 msgstr "一些玩具"
 
-#: src/app/[lang]/page.tsx:141
+#: src/app/[lang]/page.tsx:158
 msgid "some visualization"
 msgstr "可视化"
 
@@ -228,7 +256,7 @@ msgstr "切换语言"
 msgid "tailwindcss"
 msgstr "tailwindcss"
 
-#: src/app/[lang]/page.tsx:58
+#: src/app/[lang]/page.tsx:64
 msgid "Tic tac toe"
 msgstr "井字棋"
 
@@ -237,18 +265,23 @@ msgid "TIL"
 msgstr "TIL"
 
 #: src/app/_components/header.tsx:34
-#: src/app/[lang]/page.tsx:88
+#: src/app/[lang]/page.tsx:98
+#: src/app/[lang]/page.tsx:105
 msgid "Tools"
 msgstr "工具"
 
-#: src/app/[lang]/page.tsx:124
+#: src/app/[lang]/page.tsx:139
 msgid "Toys"
 msgstr "玩具"
+
+#: src/app/[lang]/page.tsx:202
+msgid "twl"
+msgstr "twl"
 
 #: src/constants/index.server.ts:32
 msgid "typescript"
 msgstr "typescript"
 
-#: src/app/[lang]/page.tsx:137
+#: src/app/[lang]/page.tsx:154
 msgid "V"
 msgstr "V"
