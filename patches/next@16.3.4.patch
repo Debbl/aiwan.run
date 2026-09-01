@@ -1,0 +1,26 @@
+diff --git a/dist/build/utils.js b/dist/build/utils.js
+index 6ec0fe0e0b2e19e2e8151810b4c6788e08dcd8a4..3e76126759e3691251a3f3b821ee735f025b0f16 100644
+--- a/dist/build/utils.js
++++ b/dist/build/utils.js
+@@ -712,7 +712,7 @@ async function isPageStatic({ dir, page, distDir, configFileName, httpAgentOptio
+                 if (pathname.endsWith('/route')) {
+                     pathname = pathname.slice(0, -'/route'.length);
+                 }
+-                if (routeModule.definition.kind === _routekind.RouteKind.APP_ROUTE && (0, _ismetadataroute.isStaticMetadataFile)(pathname)) {
++                if (routeModule.definition.kind === _routekind.RouteKind.APP_ROUTE && (0, _ismetadataroute.isStaticMetadataFile)(pathname) && !segments.some((segment)=>typeof segment.generateStaticParams === 'function')) {
+                     ;
+                     ({ prerenderedRoutes, fallbackMode: prerenderFallbackMode } = buildStaticMetadataStaticPaths(page));
+                 } else {
+diff --git a/dist/esm/build/utils.js b/dist/esm/build/utils.js
+index c44a58280e08e4b48a7d8f0f6623ce4af10a84d2..998a9c5f9b969d67cac8a9c62f955ef9bec06aec 100644
+--- a/dist/esm/build/utils.js
++++ b/dist/esm/build/utils.js
+@@ -523,7 +523,7 @@ export async function isPageStatic({ dir, page, distDir, configFileName, httpAge
+                 if (pathname.endsWith('/route')) {
+                     pathname = pathname.slice(0, -'/route'.length);
+                 }
+-                if (routeModule.definition.kind === RouteKind.APP_ROUTE && isStaticMetadataFile(pathname)) {
++                if (routeModule.definition.kind === RouteKind.APP_ROUTE && isStaticMetadataFile(pathname) && !segments.some((segment)=>typeof segment.generateStaticParams === 'function')) {
+                     ;
+                     ({ prerenderedRoutes, fallbackMode: prerenderFallbackMode } = buildStaticMetadataStaticPaths(page));
+                 } else {

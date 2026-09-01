@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { ImageResponse } from 'next/og'
 import { withGenerateStaticParams } from './layout.with'
 

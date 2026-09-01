@@ -1,10 +1,6 @@
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins'
-import {
-  defineConfig,
-  defineDocs,
-  frontmatterSchema,
-  metaSchema,
-} from 'fumadocs-mdx/config'
+import { metaSchema, pageSchema } from 'fumadocs-core/source/schema'
+import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import { transformerTwoslash } from 'fumadocs-twoslash'
 import { rehypeGithubAlerts } from 'rehype-github-alerts'
 import { z } from 'zod'
@@ -13,9 +9,9 @@ import { remarkHasInH1, remarkSandpack } from './mdx-plugins'
 export const docs = defineDocs({
   dir: 'content/posts',
   docs: {
-    schema: frontmatterSchema.extend({
+    schema: pageSchema.extend({
       duration: z.string().optional().default('1m'),
-      date: z.date().transform((val) => new Date(val)),
+      date: z.coerce.date(),
       keywords: z.array(z.string()).optional().default([]),
     }),
   },
