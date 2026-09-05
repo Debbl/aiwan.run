@@ -10,9 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: [
-      'https://aiwan.run/sitemap.xml',
-      'https://aiwan.run/zh/sitemap.xml',
-    ],
+    sitemap: 'https://aiwan.run/sitemap.xml',
   }
 }
