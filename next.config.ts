@@ -1,7 +1,16 @@
+import { fileURLToPath } from 'node:url'
 import bundleAnalyzer from '@next/bundle-analyzer'
+import { createI18nPlugin } from 'best-i18n/next'
 import { createMDX } from 'fumadocs-mdx/next'
 import { createAutoImport } from 'next-auto-import'
+import { i18n } from './src/i18n'
 import type { NextConfig } from 'next'
+
+const withI18n = createI18nPlugin({
+  // locales and baseLocale are described once, in src/i18n.ts
+  ...i18n,
+  messagesDir: fileURLToPath(new URL('./messages', import.meta.url)),
+})
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -45,13 +54,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   reactCompiler: true,
-  experimental: {
-    swcPlugins: [['@lingui/swc-plugin', {}]],
-  },
   serverExternalPackages: ['typescript', 'twoslash'],
 }
 
-export default [withBundleAnalyzer, withMDX, withAutoImport].reduce(
+export default [withBundleAnalyzer, withMDX, withAutoImport, withI18n].reduce(
   (config, fn) => fn(config),
   nextConfig,
 )

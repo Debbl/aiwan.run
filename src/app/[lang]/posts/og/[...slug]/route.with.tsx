@@ -20,7 +20,7 @@ export async function generatePostOpenGraphImage(
   lang: Lang = 'en',
 ) {
   const post = source.getPage(slugs, lang)
-  const { name } = await getServerWebsiteConstants(lang)
+  const { name } = getServerWebsiteConstants(lang)
 
   return new ImageResponse(
     <div

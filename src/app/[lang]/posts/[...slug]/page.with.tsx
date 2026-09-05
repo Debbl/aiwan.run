@@ -8,7 +8,7 @@ import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
 import { WEBSITE } from '~/constants'
-import { linguiConfig } from '~/i18n/config'
+import { i18n } from '~/i18n'
 import { getRelativePage, source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
 import type { Metadata } from 'next'
@@ -68,7 +68,7 @@ export async function withGenerateMetadata(
     },
     alternates: {
       canonical: currentPathname,
-      languages: linguiConfig.locales.reduce(
+      languages: i18n.locales.reduce(
         (acc, l) => ({
           ...acc,
           [l]: l === 'en' ? pathName : `/${l}${pathName}`,

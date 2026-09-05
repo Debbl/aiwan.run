@@ -4,7 +4,7 @@ import type { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
-  const { name, description } = await getServerWebsiteConstants('en')
+  const { name, description } = getServerWebsiteConstants('en')
 
   return {
     name,

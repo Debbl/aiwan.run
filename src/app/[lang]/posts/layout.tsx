@@ -1,21 +1,20 @@
-import { msg } from '@lingui/core/macro'
+import { t } from 'best-i18n/macro'
 import { WEBSITE } from '~/constants'
-import { generateMetadataWithI18n } from '~/i18n'
 import type { Metadata } from 'next'
-import type { Locale } from '~/i18n/config'
+import type { Lang } from '~/types'
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ lang?: Lang }>
 }): Promise<Metadata> {
-  const i18n = await generateMetadataWithI18n(params)
-  const lang = i18n.locale === 'en' ? '' : '/zh'
+  const { lang } = await params
+  const prefix = lang === 'zh' ? '/zh' : ''
 
   return {
-    title: i18n.t(msg`Brendan Dash's Blog`),
+    title: t`Brendan Dash's Blog`,
     alternates: {
-      canonical: `${WEBSITE.domain}${lang}/posts`,
+      canonical: `${WEBSITE.domain}${prefix}/posts`,
       languages: {
         zh: '/zh/posts',
         en: '/posts',

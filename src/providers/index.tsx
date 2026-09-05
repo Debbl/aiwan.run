@@ -1,21 +1,20 @@
+import { LocaleProvider } from 'best-i18n/react'
 import { RootProvider } from 'fumadocs-ui/provider/next'
 import { domAnimation, LazyMotion } from 'motion/react'
 import { ThemeProvider } from 'next-themes'
 import { isDev } from '~/constants'
-import { getI18nInstance } from '~/i18n'
+import { i18n } from '~/i18n'
 import { SerwistProvider } from '~/serwist'
 import ClientProviders from './index.client'
 import type { Lang } from '~/types'
 
-export default async function Providers({
+export default function Providers({
   children,
   lang,
 }: {
   children: React.ReactNode
   lang: Lang
 }) {
-  const i18n = await getI18nInstance(lang)
-
   return (
     <SerwistProvider swUrl='/sw.js' disable={isDev}>
       <RootProvider>
@@ -26,13 +25,9 @@ export default async function Providers({
           disableTransitionOnChange
         >
           <LazyMotion features={domAnimation} strict>
-            <ClientProviders
-              initialLocale={i18n.locale}
-              initialLocales={i18n.locales ?? []}
-              initialMessages={i18n.messages}
-            >
-              {children}
-            </ClientProviders>
+            <LocaleProvider locale={lang} config={i18n}>
+              <ClientProviders>{children}</ClientProviders>
+            </LocaleProvider>
           </LazyMotion>
         </ThemeProvider>
       </RootProvider>

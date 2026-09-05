@@ -1,29 +1,22 @@
 'use client'
-import { useLingui } from '@lingui/react'
+import { Link as I18nLink } from 'best-i18n/next/navigation'
 import NextLink from 'next/link'
-import { linguiConfig } from '~/i18n/config'
 import type { ComponentProps } from 'react'
 
 export function Link(
-  props: ComponentProps<typeof NextLink> & { noLocale?: boolean },
+  props: Omit<ComponentProps<typeof NextLink>, 'locale'> & {
+    noLocale?: boolean
+    /** Link into a specific locale, e.g. for a language switcher. */
+    locale?: string
+  },
 ) {
-  const { noLocale, ...rest } = props
+  const { noLocale, href, ...rest } = props
 
-  const { i18n } = useLingui()
-  const locale = i18n.locale
-  let href = props.href
-
-  if (typeof href === 'string' && !noLocale) {
-    if (
-      href.startsWith('/') &&
-      !linguiConfig.locales.includes(href.split('/')[1])
-    ) {
-      href =
-        locale === linguiConfig.sourceLocale
-          ? props.href
-          : `/${locale}${props.href}`
-    }
+  // I18nLink localizes string hrefs against the current locale (and leaves
+  // external URLs alone); `noLocale` opts a link out of that entirely.
+  if (noLocale || typeof href !== 'string') {
+    return <NextLink {...rest} href={href} />
   }
 
-  return <NextLink {...rest} href={href} />
+  return <I18nLink {...rest} href={href} />
 }

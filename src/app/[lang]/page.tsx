@@ -1,5 +1,5 @@
 'use client'
-import { Trans, useLingui } from '@lingui/react/macro'
+import { Trans, useI18n } from 'best-i18n/react/macro'
 import Image from 'next/image'
 import Link from 'next/link'
 import BackgroundStage from '~/app/_components/background-stage'
@@ -42,7 +42,7 @@ type Projects = Record<
 >
 
 export default function Home() {
-  const { t } = useLingui()
+  const t = useI18n()
   const projects: Projects = {
     Game: {
       'name': 'Game',

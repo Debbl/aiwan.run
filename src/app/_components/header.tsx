@@ -1,11 +1,13 @@
 'use client'
-import { useLingui } from '@lingui/react/macro'
+import { useLocale } from 'best-i18n/react'
+import { useI18n } from 'best-i18n/react/macro'
 import { useRef } from 'react'
 import { useMobile } from '~/hooks/use-mobile'
 import ThemeSwitcher from './theme-switcher'
 
 export function Header() {
-  const { t, i18n } = useLingui()
+  const t = useI18n()
+  const locale = useLocale()
   const nav: {
     'id': string
     'url': string
@@ -45,7 +47,7 @@ export function Header() {
     },
     {
       id: 'language',
-      url: i18n.locale === 'zh' ? '/' : '/zh',
+      url: locale === 'zh' ? '/' : '/zh',
       noLocale: true,
       name: t`Switch Language`,
       icon: <Icon.LuLanguages className='size-5' />,

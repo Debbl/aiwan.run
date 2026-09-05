@@ -1,5 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-import { msg } from '@lingui/core/macro'
 import Script from 'next/script'
 import { Footer } from '~/app/_components/footer'
 import { Header } from '~/app/_components/header'
@@ -15,7 +14,7 @@ export function withGenerateStaticParams(lang: Lang) {
 }
 
 export const withGenerateMetadata = async (lang: Lang): Promise<Metadata> => {
-  const { title, description, keywords } = await getServerWebsiteConstants(lang)
+  const { title, description, keywords } = getServerWebsiteConstants(lang)
 
   return {
     metadataBase: new URL(WEBSITE.domain),
@@ -91,7 +90,7 @@ export async function WithLayout(
   },
 ) {
   const { children } = props
-  const { i18n, description, baseUrl } = await getServerWebsiteConstants(lang)
+  const { name, description, baseUrl } = getServerWebsiteConstants(lang)
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -111,13 +110,13 @@ export async function WithLayout(
       'name': 'Brendan Dash',
       'url': 'https://aiwan.run',
     },
-    'inLanguage': 'en',
+    'inLanguage': lang,
     'isAccessibleForFree': true,
     'datePublished': '2024-01-01',
     'dateModified': new Date().toISOString().split('T')[0],
     'mainEntity': {
       '@type': 'WebSite',
-      'name': i18n.t(msg`Brendan Dash's Blog`),
+      'name': name,
       'description': description,
       'url': baseUrl,
     },
