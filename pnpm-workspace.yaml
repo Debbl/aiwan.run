@@ -1,11 +1,16 @@
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - 'es5-ext'
-  - 'esbuild'
-  - 'sharp'
-  - 'simple-git-hooks'
-  - 'unrs-resolver'
-  - 'workerd'
+allowBuilds:
+  '@tailwindcss/oxide': true
+  es5-ext: true
+  esbuild: true
+  sharp: true
+  simple-git-hooks: true
+  unrs-resolver: true
+  workerd: true
+
+minimumReleaseAgeExclude:
+  - '@types/node@26.5.0'
+  - miniflare@5.20260907.0-alpha
+  - wrangler@4.129.1
 
 overrides:
   'eslint-plugin-react-hooks>zod-validation-error': '4.0.2'

@@ -19,7 +19,13 @@ md.renderer.rules.image = (tokens, idx, options, env, self) => {
   const token = tokens[idx]
 
   const src = token.attrGet('src') as string
-  const mdPath = env.path
+  const mdPath = env?.path
+  if (typeof mdPath !== 'string') {
+    throw new TypeError(
+      'RSS Markdown image rendering requires a source file path',
+    )
+  }
+
   const imagePath = path.join(path.dirname(mdPath), src)
 
   const fileContent = readFileSync(imagePath)
