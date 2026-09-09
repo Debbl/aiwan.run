@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: \n"
+"Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -151,40 +151,48 @@ msgid "A comprehensive React Hooks Collection built with Shadcn"
 msgstr "一个用 Shadcn 构建的全面的 React Hooks 集合"
 
 #: src/app/[lang]/page.tsx:195
+msgid "best-i18n"
+msgstr "best-i18n"
+
+#: src/app/[lang]/page.tsx:198
+msgid "A compile-time i18n library, no runtime catalog"
+msgstr "编译时国际化库，没有运行时词表"
+
+#: src/app/[lang]/page.tsx:202
 msgid "Relay"
 msgstr "Relay"
 
-#: src/app/[lang]/page.tsx:198
+#: src/app/[lang]/page.tsx:205
 msgid "feishu <-> relay <-> codex"
 msgstr "feishu <-> relay <-> codex"
 
-#: src/app/[lang]/page.tsx:202
+#: src/app/[lang]/page.tsx:209
 msgid "twl"
 msgstr "twl"
 
-#: src/app/[lang]/page.tsx:205
+#: src/app/[lang]/page.tsx:212
 msgid "a tailwindcss tools"
 msgstr "tailwindcss 小工具"
 
-#: src/app/[lang]/page.tsx:219
+#: src/app/[lang]/page.tsx:226
 msgid "Github"
 msgstr "Github"
 
-#: src/app/[lang]/page.tsx:225
+#: src/app/[lang]/page.tsx:232
 msgid "Bilibili"
 msgstr "哔哩哔哩"
 
-#: src/app/[lang]/page.tsx:231
+#: src/app/[lang]/page.tsx:238
 msgid "Email"
 msgstr "邮箱"
 
-#: src/app/[lang]/page.tsx:262
+#: src/app/[lang]/page.tsx:269
 msgid ""
 "Hi, I'm Brendan Dash. You can find some toys, games, and other projects "
 "here that I've created."
 msgstr "你好，我是 Brendan Dash， 你可以在这里找到我创建的一些玩具、游戏和其他项目。"
 
-#: src/app/[lang]/page.tsx:316
+#: src/app/[lang]/page.tsx:323
 msgid "Find Me"
 msgstr "找到我"
 

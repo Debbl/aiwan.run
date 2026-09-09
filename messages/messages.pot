@@ -151,40 +151,48 @@ msgid "A comprehensive React Hooks Collection built with Shadcn"
 msgstr ""
 
 #: src/app/[lang]/page.tsx:195
-msgid "Relay"
+msgid "best-i18n"
 msgstr ""
 
 #: src/app/[lang]/page.tsx:198
-msgid "feishu <-> relay <-> codex"
+msgid "A compile-time i18n library, no runtime catalog"
 msgstr ""
 
 #: src/app/[lang]/page.tsx:202
-msgid "twl"
+msgid "Relay"
 msgstr ""
 
 #: src/app/[lang]/page.tsx:205
+msgid "feishu <-> relay <-> codex"
+msgstr ""
+
+#: src/app/[lang]/page.tsx:209
+msgid "twl"
+msgstr ""
+
+#: src/app/[lang]/page.tsx:212
 msgid "a tailwindcss tools"
 msgstr ""
 
-#: src/app/[lang]/page.tsx:219
+#: src/app/[lang]/page.tsx:226
 msgid "Github"
 msgstr ""
 
-#: src/app/[lang]/page.tsx:225
+#: src/app/[lang]/page.tsx:232
 msgid "Bilibili"
 msgstr ""
 
-#: src/app/[lang]/page.tsx:231
+#: src/app/[lang]/page.tsx:238
 msgid "Email"
 msgstr ""
 
-#: src/app/[lang]/page.tsx:262
+#: src/app/[lang]/page.tsx:269
 msgid ""
 "Hi, I'm Brendan Dash. You can find some toys, games, and other projects "
 "here that I've created."
 msgstr ""
 
-#: src/app/[lang]/page.tsx:316
+#: src/app/[lang]/page.tsx:323
 msgid "Find Me"
 msgstr ""
 

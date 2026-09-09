@@ -191,6 +191,13 @@ export default function Home() {
           'desc': t`A comprehensive React Hooks Collection built with Shadcn`,
         },
         {
+          'name': 'best-i18n',
+          'label': t`best-i18n`,
+          'data-umami-event': 'click-best-i18n-link',
+          'link': 'https://github.com/best-i18n/best-i18n',
+          'desc': t`A compile-time i18n library, no runtime catalog`,
+        },
+        {
           'name': 'Relay',
           'label': t`Relay`,
           'data-umami-event': 'click-relay-link',
