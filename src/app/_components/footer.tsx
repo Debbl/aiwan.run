@@ -10,7 +10,7 @@ export function Footer() {
   const { isHydrated } = useHydrated()
 
   return (
-    <footer className='border-border border-t px-8 py-10'>
+    <footer className='border-t border-border px-8 py-10'>
       <div className='flex items-center justify-between'>
         <div className='flex h-5 items-center space-x-4 text-sm'>
           <Link

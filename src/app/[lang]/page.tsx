@@ -225,19 +225,19 @@ export default function Home() {
       'url': 'https://github.com/Debbl/',
       'name': t`Github`,
       'data-umami-event': 'click-github-link',
-      'icon': (props) => <Icon.LuGithub {...props} />,
+      'icon': Icon.LuGithub,
     },
     {
       'url': 'https://space.bilibili.com/174865648/',
       'name': t`Bilibili`,
       'data-umami-event': 'click-bilibili-link',
-      'icon': (props) => <Icon.RiBilibiliLine {...props} />,
+      'icon': Icon.RiBilibiliLine,
     },
     {
       'url': 'mailto:me@aiwan.run',
       'name': t`Email`,
       'data-umami-event': 'click-email-link',
-      'icon': (props) => <Icon.MdiOutlineEmail {...props} />,
+      'icon': Icon.MdiOutlineEmail,
     },
   ]
 
@@ -273,9 +273,9 @@ export default function Home() {
           </p>
           <div>
             <div className='mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12'>
-              {Object.entries(projects).map(([_, project]) => (
+              {Object.values(projects).map((project) => (
                 <div key={project.name}>
-                  <h2 className='hover:text-primary cursor-pointer text-lg font-bold text-black transition-colors'>
+                  <h2 className='cursor-pointer text-lg font-bold text-black transition-colors hover:text-primary'>
                     {project.name}
                   </h2>
                   <div className='text-sm text-gray-600'>{project.desc}</div>
@@ -285,7 +285,7 @@ export default function Home() {
                       <li className='my-3' key={item.name}>
                         <Link
                           href={item.link}
-                          className='hover:text-primary text-sm transition-colors'
+                          className='text-sm transition-colors hover:text-primary'
                           target='_blank'
                           data-umami-event={item['data-umami-event']}
                         >
@@ -297,7 +297,7 @@ export default function Home() {
                                   src={item.favicon}
                                   width={16}
                                   height={16}
-                                  className='dark:bg-foreground mr-1 inline-block size-4 dark:rounded'
+                                  className='mr-1 inline-block size-4 dark:rounded dark:bg-foreground'
                                 />
                               ) : (
                                 <div className='mr-1 inline-flex size-4 items-center justify-center rounded bg-gray-100 text-[10px] font-semibold text-gray-600 dark:bg-gray-800 dark:text-gray-300'>
@@ -328,7 +328,7 @@ export default function Home() {
                     key={i.name}
                     href={i.url}
                     data-umami-event={i['data-umami-event']}
-                    className='hover:border-primary inline-flex items-center gap-x-1 border-b px-2 transition-colors'
+                    className='inline-flex items-center gap-x-1 border-b px-2 transition-colors hover:border-primary'
                   >
                     <i.icon className='size-5' />
                     <span>{i.name}</span>

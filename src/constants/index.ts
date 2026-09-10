@@ -1,5 +1,3 @@
-/* eslint-disable n/prefer-global/process */
-
 export const CWD = process.cwd()
 export const isDev = process.env.NODE_ENV === 'development'
 export const domain = isDev

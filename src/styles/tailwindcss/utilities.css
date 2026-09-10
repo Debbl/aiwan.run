@@ -7,7 +7,7 @@
   }
 
   &:after {
-    @apply content-['#'] px-1;
+    @apply px-1 content-['#'];
     @apply text-gray-300 dark:text-neutral-700;
     span:target + & {
       @apply text-gray-400;

@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import Script from 'next/script'
 import { Footer } from '~/app/_components/footer'
 import { Header } from '~/app/_components/header'
@@ -139,7 +138,6 @@ export async function WithLayout(
         />
         <script
           type='application/ld+json'
-          // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}

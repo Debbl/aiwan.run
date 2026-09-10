@@ -10,7 +10,7 @@ interface IMousePosition {
   y: number
 }
 
-function MousePosition(): IMousePosition {
+function useMousePosition(): IMousePosition {
   const [mousePosition, setMousePosition] = useState<IMousePosition>({
     x: 0,
     y: 0,
@@ -60,6 +60,18 @@ function hexToRgb(hex: string): number[] {
   return [red, green, blue]
 }
 
+const remapValue = (
+  value: number,
+  start1: number,
+  end1: number,
+  start2: number,
+  end2: number,
+): number => {
+  const remapped =
+    ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
+  return remapped > 0 ? remapped : 0
+}
+
 interface Circle {
   x: number
   y: number
@@ -89,26 +101,12 @@ export const Particles: React.FC<ParticlesProps> = ({
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
   const circles = useRef<Circle[]>([])
-  const mousePosition = MousePosition()
+  const mousePosition = useMousePosition()
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1
   const rafID = useRef<number | null>(null)
   const resizeTimeout = useRef<NodeJS.Timeout>(null)
-
-  const onMouseMove = useEffectEvent(() => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect()
-      const { w, h } = canvasSize.current
-      const x = mousePosition.x - rect.left - w / 2
-      const y = mousePosition.y - rect.top - h / 2
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
-      if (inside) {
-        mouse.current.x = x
-        mouse.current.y = y
-      }
-    }
-  })
 
   const circleParams = (): Circle => {
     const x = Math.floor(Math.random() * canvasSize.current.w)
@@ -193,18 +191,6 @@ export const Particles: React.FC<ParticlesProps> = ({
       const circle = circleParams()
       drawCircle(circle)
     }
-  }
-
-  const remapValue = (
-    value: number,
-    start1: number,
-    end1: number,
-    start2: number,
-    end2: number,
-  ): number => {
-    const remapped =
-      ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
-    return remapped > 0 ? remapped : 0
   }
 
   const animate = () => {
@@ -294,14 +280,26 @@ export const Particles: React.FC<ParticlesProps> = ({
     const cleanup = onColorChange()
 
     return cleanup
+    // oxlint-disable-next-line react/exhaustive-effect-dependencies
   }, [color])
 
   useEffect(() => {
-    onMouseMove()
+    if (!canvasRef.current) return
+
+    const rect = canvasRef.current.getBoundingClientRect()
+    const { w, h } = canvasSize.current
+    const x = mousePosition.x - rect.left - w / 2
+    const y = mousePosition.y - rect.top - h / 2
+    const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
+    if (inside) {
+      mouse.current.x = x
+      mouse.current.y = y
+    }
   }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
     initCanvas()
+    // oxlint-disable-next-line react/exhaustive-effect-dependencies
   }, [refresh])
 
   return (

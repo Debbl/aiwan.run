@@ -45,7 +45,6 @@ export const Meteors = ({
       {[...meteorStyles].map((style, idx) => (
         // Meteor Head
         <span
-          // eslint-disable-next-line react/no-array-index-key
           key={idx}
           style={{ ...style }}
           className={cn(

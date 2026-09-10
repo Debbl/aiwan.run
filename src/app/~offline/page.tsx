@@ -29,20 +29,36 @@ export default function OfflinePage() {
         <p lang='zh-CN' style={{ marginTop: 12, color: '#52525b' }}>
           暂时无法打开此页面，请检查网络连接后重试。
         </p>
-        <a
-          href=''
+        {/*
+          Retrying is an action, not a link, so it has to be a button - but it
+          cannot depend on React. The service worker precaches this page's HTML
+          only (see `globPatterns` in serwist.config.js), so when the user is
+          genuinely offline none of the chunks needed to hydrate a client
+          component are guaranteed to be in the cache. This inline handler runs
+          off the precached HTML alone.
+        */}
+        <button
+          type='button'
+          id='retry'
           style={{
-            display: 'inline-block',
             marginTop: 24,
             padding: '12px 20px',
+            border: 0,
             borderRadius: 10,
             background: '#18181b',
             color: '#fafafa',
-            textDecoration: 'none',
+            font: 'inherit',
+            cursor: 'pointer',
           }}
         >
           Try again / <span lang='zh-CN'>重试</span>
-        </a>
+        </button>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.getElementById('retry').addEventListener('click',function(){location.reload()})",
+          }}
+        />
       </div>
     </main>
   )

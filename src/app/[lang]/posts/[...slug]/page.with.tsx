@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -39,7 +38,6 @@ export async function withGenerateMetadata(
   const langPath = lang === 'zh' ? `${WEBSITE.domain}/zh` : WEBSITE.domain
   // Calculate hash of the opengraph route file
   const routeFilePath = join(
-    // eslint-disable-next-line n/prefer-global/process
     process.cwd(),
     'src/app/[lang]/posts/og/[...slug]/route.with.tsx',
   )
@@ -123,7 +121,7 @@ export async function WithPage(
             a: createRelativeLink(source, page),
           })}
         />
-        <div className='text-accent my-2'>
+        <div className='my-2 text-accent'>
           <Link href='/posts' className='text-muted-foreground'>
             &gt; cd ..
           </Link>
