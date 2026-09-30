@@ -1,3 +1,4 @@
+// oxlint-disable react/only-export-components
 import Script from 'next/script'
 import { Footer } from '~/app/_components/footer'
 import { Header } from '~/app/_components/header'
@@ -122,22 +123,23 @@ export async function WithLayout(
   }
 
   return (
-    <html lang={lang} className='h-full' suppressHydrationWarning>
+    <html lang={lang} className="h-full" suppressHydrationWarning>
       <head>
         <Script
           async
           defer
-          src='https://cloud.umami.is/script.js'
-          data-website-id='6ed314b0-fc17-4333-870a-d9e5af82626e'
-          data-domains='aiwan.run'
+          src="https://cloud.umami.is/script.js"
+          data-website-id="6ed314b0-fc17-4333-870a-d9e5af82626e"
+          data-domains="aiwan.run"
         />
         <Script
-          src='https://app.rybbit.io/api/script.js'
-          data-site-id='242b9158c21a'
+          src="https://app.rybbit.io/api/script.js"
+          data-site-id="242b9158c21a"
           defer
         />
         <script
-          type='application/ld+json'
+          type="application/ld+json"
+          // oxlint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}
@@ -145,7 +147,7 @@ export async function WithLayout(
       </head>
       <body>
         <Providers lang={lang}>
-          <div className='relative min-h-screen'>
+          <div className="relative min-h-screen">
             <Header />
             {children}
           </div>

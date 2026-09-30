@@ -13,6 +13,9 @@ minimumReleaseAgeExclude:
   - wrangler@4.129.1
   - '@debbl/oxc-config@0.0.0'
   - zod@4.6.5
+  - eslint-plugin-twl@0.4.3
+  - oxlint-plugin-twl@0.4.3
+  - twl@0.4.3
 
 patchedDependencies:
   'next@16.3.5': 'patches/next@16.3.5.patch'

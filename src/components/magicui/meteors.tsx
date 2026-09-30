@@ -45,6 +45,7 @@ export const Meteors = ({
       {[...meteorStyles].map((style, idx) => (
         // Meteor Head
         <span
+          // oxlint-disable-next-line react/no-array-index-key
           key={idx}
           style={{ ...style }}
           className={cn(
@@ -53,7 +54,7 @@ export const Meteors = ({
           )}
         >
           {/* Meteor Tail */}
-          <div className='pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] -translate-y-1/2 bg-gradient-to-r from-zinc-500 to-transparent' />
+          <div className="pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] -translate-y-1/2 bg-gradient-to-r from-zinc-500 to-transparent" />
         </span>
       ))}
     </>

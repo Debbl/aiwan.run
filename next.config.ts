@@ -3,6 +3,7 @@ import bundleAnalyzer from '@next/bundle-analyzer'
 import { createI18nPlugin } from 'best-i18n/next'
 import { createMDX } from 'fumadocs-mdx/next'
 import { createAutoImport } from 'next-auto-import'
+import { withTwl } from 'twl/next'
 import { i18n } from './src/i18n'
 import type { NextConfig } from 'next'
 
@@ -57,7 +58,10 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ['typescript', 'twoslash'],
 }
 
-export default [withBundleAnalyzer, withMDX, withAutoImport, withI18n].reduce(
-  (config, fn) => fn(config),
-  nextConfig,
-)
+export default [
+  withBundleAnalyzer,
+  withMDX,
+  withAutoImport,
+  withI18n,
+  withTwl(),
+].reduce((config, fn) => fn(config), nextConfig)

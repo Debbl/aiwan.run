@@ -1,3 +1,4 @@
+// oxlint-disable react/only-export-components
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -95,10 +96,10 @@ export async function WithPage(
   const otherLangUrl = `${lang === 'zh' ? '' : '/zh'}/posts/${page.slugs[0]}`
 
   return (
-    <div className='mx-auto max-w-4xl p-4 pt-8'>
+    <div className="mx-auto max-w-4xl p-4 pt-8">
       <DocsTitle>{page.data.title}</DocsTitle>
-      <div className='mt-2 flex items-center gap-3'>
-        <p className='text-muted-foreground'>
+      <div className="mt-2 flex items-center gap-3">
+        <p className="text-muted-foreground">
           <span>{format(page.data.date, 'MMM-dd, yyyy')}</span>
           {' · '}
           <span>{page.data.duration}</span>
@@ -107,22 +108,22 @@ export async function WithPage(
           href={otherLangUrl}
           replace
           noLocale
-          className='flex size-6 cursor-pointer items-center justify-center'
+          className="flex size-6 cursor-pointer items-center justify-center"
         >
-          <Icon.LuLanguages title='change language' />
+          <Icon.LuLanguages title="change language" />
         </Link>
       </div>
-      <DocsDescription className='mt-2 text-sm'>
+      <DocsDescription className="mt-2 text-sm">
         {page.data.description}
       </DocsDescription>
-      <DocsBody className='mt-4 wrap-break-word'>
+      <DocsBody className="mt-4 wrap-break-word">
         <MDXContent
           components={getMDXComponents({
             a: createRelativeLink(source, page),
           })}
         />
-        <div className='my-2 text-accent'>
-          <Link href='/posts' className='text-muted-foreground'>
+        <div className="my-2 text-accent">
+          <Link href="/posts" className="text-muted-foreground">
             &gt; cd ..
           </Link>
         </div>

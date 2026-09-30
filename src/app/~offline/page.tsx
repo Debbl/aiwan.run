@@ -26,7 +26,7 @@ export default function OfflinePage() {
           This page is unavailable
         </h1>
         <p>Check your internet connection and try again.</p>
-        <p lang='zh-CN' style={{ marginTop: 12, color: '#52525b' }}>
+        <p lang="zh-CN" style={{ marginTop: 12, color: '#52525b' }}>
           暂时无法打开此页面，请检查网络连接后重试。
         </p>
         {/*
@@ -38,8 +38,8 @@ export default function OfflinePage() {
           off the precached HTML alone.
         */}
         <button
-          type='button'
-          id='retry'
+          type="button"
+          id="retry"
           style={{
             marginTop: 24,
             padding: '12px 20px',
@@ -51,9 +51,10 @@ export default function OfflinePage() {
             cursor: 'pointer',
           }}
         >
-          Try again / <span lang='zh-CN'>重试</span>
+          Try again / <span lang="zh-CN">重试</span>
         </button>
         <script
+          // oxlint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html:
               "document.getElementById('retry').addEventListener('click',function(){location.reload()})",

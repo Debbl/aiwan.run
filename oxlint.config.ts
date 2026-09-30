@@ -1,5 +1,6 @@
 import { oxlint } from '@debbl/oxc-config'
 import { defineConfig } from 'oxlint'
+import twl from 'oxlint-plugin-twl'
 
 // Injected as globals by `unplugin-auto-import` (see `auto-imports.d.ts`), so
 // oxlint has no import to resolve them to. Kept in sync with that file.
@@ -41,7 +42,14 @@ const autoImports = [
 ]
 
 export default defineConfig({
-  extends: [oxlint({ react: true, next: true, a11y: true })],
+  extends: [
+    oxlint({ react: true, next: true, a11y: true }),
+    twl.configs.recommended,
+  ],
+  settings: {
+    // twl rules follow explicit imports from twl/macro, not the auto-imported cn.
+    twl: { stylesheet: './src/styles/globals.css' },
+  },
   globals: Object.fromEntries(autoImports.map((name) => [name, 'readonly'])),
   ignorePatterns: [
     // Prose, not code - the ESLint config excluded these too.
