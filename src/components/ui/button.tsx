@@ -48,11 +48,12 @@ function Button({
 
   return (
     <Comp
-      data-slot='button'
+      data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
   )
 }
 
+// oxlint-disable-next-line react/only-export-components
 export { Button, buttonVariants }
