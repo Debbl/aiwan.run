@@ -8,11 +8,6 @@ import Providers from '~/providers'
 import type { Metadata } from 'next'
 import type { Lang } from '~/types'
 
-export function withGenerateStaticParams(lang: Lang) {
-  if (lang === 'en') return []
-  return [{ lang }]
-}
-
 export const withGenerateMetadata = async (lang: Lang): Promise<Metadata> => {
   const { title, description, keywords } = getServerWebsiteConstants(lang)
 

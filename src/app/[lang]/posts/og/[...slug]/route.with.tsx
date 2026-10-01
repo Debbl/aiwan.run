@@ -8,9 +8,9 @@ import type { Lang } from '~/types'
 export async function withGenerateStaticParams(lang: Lang) {
   return source
     .generateParams('slug', 'lang')
-    .filter((s) => s.lang === 'en')
+    .filter((s) => s.lang === lang)
     .map((s) => ({
-      ...(lang === 'zh' ? { lang: 'zh' } : {}),
+      lang,
       slug: s.slug.concat(['opengraph-image']),
     }))
 }

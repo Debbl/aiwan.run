@@ -1,13 +1,14 @@
-import {
-  withGenerateMetadata,
-  withGenerateStaticParams,
-  WithLayout,
-} from './layout.with'
+import { i18n } from '~/i18n'
+import { withGenerateMetadata, WithLayout } from './layout.with'
 import type { Metadata } from 'next'
 import type { Lang } from '~/types'
 
-export async function generateStaticParams() {
-  return withGenerateStaticParams('zh')
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return i18n.locales
+    .filter((lang) => lang !== i18n.baseLocale)
+    .map((lang) => ({ lang }))
 }
 
 export async function generateMetadata(props: {

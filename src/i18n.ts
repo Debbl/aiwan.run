@@ -1,8 +1,7 @@
 import { defineI18nConfig } from 'best-i18n/next/config'
 
-// The locale lives in the `[lang]` route segment; the `(main)` tree has no
-// segment and falls back to `baseLocale`, which is exactly the unprefixed
-// English tree.
+// `[lang]` owns the routes; the static export plugin generates `(unprefixed)`
+// with params.lang pinned to baseLocale for the English URLs.
 export const i18n = defineI18nConfig({
   locales: ['en', 'zh'],
   baseLocale: 'en',

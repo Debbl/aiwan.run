@@ -6,8 +6,14 @@ import {
 import type { Metadata } from 'next'
 import type { Lang } from '~/types'
 
-export async function generateStaticParams() {
-  return withGenerateStaticParams('zh')
+export const dynamicParams = false
+
+export async function generateStaticParams({
+  params,
+}: {
+  params: { lang: string }
+}) {
+  return withGenerateStaticParams(params.lang as Lang)
 }
 
 export async function generateMetadata(props: {

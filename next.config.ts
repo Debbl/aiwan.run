@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'node:url'
+import { staticExport } from '@best-i18n/next-unprefixed-locale'
 import bundleAnalyzer from '@next/bundle-analyzer'
 import { createI18nPlugin } from 'best-i18n/next'
 import { createMDX } from 'fumadocs-mdx/next'
@@ -11,6 +12,7 @@ const withI18n = createI18nPlugin({
   // locales and baseLocale are described once, in src/i18n.ts
   ...i18n,
   messagesDir: fileURLToPath(new URL('./messages', import.meta.url)),
+  plugins: [staticExport()],
 })
 
 const withBundleAnalyzer = bundleAnalyzer({

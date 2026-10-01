@@ -1,12 +1,17 @@
 import { ImageResponse } from 'next/og'
-import { withGenerateStaticParams } from './layout.with'
+import { i18n } from '~/i18n'
+import type { Lang } from '~/types'
 
 export const dynamic = 'force-static'
 
 export const contentType = 'image/png'
 
-export async function generateStaticParams() {
-  return withGenerateStaticParams('zh')
+export function generateStaticParams({ params }: { params?: { lang?: Lang } }) {
+  const langs = params?.lang
+    ? [params.lang]
+    : i18n.locales.filter((lang) => lang !== i18n.baseLocale)
+
+  return langs.map((lang) => ({ lang }))
 }
 
 export default async function Image() {
